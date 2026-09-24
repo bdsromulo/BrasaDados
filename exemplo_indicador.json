@@ -1,0 +1,94 @@
+{
+  "$schema": "https://brasadados.org/schemas/indicator-v1.json",
+  "id": "educacao-ideb-ensino-medio",
+  "slug": "ideb-ensino-medio-brasil",
+  "titulo": "IDEB — Índice de Desenvolvimento da Educação Básica (Ensino Médio)",
+  "categoria": "educacao",
+  "subcategoria": "desempenho-escolar",
+  "tags": ["educação", "ideb", "inep", "saeb", "ensino médio", "escolas"],
+  "fonte": {
+    "orgao": "INEP / Ministério da Educação",
+    "pesquisa": "Censo da Educação Básica e Sistema de Avaliação da Educação Básica (Saeb)",
+    "url_oficial": "https://www.gov.br/inep/pt-br/areas-de-atuacao/pesquisas-estatisticas-e-indicadores/ideb",
+    "frequencia_atualizacao": "Bienal (a cada 2 anos)",
+    "ultima_atualizacao": "2024-08-14",
+    "proxima_atualizacao_prevista": "2026-08"
+  },
+  "explicacao_leiga": {
+    "resumo": "O IDEB é a nota oficial do Brasil para medir a qualidade das escolas públicas e privadas, variando em uma escala de 0 a 10.",
+    "como_interpretar": "O índice combina duas informações essenciais: quantos alunos foram aprovados de ano sem reprovação ou abandono (fluxo escolar) e a nota obtida pelos estudantes em provas padronizadas de Língua Portuguesa e Matemática (aprendizado no Saeb). Uma nota maior indica que mais alunos estão aprendendo e progredindo na idade correta.",
+    "por_que_importa": "Evita distorções onde uma escola aprova todo mundo sem ensinar nada, ou onde uma escola tem notas excelentes nas provas porque reprovou ou expulsou a maioria dos alunos com dificuldades.",
+    "pontos_de_atencao": "A meta histórica projetada para o Ensino Médio no Brasil era alcançar 5,2 pontos em 2021. Em 2023, o resultado geral nacional ficou em 4,3 pontos."
+  },
+  "detalhamento_tecnico": {
+    "formula_calculo": "IDEB_j = N_j * P_j, onde N_j é a nota média padronizada no Saeb (escala de 0 a 10) e P_j é o indicador de rendimento baseado na taxa de transição (aprovação) obtida no Censo Escolar.",
+    "unidade_medida": "Índice (escala contínua de 0 a 10 pontos)",
+    "amostra_cobertura": "Censo Escolar e avaliação censitária das escolas públicas e privadas urbanas e rurais com pelo menos 10 alunos matriculados na 3ª série do Ensino Médio.",
+    "taxa_resposta_criterios": "Para ter o IDEB divulgado publicamente, a escola precisa ter alcançado uma taxa mínima de 80% de participação dos alunos matriculados no dia da aplicação do Saeb.",
+    "anonimizacao_sigilo": "Escolas ou turmas com menos de 10 alunos têm seus resultados omitidos e marcados como 'sem dados' para assegurar a anonimização e cumprir os termos da LGPD e as normas do sigilo estatístico do INEP.",
+    "limitacoes_e_quebras_metodologicas": "O resultado de 2021 deve ser analisado com extrema cautela em comparações de séries históricas: em virtude da pandemia de Covid-19, diversos estados adotaram critérios de aprovação automática ou contínua, o que elevou artificialmente o componente de fluxo (P_j) da fórmula.",
+    "orientacoes_fact_checking": "Ao comparar estados ou redes públicas e privadas, sempre verifique se a taxa de participação atingiu o limiar de 80%. Não compare diretamente notas do Ensino Médio com as notas dos Anos Iniciais do Ensino Fundamental (que possuem escalas de metas diferentes)."
+  },
+  "visualizacao": {
+    "tipo_padrao": "line",
+    "eixo_x": {
+      "tipo": "temporal",
+      "rotulo": "Ano da Avaliação"
+    },
+    "eixo_y": {
+      "rotulo": "Nota IDEB",
+      "unidade": "pontos",
+      "escala_min": 0,
+      "escala_max": 10
+    },
+    "series": [
+      {
+        "id": "rede_publica",
+        "nome": "Rede Pública (Estadual e Federal)",
+        "cor": "#2563eb",
+        "dados": [
+          [2015, 3.5],
+          [2017, 3.5],
+          [2019, 3.9],
+          [2021, 3.9],
+          [2023, 4.1]
+        ]
+      },
+      {
+        "id": "rede_privada",
+        "nome": "Rede Privada",
+        "cor": "#10b981",
+        "dados": [
+          [2015, 5.3],
+          [2017, 5.8],
+          [2019, 6.0],
+          [2021, 5.6],
+          [2023, 5.8]
+        ]
+      },
+      {
+        "id": "total_brasil",
+        "nome": "Média Total Brasil",
+        "cor": "#f59e0b",
+        "estilo": "dashed",
+        "dados": [
+          [2015, 3.7],
+          [2017, 3.8],
+          [2019, 4.2],
+          [2021, 4.2],
+          [2023, 4.3]
+        ]
+      }
+    ],
+    "marcos_historicos": [
+      {
+        "ano": 2020,
+        "rotulo": "Início da Pandemia de Covid-19 (Impacto no fluxo e aplicação do Saeb 2021)"
+      }
+    ]
+  },
+  "citacao_sugerida": {
+    "abnt": "INSTITUTO NACIONAL DE ESTUDOS E PESQUISAS EDUCACIONAIS ANÍSIO TEIXEIRA (INEP). Índice de Desenvolvimento da Educação Básica (Ideb) 2023: Resultados. Brasília: MEC/INEP, 2024. Disponível em: https://www.gov.br/inep. Acesso via Brasa Dados.",
+    "link_exportacao_json": "/data/indicators/educacao-ideb-ensino-medio.json"
+  }
+}

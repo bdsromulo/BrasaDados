@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brasa Dados — O Panorama Visual e Fidedigno do Brasil</title>
+    <meta name="description" content="Agregação, contextualização e visualização didática de dados socioeconômicos do Brasil com foco em fact-checking, metodologia e análise cruzada em multiquadrantes." />
+    
+    <!-- Script Anti-FOUC para evitar clarão de tema incorreto no carregamento inicial -->
+    <script>
+      (function() {
+        try {
+          var temaSalvo = localStorage.getItem("brasadados_tema");
+          var prefereEscuro = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+          if (temaSalvo === "dark" || (!temaSalvo && prefereEscuro)) {
+            document.documentElement.classList.add("dark");
+          } else {
+            document.documentElement.classList.remove("dark");
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body class="bg-zinc-50 text-zinc-900 antialiased selection:bg-amber-400/30 selection:text-amber-900 dark:bg-zinc-950 dark:text-zinc-100 dark:selection:bg-amber-500/30 dark:selection:text-amber-200">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
