@@ -1509,14 +1509,371 @@ export const INDICADORES_REAIS: Indicator[] = [
     citacao_sugerida: {
       abnt: "ORGANIZAÇÃO MUNDIAL DA SAÚDE; BANCO MUNDIAL; IBGE. Conta Satélite de Saúde: Despesas com Saúde no Brasil (Série Histórica). Genebra/Rio de Janeiro: OMS/IBGE, 2024. Acesso via Brasa Dados."
     }
+  },
+  {
+    id: "educacao-censo-superior-ead",
+    slug: "ingressantes-ensino-superior-presencial-vs-ead-inep",
+    titulo: "Ensino Superior — Novos Ingressantes: Presencial vs. EaD (Milhões)",
+    categoria: "educacao",
+    subcategoria: "ensino-superior",
+    tags: ["educação", "ensino superior", "faculdade", "ead", "ensino presencial", "inep", "censo da educação superior"],
+    fonte: {
+      orgao: "INEP / Ministério da Educação",
+      pesquisa: "Censo da Educação Superior",
+      url_oficial: "https://www.gov.br/inep/pt-br/areas-de-atuacao/pesquisas-estatisticas-e-indicadores/censo-da-educacao-superior",
+      frequencia: "Anual",
+      ultima_atualizacao: "2024-10-03"
+    },
+    explicacao_leiga: {
+      resumo: "Mede o número anual de novos estudantes que ingressam em cursos de graduação no Brasil, separando quem estuda presencialmente de quem faz Educação a Distância (EaD).",
+      como_interpretar: "Uma virada histórica ocorreu em 2020: pela primeira vez, mais calouros entraram na faculdade pelo formato EaD do que no modelo presencial. Em 2023, o EaD já concentrava 66,4% de todos os novos alunos.",
+      por_que_importa: "Permite avaliar a democratização do acesso ao ensino superior pelo interior do país, ao mesmo tempo em que desperta debates sobre qualidade pedagógica e taxas de evasão em cursos remotos.",
+      pontos_de_atencao: "O ingresso presencial caiu de 2,12 milhões de alunos em 2017 para 1,68 milhão em 2023, enquanto o EaD saltou de 770 mil para 3,31 milhões no mesmo período."
+    },
+    detalhamento_tecnico: {
+      formula_calculo: "Contagem censitária de alunos ingressantes (matrículas no primeiro ano de graduação regular) por modalidade de ensino em instituições públicas e privadas credenciadas.",
+      unidade_medida: "Milhões de alunos ingressantes",
+      amostra_cobertura: "Censitário para todas as Instituições de Educação Superior (IES) com cursos de graduação ativos no país.",
+      anonimizacao_sigilo: "Microdados desidentificados protegidos pelo segredo estatístico do INEP e LGPD.",
+      limitacoes_e_quebras_metodologicas: "A expansão de polos EaD foi desregulamentada pelo Decreto nº 9.057/2017, acelerando a oferta de vagas virtuais pela rede privada.",
+      orientacoes_fact_checking: "Não confunda 'Alunos Ingressantes' (novos calouros no ano) com o 'Total de Matrículas' acumuladas em todos os anos do curso (cerca de 10 milhões)."
+    },
+    visualizacao: {
+      tipo_padrao: "line",
+      eixo_x: { tipo: "temporal", rotulo: "Ano" },
+      eixo_y: { rotulo: "Ingressantes (Milhões)", unidade: "mi alunos", escala_min: 0, escala_max: 4.5 },
+      series: [
+        {
+          id: "ead",
+          nome: "Educação a Distância (EaD)",
+          cor: "#8b5cf6",
+          dados: [
+            [2015, 0.50], [2016, 0.59], [2017, 0.77], [2018, 1.07],
+            [2019, 1.56], [2020, 2.01], [2021, 2.17], [2022, 3.10],
+            [2023, 3.31], [2024, 3.55]
+          ]
+        },
+        {
+          id: "presencial",
+          nome: "Ensino Presencial",
+          cor: "#3b82f6",
+          dados: [
+            [2015, 2.05], [2016, 2.13], [2017, 2.12], [2018, 2.07],
+            [2019, 2.08], [2020, 1.54], [2021, 1.56], [2022, 1.61],
+            [2023, 1.68], [2024, 1.70]
+          ]
+        }
+      ],
+      marcos_historicos: [
+        { ano: 2020, rotulo: "EaD supera o presencial pela 1ª vez na história (2,01 mi vs 1,54 mi)" },
+        { ano: 2023, rotulo: "EaD alcança 66,4% de todos os novos ingressos universitários" }
+      ]
+    },
+    citacao_sugerida: {
+      abnt: "INEP. Censo da Educação Superior 2023: Divulgação dos Resultados. Brasília: Ministério da Educação/INEP, 2024. Acesso via Brasa Dados."
+    }
+  },
+  {
+    id: "saude-cobertura-vacinal-polio",
+    slug: "cobertura-vacinal-poliomielite-menores-1-ano-pni",
+    titulo: "Vigilância Imunológica — Cobertura Vacinal contra Poliomielite (%)",
+    categoria: "saude",
+    subcategoria: "imunizacao-vigilancia",
+    tags: ["saúde", "vacinação", "poliomielite", "pni", "datasus", "infância", "sus", "imunização"],
+    fonte: {
+      orgao: "Ministério da Saúde / DataSUS",
+      pesquisa: "Programa Nacional de Imunizações (SI-PNI / RNDS)",
+      url_oficial: "https://infoms.saude.gov.br/extensions/SEIDIGI_DEMAS_VACINACAO_CALENDARIO_NACIONAL/SEIDIGI_DEMAS_VACINACAO_CALENDARIO_NACIONAL.html",
+      frequencia: "Mensal / Anual",
+      ultima_atualizacao: "2024-11-20"
+    },
+    explicacao_leiga: {
+      resumo: "Mede a porcentagem de bebês com menos de 1 ano de idade que receberam o esquema completo de três doses da vacina contra a paralisia infantil (poliomielite).",
+      como_interpretar: "A meta de segurança da OMS e do Ministério da Saúde é de 95%. Índices abaixo desse valor criam bolsões populacionais vulneráveis à reintrodução do vírus.",
+      por_que_importa: "O Brasil erradicou a paralisia infantil em 1989. O recuo vacinal na última década acendeu alertas globais pela perda da imunidade coletiva.",
+      pontos_de_atencao: "Após atingir um piso preocupante de 71% em 2021 durante a pandemia, a cobertura iniciou recuperação progressiva, voltando a superar 86% em 2024."
+    },
+    detalhamento_tecnico: {
+      formula_calculo: "Taxa de Cobertura = (Total de 3ªs doses de VIP aplicadas em menores de 1 ano / População estimada de menores de 1 ano pelo IBGE/Sinasc) * 100.",
+      unidade_medida: "% da população alvo",
+      amostra_cobertura: "Todas as salas de vacina da rede pública (SUS) e clínicas privadas conveniadas registradas no CNES.",
+      anonimizacao_sigilo: "Registros nominais centralizados na RNDS com anonimização epidemiológica agregada.",
+      limitacoes_e_quebras_metodologicas: "Migração gradual do antigo SI-PNI para o e-SUS APS e RNDS entre 2019 e 2022 causou represamentos pontuais de digitação municipal.",
+      orientacoes_fact_checking: "O indicador refere-se à Vacina Inativada Poliomielite (VIP injetável de 3 doses); não confundir com campanhas extras de reforço com a gotinha (VOP)."
+    },
+    visualizacao: {
+      tipo_padrao: "line",
+      eixo_x: { tipo: "temporal", rotulo: "Ano" },
+      eixo_y: { rotulo: "Cobertura Vacinal (%)", unidade: "%", escala_min: 60, escala_max: 105 },
+      series: [
+        {
+          id: "cobertura_polio",
+          nome: "Cobertura Poliomielite (< 1 ano)",
+          cor: "#e11d48",
+          dados: [
+            [2015, 98.3], [2016, 84.4], [2017, 84.7], [2018, 89.5],
+            [2019, 84.2], [2020, 76.8], [2021, 71.0], [2022, 77.2],
+            [2023, 84.6], [2024, 86.8]
+          ]
+        }
+      ],
+      marcos_historicos: [
+        { ano: 2021, rotulo: "Menor patamar histórico recente (71,0%) sob impacto da pandemia" },
+        { ano: 2024, rotulo: "Recuperação para 86,8%, aproximando-se da meta internacional de 95%" }
+      ]
+    },
+    citacao_sugerida: {
+      abnt: "BRASIL. Ministério da Saúde. Sistema de Informações do Programa Nacional de Imunizações (SI-PNI): Cobertura Vacinal contra Poliomielite. Brasília: Ministério da Saúde/DataSUS, 2024. Acesso via Brasa Dados."
+    }
+  },
+  {
+    id: "meio-ambiente-matriz-eletrica-renovavel",
+    slug: "participacao-fontes-renovaveis-matriz-eletrica-epe",
+    titulo: "Transição Energética — Fontes Renováveis na Matriz Elétrica (%)",
+    categoria: "meio-ambiente",
+    subcategoria: "energia-sustentabilidade",
+    tags: ["energia", "renovaveis", "matriz eletrica", "epe", "ben", "solar", "eolica", "hidreletrica", "clima"],
+    fonte: {
+      orgao: "Empresa de Pesquisa Energética (EPE) / MME",
+      pesquisa: "Balanço Energético Nacional (BEN)",
+      url_oficial: "https://www.epe.gov.br/pt/publicacoes-dados-abertos/publicacoes/balanco-energetico-nacional-ben",
+      frequencia: "Anual",
+      ultima_atualizacao: "2025-06-30"
+    },
+    explicacao_leiga: {
+      resumo: "Mede a fatia de eletricidade gerada no Brasil a partir de fontes limpas e renováveis (hidrelétricas, eólicas, solares fotovoltaicas e biomassa).",
+      como_interpretar: "Enquanto a média mundial de renovabilidade elétrica gira em torno de 30%, o Brasil gera quase 90% da sua energia de fontes limpas, despontando como potência verde.",
+      por_que_importa: "Posiciona o país como polo global para atração de indústrias de baixo carbono (aço verde, hidrogênio verde, data centers sustentáveis).",
+      pontos_de_atencao: "A geração eólica e solar saltou de menos de 5% da matriz em 2015 para mais de 24% em 2024, compensando os anos de secas e baixos reservatórios hídricos."
+    },
+    detalhamento_tecnico: {
+      formula_calculo: "Participação Renovável = (Geração Elétrica Renovável Bruta Nacional + Importação Líquida de Eletricidade Renovável) / Oferta Interna de Eletricidade (OIE) * 100.",
+      unidade_medida: "% da geração total",
+      amostra_cobertura: "Sistema Interligado Nacional (SIN), Sistemas Isolados da Amazônia e Autoprodução de Energia.",
+      anonimizacao_sigilo: "Balanço público consolidado pela EPE e ONS.",
+      limitacoes_e_quebras_metodologicas: "A crise hídrica de 2021 exigiu o acionamento emergencial de termelétricas fósseis a gás e carvão, reduzindo temporariamente a participação para 78%.",
+      orientacoes_fact_checking: "Diferencie 'Matriz Elétrica' (apenas eletricidade, onde o Brasil tem ~88% renovável) da 'Matriz Energética Total' (que inclui combustíveis de transporte e fornos industriais, onde renováveis são ~48%)."
+    },
+    visualizacao: {
+      tipo_padrao: "line",
+      eixo_x: { tipo: "temporal", rotulo: "Ano" },
+      eixo_y: { rotulo: "Renováveis (%)", unidade: "%", escala_min: 65, escala_max: 95 },
+      series: [
+        {
+          id: "renovaveis_matriz",
+          nome: "Participação de Fontes Renováveis (%)",
+          cor: "#10b981",
+          dados: [
+            [2015, 75.0], [2016, 81.0], [2017, 78.1], [2018, 83.3],
+            [2019, 83.0], [2020, 84.8], [2021, 78.1], [2022, 87.7],
+            [2023, 87.9], [2024, 88.2]
+          ]
+        }
+      ],
+      marcos_historicos: [
+        { ano: 2021, rotulo: "Crise hídrica força acionamento de termelétricas fósseis (78,1%)" },
+        { ano: 2024, rotulo: "Recorde de 88,2% impulsionado pela expansão eólica e solar" }
+      ]
+    },
+    citacao_sugerida: {
+      abnt: "EMPRESA DE PESQUISA ENERGÉTICA. Balanço Energético Nacional (BEN 2024): Relatório Síntese / Ano Base 2023. Rio de Janeiro: EPE/MME, 2024. Acesso via Brasa Dados."
+    }
+  },
+  {
+    id: "meio-ambiente-saneamento-esgoto",
+    slug: "coleta-esgotamento-sanitario-snis-brasil",
+    titulo: "Saneamento Básico — População com Coleta de Esgoto (%)",
+    categoria: "meio-ambiente",
+    subcategoria: "saneamento-basico",
+    tags: ["saneamento", "esgoto", "snis", "sinisa", "trata brasil", "cidades", "meio ambiente", "saude publica"],
+    fonte: {
+      orgao: "Ministério das Cidades / SNIS / SINISA",
+      pesquisa: "Sistema Nacional de Informações sobre Saneamento (IN024/IN056)",
+      url_oficial: "https://www.gov.br/cidades/pt-br/assuntos/saneamento/sinisa",
+      frequencia: "Anual",
+      ultima_atualizacao: "2024-12-10"
+    },
+    explicacao_leiga: {
+      resumo: "Mede a parcela da população brasileira que reside em domicílios conectados a redes públicas de coleta e afastamento de esgoto sanitário.",
+      como_interpretar: "Quase metade da população brasileira (cerca de 90 milhões de pessoas) ainda não tem esgoto coletado, o que contamina rios e provoca doenças de veiculação hídrica.",
+      por_que_importa: "O Novo Marco Legal do Saneamento (Lei 14.026/2020) fixou a meta mandatória de universalização com 90% da população atendida até 2033.",
+      pontos_de_atencao: "Há disparidades regionais gritantes: enquanto São Paulo e Paraná superam 80% a 90% de cobertura, estados do Norte e Nordeste apresentam índices inferiores a 20%."
+    },
+    detalhamento_tecnico: {
+      formula_calculo: "Índice de Atendimento Total de Esgoto (IN056) = (População Total Atendida com Esgotamento Sanitário / População Total Residente) * 100.",
+      unidade_medida: "% da população",
+      amostra_cobertura: "Mais de 5.200 municípios brasileiros declarantes ao SNIS/SINISA.",
+      anonimizacao_sigilo: "Dados administrativos públicos de companhias estaduais, autarquias municipais e concessionárias privadas.",
+      limitacoes_e_quebras_metodologicas: "Nem todo o esgoto coletado é tratado antes de ser despejado nos rios (o índice de esgoto tratado é de cerca de 52%). Transição do SNIS para SINISA em 2024.",
+      orientacoes_fact_checking: "Diferencie 'Esgoto Coletado' (57%) de 'Esgoto Tratado sobre o gerado' (52%) e de 'Acesso a Água Encanada' (85%)."
+    },
+    visualizacao: {
+      tipo_padrao: "line",
+      eixo_x: { tipo: "temporal", rotulo: "Ano" },
+      eixo_y: { rotulo: "Atendimento Esgoto (%)", unidade: "%", escala_min: 40, escala_max: 70 },
+      series: [
+        {
+          id: "coleta_esgoto",
+          nome: "População Atendida com Coleta de Esgoto (%)",
+          cor: "#0d9488",
+          dados: [
+            [2015, 50.3], [2016, 51.9], [2017, 52.4], [2018, 53.2],
+            [2019, 54.1], [2020, 55.0], [2021, 55.8], [2022, 56.0],
+            [2023, 56.5], [2024, 57.2]
+          ]
+        }
+      ],
+      marcos_historicos: [
+        { ano: 2020, rotulo: "Aprovação do Novo Marco Legal do Saneamento (Lei 14.026/2020)" },
+        { ano: 2024, rotulo: "Meta de 90% até 2033 segue como um dos maiores desafios de infraestrutura" }
+      ],
+      dados_uf: [
+        { uf: "SP", nome: "São Paulo", valor: 91.2 },
+        { uf: "DF", nome: "Distrito Federal", valor: 89.8 },
+        { uf: "PR", nome: "Paraná", valor: 79.5 },
+        { uf: "MG", nome: "Minas Gerais", valor: 75.1 },
+        { uf: "RJ", nome: "Rio de Janeiro", valor: 68.3 },
+        { uf: "GO", nome: "Goiás", valor: 62.4 },
+        { uf: "MS", nome: "Mato Grosso do Sul", valor: 61.2 },
+        { uf: "ES", nome: "Espírito Santo", valor: 58.7 },
+        { uf: "RR", nome: "Roraima", valor: 52.1 },
+        { uf: "MT", nome: "Mato Grosso", valor: 43.5 },
+        { uf: "BA", nome: "Bahia", valor: 40.2 },
+        { uf: "PB", nome: "Paraíba", valor: 39.5 },
+        { uf: "CE", nome: "Ceará", valor: 38.2 },
+        { uf: "RS", nome: "Rio Grande do Sul", valor: 35.8 },
+        { uf: "PE", nome: "Pernambuco", valor: 34.1 },
+        { uf: "TO", nome: "Tocantins", valor: 32.1 },
+        { uf: "SC", nome: "Santa Catarina", valor: 30.5 },
+        { uf: "SE", nome: "Sergipe", valor: 29.5 },
+        { uf: "RN", nome: "Rio Grande do Norte", valor: 27.8 },
+        { uf: "AL", nome: "Alagoas", valor: 22.1 },
+        { uf: "PI", nome: "Piauí", valor: 18.2 },
+        { uf: "MA", nome: "Maranhão", valor: 14.1 },
+        { uf: "AM", nome: "Amazonas", valor: 13.5 },
+        { uf: "AC", nome: "Acre", valor: 13.2 },
+        { uf: "AP", nome: "Amapá", valor: 10.8 },
+        { uf: "PA", nome: "Pará", valor: 9.2 },
+        { uf: "RO", nome: "Rondônia", valor: 8.9 }
+      ]
+    },
+    citacao_sugerida: {
+      abnt: "BRASIL. Ministério das Cidades. Sistema Nacional de Informações sobre Saneamento (SNIS/SINISA): Diagnóstico Temático Água e Esgoto. Brasília: Ministério das Cidades, 2024. Acesso via Brasa Dados."
+    }
+  },
+  {
+    id: "economia-balanca-comercial",
+    slug: "saldo-balanca-comercial-comex-stat-mdic",
+    titulo: "Comércio Exterior — Saldo da Balança Comercial (US$ Bilhões)",
+    categoria: "economia",
+    subcategoria: "comercio-exterior",
+    tags: ["economia", "balança comercial", "exportações", "importações", "mdic", "secex", "comex stat", "dólar", "superávit"],
+    fonte: {
+      orgao: "MDIC / Secretaria de Comércio Exterior (SECEX)",
+      pesquisa: "Comex Stat — Estatísticas de Comércio Exterior do Brasil",
+      url_oficial: "https://comexstat.mdic.gov.br/",
+      frequencia: "Mensal / Anual",
+      ultima_atualizacao: "2025-01-10"
+    },
+    explicacao_leiga: {
+      resumo: "Mede a diferença líquida entre tudo o que o Brasil vendeu ao exterior (exportações) e tudo o que comprou de outros países (importações), em bilhões de dólares americanos.",
+      como_interpretar: "Um saldo positivo (superávit) indica entrada líquida de dólares na economia pelo comércio de mercadorias, fortalecendo as reservas cambiais e a estabilidade externa do país.",
+      por_que_importa: "O superávit comercial brasileiro é o principal âncora das contas externas nacionais, impulsionado por safras recordes de soja, milho, minério de ferro e petróleo bruto.",
+      pontos_de_atencao: "Em 2023, o Brasil registrou o maior superávit comercial de toda a sua história: quase US$ 99 bilhões, consolidando o país entre os grandes exportadores globais de alimentos e energia."
+    },
+    detalhamento_tecnico: {
+      formula_calculo: "Saldo Comercial = Valor FOB Total das Exportações - Valor FOB Total das Importações apuradas via declarações aduaneiras do Siscomex.",
+      unidade_medida: "US$ Bilhões (FOB)",
+      amostra_cobertura: "Registro censitário aduaneiro de todas as operações de comércio exterior formalizadas perante a Receita Federal do Brasil.",
+      anonimizacao_sigilo: "Dados agregados por Nomenclatura Comum do Mercosul (NCM), países parceiros e Unidades da Federação.",
+      limitacoes_e_quebras_metodologicas: "Valores em dólares correntes sujeitos a flutuações das cotações internacionais de commodities (efeito preço vs efeito volume).",
+      orientacoes_fact_checking: "O saldo comercial abrange apenas mercadorias físicas (bens tangíveis); o saldo de transações correntes do Banco Central inclui também serviços (fretes, turismo) e remessas de lucros."
+    },
+    visualizacao: {
+      tipo_padrao: "bar",
+      eixo_x: { tipo: "temporal", rotulo: "Ano" },
+      eixo_y: { rotulo: "Saldo Comercial (US$ Bi)", unidade: "US$ bi", escala_min: 0, escala_max: 110 },
+      series: [
+        {
+          id: "saldo_comercial",
+          nome: "Superávit Comercial (US$ Bilhões)",
+          cor: "#059669",
+          dados: [
+            [2015, 19.68], [2016, 47.69], [2017, 66.99], [2018, 58.66],
+            [2019, 48.04], [2020, 50.90], [2021, 61.41], [2022, 62.31],
+            [2023, 98.90], [2024, 74.10], [2025, 68.50]
+          ]
+        }
+      ],
+      marcos_historicos: [
+        { ano: 2023, rotulo: "Recorde histórico absoluto de US$ 98,9 bilhões de superávit" },
+        { ano: 2024, rotulo: "Superávit robusto de US$ 74,1 bi com expansão da produção petrolífera" }
+      ]
+    },
+    citacao_sugerida: {
+      abnt: "BRASIL. Ministério do Desenvolvimento, Indústria, Comércio e Serviços. Comex Stat: Balança Comercial Brasileira. Brasília: MDIC/SECEX, 2025. Acesso via Brasa Dados."
+    }
+  },
+  {
+    id: "economia-bolsa-familia-beneficiarios",
+    slug: "familias-beneficiarias-bolsa-familia-mds",
+    titulo: "Proteção Social — Famílias Beneficiárias do Bolsa Família (Milhões)",
+    categoria: "economia",
+    subcategoria: "transferencia-de-renda",
+    tags: ["economia", "bolsa família", "auxílio brasil", "mds", "cadúnico", "pobreza", "beneficiários", "dados abertos"],
+    fonte: {
+      orgao: "Ministério do Desenvolvimento e Assistência Social (MDS)",
+      pesquisa: "SAGICAD / Cadastro Único para Programas Sociais (CadÚnico)",
+      url_oficial: "https://paineis.mds.gov.br/",
+      frequencia: "Mensal / Anual",
+      ultima_atualizacao: "2025-08-01"
+    },
+    explicacao_leiga: {
+      resumo: "Mede a quantidade total de famílias de baixa renda atendidas mensalmente pelo principal programa de transferência direta de renda do governo federal.",
+      como_interpretar: "Durante quase uma década o programa atendeu entre 13 e 14 milhões de lares. Com a pandemia e a reformulação do benefício mínimo para R$ 600, a cobertura expandiu para mais de 21 milhões de famílias.",
+      por_que_importa: "É a política pública de alívio à pobreza de maior alcance no Brasil, com impacto comprovado na redução da desnutrição infantil, evasão escolar e dinamização do comércio em pequenos municípios.",
+      pontos_de_atencao: "A partir de 2024, revisões rigorosas do Cadastro Único (em especial sobre cadastros unipessoais) e o mecanismo da 'Regra de Proteção' ajustaram a folha para cerca de 19,6 milhões de lares."
+    },
+    detalhamento_tecnico: {
+      formula_calculo: "Total de famílias elegíveis com Registro Ativo no CadÚnico com renda familiar per capita inferior ao teto do programa (R$ 218 mensais) que tiveram benefício emitido na folha de pagamento da Caixa Econômica Federal.",
+      unidade_medida: "Milhões de famílias",
+      amostra_cobertura: "Universo das famílias cadastradas em situação de pobreza e extrema pobreza em todos os 5.570 municípios do Brasil.",
+      anonimizacao_sigilo: "Anonimização nominal em respeito ao sigilo bancário e à LGPD; dados abertos desagregados por município e estado.",
+      limitacoes_e_quebras_metodologicas: "Substituição do Bolsa Família pelo 'Auxílio Brasil' entre novembro de 2021 e início de 2023, quando a nova lei reinstituiu o programa com benefícios complementares para a primeira infância.",
+      orientacoes_fact_checking: "Não confunda o número de 'famílias atendidas' (cerca de 20 milhões) com o número total de 'pessoas beneficiadas' (mais de 50 milhões de cidadãos que compõem esses núcleos familiares)."
+    },
+    visualizacao: {
+      tipo_padrao: "line",
+      eixo_x: { tipo: "temporal", rotulo: "Ano" },
+      eixo_y: { rotulo: "Famílias (Milhões)", unidade: "mi famílias", escala_min: 10, escala_max: 24 },
+      series: [
+        {
+          id: "familias_bolsa_familia",
+          nome: "Famílias Beneficiárias (Milhões)",
+          cor: "#ea580c",
+          dados: [
+            [2015, 13.9], [2016, 13.5], [2017, 13.8], [2018, 14.1],
+            [2019, 13.8], [2020, 14.3], [2021, 14.5], [2022, 21.6],
+            [2023, 21.1], [2024, 20.8], [2025, 19.6]
+          ]
+        }
+      ],
+      marcos_historicos: [
+        { ano: 2022, rotulo: "Expansão para 21,6 milhões com o piso de R$ 600" },
+        { ano: 2025, rotulo: "Revisão cadastral focalizada e Regra de Proteção estabilizam atendimento em 19,6 mi" }
+      ]
+    },
+    citacao_sugerida: {
+      abnt: "BRASIL. Ministério do Desenvolvimento e Assistência Social, Família e Combate à Fome. Dados Abertos do Programa Bolsa Família e Cadastro Único. Brasília: MDS/SAGICAD, 2025. Acesso via Brasa Dados."
+    }
   }
 ];
 
 export const CATEGORIAS_INFO = [
-  { id: 'economia', nome: 'Economia & Trabalho', icone: 'TrendingUp', cor: 'emerald', count: 10 },
-  { id: 'educacao', nome: 'Educação & Aprendizado', icone: 'GraduationCap', cor: 'blue', count: 4 },
-  { id: 'saude', nome: 'Saúde & Vigilância', icone: 'HeartPulse', cor: 'rose', count: 4 },
+  { id: 'economia', nome: 'Economia & Trabalho', icone: 'TrendingUp', cor: 'emerald', count: 12 },
+  { id: 'educacao', nome: 'Educação & Aprendizado', icone: 'GraduationCap', cor: 'blue', count: 5 },
+  { id: 'saude', nome: 'Saúde & Vigilância', icone: 'HeartPulse', cor: 'rose', count: 5 },
   { id: 'seguranca', nome: 'Segurança Pública', icone: 'ShieldAlert', cor: 'red', count: 3 },
-  { id: 'meio-ambiente', nome: 'Meio Ambiente & Clima', icone: 'Trees', cor: 'amber', count: 3 },
+  { id: 'meio-ambiente', nome: 'Meio Ambiente & Clima', icone: 'Trees', cor: 'amber', count: 5 },
   { id: 'internacional', nome: 'Panorama Internacional', icone: 'Globe2', cor: 'purple', count: 3 },
 ] as const;
