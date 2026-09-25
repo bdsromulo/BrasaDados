@@ -43,6 +43,12 @@ export interface HistoricalMilestone {
   rotulo: string;
 }
 
+export interface StateDataPoint {
+  uf: string;
+  nome: string;
+  valor: number;
+}
+
 export interface IndicatorVisualization {
   tipo_padrao: 'line' | 'bar';
   eixo_x: {
@@ -57,6 +63,7 @@ export interface IndicatorVisualization {
   };
   series: DataSeries[];
   marcos_historicos?: HistoricalMilestone[];
+  dados_uf?: StateDataPoint[];
 }
 
 export interface Indicator {
@@ -78,3 +85,5 @@ export interface Indicator {
 export type GridMode = '1' | '2' | '4';
 
 export type ChartDisplayType = 'line-smooth' | 'line-straight' | 'area' | 'bar';
+
+export type ViewScope = 'nacional' | 'estados';

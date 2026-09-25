@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Indicator, GridMode, ChartDisplayType } from '../types/indicator';
+import { Indicator, GridMode, ChartDisplayType, ViewScope } from '../types/indicator';
 import { EChartCanvas } from './EChartCanvas';
 import { FactCheckingDrawer } from './FactCheckingDrawer';
 import { X, Maximize2, Plus, Download, ArrowUpRight, ArrowDownRight, Minus } from 'lucide-react';
@@ -27,6 +27,7 @@ export function QuadrantWorkbench({
   chartDisplayType
 }: QuadrantWorkbenchProps) {
   const [activeSlotForDetails, setActiveSlotForDetails] = useState<number>(0);
+  const [slotScopes, setSlotScopes] = useState<Record<number, ViewScope>>({});
 
   // Determinar quantos slots estão visíveis de acordo com o gridMode
   const visibleSlotsCount = gridMode === '1' ? 1 : gridMode === '2' ? 2 : 4;
@@ -195,6 +196,42 @@ export function QuadrantWorkbench({
 
                       {/* Botões de Ação do Quadrante */}
                       <div className="flex items-center gap-1 shrink-0">
+                        {/* Seletor Brasil vs Ranking UF quando houver dados estaduais */}
+                        {slotIndicator.visualizacao.dados_uf && slotIndicator.visualizacao.dados_uf.length > 0 && (
+                          <div className="inline-flex rounded-lg border border-zinc-200/80 bg-zinc-100/70 p-0.5 dark:border-zinc-800 dark:bg-zinc-800/60 shadow-2xs mr-1">
+                            <button
+                              type="button"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                setSlotScopes(prev => ({ ...prev, [index]: 'nacional' }));
+                              }}
+                              title="Série temporal histórica do Brasil"
+                              className={`px-2 py-0.5 text-[10px] font-bold rounded-md transition-all cursor-pointer ${
+                                (slotScopes[index] || 'nacional') === 'nacional'
+                                  ? 'bg-white text-zinc-950 shadow-xs dark:bg-zinc-700 dark:text-white'
+                                  : 'text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-200'
+                              }`}
+                            >
+                              🇧🇷 Brasil
+                            </button>
+                            <button
+                              type="button"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                setSlotScopes(prev => ({ ...prev, [index]: 'estados' }));
+                              }}
+                              title="Ranking comparativo entre os estados brasileiros"
+                              className={`px-2 py-0.5 text-[10px] font-bold rounded-md transition-all cursor-pointer ${
+                                slotScopes[index] === 'estados'
+                                  ? 'bg-white text-zinc-950 shadow-xs dark:bg-zinc-700 dark:text-white'
+                                  : 'text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-200'
+                              }`}
+                            >
+                              🗺️ Ranking UF ({slotIndicator.visualizacao.dados_uf.length})
+                            </button>
+                          </div>
+                        )}
+
                         <button
                           type="button"
                           onClick={(e) => {
@@ -271,14 +308,15 @@ export function QuadrantWorkbench({
                     <div
                       className={`w-full pt-1 ${
                         gridMode === '1'
-                          ? 'h-[360px] sm:h-[400px]'
-                          : 'h-[230px] sm:h-[260px]'
+                          ? (slotScopes[index] === 'estados' ? 'h-[460px] sm:h-[520px]' : 'h-[360px] sm:h-[400px]')
+                          : (slotScopes[index] === 'estados' ? 'h-[320px] sm:h-[380px]' : 'h-[230px] sm:h-[260px]')
                       }`}
                     >
                       <EChartCanvas
                         indicator={slotIndicator}
                         timeRange={timeRange}
                         displayType={chartDisplayType}
+                        viewScope={slotScopes[index] || 'nacional'}
                         height="100%"
                       />
                     </div>
@@ -293,7 +331,7 @@ export function QuadrantWorkbench({
                       Quadrante {index + 1} Vazio
                     </span>
                     <p className="text-[11px] text-zinc-400 mt-1 max-w-[220px]">
-                      Escolha um dos 20 indicadores oficiais para preencher:
+                      Escolha um dos {availableIndicators.length} indicadores oficiais para preencher:
                     </p>
 
                     <select

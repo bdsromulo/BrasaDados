@@ -435,6 +435,28 @@ export const INDICADORES_REAIS: Indicator[] = [
       ],
       marcos_historicos: [
         { ano: 2021, rotulo: "Pandemia Covid-19 (regras especiais de aprovação)" }
+      ],
+      dados_uf: [
+        { uf: "PR", nome: "Paraná", valor: 4.9 },
+        { uf: "GO", nome: "Goiás", valor: 4.8 },
+        { uf: "ES", nome: "Espírito Santo", valor: 4.8 },
+        { uf: "CE", nome: "Ceará", valor: 4.5 },
+        { uf: "PI", nome: "Piauí", valor: 4.5 },
+        { uf: "PE", nome: "Pernambuco", valor: 4.4 },
+        { uf: "SP", nome: "São Paulo", valor: 4.2 },
+        { uf: "MG", nome: "Minas Gerais", valor: 4.2 },
+        { uf: "MS", nome: "Mato Grosso do Sul", valor: 4.2 },
+        { uf: "RS", nome: "Rio Grande do Sul", valor: 4.0 },
+        { uf: "SC", nome: "Santa Catarina", valor: 4.0 },
+        { uf: "MT", nome: "Mato Grosso", valor: 3.9 },
+        { uf: "DF", nome: "Distrito Federal", valor: 3.9 },
+        { uf: "BA", nome: "Bahia", valor: 3.7 },
+        { uf: "RJ", nome: "Rio de Janeiro", valor: 3.6 },
+        { uf: "PA", nome: "Pará", valor: 3.6 },
+        { uf: "AM", nome: "Amazonas", valor: 3.5 },
+        { uf: "MA", nome: "Maranhão", valor: 3.5 },
+        { uf: "AP", nome: "Amapá", valor: 3.4 },
+        { uf: "RN", nome: "Rio Grande do Norte", valor: 3.2 }
       ]
     },
     citacao_sugerida: {
@@ -758,6 +780,35 @@ export const INDICADORES_REAIS: Indicator[] = [
       marcos_historicos: [
         { ano: 2017, rotulo: "Pico de 30,8 por 100 mil (63.880 mortos)" },
         { ano: 2024, rotulo: "Menor patamar da série (21,9 por 100 mil)" }
+      ],
+      dados_uf: [
+        { uf: "AP", nome: "Amapá", valor: 45.2 },
+        { uf: "BA", nome: "Bahia", valor: 45.1 },
+        { uf: "AM", nome: "Amazonas", valor: 40.2 },
+        { uf: "AL", nome: "Alagoas", valor: 38.3 },
+        { uf: "PE", nome: "Pernambuco", valor: 37.8 },
+        { uf: "PA", nome: "Pará", valor: 34.8 },
+        { uf: "CE", nome: "Ceará", valor: 34.5 },
+        { uf: "SE", nome: "Sergipe", valor: 32.0 },
+        { uf: "RR", nome: "Roraima", valor: 30.9 },
+        { uf: "RN", nome: "Rio Grande do Norte", valor: 30.6 },
+        { uf: "RO", nome: "Rondônia", valor: 29.1 },
+        { uf: "TO", nome: "Tocantins", valor: 25.2 },
+        { uf: "ES", nome: "Espírito Santo", valor: 24.8 },
+        { uf: "AC", nome: "Acre", valor: 23.5 },
+        { uf: "MT", nome: "Mato Grosso", valor: 22.6 },
+        { uf: "RJ", nome: "Rio de Janeiro", valor: 20.9 },
+        { uf: "MA", nome: "Maranhão", valor: 20.6 },
+        { uf: "PB", nome: "Paraíba", valor: 19.5 },
+        { uf: "PI", nome: "Piauí", valor: 19.2 },
+        { uf: "GO", nome: "Goiás", valor: 18.7 },
+        { uf: "PR", nome: "Paraná", valor: 17.8 },
+        { uf: "MS", nome: "Mato Grosso do Sul", valor: 17.5 },
+        { uf: "RS", nome: "Rio Grande do Sul", valor: 14.8 },
+        { uf: "MG", nome: "Minas Gerais", valor: 12.8 },
+        { uf: "DF", nome: "Distrito Federal", valor: 11.1 },
+        { uf: "SC", nome: "Santa Catarina", valor: 8.6 },
+        { uf: "SP", nome: "São Paulo", valor: 7.8 }
       ]
     },
     citacao_sugerida: {
@@ -1166,14 +1217,306 @@ export const INDICADORES_REAIS: Indicator[] = [
     citacao_sugerida: {
       abnt: "TRANSPARÊNCIA INTERNACIONAL. Índice de Percepção da Corrupção (IPC 2024). Berlim: Transparency International, 2025. Acesso via Brasa Dados."
     }
+  },
+  {
+    id: "economia-pix-volume",
+    slug: "volume-transacoes-pix-bcb",
+    titulo: "Pagamentos Instantâneos — Volume Anual de Transações PIX (Bilhões)",
+    categoria: "economia",
+    subcategoria: "sistema-financeiro",
+    tags: ["economia", "pix", "banco central", "pagamentos", "fintech", "banco", "dados abertos"],
+    fonte: {
+      orgao: "Banco Central do Brasil (BCB)",
+      pesquisa: "Estatísticas de Pagamentos do Varejo e Canais de Atendimento",
+      url_oficial: "https://dadosabertos.bcb.gov.br/dataset/pix",
+      frequencia: "Mensal / Anual",
+      ultima_atualizacao: "2025-12-31"
+    },
+    explicacao_leiga: {
+      resumo: "Mede o número total de transações financeiras realizadas pelo sistema PIX em cada ano, em bilhões de operações.",
+      como_interpretar: "O crescimento exponencial mostra a rapidez da inclusão digital e bancária no Brasil após a introdução do sistema gratuito pelo Banco Central.",
+      por_que_importa: "O PIX revolucionou o comércio, reduziu o custo de transação para micro e pequenas empresas e superou somados boletos, TED, DOC e cartões de débito.",
+      pontos_de_atencao: "Lançado em novembro de 2020, o PIX atingiu a marca recorde de 224 milhões de transações em um único dia em 2024."
+    },
+    detalhamento_tecnico: {
+      formula_calculo: "Soma das liquidações brutas cursadas no Sistema de Pagamentos Instantâneos (SPI) e registradas pelas instituições participantes do arranjo Pix.",
+      unidade_medida: "Bilhões de transações",
+      amostra_cobertura: "Universo censitário de todas as transações PIX liquidadas em instituições autorizadas pelo BCB.",
+      anonimizacao_sigilo: "Dados agregados sem identificação individual de chaves, CPFs ou contas bancárias.",
+      limitacoes_e_quebras_metodologicas: "Início em novembro de 2020; o ano de 2020 reflete apenas dois meses parciais de funcionamento.",
+      orientacoes_fact_checking: "Não confunda a quantidade de transações (em bilhões de operações) com o valor financeiro movimentado (em trilhões de reais)."
+    },
+    visualizacao: {
+      tipo_padrao: "bar",
+      eixo_x: { tipo: "temporal", rotulo: "Ano" },
+      eixo_y: { rotulo: "Transações (Bi)", unidade: "bi transações", escala_min: 0, escala_max: 90 },
+      series: [
+        {
+          id: "transacoes_pix",
+          nome: "Transações PIX (Bilhões)",
+          cor: "#06b6d4",
+          dados: [
+            [2020, 0.35], [2021, 9.40], [2022, 24.10], [2023, 41.90],
+            [2024, 63.80], [2025, 78.50]
+          ]
+        }
+      ],
+      marcos_historicos: [
+        { ano: 2020, rotulo: "Lançamento oficial pelo Banco Central (nov/2020)" },
+        { ano: 2023, rotulo: "Supera todas as demais formas de pagamento de varejo somadas" }
+      ]
+    },
+    citacao_sugerida: {
+      abnt: "BANCO CENTRAL DO BRASIL. Dados Abertos: Estatísticas do Pix. Brasília: Departamento de Operações Bancárias e de Sistema de Pagamentos (Deban/BCB), 2025. Acesso via Brasa Dados."
+    }
+  },
+  {
+    id: "demografia-populacao-brasil",
+    slug: "populacao-residente-censo-projecao-ibge",
+    titulo: "Demografia — População Total Residente no Brasil (Milhões de Hab.)",
+    categoria: "economia",
+    subcategoria: "demografia",
+    tags: ["demografia", "população", "censo", "ibge", "censo 2022", "envelhecimento", "dados abertos"],
+    fonte: {
+      orgao: "Instituto Brasileiro de Geografia e Estatística (IBGE)",
+      pesquisa: "Censo Demográfico & Projeções da População do Brasil (Revisão 2024)",
+      url_oficial: "https://www.ibge.gov.br/estatisticas/sociais/populacao/9109-projecao-da-populacao.html",
+      frequencia: "Decenal (Censo) e Projeções Anuais",
+      ultima_atualizacao: "2024-08-22"
+    },
+    explicacao_leiga: {
+      resumo: "Mede o contingente populacional residente no território nacional apurado pelo Censo Demográfico e atualizado nas Projeções do IBGE.",
+      como_interpretar: "O ritmo de crescimento da população brasileira desacelerou fortemente: a taxa média caiu para 0,52% ao ano entre 2010 e 2022, a menor da história.",
+      por_que_importa: "Determina o planejamento da Previdência Social, divisão do Fundo de Participação dos Municípios (FPM), necessidades de leitos hospitalares e infraestrutura escolar.",
+      pontos_de_atencao: "O Censo 2022 contabilizou 203,08 milhões de habitantes, abaixo dos 207,8 milhões estimados anteriormente, antecipando o envelhecimento populacional."
+    },
+    detalhamento_tecnico: {
+      formula_calculo: "Contagem domiciliar presencial censitária com imputação estatística para domicílios não recenseados, calibrada pelas Projeções de Componentes Demográficos (mortalidade, fecundidade e migração).",
+      unidade_medida: "Milhões de habitantes",
+      amostra_cobertura: "Universo de todos os domicílios particulares e coletivos dos 5.570 municípios do Brasil.",
+      anonimizacao_sigilo: "Dados agregados por setores censitários com sigilo estatístico conforme Lei nº 5.534/1968.",
+      limitacoes_e_quebras_metodologicas: "O Censo 2020 foi adiado para 2022 devido à pandemia e restrições orçamentárias. A Revisão 2024 recalibrou a trajetória futura prevendo pico em 2041.",
+      orientacoes_fact_checking: "Diferencie a 'População Recenseada' nos Censos Decenais das 'Estimativas Anuais para o TCU' e das 'Projeções de Longo Prazo'."
+    },
+    visualizacao: {
+      tipo_padrao: "line",
+      eixo_x: { tipo: "temporal", rotulo: "Ano" },
+      eixo_y: { rotulo: "População (Milhões)", unidade: "mi hab", escala_min: 180, escala_max: 220 },
+      series: [
+        {
+          id: "populacao_brasil",
+          nome: "População Total (Milhões)",
+          cor: "#3b82f6",
+          dados: [
+            [2010, 190.76], [2012, 193.98], [2014, 197.10], [2016, 200.12],
+            [2018, 202.40], [2020, 204.30], [2022, 203.08], [2023, 203.06],
+            [2024, 203.04], [2025, 203.01], [2026, 202.95]
+          ]
+        }
+      ],
+      marcos_historicos: [
+        { ano: 2022, rotulo: "Censo Demográfico 2022 (203,08 milhões)" },
+        { ano: 2024, rotulo: "Revisão 2024 do IBGE projeta estabilidade e pico em 2041" }
+      ],
+      dados_uf: [
+        { uf: "SP", nome: "São Paulo", valor: 44.42 },
+        { uf: "MG", nome: "Minas Gerais", valor: 20.54 },
+        { uf: "RJ", nome: "Rio de Janeiro", valor: 16.05 },
+        { uf: "BA", nome: "Bahia", valor: 14.14 },
+        { uf: "PR", nome: "Paraná", valor: 11.44 },
+        { uf: "RS", nome: "Rio Grande do Sul", valor: 10.88 },
+        { uf: "PE", nome: "Pernambuco", valor: 9.06 },
+        { uf: "CE", nome: "Ceará", valor: 8.80 },
+        { uf: "PA", nome: "Pará", valor: 8.12 },
+        { uf: "SC", nome: "Santa Catarina", valor: 7.61 },
+        { uf: "GO", nome: "Goiás", valor: 7.06 },
+        { uf: "MA", nome: "Maranhão", valor: 6.78 },
+        { uf: "PB", nome: "Paraíba", valor: 3.97 },
+        { uf: "AM", nome: "Amazonas", valor: 3.94 },
+        { uf: "ES", nome: "Espírito Santo", valor: 3.83 },
+        { uf: "MT", nome: "Mato Grosso", valor: 3.66 },
+        { uf: "RN", nome: "Rio Grande do Norte", valor: 3.30 },
+        { uf: "PI", nome: "Piauí", valor: 3.27 },
+        { uf: "AL", nome: "Alagoas", valor: 3.13 },
+        { uf: "DF", nome: "Distrito Federal", valor: 2.82 },
+        { uf: "MS", nome: "Mato Grosso do Sul", valor: 2.76 },
+        { uf: "SE", nome: "Sergipe", valor: 2.21 },
+        { uf: "RO", nome: "Rondônia", valor: 1.58 },
+        { uf: "TO", nome: "Tocantins", valor: 1.51 },
+        { uf: "AC", nome: "Acre", valor: 0.83 },
+        { uf: "AP", nome: "Amapá", valor: 0.73 },
+        { uf: "RR", nome: "Roraima", valor: 0.64 }
+      ]
+    },
+    citacao_sugerida: {
+      abnt: "IBGE. Censo Demográfico 2022 & Projeções da População do Brasil: Revisão 2024. Rio de Janeiro: IBGE, 2024. Acesso via Brasa Dados."
+    }
+  },
+  {
+    id: "politica-cota-parlamentar",
+    slug: "gasto-cota-parlamentar-ceap-camara",
+    titulo: "Transparência Pública — Gasto da Cota Parlamentar CEAP (R$ Milhões)",
+    categoria: "economia",
+    subcategoria: "transparencia-publica",
+    tags: ["política", "congresso", "câmara", "ceap", "transparência", "gastos públicos", "deputados", "dados abertos"],
+    fonte: {
+      orgao: "Câmara dos Deputados",
+      pesquisa: "Portal de Dados Abertos — Cota para o Exercício da Atividade Parlamentar (CEAP)",
+      url_oficial: "https://dadosabertos.camara.leg.br/",
+      frequencia: "Contínua / Mensal",
+      ultima_atualizacao: "2025-12-31"
+    },
+    explicacao_leiga: {
+      resumo: "Mede o total reembolsado anualmente aos 513 deputados federais para despesas de mandato (passagens aéreas, combustível, divulgação, aluguel de escritório).",
+      como_interpretar: "Cada deputado tem um limite mensal variável conforme a distância de seu estado até Brasília (de R$ 33,6 mil para DF até R$ 50,4 mil para Roraima).",
+      por_que_importa: "Permite monitorar a transparência e eficiência do uso de recursos públicos diretamente pelos representantes eleitos.",
+      pontos_de_atencao: "Em 2020 houve queda expressiva nas despesas com passagens e hospedagens em razão do sistema de deliberação remota implementado na pandemia."
+    },
+    detalhamento_tecnico: {
+      formula_calculo: "Somatório do valor líquido dos documentos fiscais homologados e reembolsados pela Diretoria-Geral da Câmara sob o Ato da Mesa nº 43/2009.",
+      unidade_medida: "R$ Milhões correntes",
+      amostra_cobertura: "Totalidade dos 513 deputados federais em exercício ao longo de cada ano da legislatura.",
+      anonimizacao_sigilo: "Dados 100% públicos com número de nota fiscal, CNPJ/CPF do fornecedor e descrição do serviço.",
+      limitacoes_e_quebras_metodologicas: "Valores nominais sem correção inflacionária pelo IPCA; reajustes periódicos autorizados pela Mesa Diretora da Câmara.",
+      orientacoes_fact_checking: "A CEAP é exclusiva para ressarcimento de custos operacionais do mandato e não se confunde com os salários (subsídios) ou verba de gabinete para assessores."
+    },
+    visualizacao: {
+      tipo_padrao: "bar",
+      eixo_x: { tipo: "temporal", rotulo: "Ano" },
+      eixo_y: { rotulo: "Gasto CEAP (R$ Mi)", unidade: "R$ mi", escala_min: 100, escala_max: 300 },
+      series: [
+        {
+          id: "gasto_ceap",
+          nome: "Despesa CEAP (R$ Milhões)",
+          cor: "#f59e0b",
+          dados: [
+            [2018, 206.5], [2019, 212.8], [2020, 167.3], [2021, 198.4],
+            [2022, 215.1], [2023, 236.4], [2024, 242.1], [2025, 248.5]
+          ]
+        }
+      ],
+      marcos_historicos: [
+        { ano: 2020, rotulo: "Queda para R$ 167 mi com votações remotas na pandemia" },
+        { ano: 2024, rotulo: "Retomada integral de viagens e sessões presenciais" }
+      ]
+    },
+    citacao_sugerida: {
+      abnt: "BRASIL. Congresso Nacional. Câmara dos Deputados. Dados Abertos: Despesas da Cota para o Exercício da Atividade Parlamentar (CEAP). Brasília: Câmara dos Deputados, 2025. Acesso via Brasa Dados."
+    }
+  },
+  {
+    id: "meio-ambiente-emissoes-gee",
+    slug: "emissoes-gases-efeito-estufa-seeg-brasil",
+    titulo: "Clima & Emissões — Emissões Totais de Gases de Efeito Estufa (Mt CO₂e)",
+    categoria: "meio-ambiente",
+    subcategoria: "clima-e-carbono",
+    tags: ["meio ambiente", "clima", "emissoes", "co2", "seeg", "observatório do clima", "desmatamento", "amazonia"],
+    fonte: {
+      orgao: "SEEG / Observatório do Clima",
+      pesquisa: "Sistema de Estimativas de Emissões e Remoções de Gases de Efeito Estufa",
+      url_oficial: "https://seeg.eco.br/",
+      frequencia: "Anual",
+      ultima_atualizacao: "2024-11-07"
+    },
+    explicacao_leiga: {
+      resumo: "Mede o volume bruto de todos os gases causadores do aquecimento global lançados na atmosfera pelo Brasil, convertidos em milhões de toneladas de dióxido de carbono equivalente (Mt CO₂e).",
+      como_interpretar: "Ao contrário dos países desenvolvidos onde energia e transportes dominam as emissões, no Brasil quase metade das emissões vem do desmatamento (mudança no uso da terra).",
+      por_que_importa: "É a métrica primordial para verificar se o Brasil cumprirá suas metas no Acordo de Paris (NDC) de reduzir em 53% suas emissões até 2030.",
+      pontos_de_atencao: "Em 2021, o Brasil atingiu 2.420 Mt CO₂e, o nível mais elevado em 15 anos, iniciando trajetória de queda com a redução das queimadas e fiscalização na Amazônia."
+    },
+    detalhamento_tecnico: {
+      formula_calculo: "Emissões Brutas Totais = Σ (Atividades setoriais * Fatores de emissão específicos pelo potencial de aquecimento global GWP-AR5 do IPCC) nos 5 setores: Mudança de Uso da Terra, Agropecuária, Energia, Processos Industriais e Resíduos.",
+      unidade_medida: "Mt CO₂e (Milhões de t de CO₂ eq.)",
+      amostra_cobertura: "Estimativa de todo o território brasileiro e seus biomas segundo metodologia oficial do Inventário Nacional de GEE e IPCC.",
+      anonimizacao_sigilo: "Dados agregados por setor econômico, bioma e estado.",
+      limitacoes_e_quebras_metodologicas: "Adota os fatores de equivalência métrica do IPCC AR5; séries históricas são recalculadas retroativamente a cada nova rodada do SEEG.",
+      orientacoes_fact_checking: "Diferencie 'Emissões Brutas' (total despejado) de 'Emissões Líquidas' (que deduzem a absorção de carbono por florestas protegidas)."
+    },
+    visualizacao: {
+      tipo_padrao: "line",
+      eixo_x: { tipo: "temporal", rotulo: "Ano" },
+      eixo_y: { rotulo: "Emissões (Mt CO₂e)", unidade: "Mt CO₂e", escala_min: 1500, escala_max: 2700 },
+      series: [
+        {
+          id: "emissoes_brutas",
+          nome: "Emissões Brutas Totais (Mt CO₂e)",
+          cor: "#10b981",
+          dados: [
+            [2015, 2060], [2016, 2120], [2017, 2080], [2018, 2095],
+            [2019, 2275], [2020, 2360], [2021, 2420], [2022, 2310],
+            [2023, 2090], [2024, 1980]
+          ]
+        }
+      ],
+      marcos_historicos: [
+        { ano: 2021, rotulo: "Pico de 2.420 Mt CO₂e impulsionado por altas taxas de desmatamento" },
+        { ano: 2024, rotulo: "Recuo para 1.980 Mt CO₂e após contenção de alertas florestais" }
+      ]
+    },
+    citacao_sugerida: {
+      abnt: "SEEG / OBSERVATÓRIO DO CLIMA. Análise das Emissões Brasileiras de Gases de Efeito Estufa e suas Implicações para as Metas Climáticas do Brasil (1990-2023). São Paulo: Observatório do Clima, 2024. Acesso via Brasa Dados."
+    }
+  },
+  {
+    id: "saude-gastos-publicos-pib",
+    slug: "gasto-total-saude-percentual-pib",
+    titulo: "Economia da Saúde — Gasto Corrente em Saúde (% do PIB)",
+    categoria: "saude",
+    subcategoria: "financiamento-da-saude",
+    tags: ["saúde", "gastos", "pib", "sus", "oms", "banco mundial", "orçamento", "contas de saúde", "ibge"],
+    fonte: {
+      orgao: "OMS / Banco Mundial / IBGE",
+      pesquisa: "Conta Satélite de Saúde & WHO Global Health Expenditure Database",
+      url_oficial: "https://data.worldbank.org/indicator/SH.XPD.CHEX.GD.ZS",
+      frequencia: "Anual",
+      ultima_atualizacao: "2024-12-15"
+    },
+    explicacao_leiga: {
+      resumo: "Mede quanto o Brasil gasta no total em saúde (somando setor público SUS e desembolsos privados com planos, remédios e consultas) em relação ao PIB nacional.",
+      como_interpretar: "Uma fatia próxima a 9,5% do PIB equipara o Brasil a países desenvolvidos em esforço financeiro, porém com uma particularidade: o gasto privado é maior que o público.",
+      por_que_importa: "Diferente de países como Reino Unido ou Canadá, onde mais de 70% do gasto em saúde é estatal, no Brasil o setor público responde por cerca de 42% e as famílias/empresas por 58%.",
+      pontos_de_atencao: "Em 2020 atingiu o ápice de 10,3% do PIB em função do colapso sanitário e despesas extraordinárias de combate à Covid-19."
+    },
+    detalhamento_tecnico: {
+      formula_calculo: "Current Health Expenditure (CHE) como percentual do Produto Interno Bruto (PIB) a preços de mercado, padronizado pelo Sistema de Contas de Saúde (SHA 2011) da OCDE/OMS.",
+      unidade_medida: "% do PIB",
+      amostra_cobertura: "Sistema Integrado de Informações Financeiras (SIAFI/Siope), ANS e Contas Nacionais do IBGE.",
+      anonimizacao_sigilo: "Dados macroeconômicos consolidados pelo IBGE e OMS sem dados pessoais de pacientes.",
+      limitacoes_e_quebras_metodologicas: "A Conta Satélite de Saúde do IBGE possui defasagem de apuração de 2 a 3 anos, utilizando-se estimativas harmônicas no período recente.",
+      orientacoes_fact_checking: "Não confunda 'Gasto Total em Saúde' (9,5% do PIB) com 'Orçamento do Ministério da Saúde' (cerca de 1,8% do PIB)."
+    },
+    visualizacao: {
+      tipo_padrao: "line",
+      eixo_x: { tipo: "temporal", rotulo: "Ano" },
+      eixo_y: { rotulo: "Gasto em Saúde (% PIB)", unidade: "%", escala_min: 7, escala_max: 12 },
+      series: [
+        {
+          id: "gasto_saude_pib",
+          nome: "Gasto em Saúde (% do PIB)",
+          cor: "#e11d48",
+          dados: [
+            [2015, 8.9], [2016, 9.1], [2017, 9.2], [2018, 9.3],
+            [2019, 9.6], [2020, 10.3], [2021, 9.9], [2022, 9.7],
+            [2023, 9.6], [2024, 9.5]
+          ]
+        }
+      ],
+      marcos_historicos: [
+        { ano: 2020, rotulo: "Pico de 10,3% do PIB decorrente da resposta à pandemia de Covid-19" },
+        { ano: 2024, rotulo: "Estabilização no patamar de 9,5% do PIB" }
+      ]
+    },
+    citacao_sugerida: {
+      abnt: "ORGANIZAÇÃO MUNDIAL DA SAÚDE; BANCO MUNDIAL; IBGE. Conta Satélite de Saúde: Despesas com Saúde no Brasil (Série Histórica). Genebra/Rio de Janeiro: OMS/IBGE, 2024. Acesso via Brasa Dados."
+    }
   }
 ];
 
 export const CATEGORIAS_INFO = [
-  { id: 'economia', nome: 'Economia & Trabalho', icone: 'TrendingUp', cor: 'emerald', count: 7 },
+  { id: 'economia', nome: 'Economia & Trabalho', icone: 'TrendingUp', cor: 'emerald', count: 10 },
   { id: 'educacao', nome: 'Educação & Aprendizado', icone: 'GraduationCap', cor: 'blue', count: 4 },
-  { id: 'saude', nome: 'Saúde & Vigilância', icone: 'HeartPulse', cor: 'rose', count: 3 },
+  { id: 'saude', nome: 'Saúde & Vigilância', icone: 'HeartPulse', cor: 'rose', count: 4 },
   { id: 'seguranca', nome: 'Segurança Pública', icone: 'ShieldAlert', cor: 'red', count: 3 },
-  { id: 'meio-ambiente', nome: 'Meio Ambiente & Clima', icone: 'Trees', cor: 'amber', count: 2 },
+  { id: 'meio-ambiente', nome: 'Meio Ambiente & Clima', icone: 'Trees', cor: 'amber', count: 3 },
   { id: 'internacional', nome: 'Panorama Internacional', icone: 'Globe2', cor: 'purple', count: 3 },
 ] as const;

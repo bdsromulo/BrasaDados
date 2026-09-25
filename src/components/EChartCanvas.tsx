@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import * as echarts from 'echarts';
-import { Indicator, ChartDisplayType } from '../types/indicator';
+import { Indicator, ChartDisplayType, ViewScope } from '../types/indicator';
 
 interface EChartCanvasProps {
   indicator?: Indicator;
@@ -8,6 +8,7 @@ interface EChartCanvasProps {
   height?: string | number;
   timeRange?: [number, number]; // [anoInicio, anoFim]
   displayType?: ChartDisplayType;
+  viewScope?: ViewScope;
 }
 
 export function EChartCanvas({
@@ -15,7 +16,8 @@ export function EChartCanvas({
   mergedIndicators,
   height = '100%',
   timeRange,
-  displayType
+  displayType,
+  viewScope
 }: EChartCanvasProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const chartInstanceRef = useRef<echarts.ECharts | null>(null);
@@ -63,7 +65,7 @@ export function EChartCanvas({
     if (chartInstanceRef.current) {
       renderChart(chartInstanceRef.current);
     }
-  }, [indicator, mergedIndicators, timeRange, displayType]);
+  }, [indicator, mergedIndicators, timeRange, displayType, viewScope]);
 
   function renderChart(chart: echarts.ECharts) {
     const isDark = document.documentElement.classList.contains('dark');
@@ -221,6 +223,101 @@ export function EChartCanvas({
 
     // Cenário 2: Gráfico Individual Único
     if (!indicator) return;
+
+    // Cenário 2B: Visualização de Ranking por Unidade Federativa (UF)
+    if (viewScope === 'estados' && indicator.visualizacao.dados_uf && indicator.visualizacao.dados_uf.length > 0) {
+      // Ordenação crescente para que o maior valor apareça no topo do gráfico de barras horizontais
+      const sortedUfs = [...indicator.visualizacao.dados_uf].sort((a, b) => a.valor - b.valor);
+      const nomesUfs = sortedUfs.map(d => `${d.uf} - ${d.nome}`);
+      const valoresUfs = sortedUfs.map(d => d.valor);
+      const baseCor = indicator.visualizacao.series[0]?.cor || '#10b981';
+
+      const option: echarts.EChartsOption = {
+        backgroundColor: 'transparent',
+        animationDuration: 600,
+        toolbox: {
+          show: true,
+          right: 10,
+          top: 4,
+          iconStyle: { borderColor: isDark ? '#a1a1aa' : '#71717a' },
+          feature: {
+            saveAsImage: {
+              title: 'Baixar Imagem PNG',
+              pixelRatio: 2,
+              backgroundColor: isDark ? '#18181b' : '#ffffff'
+            }
+          }
+        },
+        tooltip: {
+          trigger: 'axis',
+          axisPointer: { type: 'shadow' },
+          backgroundColor: isDark ? '#18181b' : '#ffffff',
+          borderColor: isDark ? '#27272a' : '#e4e4e7',
+          textStyle: { color: isDark ? '#fafafa' : '#09090b', fontSize: 12 },
+          formatter: (params: any) => {
+            if (!Array.isArray(params) || params.length === 0) return '';
+            const p = params[0];
+            return `<div style="font-weight: 700; margin-bottom: 4px;">${p.name}</div>
+                    <div style="display:flex; align-items:center; gap:6px;">
+                      <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${baseCor};"></span>
+                      <span style="color:${isDark ? '#a1a1aa' : '#52525b'};">Taxa/Valor:</span>
+                      <span style="font-weight:700;">${p.value} ${indicator.visualizacao.eixo_y.unidade}</span>
+                    </div>`;
+          }
+        },
+        grid: {
+          top: 25,
+          right: 45,
+          bottom: 15,
+          left: 10,
+          containLabel: true
+        },
+        xAxis: {
+          type: 'value',
+          name: indicator.visualizacao.eixo_y.unidade,
+          nameTextStyle: { color: textColor, fontSize: 10 },
+          axisLine: { show: false },
+          splitLine: { lineStyle: { color: splitLineColor } },
+          axisLabel: { color: textColor, fontSize: 10 }
+        },
+        yAxis: {
+          type: 'category',
+          data: nomesUfs,
+          axisLine: { lineStyle: { color: axisLineColor } },
+          axisTick: { show: false },
+          axisLabel: {
+            color: textColor,
+            fontSize: 10,
+            formatter: (val: string) => val.split(' - ')[0] // Exibe apenas a sigla no eixo
+          }
+        },
+        series: [
+          {
+            name: indicator.titulo,
+            type: 'bar',
+            data: valoresUfs,
+            barMaxWidth: 16,
+            itemStyle: {
+              color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [
+                { offset: 0, color: baseCor },
+                { offset: 1, color: isDark ? '#38bdf8' : '#0284c7' }
+              ]),
+              borderRadius: [0, 4, 4, 0]
+            },
+            label: {
+              show: true,
+              position: 'right',
+              color: textColor,
+              fontSize: 10,
+              formatter: '{c}'
+            }
+          }
+        ]
+      };
+
+      chart.setOption(option, true);
+      return;
+    }
 
     const { visualizacao } = indicator;
     const seriesList: any[] = [];
