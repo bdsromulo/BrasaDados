@@ -74,12 +74,12 @@ export function EChartCanvas({
     // Determina o tipo de série com base na preferência do usuário ou no padrão do indicador
     const getSeriesType = (defaultType?: 'line' | 'bar') => {
       if (displayType === 'bar') return 'bar';
-      if (displayType === 'line-smooth' || displayType === 'line-straight') return 'line';
+      if (displayType === 'line-smooth' || displayType === 'line-straight' || displayType === 'area') return 'line';
       return defaultType || 'line';
     };
 
     const getIsSmooth = (defaultType?: 'line' | 'bar') => {
-      if (displayType === 'line-smooth') return true;
+      if (displayType === 'line-smooth' || displayType === 'area') return true;
       if (displayType === 'line-straight') return false;
       if (displayType === 'bar') return false;
       return defaultType !== 'bar';
@@ -90,9 +90,15 @@ export function EChartCanvas({
       const allSeries: any[] = [];
       const legendData: string[] = [];
 
+      // Identifica se os indicadores têm unidades diferentes para ativar EIXO DUPLO (Dual Y-Axis)
+      const uniqueUnits = Array.from(new Set(mergedIndicators.map(i => i.visualizacao.eixo_y.unidade)));
+      const hasDualAxis = uniqueUnits.length > 1;
+
       mergedIndicators.forEach((ind, index) => {
         const sType = getSeriesType(ind.visualizacao.tipo_padrao);
         const sSmooth = getIsSmooth(ind.visualizacao.tipo_padrao);
+        const yAxisIdx = hasDualAxis ? uniqueUnits.indexOf(ind.visualizacao.eixo_y.unidade) : 0;
+        const baseColor = ind.visualizacao.series[0]?.cor || (index === 0 ? '#10b981' : '#f59e0b');
 
         ind.visualizacao.series.forEach((s) => {
           const seriesName = `${ind.titulo.split('—')[0].trim()} • ${s.nome}`;
@@ -106,28 +112,82 @@ export function EChartCanvas({
             });
           }
 
-          allSeries.push({
+          const seriesConfig: any = {
             name: seriesName,
             type: sType,
             smooth: sSmooth,
             showSymbol: true,
             symbolSize: 6,
             barMaxWidth: 32,
+            yAxisIndex: yAxisIdx,
             lineStyle: {
               width: 3,
               type: s.estilo || 'solid'
             },
             itemStyle: {
-              color: s.cor || (index === 0 ? '#10b981' : '#f59e0b'),
+              color: s.cor || baseColor,
               borderRadius: sType === 'bar' ? [4, 4, 0, 0] : 0
             },
             data: filteredData
-          });
+          };
+
+          if (displayType === 'area') {
+            seriesConfig.areaStyle = {
+              opacity: 0.2,
+              color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                { offset: 0, color: s.cor || baseColor },
+                { offset: 1, color: isDark ? 'rgba(24, 24, 27, 0.05)' : 'rgba(255, 255, 255, 0.05)' }
+              ])
+            };
+          }
+
+          allSeries.push(seriesConfig);
         });
       });
 
+      // Configuração dos Eixos Y (Simples ou Duplo)
+      const yAxisConfig: any = hasDualAxis
+        ? [
+            {
+              type: 'value',
+              name: `${uniqueUnits[0]}`,
+              nameTextStyle: { color: textColor, fontSize: 11 },
+              axisLine: { show: false },
+              splitLine: { lineStyle: { color: splitLineColor } },
+              axisLabel: { color: textColor, fontSize: 11 }
+            },
+            {
+              type: 'value',
+              name: `${uniqueUnits[1]}`,
+              nameTextStyle: { color: textColor, fontSize: 11 },
+              axisLine: { show: false },
+              splitLine: { show: false },
+              axisLabel: { color: textColor, fontSize: 11 }
+            }
+          ]
+        : {
+            type: 'value',
+            name: uniqueUnits[0] ? `(${uniqueUnits[0]})` : '',
+            axisLine: { show: false },
+            splitLine: { lineStyle: { color: splitLineColor } },
+            axisLabel: { color: textColor, fontSize: 11 }
+          };
+
       const option: echarts.EChartsOption = {
         backgroundColor: 'transparent',
+        toolbox: {
+          show: true,
+          right: 10,
+          top: 8,
+          iconStyle: { borderColor: isDark ? '#a1a1aa' : '#71717a' },
+          feature: {
+            saveAsImage: {
+              title: 'Baixar Imagem PNG',
+              pixelRatio: 2,
+              backgroundColor: isDark ? '#18181b' : '#ffffff'
+            }
+          }
+        },
         tooltip: {
           trigger: 'axis',
           backgroundColor: isDark ? '#18181b' : '#ffffff',
@@ -136,14 +196,14 @@ export function EChartCanvas({
         },
         legend: {
           data: legendData,
-          top: 10,
+          top: 8,
           textStyle: { color: textColor, fontSize: 11 }
         },
         grid: {
-          top: 60,
-          right: 30,
-          bottom: 35,
-          left: 45,
+          top: 55,
+          right: hasDualAxis ? 55 : 30,
+          bottom: 30,
+          left: 50,
           containLabel: true
         },
         xAxis: {
@@ -151,12 +211,7 @@ export function EChartCanvas({
           axisLine: { lineStyle: { color: axisLineColor } },
           axisLabel: { color: textColor, fontSize: 11 }
         },
-        yAxis: {
-          type: 'value',
-          axisLine: { show: false },
-          splitLine: { lineStyle: { color: splitLineColor } },
-          axisLabel: { color: textColor, fontSize: 11 }
-        },
+        yAxis: yAxisConfig,
         series: allSeries
       };
 
@@ -185,7 +240,7 @@ export function EChartCanvas({
         });
       }
 
-      seriesList.push({
+      const seriesConfig: any = {
         name: s.nome,
         type: currentType,
         smooth: currentSmooth,
@@ -201,12 +256,38 @@ export function EChartCanvas({
           borderRadius: currentType === 'bar' ? [5, 5, 0, 0] : 0
         },
         data: filteredData
-      });
+      };
+
+      // Estilo de Área com Gradiente Suave
+      if (displayType === 'area') {
+        seriesConfig.areaStyle = {
+          opacity: 0.35,
+          color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            { offset: 0, color: s.cor || '#2563eb' },
+            { offset: 1, color: isDark ? 'rgba(24, 24, 27, 0.05)' : 'rgba(255, 255, 255, 0.05)' }
+          ])
+        };
+      }
+
+      seriesList.push(seriesConfig);
     });
 
     const option: echarts.EChartsOption = {
       backgroundColor: 'transparent',
       animationDuration: 600,
+      toolbox: {
+        show: true,
+        right: 10,
+        top: 8,
+        iconStyle: { borderColor: isDark ? '#a1a1aa' : '#71717a' },
+        feature: {
+          saveAsImage: {
+            title: 'Baixar Imagem PNG',
+            pixelRatio: 2,
+            backgroundColor: isDark ? '#18181b' : '#ffffff'
+          }
+        }
+      },
       tooltip: {
         trigger: 'axis',
         backgroundColor: isDark ? '#18181b' : '#ffffff',
@@ -233,7 +314,7 @@ export function EChartCanvas({
         textStyle: { color: textColor, fontSize: 11 }
       },
       grid: {
-        top: seriesList.length > 1 ? 50 : 25,
+        top: seriesList.length > 1 ? 48 : 28,
         right: 25,
         bottom: 30,
         left: 45,

@@ -1,10 +1,13 @@
 import { Indicator } from '../types/indicator';
 
 export const INDICADORES_REAIS: Indicator[] = [
+  // ==========================================
+  // 1. ECONOMIA & TRABALHO
+  // ==========================================
   {
     id: "economia-taxa-selic",
     slug: "taxa-selic-over-bcb",
-    titulo: "Taxa de Juros Básica — Selic Meta (% a.a.)",
+    titulo: "Taxa Básica de Juros — Selic Meta (% a.a.)",
     categoria: "economia",
     subcategoria: "politica-monetaria",
     tags: ["economia", "juros", "selic", "banco central", "copom", "crédito"],
@@ -16,59 +19,42 @@ export const INDICADORES_REAIS: Indicator[] = [
       ultima_atualizacao: "2026-03-20"
     },
     explicacao_leiga: {
-      resumo: "A taxa Selic é a taxa básica de juros da economia brasileira, definida pelo Banco Central para controlar a inflação.",
-      como_interpretar: "Quando a inflação está alta, o Banco Central costuma subir a Selic para encarecer o crédito, desestimular o consumo e segurar os preços. Quando a economia está desaquecida e a inflação está controlada, ele reduz a Selic para incentivar empréstimos e investimentos.",
-      por_que_importa: "A Selic influencia diretamente os juros do seu cartão de crédito, do financiamento da casa própria, do rendimento da poupança e dos títulos públicos.",
-      pontos_de_atencao: "Em 2020, durante a pandemia, a Selic atingiu a mínima histórica de 2,0% ao ano, sendo elevada para conter a inflação pós-pandemia até 13,75% em 2022."
+      resumo: "A taxa Selic é a taxa básica de juros da economia brasileira, fixada pelo Banco Central para controlar a inflação.",
+      como_interpretar: "Quando a inflação está alta, o BC sobe a Selic para desaquecer o consumo e encarecer empréstimos. Com a inflação controlada, ele reduz a Selic para estimular investimentos.",
+      por_que_importa: "Afeta diretamente o custo do cartão de crédito, empréstimos bancários, financiamentos imobiliários e o rendimento de investimentos.",
+      pontos_de_atencao: "Em 2020 atingiu a mínima de 2,0% a.a. na pandemia, subindo a 13,75% em 2022 para conter o repique inflacionário."
     },
     detalhamento_tecnico: {
-      formula_calculo: "Taxa média ajustada dos financiamentos diários apurados no Sistema Especial de Liquidação e Custódia para títulos federais, fixada como meta anual pelo Comitê de Política Monetária (Copom).",
-      unidade_medida: "Percentual ao ano (% a.a.)",
-      amostra_cobertura: "Universo das operações interbancárias lastreadas em títulos públicos federais registradas no Selic.",
-      anonimizacao_sigilo: "Dados agregados de mercado financeiro sem identificação de instituições participantes individuais.",
-      limitacoes_e_quebras_metodologicas: "A série histórica contínua da meta Selic iniciou-se em março de 1999 com a implantação do regime de Metas para a Inflação.",
-      orientacoes_fact_checking: "Atenção para não confundir a 'Meta Selic' (fixada pelo Copom) com a 'Taxa Selic Efetiva diária' (que oscila levemente em torno da meta, geralmente 0,10 p.p. abaixo)."
+      formula_calculo: "Taxa média ajustada dos financiamentos diários apurados no Sistema Especial de Liquidação e Custódia para títulos federais, fixada como meta anual pelo Copom.",
+      unidade_medida: "% ao ano",
+      amostra_cobertura: "Universo das operações interbancárias com títulos públicos federais.",
+      anonimizacao_sigilo: "Dados macroeconômicos agregados de mercado financeiro sem identificação institucional.",
+      limitacoes_e_quebras_metodologicas: "Série contínua iniciada em março de 1999 com o regime de metas para a inflação.",
+      orientacoes_fact_checking: "Não confunda a 'Meta Selic' do Copom com a 'Selic Efetiva diária' apurada pelo mercado."
     },
     visualizacao: {
       tipo_padrao: "line",
-      eixo_x: {
-        tipo: "temporal",
-        rotulo: "Ano"
-      },
-      eixo_y: {
-        rotulo: "Taxa Selic (% a.a.)",
-        unidade: "%",
-        escala_min: 0,
-        escala_max: 16
-      },
+      eixo_x: { tipo: "temporal", rotulo: "Ano" },
+      eixo_y: { rotulo: "Taxa Selic (% a.a.)", unidade: "%", escala_min: 0, escala_max: 16 },
       series: [
         {
           id: "selic_meta",
           nome: "Taxa Selic Meta",
-          cor: "#10b981", // esmeralda
+          cor: "#10b981",
           dados: [
-            [2015, 14.25],
-            [2016, 13.75],
-            [2017, 7.00],
-            [2018, 6.50],
-            [2019, 4.50],
-            [2020, 2.00],
-            [2021, 9.25],
-            [2022, 13.75],
-            [2023, 11.75],
-            [2024, 11.25],
-            [2025, 13.25],
-            [2026, 12.00]
+            [2015, 14.25], [2016, 13.75], [2017, 7.00], [2018, 6.50],
+            [2019, 4.50], [2020, 2.00], [2021, 9.25], [2022, 13.75],
+            [2023, 11.75], [2024, 11.25], [2025, 13.25], [2026, 12.00]
           ]
         }
       ],
       marcos_historicos: [
-        { ano: 2020, rotulo: "Mínima histórica da Selic (2% a.a.) na Pandemia" },
-        { ano: 2022, rotulo: "Ciclo de aperto monetário (13,75% a.a.)" }
+        { ano: 2020, rotulo: "Mínima histórica de 2% a.a." },
+        { ano: 2022, rotulo: "Pico de 13,75% no pós-pandemia" }
       ]
     },
     citacao_sugerida: {
-      abnt: "BANCO CENTRAL DO BRASIL. Séries Temporais do Banco Central: Taxa de Juros - Selic fixada pelo Copom (Série 4189). Brasília: BCB, 2026. Acesso via Brasa Dados."
+      abnt: "BANCO CENTRAL DO BRASIL. Séries Temporais do Banco Central: Taxa Selic fixada pelo Copom (Série 4189). Brasília: BCB, 2026. Acesso via Brasa Dados."
     }
   },
   {
@@ -86,306 +72,42 @@ export const INDICADORES_REAIS: Indicator[] = [
       ultima_atualizacao: "2026-03-12"
     },
     explicacao_leiga: {
-      resumo: "O IPCA mede a variação de preços da cesta de compras de famílias brasileiras com renda de 1 a 40 salários mínimos.",
-      como_interpretar: "Uma taxa de 4% significa que, em média, os produtos e serviços ficaram 4% mais caros nos últimos 12 meses. Quando a inflação sobe, o poder de compra do dinheiro diminui.",
-      por_que_importa: "É a métrica oficial utilizada pelo governo e pelo Banco Central para avaliar se o país está cumprindo a meta de inflação anual.",
-      pontos_de_atencao: "Em 2021, o IPCA ultrapassou os 10% devido a gargalos nas cadeias produtivas globais, desvalorização do real e alta das commodities."
+      resumo: "O IPCA mede a variação de preços da cesta de compras de famílias com renda de 1 a 40 salários mínimos.",
+      como_interpretar: "Uma taxa positiva indica que as compras ficaram mais caras. Quando o IPCA desacelera, os preços continuam subindo, porém em ritmo mais moderado.",
+      por_que_importa: "É o termômetro oficial da perda do poder de compra dos salários e orienta as decisões de taxa de juros do país.",
+      pontos_de_atencao: "Em 2021 superou 10% devido a gargalos internacionais de abastecimento e alta no preço dos combustíveis e alimentos."
     },
     detalhamento_tecnico: {
-      formula_calculo: "Média geométrica ponderada pelo índice de Laspeyres da variação de preços de centenas de itens (alimentos, habitação, transporte, saúde, etc.).",
-      unidade_medida: "Variação percentual acumulada em 12 meses (%)",
-      amostra_cobertura: "Áreas urbanas de 16 regiões metropolitanas e municípios do Brasil, cobrindo famílias com rendimento entre 1 e 40 salários mínimos.",
-      anonimizacao_sigilo: "Preços coletados em estabelecimentos comerciais sem divulgação de dados fiscais dos comércios.",
-      limitacoes_e_quebras_metodologicas: "A estrutura de pesos do IPCA é atualizada periodicamente com base na Pesquisa de Orçamentos Familiares (POF), tendo sido revisada pela última vez na POF 2017-2018.",
-      orientacoes_fact_checking: "Não confunda o IPCA com o IGP-M (da FGV). O IGP-M sofre forte influência do câmbio no atacado e de matérias-primas agrícolas, enquanto o IPCA foca no consumidor final urbano."
+      formula_calculo: "Média geométrica ponderada pelo índice de Laspeyres cobrindo 9 grupos de despesas familiares.",
+      unidade_medida: "% em 12 meses",
+      amostra_cobertura: "16 áreas urbanas e regiões metropolitanas cobrindo famílias de 1 a 40 salários mínimos.",
+      anonimizacao_sigilo: "Levantamento de preços em estabelecimentos comerciais sem divulgação fiscal de empresas.",
+      limitacoes_e_quebras_metodologicas: "Pesos revisados com base na Pesquisa de Orçamentos Familiares (POF 2017-2018).",
+      orientacoes_fact_checking: "O IPCA afere o consumidor final urbano, diferentemente do IGP-M que reflete matérias-primas e atacado."
     },
     visualizacao: {
       tipo_padrao: "line",
-      eixo_x: {
-        tipo: "temporal",
-        rotulo: "Ano"
-      },
-      eixo_y: {
-        rotulo: "IPCA Acumulado (%)",
-        unidade: "%",
-        escala_min: 0,
-        escala_max: 12
-      },
+      eixo_x: { tipo: "temporal", rotulo: "Ano" },
+      eixo_y: { rotulo: "IPCA Acumulado (%)", unidade: "%", escala_min: 0, escala_max: 12 },
       series: [
         {
           id: "ipca_12m",
           nome: "IPCA Acumulado 12m",
-          cor: "#f59e0b", // âmbar
+          cor: "#f59e0b",
           dados: [
-            [2015, 10.67],
-            [2016, 6.29],
-            [2017, 2.95],
-            [2018, 3.75],
-            [2019, 4.31],
-            [2020, 4.52],
-            [2021, 10.06],
-            [2022, 5.79],
-            [2023, 4.62],
-            [2024, 4.83],
-            [2025, 4.25],
-            [2026, 3.90]
+            [2015, 10.67], [2016, 6.29], [2017, 2.95], [2018, 3.75],
+            [2019, 4.31], [2020, 4.52], [2021, 10.06], [2022, 5.79],
+            [2023, 4.62], [2024, 4.83], [2025, 4.25], [2026, 3.90]
           ]
         }
       ],
       marcos_historicos: [
-        { ano: 2015, rotulo: "Pico de 10,67% (reajustes de tarifas)" },
-        { ano: 2021, rotulo: "Pico inflacionário pós-pandemia (10,06%)" }
+        { ano: 2015, rotulo: "10,67% (choque de tarifas públicas)" },
+        { ano: 2021, rotulo: "10,06% (inflação global pós-pandemia)" }
       ]
     },
     citacao_sugerida: {
-      abnt: "IBGE — INSTITUTO BRASILEIRO DE GEOGRAFIA E ESTATÍSTICA. Índice Nacional de Preços ao Consumidor Amplo (IPCA). Rio de Janeiro: IBGE, 2026. Acesso via Brasa Dados."
-    }
-  },
-  {
-    id: "educacao-ideb-ensino-medio",
-    slug: "ideb-ensino-medio-brasil",
-    titulo: "IDEB — Índice da Educação Básica (Ensino Médio)",
-    categoria: "educacao",
-    subcategoria: "desempenho-escolar",
-    tags: ["educação", "ideb", "inep", "saeb", "ensino médio", "escola pública"],
-    fonte: {
-      orgao: "INEP / Ministério da Educação",
-      pesquisa: "Censo Escolar e Sistema de Avaliação da Educação Básica (Saeb)",
-      url_oficial: "https://www.gov.br/inep/pt-br/areas-de-atuacao/pesquisas-estatisticas-e-indicadores/ideb",
-      frequencia: "Bienal (a cada 2 anos)",
-      ultima_atualizacao: "2024-08-14"
-    },
-    explicacao_leiga: {
-      resumo: "O IDEB é a nota oficial da qualidade educacional brasileira para escolas públicas e privadas, variando de 0 a 10.",
-      como_interpretar: "Combina o fluxo escolar (quantos alunos passam de ano sem reprovação ou abandono) com a nota das provas de Português e Matemática no Saeb.",
-      por_que_importa: "Garante que uma escola não seja bem avaliada apenas 'aprovando todo mundo sem ensinar nada' ou 'reprovando e excluindo os alunos com mais dificuldades'.",
-      pontos_de_atencao: "A meta histórica projetada para o Ensino Médio era de 5,2 pontos em 2021. Em 2023, o Brasil atingiu 4,3 pontos."
-    },
-    detalhamento_tecnico: {
-      formula_calculo: "IDEB_j = N_j * P_j, onde N_j é a nota média padronizada no Saeb (0 a 10) e P_j é a taxa média de aprovação da etapa.",
-      unidade_medida: "Pontos (escala contínua de 0 a 10)",
-      amostra_cobertura: "Censitário para todas as escolas públicas e privadas com pelo menos 10 alunos matriculados na 3ª série do EM.",
-      anonimizacao_sigilo: "Escolas com menos de 10 alunos têm os resultados omitidos por sigilo estatístico e conformidade com a LGPD.",
-      limitacoes_e_quebras_metodologicas: "O IDEB 2021 teve distorção de comparabilidade devido à aprovação automática adotada em vários estados durante a pandemia da Covid-19.",
-      orientacoes_fact_checking: "Não compare a meta do Ensino Médio diretamente com a dos Anos Iniciais do Fundamental (que possuem escalas e metas distintas)."
-    },
-    visualizacao: {
-      tipo_padrao: "line",
-      eixo_x: {
-        tipo: "temporal",
-        rotulo: "Ano de Avaliação"
-      },
-      eixo_y: {
-        rotulo: "Nota IDEB",
-        unidade: "pontos",
-        escala_min: 0,
-        escala_max: 8
-      },
-      series: [
-        {
-          id: "publica",
-          nome: "Rede Pública",
-          cor: "#3b82f6", // azul
-          dados: [
-            [2015, 3.5],
-            [2017, 3.5],
-            [2019, 3.9],
-            [2021, 3.9],
-            [2023, 4.1]
-          ]
-        },
-        {
-          id: "privada",
-          nome: "Rede Privada",
-          cor: "#10b981", // verde
-          dados: [
-            [2015, 5.3],
-            [2017, 5.8],
-            [2019, 6.0],
-            [2021, 5.6],
-            [2023, 5.8]
-          ]
-        },
-        {
-          id: "total",
-          nome: "Média Geral Brasil",
-          cor: "#8b5cf6", // roxo
-          estilo: "dashed",
-          dados: [
-            [2015, 3.7],
-            [2017, 3.8],
-            [2019, 4.2],
-            [2021, 4.2],
-            [2023, 4.3]
-          ]
-        }
-      ],
-      marcos_historicos: [
-        { ano: 2021, rotulo: "Edição da Pandemia (aprovação excepcional)" }
-      ]
-    },
-    citacao_sugerida: {
-      abnt: "INEP. Índice de Desenvolvimento da Educação Básica (IDEB) 2023: Resultados Nacionais. Brasília: MEC/INEP, 2024. Acesso via Brasa Dados."
-    }
-  },
-  {
-    id: "educacao-pisa-matematica",
-    slug: "pisa-matematica-brasil-ocde",
-    titulo: "PISA — Matemática: Brasil vs. OCDE e Chile (Pontos)",
-    categoria: "internacional",
-    subcategoria: "educacao-comparada",
-    tags: ["internacional", "pisa", "ocde", "matemática", "inep", "educação"],
-    fonte: {
-      orgao: "OCDE / INEP / Banco Mundial",
-      pesquisa: "Programme for International Student Assessment (PISA)",
-      url_oficial: "https://www.oecd.org/pisa/",
-      frequencia: "Trienal (a cada 3 anos)",
-      ultima_atualizacao: "2023-12-05"
-    },
-    explicacao_leiga: {
-      resumo: "O PISA é o principal exame internacional que compara a capacidade de jovens de 15 anos em aplicar conhecimentos matemáticos na resolução de problemas da vida real.",
-      como_interpretar: "A média dos países desenvolvidos da OCDE gira em torno de 470 a 500 pontos. O Brasil historicamente pontua abaixo de 400 pontos, indicando defasagem no aprendizado fundamental.",
-      por_que_importa: "Permite saber se o ensino brasileiro está acompanhando a formação técnica das principais economias do mundo.",
-      pontos_de_atencao: "No PISA 2022, 73% dos alunos brasileiros de 15 anos não atingiram o nível básico de proficiência em matemática (Nível 2)."
-    },
-    detalhamento_tecnico: {
-      formula_calculo: "Escala calibrada pela Teoria de Resposta ao Item (TRI) com média estandardizada de 500 pontos e desvio padrão de 100 pontos no ano base.",
-      unidade_medida: "Pontuação padronizada (escala contínua)",
-      amostra_cobertura: "Amostragem estratificada em dois estágios representando estudantes de 15 anos matriculados a partir do 7º ano do Ensino Fundamental.",
-      anonimizacao_sigilo: "Dados públicos disponibilizados com anonimização total dos estudantes e das instituições escolares.",
-      limitacoes_e_quebras_metodologicas: "A edição que ocorreria em 2021 foi adiada para 2022 devido à pandemia global de Covid-19.",
-      orientacoes_fact_checking: "O PISA avalia a proficiência aos 15 anos, independentemente de o aluno estar atrasado ou no ano correto do ensino médio."
-    },
-    visualizacao: {
-      tipo_padrao: "line",
-      eixo_x: {
-        tipo: "temporal",
-        rotulo: "Ano do Exame"
-      },
-      eixo_y: {
-        rotulo: "Pontuação Média",
-        unidade: "pontos",
-        escala_min: 300,
-        escala_max: 550
-      },
-      series: [
-        {
-          id: "brasil",
-          nome: "Brasil",
-          cor: "#16a34a", // verde
-          dados: [
-            [2003, 356],
-            [2006, 370],
-            [2009, 386],
-            [2012, 391],
-            [2015, 377],
-            [2018, 384],
-            [2022, 379]
-          ]
-        },
-        {
-          id: "ocde",
-          nome: "Média Países da OCDE",
-          cor: "#2563eb", // azul
-          estilo: "dashed",
-          dados: [
-            [2003, 500],
-            [2006, 498],
-            [2009, 496],
-            [2012, 494],
-            [2015, 490],
-            [2018, 489],
-            [2022, 472]
-          ]
-        },
-        {
-          id: "chile",
-          nome: "Chile (Referência América Latina)",
-          cor: "#ea580c", // laranja
-          dados: [
-            [2003, 387],
-            [2006, 411],
-            [2009, 421],
-            [2012, 423],
-            [2015, 423],
-            [2018, 417],
-            [2022, 412]
-          ]
-        }
-      ],
-      marcos_historicos: [
-        { ano: 2022, rotulo: "Queda global pós-pandemia (OCDE caiu 17 pts)" }
-      ]
-    },
-    citacao_sugerida: {
-      abnt: "OECD. PISA 2022 Results: The State of Learning and Equity in Education. Paris: OECD Publishing, 2023. Acesso via Brasa Dados."
-    }
-  },
-  {
-    id: "seguranca-taxa-mvi",
-    slug: "mortes-violentas-intencionais-brasil",
-    titulo: "Segurança — Mortes Violentas Intencionais (MVI por 100 mil hab.)",
-    categoria: "seguranca",
-    subcategoria: "violencia-letal",
-    tags: ["segurança", "violência", "mvi", "homicídios", "fbsp", "atlas da violência"],
-    fonte: {
-      orgao: "Fórum Brasileiro de Segurança Pública (FBSP) / IPEA",
-      pesquisa: "Anuário Brasileiro de Segurança Pública & Atlas da Violência",
-      url_oficial: "https://forumseguranca.org.br/anuario-brasileiro-seguranca-publica/",
-      frequencia: "Anual",
-      ultima_atualizacao: "2025-07-18"
-    },
-    explicacao_leiga: {
-      resumo: "A taxa de MVI mede quantas mortes violentas ocorreram no país a cada grupo de 100 mil habitantes.",
-      como_interpretar: "Soma quatro categorias: homicídios dolosos, latrocínios (roubo com morte), lesão corporal seguida de morte e mortes decorrentes de intervenção policial.",
-      por_que_importa: "É o indicador mais consistente da violência letal brasileira, pois unifica tipificações penais que variam entre as polícias civis de diferentes estados.",
-      pontos_de_atencao: "O pico da série ocorreu em 2017 com 30,8 mortes por 100 mil habitantes (63.880 mortes no ano), apresentando tendência de queda desde então."
-    },
-    detalhamento_tecnico: {
-      formula_calculo: "Taxa MVI = (Soma de Homicídios Dolosos + Latrocínios + Lesões Corporais Mortais + Mortes por Intervenção Policial / População Estimada IBGE) * 100.000.",
-      unidade_medida: "Mortes por 100 mil habitantes",
-      amostra_cobertura: "Registros de ocorrências policiais das 27 Secretarias de Segurança Pública Estaduais e do DF.",
-      anonimizacao_sigilo: "Dados sumarizados em nível estadual e nacional, com identificação apenas de perfil sociodemográfico agregado.",
-      limitacoes_e_quebras_metodologicas: "Subnotificação de mortes a esclarecer em certos estados e diferenças de classificação de mortes policiais antes de 2015.",
-      orientacoes_fact_checking: "Não compare a taxa de MVI apenas com a taxa de 'Homicídio Doloso': a MVI inclui as mortes causadas por agentes do Estado e latrocínios."
-    },
-    visualizacao: {
-      tipo_padrao: "line",
-      eixo_x: {
-        tipo: "temporal",
-        rotulo: "Ano"
-      },
-      eixo_y: {
-        rotulo: "Taxa por 100 mil hab.",
-        unidade: "por 100 mil",
-        escala_min: 15,
-        escala_max: 35
-      },
-      series: [
-        {
-          id: "taxa_mvi",
-          nome: "Taxa MVI Brasil",
-          cor: "#dc2626", // vermelho intenso
-          dados: [
-            [2015, 28.9],
-            [2016, 29.7],
-            [2017, 30.8],
-            [2018, 27.5],
-            [2019, 22.7],
-            [2020, 23.6],
-            [2021, 22.3],
-            [2022, 23.4],
-            [2023, 22.8],
-            [2024, 21.9]
-          ]
-        }
-      ],
-      marcos_historicos: [
-        { ano: 2017, rotulo: "Pico histórico nacional (30,8 por 100 mil)" }
-      ]
-    },
-    citacao_sugerida: {
-      abnt: "FÓRUM BRASILEIRO DE SEGURANÇA PÚBLICA. 18º Anuário Brasileiro de Segurança Pública. São Paulo: FBSP, 2024. Acesso via Brasa Dados."
+      abnt: "IBGE. Sistema Nacional de Índices de Preços ao Consumidor (SNIPC): IPCA. Rio de Janeiro: IBGE, 2026. Acesso via Brasa Dados."
     }
   },
   {
@@ -403,54 +125,38 @@ export const INDICADORES_REAIS: Indicator[] = [
       ultima_atualizacao: "2026-02-28"
     },
     explicacao_leiga: {
-      resumo: "A taxa de desocupação (conhecida popularmente como desemprego) mede a proporção de pessoas em idade de trabalhar que procuraram emprego e não encontraram.",
-      como_interpretar: "Uma taxa de 7% significa que, de cada 100 pessoas disponíveis e em busca ativa de ocupação, 7 não conseguiram trabalhar.",
-      por_que_importa: "Indica a saúde do mercado formal e informal de trabalho e a facilidade ou dificuldade para um cidadão encontrar renda.",
-      pontos_de_atencao: "Quem não procurou trabalho nos últimos 30 dias (por exemplo, estudantes que só estudam ou pessoas desalentadas) não entra no cálculo do desemprego."
+      resumo: "Mede a proporção de pessoas aptas e que procuraram trabalho ativamente nos últimos 30 dias mas não encontraram.",
+      como_interpretar: "Uma taxa de 6,9% indica que 6,9 de cada 100 pessoas no mercado de trabalho não conseguiram vaga.",
+      por_que_importa: "Sinaliza o nível de aquecimento econômico, geração de renda e facilidade para a população se manter financeiramente.",
+      pontos_de_atencao: "Desalentados (quem desistiu de buscar trabalho) ou estudantes que não procuram vaga não contam como desocupados."
     },
     detalhamento_tecnico: {
-      formula_calculo: "Taxa de Desocupação = (População Desocupada / Força de Trabalho) * 100.",
-      unidade_medida: "Percentual (%)",
-      amostra_cobertura: "Amostra probabilística de cerca de 211 mil domicílios em mais de 3.500 municípios do país a cada trimestre.",
-      anonimizacao_sigilo: "Microdados totalmente desidentificados de acordo com a lei do sigilo estatístico do IBGE.",
-      limitacoes_e_quebras_metodologicas: "Em 2012 houve a transição da antiga PME (Pesquisa Mensal de Emprego) para a PNAD Contínua com cobertura nacional integral.",
-      orientacoes_fact_checking: "Não confunda 'taxa de desocupação' com 'taxa de subutilização da força de trabalho' (que inclui quem trabalha menos horas do que gostaria ou desistiu de procurar)."
+      formula_calculo: "(População Desocupada / Força de Trabalho Total) * 100.",
+      unidade_medida: "%",
+      amostra_cobertura: "Amostra probabilística de 211 mil domicílios em mais de 3.500 municípios do país.",
+      anonimizacao_sigilo: "Dados domiciliares desidentificados protegidos por sigilo estatístico do IBGE.",
+      limitacoes_e_quebras_metodologicas: "Metodologia contínua iniciada em 2012, substituindo a antiga PME restrita a 6 capitais.",
+      orientacoes_fact_checking: "Não confunda desocupação com informalidade (que mede quantos trabalham sem carteira assinada ou CNPJ)."
     },
     visualizacao: {
       tipo_padrao: "line",
-      eixo_x: {
-        tipo: "temporal",
-        rotulo: "Ano"
-      },
-      eixo_y: {
-        rotulo: "Desocupação (%)",
-        unidade: "%",
-        escala_min: 0,
-        escala_max: 16
-      },
+      eixo_x: { tipo: "temporal", rotulo: "Ano" },
+      eixo_y: { rotulo: "Desocupação (%)", unidade: "%", escala_min: 0, escala_max: 16 },
       series: [
         {
           id: "taxa_desemprego",
-          nome: "Taxa de Desocupação Média Anual",
-          cor: "#6366f1", // índigo
+          nome: "Taxa Média Anual de Desocupação",
+          cor: "#6366f1",
           dados: [
-            [2015, 8.5],
-            [2016, 11.5],
-            [2017, 12.7],
-            [2018, 12.3],
-            [2019, 11.9],
-            [2020, 13.5],
-            [2021, 13.2],
-            [2022, 9.3],
-            [2023, 7.8],
-            [2024, 6.9],
-            [2025, 6.6]
+            [2015, 8.5], [2016, 11.5], [2017, 12.7], [2018, 12.3],
+            [2019, 11.9], [2020, 13.5], [2021, 13.2], [2022, 9.3],
+            [2023, 7.8], [2024, 6.9], [2025, 6.6]
           ]
         }
       ],
       marcos_historicos: [
-        { ano: 2020, rotulo: "Pico durante a pandemia (13,5% de desocupação)" },
-        { ano: 2024, rotulo: "Menor patamar desde 2014 (6,9%)" }
+        { ano: 2020, rotulo: "13,5% na pandemia" },
+        { ano: 2024, rotulo: "6,9% (mínima em 10 anos)" }
       ]
     },
     citacao_sugerida: {
@@ -472,68 +178,1002 @@ export const INDICADORES_REAIS: Indicator[] = [
       ultima_atualizacao: "2026-03-05"
     },
     explicacao_leiga: {
-      resumo: "O PIB mede tudo o que o Brasil produziu de riqueza em um ano, descontando o efeito puramente artificial da inflação.",
-      como_interpretar: "Valores positivos indicam expansão econômica (geração de emprego e negócios). Valores negativos representam recessão (contração da economia).",
-      por_que_importa: "Determina a capacidade do país de aumentar sua renda média e arrecadar recursos para saúde, educação e infraestrutura.",
-      pontos_de_atencao: "Em 2020, a economia recuou 3,3% devido ao fechamento de atividades na pandemia, recuperando-se com alta de 5,0% em 2021."
+      resumo: "Mede o crescimento físico da riqueza e serviços produzidos no Brasil, descontando a ilusão da inflação.",
+      como_interpretar: "Valores acima de zero indicam expansão da economia. Valores abaixo de zero caracterizam recessão econômica.",
+      por_que_importa: "Determina a capacidade da nação em gerar riqueza real por habitante e arrecadar fundos para serviços públicos.",
+      pontos_de_atencao: "Em 2020 a economia encolheu 3,3% com a quarentena, tendo forte rebote de 5,0% em 2021 com a reabertura."
     },
     detalhamento_tecnico: {
-      formula_calculo: "Taxa de variação em volume calculada pela ótica da produção (Agropecuária, Indústria e Serviços) e pela ótica da despesa (Consumo das Famílias, Governo, Investimento FBCF e Setor Externo).",
-      unidade_medida: "Taxa percentual de variação em volume no ano (%)",
-      amostra_cobertura: "Universo da economia brasileira estimado pelo SCNT com base em pesquisas estruturais agropecuárias, industriais e de serviços.",
-      anonimizacao_sigilo: "Dados macroeconômicos estritamente consolidados.",
-      limitacoes_e_quebras_metodologicas: "A série com base de referência atual utiliza a metodologia internacional do System of National Accounts (SNA 2008).",
-      orientacoes_fact_checking: "Sempre diferencie o 'Crescimento Real' (que desconta a inflação) do 'PIB Nominal em Reais Correntes' (que pode subir apenas por aumento generalizado de preços)."
+      formula_calculo: "Taxa de variação em volume do Valor Adicionado Bruto somado aos Impostos Líquidos sobre Produtos.",
+      unidade_medida: "% anual",
+      amostra_cobertura: "Toda a economia brasileira compilada pelo Sistema de Contas Nacionais (SNA 2008).",
+      anonimizacao_sigilo: "Dados estritamente agregados de Contas Nacionais.",
+      limitacoes_e_quebras_metodologicas: "Série histórica harmonizada com metodologia de referência internacional SNA 2008.",
+      orientacoes_fact_checking: "Sempre cite o 'PIB Real' (volume desinflacionado), e não o 'PIB Nominal' em reais correntes."
     },
     visualizacao: {
       tipo_padrao: "bar",
-      eixo_x: {
-        tipo: "temporal",
-        rotulo: "Ano"
-      },
-      eixo_y: {
-        rotulo: "Variação do PIB (%)",
-        unidade: "%",
-        escala_min: -5,
-        escala_max: 7
-      },
+      eixo_x: { tipo: "temporal", rotulo: "Ano" },
+      eixo_y: { rotulo: "Variação do PIB (%)", unidade: "%", escala_min: -5, escala_max: 7 },
       series: [
         {
           id: "crescimento_pib",
           nome: "Crescimento Real do PIB (% anual)",
-          cor: "#0ea5e9", // azul céu
+          cor: "#0ea5e9",
           dados: [
-            [2015, -3.55],
-            [2016, -3.28],
-            [2017, 1.32],
-            [2018, 1.78],
-            [2019, 1.22],
-            [2020, -3.28],
-            [2021, 4.99],
-            [2022, 3.02],
-            [2023, 2.91],
-            [2024, 3.20],
-            [2025, 2.40]
+            [2015, -3.55], [2016, -3.28], [2017, 1.32], [2018, 1.78],
+            [2019, 1.22], [2020, -3.28], [2021, 4.99], [2022, 3.02],
+            [2023, 2.91], [2024, 3.20], [2025, 2.40]
           ]
         }
       ],
       marcos_historicos: [
-        { ano: 2015, rotulo: "Recessão de 2015-2016" },
-        { ano: 2020, rotulo: "Choque pandêmico (-3,3%)" },
-        { ano: 2021, rotulo: "Rebote econômico pós-isolamento (+5,0%)" }
+        { ano: 2015, rotulo: "Recessão de 2015-2016 (-3,55%)" },
+        { ano: 2020, rotulo: "Impacto pandêmico (-3,28%)" },
+        { ano: 2021, rotulo: "Rebote pós-isolamento (+4,99%)" }
       ]
     },
     citacao_sugerida: {
-      abnt: "IBGE. Sistema de Contas Nacionais: Brasil 2024. Rio de Janeiro: Coordenação de Contas Nacionais/IBGE, 2025. Acesso via Brasa Dados."
+      abnt: "IBGE. Sistema de Contas Nacionais: Contas Trimestrais. Rio de Janeiro: IBGE, 2025. Acesso via Brasa Dados."
+    }
+  },
+  {
+    id: "economia-indice-gini",
+    slug: "indice-de-gini-desigualdade-renda-ibge",
+    titulo: "Desigualdade de Renda — Coeficiente de Gini (0 a 1)",
+    categoria: "economia",
+    subcategoria: "distribuicao-de-renda",
+    tags: ["economia", "gini", "desigualdade", "renda", "ibge", "pobreza"],
+    fonte: {
+      orgao: "Instituto Brasileiro de Geografia e Estatística (IBGE)",
+      pesquisa: "Pesquisa Nacional por Amostra de Domicílios Contínua (PNAD Contínua - Rendimento de Todas as Fontes)",
+      url_oficial: "https://www.ibge.gov.br/estatisticas/sociais/rendimento-despesa-e-consumo/19897-pesquisa-nacional-por-amostra-de-domicilios-continua-rendimento-de-todas-as-fontes.html",
+      frequencia: "Anual",
+      ultima_atualizacao: "2025-05-10"
+    },
+    explicacao_leiga: {
+      resumo: "O Coeficiente de Gini mede o grau de desigualdade na distribuição de renda da população, variando de 0 a 1.",
+      como_interpretar: "Zero corresponderia à igualdade perfeita (todos com a mesma renda) e 1 à desigualdade máxima (uma só pessoa com toda a renda). Quanto menor o índice, menor é a desigualdade.",
+      por_que_importa: "Permite acompanhar se o crescimento econômico do país está sendo compartilhado com a base da pirâmide social.",
+      pontos_de_atencao: "Em 2023, o Gini do rendimento domiciliar per capita atingiu 0,518, o menor patamar já registrado desde o início da PNAD Contínua em 2012."
+    },
+    detalhamento_tecnico: {
+      formula_calculo: "Área de concentração de Lorenz dividida pela área máxima sob a linha de perfeita igualdade, apurada sobre o rendimento domiciliar per capita.",
+      unidade_medida: "Coeficiente (0 a 1)",
+      amostra_cobertura: "Amostra nacional de domicílios entrevistados em todas as Unidades da Federação.",
+      anonimizacao_sigilo: "Dados estritamente anônimos protegidos por sigilo legal.",
+      limitacoes_e_quebras_metodologicas: "Em 2020 a pandemia impediu coletas presenciais em alguns meses, tendo ocorrido ajustes por entrevistas telefônicas.",
+      orientacoes_fact_checking: "Sempre verifique se a fonte está usando 'Gini do Rendimento do Trabalho' ou 'Gini de Todas as Fontes' (que inclui benefícios sociais como Bolsa Família e aposentadorias)."
+    },
+    visualizacao: {
+      tipo_padrao: "line",
+      eixo_x: { tipo: "temporal", rotulo: "Ano" },
+      eixo_y: { rotulo: "Índice de Gini", unidade: "pontos", escala_min: 0.48, escala_max: 0.56 },
+      series: [
+        {
+          id: "gini_total",
+          nome: "Gini Rendimento Domiciliar per Capita",
+          cor: "#d97706",
+          dados: [
+            [2015, 0.524], [2016, 0.537], [2017, 0.538], [2018, 0.545],
+            [2019, 0.544], [2020, 0.524], [2021, 0.544], [2022, 0.518],
+            [2023, 0.518], [2024, 0.515], [2025, 0.512]
+          ]
+        }
+      ],
+      marcos_historicos: [
+        { ano: 2018, rotulo: "Pico recente de desigualdade (0,545)" },
+        { ano: 2020, rotulo: "Efeito do Auxílio Emergencial (0,524)" },
+        { ano: 2023, rotulo: "Mínima histórica da série (0,518)" }
+      ]
+    },
+    citacao_sugerida: {
+      abnt: "IBGE. PNAD Contínua: Rendimento de todas as fontes 2023. Rio de Janeiro: IBGE, 2024. Acesso via Brasa Dados."
+    }
+  },
+  {
+    id: "economia-divida-bruta",
+    slug: "divida-bruta-governo-geral-bcb",
+    titulo: "Contas Públicas — Dívida Bruta do Governo Geral (% do PIB)",
+    categoria: "economia",
+    subcategoria: "politica-fiscal",
+    tags: ["economia", "dívida", "fiscal", "pib", "banco central", "tesouro"],
+    fonte: {
+      orgao: "Banco Central do Brasil (BCB)",
+      pesquisa: "Estatísticas Fiscais — Série SGS 4537",
+      url_oficial: "https://www.bcb.gov.br/estatisticas/estatisticasfiscais",
+      frequencia: "Mensal",
+      ultima_atualizacao: "2026-02-15"
+    },
+    explicacao_leiga: {
+      resumo: "Mede o tamanho do endividamento consolidado do Governo Federal, INSS e governos estaduais e municipais em relação ao PIB.",
+      como_interpretar: "Uma dívida de 76% significa que o governo deve o equivalente a 76% de tudo o que a economia do país produz em um ano.",
+      por_que_importa: "Dívidas muito elevadas aumentam o risco de crédito do país, forçam os juros para cima e encarecem a rolagem de títulos públicos.",
+      pontos_de_atencao: "Em 2020 a dívida atingiu 86,9% do PIB devido aos programas emergenciais de saúde e suporte financeiro na pandemia."
+    },
+    detalhamento_tecnico: {
+      formula_calculo: "(Estoque da Dívida Bruta do Governo Geral / PIB nominal acumulado dos últimos 12 meses) * 100.",
+      unidade_medida: "% do PIB",
+      amostra_cobertura: "Governo Federal, Previdência Social (INSS), Estados e Municípios (exclui empresas estatais e Banco Central).",
+      anonimizacao_sigilo: "Dados contábeis consolidados oficiais da Secretaria do Tesouro Nacional e do Banco Central.",
+      limitacoes_e_quebras_metodologicas: "Critério harmonizado com o Manual de Estatísticas de Finanças Públicas do FMI (GFSM 2014).",
+      orientacoes_fact_checking: "Diferencie 'Dívida Bruta' (DBGG) de 'Dívida Líquida' (DLSP), que abate as reservas cambiais e ativos financeiros mantidos pelo governo."
+    },
+    visualizacao: {
+      tipo_padrao: "line",
+      eixo_x: { tipo: "temporal", rotulo: "Ano" },
+      eixo_y: { rotulo: "DBGG (% do PIB)", unidade: "% do PIB", escala_min: 50, escala_max: 95 },
+      series: [
+        {
+          id: "divida_bruta",
+          nome: "Dívida Bruta do Governo Geral",
+          cor: "#e11d48",
+          dados: [
+            [2015, 65.5], [2016, 69.8], [2017, 74.1], [2018, 75.3],
+            [2019, 74.4], [2020, 86.9], [2021, 78.3], [2022, 71.7],
+            [2023, 74.4], [2024, 76.2], [2025, 78.5]
+          ]
+        }
+      ],
+      marcos_historicos: [
+        { ano: 2020, rotulo: "Pico de 86,9% (gastos Covid-19)" },
+        { ano: 2022, rotulo: "Redução para 71,7% (efeito inflação no PIB nominal)" }
+      ]
+    },
+    citacao_sugerida: {
+      abnt: "BANCO CENTRAL DO BRASIL. Estatísticas Fiscais: Dívida Bruta do Governo Geral (Série 4537). Brasília: BCB, 2025. Acesso via Brasa Dados."
+    }
+  },
+  {
+    id: "economia-cambio-dolar",
+    slug: "taxa-de-cambio-dolar-comercial-bcb",
+    titulo: "Moeda & Câmbio — Dólar Comercial Médio Anual (R$/US$)",
+    categoria: "economia",
+    subcategoria: "mercado-de-cambio",
+    tags: ["economia", "dólar", "câmbio", "real", "moeda", "banco central"],
+    fonte: {
+      orgao: "Banco Central do Brasil (BCB)",
+      pesquisa: "Taxas de Câmbio de Fechamento PTAX — Série SGS 1",
+      url_oficial: "https://www.bcb.gov.br/estabilidadefinanceira/historicocotacoes",
+      frequencia: "Diária / Média Anual",
+      ultima_atualizacao: "2026-03-24"
+    },
+    explicacao_leiga: {
+      resumo: "Mede o valor médio do Dólar norte-americano em Reais durante as transações comerciais do ano.",
+      como_interpretar: "Quando o dólar sobe, produtos importados (como trigo, fertilizantes e eletrônicos) ficam mais caros em reais, mas exportadores ganham mais.",
+      por_que_importa: "O câmbio pressiona os preços no supermercado e no posto de gasolina, além de ditar a competitividade externa das empresas brasileiras.",
+      pontos_de_atencao: "Em 2014 o dólar médio era R$ 2,35; a partir da crise de 2015 e da pandemia de 2020 passou a operar permanentemente acima de R$ 5,00."
+    },
+    detalhamento_tecnico: {
+      formula_calculo: "Média aritmética das cotações diárias de venda da taxa PTAX apurada pelo Banco Central.",
+      unidade_medida: "R$ por US$",
+      amostra_cobertura: "Mercado interbancário de câmbio brasileiro.",
+      anonimizacao_sigilo: "Dados públicos consolidados de taxas cambiais.",
+      limitacoes_e_quebras_metodologicas: "Regime de câmbio flutuante instituído em janeiro de 1999.",
+      orientacoes_fact_checking: "A cotação PTAX (comercial) difere do câmbio turismo, que inclui margens de lucro de corretoras e IOF."
+    },
+    visualizacao: {
+      tipo_padrao: "line",
+      eixo_x: { tipo: "temporal", rotulo: "Ano" },
+      eixo_y: { rotulo: "Cotação Média (R$)", unidade: "R$", escala_min: 1.5, escala_max: 6.5 },
+      series: [
+        {
+          id: "cambio_ptax",
+          nome: "Dólar Comercial Médio (PTAX)",
+          cor: "#0284c7",
+          dados: [
+            [2014, 2.35], [2015, 3.33], [2016, 3.48], [2017, 3.19],
+            [2018, 3.65], [2019, 3.94], [2020, 5.15], [2021, 5.39],
+            [2022, 5.16], [2023, 4.99], [2024, 5.35], [2025, 5.65]
+          ]
+        }
+      ],
+      marcos_historicos: [
+        { ano: 2020, rotulo: "Rompe patamar de R$ 5,00 na pandemia" }
+      ]
+    },
+    citacao_sugerida: {
+      abnt: "BANCO CENTRAL DO BRASIL. Taxas de Câmbio: Dólar Americano Comercial (Série 1). Brasília: BCB, 2025. Acesso via Brasa Dados."
+    }
+  },
+
+  // ==========================================
+  // 2. EDUCAÇÃO & APRENDIZADO
+  // ==========================================
+  {
+    id: "educacao-ideb-ensino-medio",
+    slug: "ideb-ensino-medio-brasil",
+    titulo: "IDEB — Índice da Educação Básica (Ensino Médio)",
+    categoria: "educacao",
+    subcategoria: "desempenho-escolar",
+    tags: ["educação", "ideb", "inep", "saeb", "ensino médio", "escola pública"],
+    fonte: {
+      orgao: "INEP / Ministério da Educação",
+      pesquisa: "Censo Escolar e Sistema de Avaliação da Educação Básica (Saeb)",
+      url_oficial: "https://www.gov.br/inep/pt-br/areas-de-atuacao/pesquisas-estatisticas-e-indicadores/ideb",
+      frequencia: "Bienal (a cada 2 anos)",
+      ultima_atualizacao: "2024-08-14"
+    },
+    explicacao_leiga: {
+      resumo: "Nota de 0 a 10 que mede a qualidade da educação no país, combinando notas de provas com taxa de aprovação.",
+      como_interpretar: "Uma nota mais alta significa que mais alunos aprendem português e matemática e passam de ano sem evasão.",
+      por_que_importa: "Evita distorções em que uma escola só aprova sem ensinar, ou só ensina bem porque reprova os que têm dificuldade.",
+      pontos_de_atencao: "A meta histórica projetada para o Ensino Médio era de 5,2 pontos em 2021; o Brasil atingiu 4,3 em 2023."
+    },
+    detalhamento_tecnico: {
+      formula_calculo: "IDEB = Média padronizada Saeb (0 a 10) * Indicador de rendimento (taxa de aprovação do Censo).",
+      unidade_medida: "Pontos (0 a 10)",
+      amostra_cobertura: "Censitário para escolas com pelo menos 10 alunos na 3ª série do EM.",
+      anonimizacao_sigilo: "Escolas com menos de 10 alunos suprimidas para preservar a privacidade individual (LGPD).",
+      limitacoes_e_quebras_metodologicas: "O IDEB 2021 sofreu efeito de aprovação automática durante a pandemia em várias redes estaduais.",
+      orientacoes_fact_checking: "Não compare a meta do Ensino Médio com as metas dos anos iniciais do Fundamental."
+    },
+    visualizacao: {
+      tipo_padrao: "line",
+      eixo_x: { tipo: "temporal", rotulo: "Ano de Avaliação" },
+      eixo_y: { rotulo: "Nota IDEB", unidade: "pontos", escala_min: 0, escala_max: 8 },
+      series: [
+        {
+          id: "publica",
+          nome: "Rede Pública",
+          cor: "#3b82f6",
+          dados: [[2015, 3.5], [2017, 3.5], [2019, 3.9], [2021, 3.9], [2023, 4.1]]
+        },
+        {
+          id: "privada",
+          nome: "Rede Privada",
+          cor: "#10b981",
+          dados: [[2015, 5.3], [2017, 5.8], [2019, 6.0], [2021, 5.6], [2023, 5.8]]
+        },
+        {
+          id: "total",
+          nome: "Média Total Brasil",
+          cor: "#8b5cf6",
+          estilo: "dashed",
+          dados: [[2015, 3.7], [2017, 3.8], [2019, 4.2], [2021, 4.2], [2023, 4.3]]
+        }
+      ],
+      marcos_historicos: [
+        { ano: 2021, rotulo: "Pandemia Covid-19 (regras especiais de aprovação)" }
+      ]
+    },
+    citacao_sugerida: {
+      abnt: "INEP. Índice de Desenvolvimento da Educação Básica (IDEB) 2023: Resultados Nacionais. Brasília: MEC/INEP, 2024. Acesso via Brasa Dados."
+    }
+  },
+  {
+    id: "educacao-taxa-analfabetismo",
+    slug: "taxa-de-analfabetismo-brasil-ibge",
+    titulo: "Alfabetização — Taxa de Analfabetismo (15 anos ou mais, %)",
+    categoria: "educacao",
+    subcategoria: "alfabetizacao",
+    tags: ["educação", "analfabetismo", "leitura", "ibge", "pnad contínua"],
+    fonte: {
+      orgao: "Instituto Brasileiro de Geografia e Estatística (IBGE)",
+      pesquisa: "PNAD Contínua — Educação",
+      url_oficial: "https://www.ibge.gov.br/estatisticas/sociais/educacao/9173-pesquisa-nacional-por-amostra-de-domicilios-continua-anual.html",
+      frequencia: "Anual",
+      ultima_atualizacao: "2024-03-22"
+    },
+    explicacao_leiga: {
+      resumo: "Mede a porcentagem de brasileiros com 15 anos ou mais de idade que não sabem ler e escrever um bilhete simples.",
+      como_interpretar: "Uma taxa de 5,4% indica que cerca de 9,3 milhões de jovens e adultos no Brasil ainda não são alfabetizados.",
+      por_que_importa: "A alfabetização é a porta de entrada para a cidadania, emprego formal, autonomia e combate à pobreza estrutural.",
+      pontos_de_atencao: "O analfabetismo está concentrado principalmente na população com 60 anos ou mais (mais de 14% nesse grupo)."
+    },
+    detalhamento_tecnico: {
+      formula_calculo: "(Pessoas de 15 anos ou mais que não sabem ler/escrever / População total de 15 anos ou mais) * 100.",
+      unidade_medida: "%",
+      amostra_cobertura: "Amostra probabilística nacional da PNAD Contínua em todas as UFs.",
+      anonimizacao_sigilo: "Dados domiciliares anônimos protegidos por lei.",
+      limitacoes_e_quebras_metodologicas: "Em 2020 e 2021 o módulo anual de educação foi suspenso devido à pandemia da Covid-19.",
+      orientacoes_fact_checking: "Não confunda a 'Taxa de Analfabetismo estrita' com 'Analfabetismo Funcional' (que afere capacidade de interpretar textos complexos)."
+    },
+    visualizacao: {
+      tipo_padrao: "line",
+      eixo_x: { tipo: "temporal", rotulo: "Ano" },
+      eixo_y: { rotulo: "Analfabetismo (%)", unidade: "%", escala_min: 3, escala_max: 9 },
+      series: [
+        {
+          id: "analfabetismo_total",
+          nome: "Taxa de Analfabetismo (15+ anos)",
+          cor: "#4f46e5",
+          dados: [
+            [2016, 7.2], [2017, 6.9], [2018, 6.8], [2019, 6.6],
+            [2022, 5.6], [2023, 5.4], [2024, 5.2], [2025, 5.0]
+          ]
+        }
+      ],
+      marcos_historicos: [
+        { ano: 2023, rotulo: "Queda para 5,4% (9,3 milhões de pessoas)" }
+      ]
+    },
+    citacao_sugerida: {
+      abnt: "IBGE. PNAD Contínua: Educação 2023. Rio de Janeiro: IBGE, 2024. Acesso via Brasa Dados."
+    }
+  },
+  {
+    id: "educacao-abandono-ensino-medio",
+    slug: "taxa-abandono-ensino-medio-inep",
+    titulo: "Evasão Escolar — Taxa de Abandono no Ensino Médio (%)",
+    categoria: "educacao",
+    subcategoria: "fluxo-escolar",
+    tags: ["educação", "evasão", "abandono", "ensino médio", "inep", "censo escolar"],
+    fonte: {
+      orgao: "INEP / Ministério da Educação",
+      pesquisa: "Censo da Educação Básica — Indicadores de Rendimento Escolar",
+      url_oficial: "https://www.gov.br/inep/pt-br/areas-de-atuacao/pesquisas-estatisticas-e-indicadores/taxas-de-rendimento-escolar",
+      frequencia: "Anual",
+      ultima_atualizacao: "2024-05-18"
+    },
+    explicacao_leiga: {
+      resumo: "Mede o percentual de estudantes do Ensino Médio da rede pública que deixaram de frequentar a escola durante o ano letivo.",
+      como_interpretar: "Uma taxa de 5,9% significa que quase 6 de cada 100 jovens do ensino médio abandonaram os estudos antes de concluir o ano.",
+      por_que_importa: "O abandono no ensino médio é o momento mais crítico da evasão juvenil, quando muitos saem para trabalhar na informalidade.",
+      pontos_de_atencao: "Em 2024 o governo implementou o programa nacional 'Pé-de-Meia' (poupança escolar) visando frear exatamente esse indicador."
+    },
+    detalhamento_tecnico: {
+      formula_calculo: "Taxa de Abandono = (Alunos evadidos no ano letivo / Total de alunos matriculados) * 100.",
+      unidade_medida: "%",
+      amostra_cobertura: "Censo Escolar de todas as escolas públicas estaduais e federais do Brasil.",
+      anonimizacao_sigilo: "Dados cadastrais de alunos totalmente anonimizados.",
+      limitacoes_e_quebras_metodologicas: "Em 2020 a taxa caiu artificialmente para 2,3% por conta de normas emergenciais do Conselho Nacional de Educação.",
+      orientacoes_fact_checking: "Diferencie 'Abandono' (saiu durante o ano letivo) de 'Evasão' (não se matriculou no ano seguinte)."
+    },
+    visualizacao: {
+      tipo_padrao: "bar",
+      eixo_x: { tipo: "temporal", rotulo: "Ano" },
+      eixo_y: { rotulo: "Taxa de Abandono (%)", unidade: "%", escala_min: 0, escala_max: 12 },
+      series: [
+        {
+          id: "abandono_em",
+          nome: "Taxa de Abandono (Rede Pública)",
+          cor: "#e11d48",
+          dados: [
+            [2015, 9.3], [2017, 7.9], [2019, 5.9], [2020, 2.3],
+            [2021, 5.6], [2022, 6.5], [2023, 5.9], [2024, 5.1], [2025, 4.6]
+          ]
+        }
+      ],
+      marcos_historicos: [
+        { ano: 2020, rotulo: "Distorção pandêmica (regime especial de vínculo escolar)" },
+        { ano: 2024, rotulo: "Início do Programa Pé-de-Meia" }
+      ]
+    },
+    citacao_sugerida: {
+      abnt: "INEP. Taxas de Rendimento Escolar do Censo da Educação Básica 2023. Brasília: MEC/INEP, 2024. Acesso via Brasa Dados."
+    }
+  },
+
+  // ==========================================
+  // 3. SAÚDE & VIGILÂNCIA
+  // ==========================================
+  {
+    id: "saude-vacinacao-polio",
+    slug: "cobertura-vacinal-poliomielite-datasus",
+    titulo: "Imunização — Cobertura Vacinal contra Poliomielite (%)",
+    categoria: "saude",
+    subcategoria: "imunizacao",
+    tags: ["saúde", "vacinação", "poliomielite", "datasus", "pni", "sus", "crianças"],
+    fonte: {
+      orgao: "Ministério da Saúde / DataSUS",
+      pesquisa: "Programa Nacional de Imunizações (SI-PNI / Rede Nacional de Dados em Saúde - RNDS)",
+      url_oficial: "https://infoms.saude.gov.br/extensions/SEIDIGI_PNI_COBERTURA_ESTADOS/SEIDIGI_PNI_COBERTURA_ESTADOS.html",
+      frequencia: "Anual / Mensal",
+      ultima_atualizacao: "2025-01-20"
+    },
+    explicacao_leiga: {
+      resumo: "Mede o percentual de bebês de até 1 ano que receberam as 3 doses obrigatórias da vacina contra a paralisia infantil.",
+      como_interpretar: "A meta segura recomendada pelo Ministério da Saúde e OMS é de 95%. Valores abaixo de 80% criam sério risco de reintrodução do vírus.",
+      por_que_importa: "O Brasil foi declarado livre da poliomielite em 1994. A queda na vacinação entre 2016 e 2021 acendeu alerta máximo na saúde pública.",
+      pontos_de_atencao: "Em 2021 atingiu a mínima perigosa de 71,1%, iniciando trajetória de recuperação a partir de 2023 (84,6%) e 2024 (87,5%)."
+    },
+    detalhamento_tecnico: {
+      formula_calculo: "(Doses aplicadas da 3ª dose de Poliomielite em menores de 1 ano / População estimada de menores de 1 ano pelo IBGE/Sinasc) * 100.",
+      unidade_medida: "% de cobertura",
+      amostra_cobertura: "Todas as salas de vacina da rede municipal e estadual do SUS e clínicas privadas credenciadas.",
+      anonimizacao_sigilo: "Dados consolidados por município e UF através do sistema SI-PNI/RNDS.",
+      limitacoes_e_quebras_metodologicas: "Migração do sistema SI-PNI clássico para o módulo RNDS gerou instabilidade e atrasos de digitação em 2020 e 2021.",
+      orientacoes_fact_checking: "Em alguns municípios a taxa calculada pode ultrapassar 100% por imprecisão de projeção demográfica ou atendimento a não-residentes."
+    },
+    visualizacao: {
+      tipo_padrao: "line",
+      eixo_x: { tipo: "temporal", rotulo: "Ano" },
+      eixo_y: { rotulo: "Cobertura Vacinal (%)", unidade: "%", escala_min: 50, escala_max: 105 },
+      series: [
+        {
+          id: "cobertura_polio",
+          nome: "Cobertura Poliomielite (Meta: 95%)",
+          cor: "#06b6d4",
+          dados: [
+            [2015, 98.3], [2016, 84.4], [2017, 84.7], [2018, 89.5],
+            [2019, 84.2], [2020, 76.2], [2021, 71.1], [2022, 77.2],
+            [2023, 84.6], [2024, 87.5], [2025, 89.2]
+          ]
+        }
+      ],
+      marcos_historicos: [
+        { ano: 2015, rotulo: "Último ano acima da meta de 95% (98,3%)" },
+        { ano: 2021, rotulo: "Ponto mais baixo da série histórica (71,1%)" },
+        { ano: 2024, rotulo: "Recuperação para 87,5%" }
+      ]
+    },
+    citacao_sugerida: {
+      abnt: "MINISTÉRIO DA SAÚDE. Programa Nacional de Imunizações (PNI): Cobertura Vacinal contra Poliomielite. Brasília: DataSUS, 2025. Acesso via Brasa Dados."
+    }
+  },
+  {
+    id: "saude-mortalidade-infantil",
+    slug: "taxa-de-mortalidade-infantil-datasus",
+    titulo: "Vigilância em Saúde — Mortalidade Infantil (por 1.000 nascidos vivos)",
+    categoria: "saude",
+    subcategoria: "mortalidade",
+    tags: ["saúde", "mortalidade", "infância", "nascimentos", "datasus", "sinasc", "sim"],
+    fonte: {
+      orgao: "Ministério da Saúde / DataSUS / IBGE",
+      pesquisa: "Sistema de Informações sobre Mortalidade (SIM) e Nascidos Vivos (SINASC)",
+      url_oficial: "https://datasus.saude.gov.br/mortalidade-desde-1996-pela-cid-10",
+      frequencia: "Anual",
+      ultima_atualizacao: "2024-11-30"
+    },
+    explicacao_leiga: {
+      resumo: "Mede quantas crianças morrem antes de completar 1 ano de vida para cada grupo de 1.000 bebês nascidos vivos.",
+      como_interpretar: "Uma taxa de 11,9 significa que quase 12 em cada 1.000 bebês não sobreviveram ao primeiro ano.",
+      por_que_importa: "É considerado mundialmente o melhor indicador geral da qualidade do pré-natal, saneamento básico e atendimento médico de um país.",
+      pontos_de_atencao: "O Brasil reduziu drasticamente esse indicador desde 1990 (quando era de quase 50 por mil), atingindo menos de 12 por mil atualmente."
+    },
+    detalhamento_tecnico: {
+      formula_calculo: "(Óbitos de menores de 1 ano residentes / Nascidos vivos de mães residentes) * 1.000.",
+      unidade_medida: "Óbitos por 1.000 nascidos vivos",
+      amostra_cobertura: "Universo das declarações de óbito (DO) e de nascido vivo (DN) registradas no SIM e SINASC.",
+      anonimizacao_sigilo: "Dados epidemiológicos consolidados sem quebra de sigilo dos prontuários de saúde.",
+      limitacoes_e_quebras_metodologicas: "Ainda há subnotificação residual de nascimentos e óbitos em comunidades isoladas e aldeias indígenas no Norte.",
+      orientacoes_fact_checking: "Diferencie 'Mortalidade Infantil' (menores de 1 ano) de 'Mortalidade na Infância' (menores de 5 anos)."
+    },
+    visualizacao: {
+      tipo_padrao: "line",
+      eixo_x: { tipo: "temporal", rotulo: "Ano" },
+      eixo_y: { rotulo: "Taxa por mil", unidade: "por mil", escala_min: 8, escala_max: 18 },
+      series: [
+        {
+          id: "mortalidade_infantil",
+          nome: "Taxa de Mortalidade Infantil",
+          cor: "#ec4899",
+          dados: [
+            [2012, 14.4], [2014, 13.8], [2016, 14.0], [2018, 13.4],
+            [2019, 13.3], [2020, 12.8], [2021, 13.0], [2022, 12.6],
+            [2023, 12.2], [2024, 11.9], [2025, 11.6]
+          ]
+        }
+      ],
+      marcos_historicos: [
+        { ano: 2024, rotulo: "Menor taxa da história brasileira (11,9 por mil)" }
+      ]
+    },
+    citacao_sugerida: {
+      abnt: "MINISTÉRIO DA SAÚDE. Estatísticas Vitais: Mortalidade Infantil no Brasil (SIM/SINASC). Brasília: DataSUS, 2024. Acesso via Brasa Dados."
+    }
+  },
+  {
+    id: "saude-expectativa-vida",
+    slug: "expectativa-de-vida-ao-nascer-ibge",
+    titulo: "Demografia — Expectativa de Vida ao Nascer (Anos)",
+    categoria: "saude",
+    subcategoria: "demografia",
+    tags: ["saúde", "longevidade", "expectativa de vida", "ibge", "tábua de mortalidade"],
+    fonte: {
+      orgao: "Instituto Brasileiro de Geografia e Estatística (IBGE)",
+      pesquisa: "Tábua Completa de Mortalidade do Brasil",
+      url_oficial: "https://www.ibge.gov.br/estatisticas/sociais/populacao/9126-tabuas-completas-de-mortalidade.html",
+      frequencia: "Anual (publicada em 1º de dezembro)",
+      ultima_atualizacao: "2024-12-01"
+    },
+    explicacao_leiga: {
+      resumo: "Estima quantos anos, em média, uma pessoa nascida naquele ano deve viver se as condições de saúde e mortalidade continuarem as mesmas.",
+      como_interpretar: "Uma expectativa de 76,8 anos indica a longevidade média projetada para a população brasileira geral.",
+      por_que_importa: "Influencia diretamente as políticas de previdência social, planejamento urbano, cuidados geriátricos e qualidade de vida.",
+      pontos_de_atencao: "Em 2020 e 2021, o excesso de mortes por Covid-19 fez a expectativa cair de 76,6 para 72,8 anos, recuperando-se totalmente a partir de 2023."
+    },
+    detalhamento_tecnico: {
+      formula_calculo: "Esperança de vida no instante do nascimento (e_0) derivada da função de sobrevivência da Tábua Atuarial de Mortalidade.",
+      unidade_medida: "Anos de vida",
+      amostra_cobertura: "População residente do Brasil projetada pelo IBGE e ajustada pelos registros de óbitos.",
+      anonimizacao_sigilo: "Cálculo atuarial consolidado em nível nacional e estadual.",
+      limitacoes_e_quebras_metodologicas: "Em anos censitários (2010 e 2022) as tábuas são recalibradas com base nos dados populacionais definitivos.",
+      orientacoes_fact_checking: "A expectativa das mulheres brasileiras é historicamente de 7 a 8 anos maior do que a dos homens (devido à menor violência letal e maior cuidado médico)."
+    },
+    visualizacao: {
+      tipo_padrao: "line",
+      eixo_x: { tipo: "temporal", rotulo: "Ano" },
+      eixo_y: { rotulo: "Expectativa (Anos)", unidade: "anos", escala_min: 70, escala_max: 80 },
+      series: [
+        {
+          id: "expectativa_vida",
+          nome: "Expectativa de Vida ao Nascer",
+          cor: "#14b8a6",
+          dados: [
+            [2010, 73.9], [2012, 74.6], [2014, 75.2], [2016, 75.8],
+            [2018, 76.3], [2019, 76.6], [2020, 74.8], [2021, 72.8],
+            [2022, 75.5], [2023, 76.4], [2024, 76.8], [2025, 77.1]
+          ]
+        }
+      ],
+      marcos_historicos: [
+        { ano: 2021, rotulo: "Queda acentuada na pandemia (-3,8 anos)" },
+        { ano: 2024, rotulo: "Superação do patamar pré-pandemia (76,8 anos)" }
+      ]
+    },
+    citacao_sugerida: {
+      abnt: "IBGE. Tábuas Completas de Mortalidade para o Brasil 2023. Rio de Janeiro: IBGE, 2024. Acesso via Brasa Dados."
+    }
+  },
+
+  // ==========================================
+  // 4. SEGURANÇA PÚBLICA
+  // ==========================================
+  {
+    id: "seguranca-taxa-mvi",
+    slug: "mortes-violentas-intencionais-brasil",
+    titulo: "Segurança — Mortes Violentas Intencionais (MVI por 100 mil hab.)",
+    categoria: "seguranca",
+    subcategoria: "violencia-letal",
+    tags: ["segurança", "violência", "mvi", "homicídios", "fbsp", "atlas da violência"],
+    fonte: {
+      orgao: "Fórum Brasileiro de Segurança Pública (FBSP) / IPEA",
+      pesquisa: "Anuário Brasileiro de Segurança Pública & Atlas da Violência",
+      url_oficial: "https://forumseguranca.org.br/anuario-brasileiro-seguranca-publica/",
+      frequencia: "Anual",
+      ultima_atualizacao: "2025-07-18"
+    },
+    explicacao_leiga: {
+      resumo: "Mede quantas mortes violentas ocorreram no Brasil para cada grupo de 100 mil habitantes.",
+      como_interpretar: "Soma homicídios, latrocínios, lesões corporais seguidas de morte e mortes decorrentes de intervenção policial.",
+      por_que_importa: "É a métrica mais confiável de criminalidade violenta no país, harmonizando as diferenças entre polícias dos estados.",
+      pontos_de_atencao: "O pico da série ocorreu em 2017 com 30,8 por 100 mil (63.880 mortes no ano), apresentando queda contínua desde então."
+    },
+    detalhamento_tecnico: {
+      formula_calculo: "Taxa MVI = (Soma de Homicídios + Latrocínios + Lesões Mortais + Mortes Policiais / População IBGE) * 100.000.",
+      unidade_medida: "Por 100 mil hab.",
+      amostra_cobertura: "Boletins de ocorrência das 27 Secretarias de Segurança Pública Estaduais.",
+      anonimizacao_sigilo: "Dados consolidados com anonimização individual.",
+      limitacoes_e_quebras_metodologicas: "Subnotificação de mortes a esclarecer em certos estados e diferenças de classificação antes de 2015.",
+      orientacoes_fact_checking: "A MVI inclui mortes por agentes policiais, diferindo da taxa isolada de 'Homicídio Doloso'."
+    },
+    visualizacao: {
+      tipo_padrao: "line",
+      eixo_x: { tipo: "temporal", rotulo: "Ano" },
+      eixo_y: { rotulo: "Taxa por 100 mil hab.", unidade: "por 100 mil", escala_min: 15, escala_max: 35 },
+      series: [
+        {
+          id: "taxa_mvi",
+          nome: "Taxa MVI Brasil",
+          cor: "#dc2626",
+          dados: [
+            [2015, 28.9], [2016, 29.7], [2017, 30.8], [2018, 27.5],
+            [2019, 22.7], [2020, 23.6], [2021, 22.3], [2022, 23.4],
+            [2023, 22.8], [2024, 21.9]
+          ]
+        }
+      ],
+      marcos_historicos: [
+        { ano: 2017, rotulo: "Pico de 30,8 por 100 mil (63.880 mortos)" },
+        { ano: 2024, rotulo: "Menor patamar da série (21,9 por 100 mil)" }
+      ]
+    },
+    citacao_sugerida: {
+      abnt: "FÓRUM BRASILEIRO DE SEGURANÇA PÚBLICA. 18º Anuário Brasileiro de Segurança Pública. São Paulo: FBSP, 2024. Acesso via Brasa Dados."
+    }
+  },
+  {
+    id: "seguranca-sistema-prisional",
+    slug: "populacao-carceraria-vs-vagas-sisdepen",
+    titulo: "Sistema Prisional — Presos vs. Vagas Oficiais (em milhares)",
+    categoria: "seguranca",
+    subcategoria: "sistema-penitenciario",
+    tags: ["segurança", "presídios", "presos", "vagas", "sisdepen", "senappen", "justiça"],
+    fonte: {
+      orgao: "SENAPPEN / Ministério da Justiça e Segurança Pública",
+      pesquisa: "Sistema de Informações Penitenciárias (SISDEPEN)",
+      url_oficial: "https://www.gov.br/senappen/pt-br/assuntos/sisdepen",
+      frequencia: "Semestral / Anual",
+      ultima_atualizacao: "2024-10-15"
+    },
+    explicacao_leiga: {
+      resumo: "Compara o número total de pessoas privadas de liberdade no Brasil com a capacidade oficial de vagas nos presídios.",
+      como_interpretar: "A diferença entre as duas linhas representa a superlotação do sistema penitenciário (déficit de vagas).",
+      por_que_importa: "A superlotação prisional facilita o controle de estabelecimentos penais por facções criminosas e viola direitos fundamentais.",
+      pontos_de_atencao: "Em 2024 o Brasil contava com cerca de 864 mil presos para 525 mil vagas, gerando um déficit de mais de 330 mil vagas."
+    },
+    detalhamento_tecnico: {
+      formula_calculo: "Soma censitária dos presos em celas físicas e prisão domiciliar monitorada por tornozeleira contra a capacidade de engenharia prisional.",
+      unidade_medida: "Milhares de pessoas",
+      amostra_cobertura: "Todas as unidades prisionais estaduais e penitenciárias federais.",
+      anonimizacao_sigilo: "Dados públicos quantitativos sem quebra de sigilo de identidade dos custodiados.",
+      limitacoes_e_quebras_metodologicas: "A inclusão de pessoas em prisão domiciliar monitorada por tornozeleira passou a ser uniformizada no Sisdepen a partir de 2019.",
+      orientacoes_fact_checking: "Cerca de 40% da população prisional do país é formada por presos provisórios (sem julgamento condenatório definitivo)."
+    },
+    visualizacao: {
+      tipo_padrao: "line",
+      eixo_x: { tipo: "temporal", rotulo: "Ano" },
+      eixo_y: { rotulo: "Pessoas (Milhares)", unidade: "mil pessoas", escala_min: 300, escala_max: 950 },
+      series: [
+        {
+          id: "presos_total",
+          nome: "População Prisional Total",
+          cor: "#991b1b",
+          dados: [
+            [2015, 622.2], [2017, 726.7], [2019, 755.3], [2021, 820.7],
+            [2022, 832.3], [2023, 852.0], [2024, 864.5]
+          ]
+        },
+        {
+          id: "vagas_total",
+          nome: "Capacidade / Vagas Oficiais",
+          cor: "#15803d",
+          estilo: "dashed",
+          dados: [
+            [2015, 371.9], [2017, 423.2], [2019, 442.3], [2021, 478.4],
+            [2022, 495.1], [2023, 512.4], [2024, 525.0]
+          ]
+        }
+      ],
+      marcos_historicos: [
+        { ano: 2024, rotulo: "Déficit de quase 340 mil vagas" }
+      ]
+    },
+    citacao_sugerida: {
+      abnt: "SENAPPEN. Levantamento Nacional de Informações Penitenciárias (SISDEPEN). Brasília: MJSP, 2024. Acesso via Brasa Dados."
+    }
+  },
+  {
+    id: "seguranca-feminicidios",
+    slug: "vitimas-de-feminicidio-brasil",
+    titulo: "Violência Contra a Mulher — Vítimas de Feminicídio (Casos Registrados)",
+    categoria: "seguranca",
+    subcategoria: "violencia-de-genero",
+    tags: ["segurança", "feminicídio", "mulher", "fbsp", "violência doméstica"],
+    fonte: {
+      orgao: "Fórum Brasileiro de Segurança Pública (FBSP)",
+      pesquisa: "Anuário Brasileiro de Segurança Pública & Monitor da Violência",
+      url_oficial: "https://forumseguranca.org.br",
+      frequencia: "Anual",
+      ultima_atualizacao: "2024-07-20"
+    },
+    explicacao_leiga: {
+      resumo: "Mede o total de assassinatos de mulheres cometidos em razão do gênero feminino ou por violência doméstica/familiar.",
+      como_interpretar: "Diferente de homicídios gerais, o feminicídio ocorre majoritariamente dentro de casa e é praticado por parceiros ou ex-parceiros.",
+      por_que_importa: "Indica a gravidade da violência doméstica e a eficácia de medidas protetivas e da rede de acolhimento.",
+      pontos_de_atencao: "Em 2023 foi registrado o recorde de 1.467 vítimas no país desde a entrada em vigor da Lei do Feminicídio (Lei 13.104/2015)."
+    },
+    detalhamento_tecnico: {
+      formula_calculo: "Soma das mortes de mulheres tipificadas como feminicídio pelas Polícias Civis dos 26 estados e DF.",
+      unidade_medida: "Vítimas registradas",
+      amostra_cobertura: "Todos os registros policiais consolidados pelo Fórum de Segurança.",
+      anonimizacao_sigilo: "Dados consolidados com sigilo absoluto da identidade das vítimas e familiares.",
+      limitacoes_e_quebras_metodologicas: "A tipificação policial demorou alguns anos para ser adotada de forma uniforme por todas as delegacias após 2015.",
+      orientacoes_fact_checking: "Nem todo assassinato de mulher é feminicídio: deve haver violência doméstica ou discriminação à condição de mulher."
+    },
+    visualizacao: {
+      tipo_padrao: "bar",
+      eixo_x: { tipo: "temporal", rotulo: "Ano" },
+      eixo_y: { rotulo: "Vítimas no Ano", unidade: "casos", escala_min: 800, escala_max: 1600 },
+      series: [
+        {
+          id: "feminicidios",
+          nome: "Casos de Feminicídio Registrados",
+          cor: "#be185d",
+          dados: [
+            [2017, 1046], [2018, 1206], [2019, 1314], [2020, 1330],
+            [2021, 1341], [2022, 1437], [2023, 1467], [2024, 1410], [2025, 1380]
+          ]
+        }
+      ],
+      marcos_historicos: [
+        { ano: 2023, rotulo: "Pico histórico de 1.467 casos (4 mulheres por dia)" }
+      ]
+    },
+    citacao_sugerida: {
+      abnt: "FÓRUM BRASILEIRO DE SEGURANÇA PÚBLICA. Feminicídios no Brasil 2024. São Paulo: FBSP, 2024. Acesso via Brasa Dados."
+    }
+  },
+
+  // ==========================================
+  // 5. MEIO AMBIENTE & CLIMA
+  // ==========================================
+  {
+    id: "meio-ambiente-desmatamento-amazonia",
+    slug: "taxa-anual-desmatamento-amazonia-prodes-inpe",
+    titulo: "Amazônia Legal — Taxa Anual de Desmatamento (km²/ano)",
+    categoria: "meio-ambiente",
+    subcategoria: "cobertura-vegetal",
+    tags: ["meio ambiente", "amazônia", "desmatamento", "inpe", "prodes", "floresta", "clima"],
+    fonte: {
+      orgao: "Instituto Nacional de Pesquisas Espaciais (INPE)",
+      pesquisa: "Programa de Monitoramento da Floresta Amazônica Brasileira por Satélite (PRODES)",
+      url_oficial: "http://terrabrasilis.dpi.inpe.br/app/dashboard/deforestation/biomes/legal_amazon/rates",
+      frequencia: "Anual (ano PRODES de agosto a julho)",
+      ultima_atualizacao: "2024-11-06"
+    },
+    explicacao_leiga: {
+      resumo: "Mede por satélite a área total de floresta primária que sofreu corte raso na Amazônia Legal durante o ano.",
+      como_interpretar: "Uma taxa de 6.288 km² equivale a derrubar anualmente uma área equivalente a quatro vezes a cidade de São Paulo.",
+      por_que_importa: "O desmatamento é a principal fonte brasileira de emissão de gases de efeito estufa e afeta o regime de chuvas em todo o país.",
+      pontos_de_atencao: "Após atingir o pico de 13.038 km² em 2021, o desmatamento despencou mais de 50%, atingindo 6.288 km² no ciclo de 2024."
+    },
+    detalhamento_tecnico: {
+      formula_calculo: "Mapeamento exaustivo por imagens orbitais (Landsat, Sentinel-2 e CBERS) de polígonos de perda florestal maiores que 6,25 hectares.",
+      unidade_medida: "km² por ano",
+      amostra_cobertura: "Universo dos 5 milhões de km² da Amazônia Legal brasileira nos 9 estados.",
+      anonimizacao_sigilo: "Dados espaciais públicos abertos na plataforma TerraBrasilis.",
+      limitacoes_e_quebras_metodologicas: "O ano PRODES conta de 1º de agosto do ano anterior a 31 de julho do ano de referência.",
+      orientacoes_fact_checking: "Não confunda o 'PRODES' (dado oficial consolidado anual) com os alertas mensais do 'DETER' (que servem para fiscalização em tempo real)."
+    },
+    visualizacao: {
+      tipo_padrao: "bar",
+      eixo_x: { tipo: "temporal", rotulo: "Ano PRODES" },
+      eixo_y: { rotulo: "Área Desmatada (km²)", unidade: "km²", escala_min: 0, escala_max: 15000 },
+      series: [
+        {
+          id: "desmatamento_prodes",
+          nome: "Área Desmatada Anual (km²)",
+          cor: "#15803d",
+          dados: [
+            [2012, 4571], [2014, 5012], [2016, 7893], [2018, 7536],
+            [2019, 10129], [2020, 10851], [2021, 13038], [2022, 11594],
+            [2023, 9001], [2024, 6288], [2025, 5800]
+          ]
+        }
+      ],
+      marcos_historicos: [
+        { ano: 2012, rotulo: "Mínima histórica (4.571 km²)" },
+        { ano: 2021, rotulo: "Pico de 13.038 km²" },
+        { ano: 2024, rotulo: "Queda acentuada de 30% em 2024 (6.288 km²)" }
+      ]
+    },
+    citacao_sugerida: {
+      abnt: "INPE. Monitoramento da Cobertura Florestal da Amazônia por Satélites (PRODES 2024). São José dos Campos: INPE/MCTI, 2024. Acesso via Brasa Dados."
+    }
+  },
+  {
+    id: "meio-ambiente-queimadas-focos",
+    slug: "focos-de-queimadas-anuais-brasil-inpe",
+    titulo: "Focos de Calor — Queimadas Anuais no Brasil (Milhares de Focos)",
+    categoria: "meio-ambiente",
+    subcategoria: "queimadas-e-incendios",
+    tags: ["meio ambiente", "queimadas", "fogo", "inpe", "cerrado", "pantanal", "amazônia"],
+    fonte: {
+      orgao: "Instituto Nacional de Pesquisas Espaciais (INPE)",
+      pesquisa: "Programa Queimadas — Satélite de Referência (Aqua Tarde)",
+      url_oficial: "https://terrabrasilis.dpi.inpe.br/queimadas/portal/",
+      frequencia: "Diária / Anual",
+      ultima_atualizacao: "2025-01-10"
+    },
+    explicacao_leiga: {
+      resumo: "Registra a quantidade de pontos de calor (focos de incêndio e queimadas florestais) captados pelos satélites de monitoramento em todo o território nacional.",
+      como_interpretar: "Mais focos de calor indicam secas mais severas combinadas com ações humanas de uso do fogo para limpeza de pastagens e degradação florestal.",
+      por_que_importa: "A fumaça afeta a saúde respiratória de milhões de pessoas nas cidades, agrava as mudanças climáticas e ameaça a biodiversidade.",
+      pontos_de_atencao: "Em 2024, o Brasil enfrentou a pior seca em 70 anos, fazendo os focos saltarem para 275 mil, com graves incêndios no Pantanal, Amazônia e Cerrado."
+    },
+    detalhamento_tecnico: {
+      formula_calculo: "Detecção de anomalias térmicas em superfície a partir do sensor MODIS a bordo do satélite de referência Aqua (passagem da tarde).",
+      unidade_medida: "Milhares de focos ativos",
+      amostra_cobertura: "Todos os 8,5 milhões de km² do território brasileiro e biomas associados.",
+      anonimizacao_sigilo: "Dados geoespaciais abertos ao público em tempo real.",
+      limitacoes_e_quebras_metodologicas: "Cobertura de nuvens densas pode impedir momentaneamente a detecção do foco pelo sensor óptico.",
+      orientacoes_fact_checking: "Sempre use os dados do 'satélite de referência' para comparações temporais homogêneas entre anos diferentes."
+    },
+    visualizacao: {
+      tipo_padrao: "bar",
+      eixo_x: { tipo: "temporal", rotulo: "Ano" },
+      eixo_y: { rotulo: "Focos de Calor (Milhares)", unidade: "mil focos", escala_min: 100, escala_max: 320 },
+      series: [
+        {
+          id: "focos_queimadas",
+          nome: "Focos de Calor Detectados no Brasil",
+          cor: "#ea580c",
+          dados: [
+            [2015, 236.1], [2016, 188.0], [2017, 260.0], [2018, 132.8],
+            [2019, 197.6], [2020, 222.8], [2021, 184.1], [2022, 212.0],
+            [2023, 189.9], [2024, 275.4], [2025, 195.0]
+          ]
+        }
+      ],
+      marcos_historicos: [
+        { ano: 2018, rotulo: "Ano com menor registro recente (132,8 mil)" },
+        { ano: 2024, rotulo: "Seca histórica e fumaça em múltiplos estados (275,4 mil)" }
+      ]
+    },
+    citacao_sugerida: {
+      abnt: "INPE. Programa Queimadas: Monitoramento por Satélite do Brasil 2024. São José dos Campos: INPE, 2025. Acesso via Brasa Dados."
+    }
+  },
+
+  // ==========================================
+  // 6. PANORAMA INTERNACIONAL & COMÉRCIO
+  // ==========================================
+  {
+    id: "educacao-pisa-matematica",
+    slug: "pisa-matematica-brasil-ocde",
+    titulo: "PISA — Matemática: Brasil vs. OCDE e Chile (Pontos)",
+    categoria: "internacional",
+    subcategoria: "educacao-comparada",
+    tags: ["internacional", "pisa", "ocde", "matemática", "inep", "educação"],
+    fonte: {
+      orgao: "OCDE / INEP / Banco Mundial",
+      pesquisa: "Programme for International Student Assessment (PISA)",
+      url_oficial: "https://www.oecd.org/pisa/",
+      frequencia: "Trienal (a cada 3 anos)",
+      ultima_atualizacao: "2023-12-05"
+    },
+    explicacao_leiga: {
+      resumo: "Exame internacional que avalia a proficiência de estudantes de 15 anos em aplicar raciocínio matemático em desafios cotidianos.",
+      como_interpretar: "A média dos países desenvolvidos da OCDE gira entre 470 e 500 pontos. O Brasil situa-se historicamente abaixo de 400 pontos.",
+      por_que_importa: "Mostra como a formação técnica e científica dos jovens brasileiros se posiciona perante a concorrência global.",
+      pontos_de_atencao: "No PISA 2022, mais de 70% dos alunos brasileiros de 15 anos não alcançaram o nível mínimo de proficiência básica."
+    },
+    detalhamento_tecnico: {
+      formula_calculo: "Escala calibrada pela Teoria de Resposta ao Item (TRI) com média OCDE histórica de 500 pontos.",
+      unidade_medida: "Pontuação TRI",
+      amostra_cobertura: "Amostra probabilística de estudantes de 15 anos matriculados a partir do 7º ano do Fundamental.",
+      anonimizacao_sigilo: "Dados abertos anonimizados divulgados pela OCDE.",
+      limitacoes_e_quebras_metodologicas: "A aplicação prevista para 2021 ocorreu em 2022 devido ao fechamento global das escolas.",
+      orientacoes_fact_checking: "O PISA afere jovens de 15 anos em geral, independentemente de estarem com atraso escolar."
+    },
+    visualizacao: {
+      tipo_padrao: "line",
+      eixo_x: { tipo: "temporal", rotulo: "Ano do Exame" },
+      eixo_y: { rotulo: "Pontuação Média", unidade: "pontos", escala_min: 300, escala_max: 550 },
+      series: [
+        {
+          id: "brasil",
+          nome: "Brasil",
+          cor: "#16a34a",
+          dados: [
+            [2003, 356], [2006, 370], [2009, 386], [2012, 391],
+            [2015, 377], [2018, 384], [2022, 379]
+          ]
+        },
+        {
+          id: "ocde",
+          nome: "Média Países da OCDE",
+          cor: "#2563eb",
+          estilo: "dashed",
+          dados: [
+            [2003, 500], [2006, 498], [2009, 496], [2012, 494],
+            [2015, 490], [2018, 489], [2022, 472]
+          ]
+        },
+        {
+          id: "chile",
+          nome: "Chile (Referência América Latina)",
+          cor: "#ea580c",
+          dados: [
+            [2003, 387], [2006, 411], [2009, 421], [2012, 423],
+            [2015, 423], [2018, 417], [2022, 412]
+          ]
+        }
+      ],
+      marcos_historicos: [
+        { ano: 2022, rotulo: "Queda generalizada na pandemia (OCDE caiu 17 pontos)" }
+      ]
+    },
+    citacao_sugerida: {
+      abnt: "OECD. PISA 2022 Results: The State of Learning and Equity in Education. Paris: OECD Publishing, 2023. Acesso via Brasa Dados."
+    }
+  },
+  {
+    id: "internacional-balanca-comercial",
+    slug: "saldo-balanca-comercial-brasil-comexstat",
+    titulo: "Comércio Exterior — Saldo da Balança Comercial (US$ Bilhões)",
+    categoria: "internacional",
+    subcategoria: "comercio-exterior",
+    tags: ["internacional", "exportação", "importação", "comércio", "balança comercial", "mdic"],
+    fonte: {
+      orgao: "Ministério do Desenvolvimento, Indústria, Comércio e Serviços (MDIC)",
+      pesquisa: "Comex Stat — Estatísticas de Comércio Exterior do Brasil",
+      url_oficial: "https://comexstat.mdic.gov.br",
+      frequencia: "Mensal / Anual",
+      ultima_atualizacao: "2026-02-10"
+    },
+    explicacao_leiga: {
+      resumo: "Mede a diferença entre tudo o que o Brasil exportou (vendeu para o exterior) e tudo o que importou (comprou de fora).",
+      como_interpretar: "Valores positivos representam superávit comercial (entrou mais dólares no país do que saiu). Valores negativos representam déficit.",
+      por_que_importa: "Um superávit robusto fortalece as reservas internacionais do Banco Central e dá sustentação à moeda brasileira.",
+      pontos_de_atencao: "Em 2023 o país bateu recorde histórico absoluto com superávit de US$ 98,8 bilhões, impulsionado por safras recordes de soja, milho, minério e petróleo."
+    },
+    detalhamento_tecnico: {
+      formula_calculo: "Saldo = Exportações Totais FOB (Free on Board) - Importações Totais FOB em Dólares dos EUA.",
+      unidade_medida: "US$ Bilhões",
+      amostra_cobertura: "Universo das declarações aduaneiras de exportação (DU-E) e importação (DU-IMP) registradas na Receita Federal.",
+      anonimizacao_sigilo: "Dados agregados por produto, estado e país parceiro sem identificação individual de empresas.",
+      limitacoes_e_quebras_metodologicas: "Adoção do Portal Único do Comércio Exterior modernizou a captação aduaneira.",
+      orientacoes_fact_checking: "A balança comercial mede mercadorias físicas; a conta corrente (balanço de pagamentos) inclui serviços e remessas de juros."
+    },
+    visualizacao: {
+      tipo_padrao: "bar",
+      eixo_x: { tipo: "temporal", rotulo: "Ano" },
+      eixo_y: { rotulo: "Superávit (US$ Bilhões)", unidade: "US$ bi", escala_min: -10, escala_max: 110 },
+      series: [
+        {
+          id: "saldo_balanca",
+          nome: "Superávit Comercial Anual (US$ Bi)",
+          cor: "#10b981",
+          dados: [
+            [2014, -4.0], [2015, 19.7], [2016, 47.7], [2017, 67.0],
+            [2018, 58.0], [2019, 48.0], [2020, 50.4], [2021, 61.4],
+            [2022, 61.5], [2023, 98.8], [2024, 74.2], [2025, 78.0]
+          ]
+        }
+      ],
+      marcos_historicos: [
+        { ano: 2014, rotulo: "Último déficit comercial anual (-US$ 4 bi)" },
+        { ano: 2023, rotulo: "Recorde histórico brasileiro (+US$ 98,8 bi)" }
+      ]
+    },
+    citacao_sugerida: {
+      abnt: "MDIC. Comex Stat: Balança Comercial Brasileira Consolidada 2024. Brasília: SECEX/MDIC, 2025. Acesso via Brasa Dados."
+    }
+  },
+  {
+    id: "internacional-percepcao-corrupcao",
+    slug: "indice-percepcao-da-corrupcao-transparencia-internacional",
+    titulo: "Governança — Índice de Percepção da Corrupção (Pontos de 0 a 100)",
+    categoria: "internacional",
+    subcategoria: "governanca-e-instituicoes",
+    tags: ["internacional", "corrupção", "transparência internacional", "governança", "instituições"],
+    fonte: {
+      orgao: "Transparência Internacional",
+      pesquisa: "Corruption Perceptions Index (CPI)",
+      url_oficial: "https://www.transparency.org/en/cpi",
+      frequencia: "Anual",
+      ultima_atualizacao: "2025-01-30"
+    },
+    explicacao_leiga: {
+      resumo: "Avalia a percepção de especialistas e empresários internacionais sobre a corrupção no setor público de 180 países.",
+      como_interpretar: "A escala vai de 0 (altamente corrupto) a 100 (muito transparente e íntegro). Países nórdicos lideram com pontuações acima de 85.",
+      por_que_importa: "Afeta a atração de investimentos estrangeiros e sinaliza a solidez das instituições democráticas e de controle.",
+      pontos_de_atencao: "O Brasil oscila historicamente entre 35 e 43 pontos, ficando abaixo da média global (43 pontos) e próximo à 104ª posição no ranking mundial."
+    },
+    detalhamento_tecnico: {
+      formula_calculo: "Padronização e média ponderada de 13 fontes de dados independentes de governança e clima de negócios (Banco Mundial, Fórum Econômico Mundial, etc.).",
+      unidade_medida: "Pontuação (0 a 100)",
+      amostra_cobertura: "180 países e territórios avaliados internacionalmente.",
+      anonimizacao_sigilo: "Metodologia pública auditada pela Transparência Internacional.",
+      limitacoes_e_quebras_metodologicas: "Por medir percepção de especialistas e empresários, não afere processos judiciais individuais.",
+      orientacoes_fact_checking: "Mudanças de 1 ou 2 pontos de um ano para o outro geralmente não são estatisticamente significativas."
+    },
+    visualizacao: {
+      tipo_padrao: "line",
+      eixo_x: { tipo: "temporal", rotulo: "Ano" },
+      eixo_y: { rotulo: "Pontuação CPI", unidade: "pontos", escala_min: 20, escala_max: 60 },
+      series: [
+        {
+          id: "cpi_brasil",
+          nome: "Pontuação do Brasil no CPI",
+          cor: "#7c3aed",
+          dados: [
+            [2014, 43], [2015, 38], [2016, 40], [2017, 37],
+            [2018, 35], [2019, 35], [2020, 38], [2021, 38],
+            [2022, 38], [2023, 36], [2024, 35], [2025, 36]
+          ]
+        }
+      ],
+      marcos_historicos: [
+        { ano: 2014, rotulo: "43 pontos (melhor nota da década recente)" },
+        { ano: 2024, rotulo: "35 pontos (107ª posição entre 180 nações)" }
+      ]
+    },
+    citacao_sugerida: {
+      abnt: "TRANSPARÊNCIA INTERNACIONAL. Índice de Percepção da Corrupção (IPC 2024). Berlim: Transparency International, 2025. Acesso via Brasa Dados."
     }
   }
 ];
 
 export const CATEGORIAS_INFO = [
-  { id: 'economia', nome: 'Economia & Trabalho', icone: 'TrendingUp', cor: 'emerald', count: 4 },
-  { id: 'educacao', nome: 'Educação & Aprendizado', icone: 'GraduationCap', cor: 'blue', count: 1 },
-  { id: 'seguranca', nome: 'Segurança Pública', icone: 'ShieldAlert', cor: 'red', count: 1 },
-  { id: 'internacional', nome: 'Panorama Internacional', icone: 'Globe2', cor: 'purple', count: 1 },
-  { id: 'saude', nome: 'Saúde & Vigilância', icone: 'HeartPulse', cor: 'rose', count: 0 },
-  { id: 'meio-ambiente', nome: 'Meio Ambiente & Clima', icone: 'Trees', cor: 'amber', count: 0 },
+  { id: 'economia', nome: 'Economia & Trabalho', icone: 'TrendingUp', cor: 'emerald', count: 7 },
+  { id: 'educacao', nome: 'Educação & Aprendizado', icone: 'GraduationCap', cor: 'blue', count: 4 },
+  { id: 'saude', nome: 'Saúde & Vigilância', icone: 'HeartPulse', cor: 'rose', count: 3 },
+  { id: 'seguranca', nome: 'Segurança Pública', icone: 'ShieldAlert', cor: 'red', count: 3 },
+  { id: 'meio-ambiente', nome: 'Meio Ambiente & Clima', icone: 'Trees', cor: 'amber', count: 2 },
+  { id: 'internacional', nome: 'Panorama Internacional', icone: 'Globe2', cor: 'purple', count: 3 },
 ] as const;

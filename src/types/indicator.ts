@@ -77,4 +77,4 @@ export interface Indicator {
 
 export type GridMode = '1' | '2' | '4';
 
-export type ChartDisplayType = 'line-smooth' | 'line-straight' | 'bar';
+export type ChartDisplayType = 'line-smooth' | 'line-straight' | 'area' | 'bar';

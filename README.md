@@ -7,10 +7,17 @@
 ## ⚡ Diferenciais do Projeto
 
 - **Zero Backend de Runtime:** 100% estático (JAMstack), preparado para deploy instantâneo no **GitHub Pages** ou **Cloudflare Pages**.
-- **Dados Reais Oficiais:** Séries históricas consolidadas do **Banco Central (SGS)**, **IBGE (SIDRA e PNAD)**, **INEP/MEC**, **OCDE (PISA)** e **FBSP (Anuário de Segurança)**.
+- **Acervo de 20 Indicadores Oficiais Reais:** Cobrindo todas as áreas sociais com séries históricas do **Banco Central**, **IBGE**, **INEP/MEC**, **DataSUS**, **INPE (PRODES/Queimadas)**, **FBSP (Anuário de Segurança)**, **MDIC (Comex Stat)** e **OCDE**.
+- **Variedade de Visualizações no Motor ECharts:**
+  - 📈 **Linhas Curvas (*Spline*)** para visão fluida de tendências.
+  - 📉 **Linhas Retas (*Linear*)** para rigor metodológico de auditoria e fact-checking.
+  - 🌊 **Gráfico de Área com Gradiente** para visualização elegante de densidade temporal.
+  - 📊 **Gráfico de Barras / Colunas** para comparação discreta ano a ano.
 - **Bancada Multiquadrante (1, 2 ou 4 Telas):** Permite colocar até 4 gráficos lado a lado e sincronizar análises.
-- **Fusão de Séries Compatíveis (⚡ Mesclar):** Possibilidade de plotar gráficos no mesmo eixo (ex: Taxa Selic x Inflação IPCA para visualizar o juro real).
-- **Dupla Leitura Editorial:** Cada dado tem uma aba para leigos (*"O que isso significa na prática?"*) e uma aba técnica para fact-checking (*"Amostra, fórmula, sigilo estatístico e quebras metodológicas"*).
+- **Fusão de Séries com Eixo Duplo Inteligente (⚡ Mesclar):** Possibilidade de cruzar quaisquer indicadores no mesmo gráfico (usando escala única para unidades iguais ou **Eixo Y Duplo** para unidades distintas, como PIB em % x Dólar em R$).
+- **Cards de Métricas Rápidas (KPIs):** Cada quadrante exibe o último valor registrado, variação (*delta* recente com indicação visual) e valores mínimo/máximo do período.
+- **Exportação de Dados:** Download da imagem do gráfico em alta resolução (PNG) com carimbo oficial e download dos dados em planilha (CSV).
+- **Dupla Leitura Editorial:** Cada dado tem uma aba para leigos (*"O que isso significa na prática?"*) e uma aba técnica para fact-checking (*"Amostra, fórmula, sigilo estatístico e cópia da citação ABNT"*).
 - **Menu Lateral Colapsável:** Alternância suave entre modo expandido e modo compacto de ícones.
 - **Switch de Tema Claro / Escuro:** Estilo pílula segmentada com persistência local e zero *flicker* no carregamento.
 

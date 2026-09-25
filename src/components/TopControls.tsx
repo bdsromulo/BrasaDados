@@ -8,7 +8,8 @@ import {
   Calendar,
   BarChart2,
   TrendingUp,
-  Activity
+  Activity,
+  Layers
 } from 'lucide-react';
 
 interface TopControlsProps {
@@ -98,6 +99,20 @@ export function TopControls({
           >
             <Activity className="h-3.5 w-3.5 text-blue-600 dark:text-blue-400" />
             <span className="hidden lg:inline">Retas</span>
+          </button>
+
+          <button
+            type="button"
+            onClick={() => onSetChartDisplayType('area')}
+            title="Gráfico de Área com Gradiente Suave"
+            className={`flex items-center gap-1 px-2.5 py-1 text-xs font-semibold rounded-lg transition-all cursor-pointer ${
+              chartDisplayType === 'area'
+                ? 'bg-white text-zinc-950 shadow-xs font-bold dark:bg-zinc-700 dark:text-white'
+                : 'text-zinc-600 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-200'
+            }`}
+          >
+            <Layers className="h-3.5 w-3.5 text-purple-600 dark:text-purple-400" />
+            <span className="hidden lg:inline">Área</span>
           </button>
 
           <button

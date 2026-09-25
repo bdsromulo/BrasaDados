@@ -82,16 +82,11 @@ export default function App() {
     }
   }
 
-  // Verifica se há pelo menos 2 indicadores ativos compatíveis para mesclar
+  // Permite mesclar quaisquer 2 ou mais indicadores visíveis (suporta eixo simples ou eixo duplo)
   const canMerge = useMemo(() => {
     const visibleCount = gridMode === '1' ? 1 : gridMode === '2' ? 2 : 4;
     const active = slots.slice(0, visibleCount).filter((i): i is Indicator => i !== null);
-    if (active.length < 2) return false;
-
-    // Checa se pelo menos 2 compartilham a mesma unidade (ex: % ou pontos)
-    const units = active.map(i => i.visualizacao.eixo_y.unidade);
-    const hasSameUnit = units.some((u, idx) => units.indexOf(u) !== idx);
-    return hasSameUnit;
+    return active.length >= 2;
   }, [slots, gridMode]);
 
   return (
