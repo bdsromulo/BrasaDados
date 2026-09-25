@@ -2,6 +2,24 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@font-face {
+  font-family: 'NikeFont';
+  src: url('/fonts/BarlowCondensed-BlackItalic.ttf') format('truetype'),
+       url('./fonts/BarlowCondensed-BlackItalic.ttf') format('truetype');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+.font-nike {
+  font-family: 'NikeFont', 'Barlow Condensed', 'Futura Condensed', 'Futura-Bold', 'Impact', sans-serif;
+  font-style: italic;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  transform: skewX(-4deg);
+}
+
 @layer base {
   * {
     border-color: var(--border, rgba(228, 228, 231, 0.8));

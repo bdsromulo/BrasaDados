@@ -2,6 +2,7 @@ import { useState, useMemo } from 'react';
 import { Sidebar } from './components/Sidebar';
 import { TopControls } from './components/TopControls';
 import { QuadrantWorkbench } from './components/QuadrantWorkbench';
+import { IndicatorPickerModal } from './components/IndicatorPickerModal';
 import { INDICADORES_REAIS } from './data/indicators';
 import { Indicator, GridMode, ChartDisplayType } from './types/indicator';
 
@@ -13,22 +14,24 @@ export default function App() {
     return false;
   });
 
-  const [gridMode, setGridMode] = useState<GridMode>('4');
+  const [gridMode, setGridMode] = useState<GridMode>('1');
   const [yearsRange, setYearsRange] = useState<[number, number]>([2015, 2026]);
   const [isMerged, setIsMerged] = useState<boolean>(false);
   const [chartDisplayType, setChartDisplayType] = useState<ChartDisplayType>('line-straight');
 
-  // Inicializa com 4 indicadores reais emblemáticos nos 4 quadrantes
+  // Inicializa a tela vazia por padrão conforme solicitação do usuário
   const [slots, setSlots] = useState<(Indicator | null)[]>([
-    INDICADORES_REAIS[0], // Selic (BCB)
-    INDICADORES_REAIS[1], // Inflação IPCA (IBGE)
-    INDICADORES_REAIS[2], // IDEB Ensino Médio (INEP)
-    INDICADORES_REAIS[4], // Mortes Violentas Intencionais (FBSP)
+    null,
+    null,
+    null,
+    null,
   ]);
 
-  const [selectedIndicatorId, setSelectedIndicatorId] = useState<string>(
-    INDICADORES_REAIS[0].id
-  );
+  const [selectedIndicatorId, setSelectedIndicatorId] = useState<string>('');
+  
+  // Estado do Modal Pop-up de Adição de Indicadores
+  const [isPickerModalOpen, setIsPickerModalOpen] = useState<boolean>(false);
+  const [pickerTargetSlot, setPickerTargetSlot] = useState<number | undefined>(undefined);
 
   function toggleSidebar() {
     setSidebarCollapsed(prev => {
@@ -38,37 +41,121 @@ export default function App() {
     });
   }
 
-  function handleSelectIndicator(indicator: Indicator) {
+  function handleOpenPicker(slotIndex?: number) {
+    setPickerTargetSlot(slotIndex);
+    setIsPickerModalOpen(true);
+  }
+
+  function handleSelectIndicatorFromModal(indicator: Indicator, targetSlotIndex?: number) {
     setSelectedIndicatorId(indicator.id);
-    // Coloca no primeiro slot se o modo for 1 tela, ou no slot 0
-    if (gridMode === '1') {
-      setSlots(prev => [indicator, prev[1], prev[2], prev[3]]);
-    } else {
-      // Se não estiver em nenhum slot, preenche o primeiro vago ou o primeiro slot
+    
+    if (targetSlotIndex !== undefined) {
+      // Aloca no slot específico
       setSlots(prev => {
-        const alreadyIn = prev.findIndex(s => s?.id === indicator.id);
-        if (alreadyIn >= 0) return prev;
-        const firstEmpty = prev.findIndex(s => s === null);
-        const target = firstEmpty >= 0 ? firstEmpty : 0;
         const copy = [...prev];
-        copy[target] = indicator;
+        copy[targetSlotIndex] = indicator;
         return copy;
       });
+      if (targetSlotIndex === 1 && gridMode === '1') {
+        setGridMode('2');
+      } else if (targetSlotIndex >= 2 && gridMode !== '4') {
+        setGridMode('4');
+      }
+    } else {
+      // Adição inteligente no próximo slot disponível
+      const occupied = slots.filter(Boolean).length;
+      if (occupied === 0) {
+        setSlots([indicator, null, null, null]);
+        setGridMode('1');
+      } else if (occupied === 1) {
+        setSlots(prev => [prev[0], indicator, null, null]);
+        setGridMode('2');
+      } else if (occupied === 2) {
+        setSlots(prev => [prev[0], prev[1], indicator, null]);
+        setGridMode('4');
+      } else {
+        setSlots(prev => {
+          const firstEmpty = prev.findIndex(s => s === null);
+          const target = firstEmpty >= 0 ? firstEmpty : 0;
+          const copy = [...prev];
+          copy[target] = indicator;
+          return copy;
+        });
+      }
     }
   }
 
-  function handleAddToQuadrant(indicator: Indicator) {
-    setSelectedIndicatorId(indicator.id);
-    setSlots(prev => {
-      const firstEmpty = prev.findIndex(s => s === null);
-      if (firstEmpty >= 0) {
+  // Ação ao arrastar e soltar (Drag and Drop)
+  function handleDropIndicator(indicatorId: string, targetSlotIndex?: number) {
+    const found = INDICADORES_REAIS.find(i => i.id === indicatorId);
+    if (!found) return;
+
+    setSelectedIndicatorId(found.id);
+
+    if (targetSlotIndex !== undefined) {
+      setSlots(prev => {
         const copy = [...prev];
-        copy[firstEmpty] = indicator;
+        copy[targetSlotIndex] = found;
         return copy;
+      });
+      if (targetSlotIndex === 1 && gridMode === '1') {
+        setGridMode('2');
+      } else if (targetSlotIndex >= 2 && gridMode !== '4') {
+        setGridMode('4');
       }
-      // Se todos estiverem cheios, substitui o slot 1
-      return [prev[0], indicator, prev[2], prev[3]];
-    });
+    } else {
+      // Solto no canvas geral
+      const occupied = slots.filter(Boolean).length;
+      if (occupied === 0) {
+        setSlots([found, null, null, null]);
+        setGridMode('1');
+      } else if (occupied === 1) {
+        // Coloca lado a lado (2 Telas)
+        setSlots(prev => [prev[0], found, null, null]);
+        setGridMode('2');
+      } else if (occupied === 2) {
+        // Expande para 4 Quadrantes
+        setSlots(prev => [prev[0], prev[1], found, null]);
+        setGridMode('4');
+      } else {
+        setSlots(prev => {
+          const firstEmpty = prev.findIndex(s => s === null);
+          const target = firstEmpty >= 0 ? firstEmpty : 0;
+          const copy = [...prev];
+          copy[target] = found;
+          return copy;
+        });
+      }
+    }
+  }
+
+  // Ação ao clicar em um indicador da barra lateral
+  function handleSelectIndicatorFromSidebar(indicator: Indicator) {
+    setSelectedIndicatorId(indicator.id);
+    const occupied = slots.filter(Boolean).length;
+    if (occupied === 0) {
+      setSlots([indicator, null, null, null]);
+      setGridMode('1');
+    } else if (gridMode === '1') {
+      setSlots([indicator, slots[1], slots[2], slots[3]]);
+    } else {
+      // Se não estiver na tela, preenche o primeiro vago
+      const alreadyIn = slots.findIndex(s => s?.id === indicator.id);
+      if (alreadyIn < 0) {
+        const firstEmpty = slots.findIndex(s => s === null);
+        const target = firstEmpty >= 0 ? firstEmpty : 0;
+        setSlots(prev => {
+          const copy = [...prev];
+          copy[target] = indicator;
+          return copy;
+        });
+      }
+    }
+  }
+
+  // Ação ao clicar no botão "+" de um indicador da barra lateral
+  function handleAddToQuadrant(indicator: Indicator) {
+    handleDropIndicator(indicator.id);
   }
 
   function handleUpdateSlot(index: number, indicator: Indicator | null) {
@@ -82,7 +169,11 @@ export default function App() {
     }
   }
 
-  // Permite mesclar quaisquer 2 ou mais indicadores visíveis (suporta eixo simples ou eixo duplo)
+  const activeIndicatorsCount = useMemo(() => {
+    return slots.filter(Boolean).length;
+  }, [slots]);
+
+  // Permite mesclar quaisquer 2 ou mais indicadores visíveis
   const canMerge = useMemo(() => {
     const visibleCount = gridMode === '1' ? 1 : gridMode === '2' ? 2 : 4;
     const active = slots.slice(0, visibleCount).filter((i): i is Indicator => i !== null);
@@ -97,11 +188,12 @@ export default function App() {
         onToggleCollapse={toggleSidebar}
         indicators={INDICADORES_REAIS}
         selectedIndicatorId={selectedIndicatorId}
-        onSelectIndicator={handleSelectIndicator}
+        onSelectIndicator={handleSelectIndicatorFromSidebar}
         onAddToQuadrant={handleAddToQuadrant}
+        onOpenPickerModal={() => handleOpenPicker()}
       />
 
-      {/* 2. Área do Canvas Principal (ocupa toda a largura restante até a borda direita) */}
+      {/* 2. Área do Canvas Principal */}
       <main className="flex flex-1 flex-col overflow-hidden relative">
         {/* Barra Superior de Filtros e Controles */}
         <TopControls
@@ -112,12 +204,13 @@ export default function App() {
           canMerge={canMerge}
           isMerged={isMerged}
           onToggleMerge={() => setIsMerged(prev => !prev)}
-          activeCount={slots.filter(Boolean).length}
+          activeCount={activeIndicatorsCount}
           chartDisplayType={chartDisplayType}
           onSetChartDisplayType={setChartDisplayType}
+          onOpenPickerModal={() => handleOpenPicker()}
         />
 
-        {/* Bancada de Visualização em Quadrantes */}
+        {/* Bancada de Visualização em Quadrantes com Suporte a Drag & Drop */}
         <QuadrantWorkbench
           gridMode={gridMode}
           slots={slots}
@@ -127,8 +220,20 @@ export default function App() {
           isMerged={isMerged}
           onSetGridMode={setGridMode}
           chartDisplayType={chartDisplayType}
+          onOpenPickerModal={handleOpenPicker}
+          onDropIndicator={handleDropIndicator}
         />
       </main>
+
+      {/* 3. Modal Pop-up para Escolha e Pesquisa de Indicadores */}
+      <IndicatorPickerModal
+        isOpen={isPickerModalOpen}
+        onClose={() => setIsPickerModalOpen(false)}
+        onSelectIndicator={handleSelectIndicatorFromModal}
+        indicators={INDICADORES_REAIS}
+        targetSlotIndex={pickerTargetSlot}
+        currentActiveIds={slots.filter((i): i is Indicator => i !== null).map(i => i.id)}
+      />
     </div>
   );
 }
