@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Indicator, GridMode, ChartDisplayType, ViewScope } from '../types/indicator';
 import { EChartCanvas } from './EChartCanvas';
 import { FactCheckingDrawer } from './FactCheckingDrawer';
-import { X, Maximize2, Plus, Download, ArrowUpRight, ArrowDownRight, Minus } from 'lucide-react';
+import { X, Maximize2, Plus, Download, ArrowUpRight, ArrowDownRight, Minus, ExternalLink } from 'lucide-react';
 import { CATEGORIAS_INFO } from '../data/indicators';
 
 interface QuadrantWorkbenchProps {
@@ -189,9 +189,30 @@ export function QuadrantWorkbench({
                             {slotIndicator.titulo}
                           </h3>
                         </div>
-                        <p className="truncate text-[11px] text-zinc-500 dark:text-zinc-400 mt-0.5">
-                          {slotIndicator.fonte.orgao} • {slotIndicator.detalhamento_tecnico.unidade_medida}
-                        </p>
+                        <div className="flex items-center gap-1.5 mt-0.5 flex-wrap">
+                          <a
+                            href={slotIndicator.fonte.url_oficial}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={(e) => e.stopPropagation()}
+                            title={`Acessar fonte bruta/oficial: ${slotIndicator.fonte.rotulo_link}`}
+                            className="inline-flex items-center gap-1 text-[11px] font-bold text-emerald-600 hover:text-emerald-700 dark:text-emerald-400 hover:underline cursor-pointer"
+                          >
+                            <span>{slotIndicator.fonte.orgao.split('/')[0]}</span>
+                            <ExternalLink className="h-2.5 w-2.5" />
+                          </a>
+                          <span className="text-zinc-300 dark:text-zinc-700">•</span>
+                          <span className="inline-flex items-center px-1.5 py-0.2 rounded text-[9px] font-mono font-bold border bg-zinc-100 text-zinc-700 border-zinc-200 dark:bg-zinc-800 dark:text-zinc-300 dark:border-zinc-700">
+                            {slotIndicator.fonte.tipo_recurso === 'api' ? '⚡ API' :
+                             slotIndicator.fonte.tipo_recurso === 'dados_abertos' ? '📂 Dados Abertos' :
+                             slotIndicator.fonte.tipo_recurso === 'painel' ? '📊 Painel' :
+                             slotIndicator.fonte.tipo_recurso === 'serie_temporal' ? '📈 Série' : '📄 Relatório'}
+                          </span>
+                          <span className="text-zinc-300 dark:text-zinc-700">•</span>
+                          <span className="text-[11px] text-zinc-500 dark:text-zinc-400">
+                            {slotIndicator.detalhamento_tecnico.unidade_medida}
+                          </span>
+                        </div>
                       </div>
 
                       {/* Botões de Ação do Quadrante */}
@@ -231,6 +252,18 @@ export function QuadrantWorkbench({
                             </button>
                           </div>
                         )}
+
+                        {/* Botão de Acesso Direto à Fonte Bruta/Oficial */}
+                        <a
+                          href={slotIndicator.fonte.url_oficial}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
+                          title={`Acessar fonte oficial (${slotIndicator.fonte.rotulo_link}) em nova aba`}
+                          className="rounded-lg p-1.5 text-emerald-600 hover:bg-emerald-50 hover:text-emerald-700 dark:text-emerald-400 dark:hover:bg-emerald-950/40 cursor-pointer transition-colors"
+                        >
+                          <ExternalLink className="h-3.5 w-3.5" />
+                        </a>
 
                         <button
                           type="button"

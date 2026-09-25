@@ -6,10 +6,19 @@ export type CategoryId =
   | 'internacional' 
   | 'meio-ambiente';
 
+export type SourceResourceType = 
+  | 'api' 
+  | 'dados_abertos' 
+  | 'painel' 
+  | 'serie_temporal' 
+  | 'relatorio_oficial';
+
 export interface IndicatorSource {
   orgao: string;
   pesquisa: string;
   url_oficial: string;
+  tipo_recurso: SourceResourceType;
+  rotulo_link: string;
   frequencia: string;
   ultima_atualizacao: string;
 }

@@ -14,7 +14,9 @@ export const INDICADORES_REAIS: Indicator[] = [
     fonte: {
       orgao: "Banco Central do Brasil (BCB)",
       pesquisa: "Sistema Gerenciador de Séries Temporais (SGS) — Série 4189",
-      url_oficial: "https://www.bcb.gov.br/controleinflacao/taxaselic",
+      url_oficial: "https://dadosabertos.bcb.gov.br/dataset/4189-taxa-de-juros---selic-acumulada-no-mes-anualizada-base-252",
+      tipo_recurso: "api",
+      rotulo_link: "API SGS / Dados Abertos Banco Central (Série 4189)",
       frequencia: "A cada 45 dias (Reuniões do Copom)",
       ultima_atualizacao: "2026-03-20"
     },
@@ -67,7 +69,9 @@ export const INDICADORES_REAIS: Indicator[] = [
     fonte: {
       orgao: "Instituto Brasileiro de Geografia e Estatística (IBGE)",
       pesquisa: "Sistema Nacional de Índices de Preços ao Consumidor (SNIPC)",
-      url_oficial: "https://www.ibge.gov.br/estatisticas/economicas/precos-e-custos/9256-indice-nacional-de-precos-ao-consumidor-amplo.html",
+      url_oficial: "https://sidra.ibge.gov.br/tabela/7060",
+      tipo_recurso: "api",
+      rotulo_link: "API SIDRA / Tabela 7060 (IBGE)",
       frequencia: "Mensal",
       ultima_atualizacao: "2026-03-12"
     },
@@ -120,7 +124,9 @@ export const INDICADORES_REAIS: Indicator[] = [
     fonte: {
       orgao: "Instituto Brasileiro de Geografia e Estatística (IBGE)",
       pesquisa: "Pesquisa Nacional por Amostra de Domicílios Contínua (PNAD Contínua)",
-      url_oficial: "https://www.ibge.gov.br/estatisticas/sociais/trabalho/9173-pesquisa-nacional-por-amostra-de-domicilios-continua-trimestral.html",
+      url_oficial: "https://sidra.ibge.gov.br/tabela/6381",
+      tipo_recurso: "api",
+      rotulo_link: "API SIDRA / Tabela 6381 (PNAD Contínua IBGE)",
       frequencia: "Trimestral / Mensal móvel",
       ultima_atualizacao: "2026-02-28"
     },
@@ -173,7 +179,9 @@ export const INDICADORES_REAIS: Indicator[] = [
     fonte: {
       orgao: "Instituto Brasileiro de Geografia e Estatística (IBGE)",
       pesquisa: "Sistema de Contas Nacionais Trimestrais (SCNT)",
-      url_oficial: "https://www.ibge.gov.br/estatisticas/economicas/contas-nacionais/9300-contas-nacionais-trimestrais.html",
+      url_oficial: "https://sidra.ibge.gov.br/tabela/1620",
+      tipo_recurso: "api",
+      rotulo_link: "API SIDRA / Tabela 1620 (Contas Nacionais IBGE)",
       frequencia: "Trimestral / Anual",
       ultima_atualizacao: "2026-03-05"
     },
@@ -227,7 +235,9 @@ export const INDICADORES_REAIS: Indicator[] = [
     fonte: {
       orgao: "Instituto Brasileiro de Geografia e Estatística (IBGE)",
       pesquisa: "Pesquisa Nacional por Amostra de Domicílios Contínua (PNAD Contínua - Rendimento de Todas as Fontes)",
-      url_oficial: "https://www.ibge.gov.br/estatisticas/sociais/rendimento-despesa-e-consumo/19897-pesquisa-nacional-por-amostra-de-domicilios-continua-rendimento-de-todas-as-fontes.html",
+      url_oficial: "https://sidra.ibge.gov.br/tabela/7435",
+      tipo_recurso: "api",
+      rotulo_link: "API SIDRA / Tabela 7435 (Gini Rendimento IBGE)",
       frequencia: "Anual",
       ultima_atualizacao: "2025-05-10"
     },
@@ -281,7 +291,9 @@ export const INDICADORES_REAIS: Indicator[] = [
     fonte: {
       orgao: "Banco Central do Brasil (BCB)",
       pesquisa: "Estatísticas Fiscais — Série SGS 4537",
-      url_oficial: "https://www.bcb.gov.br/estatisticas/estatisticasfiscais",
+      url_oficial: "https://dadosabertos.bcb.gov.br/dataset/13762-divida-bruta-do-governo-geral---metodologia-a-partir-de-2008",
+      tipo_recurso: "api",
+      rotulo_link: "API SGS / Dados Abertos BCB (Série 13762)",
       frequencia: "Mensal",
       ultima_atualizacao: "2026-02-15"
     },
@@ -334,7 +346,9 @@ export const INDICADORES_REAIS: Indicator[] = [
     fonte: {
       orgao: "Banco Central do Brasil (BCB)",
       pesquisa: "Taxas de Câmbio de Fechamento PTAX — Série SGS 1",
-      url_oficial: "https://www.bcb.gov.br/estabilidadefinanceira/historicocotacoes",
+      url_oficial: "https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/aplicacao#!/recursos",
+      tipo_recurso: "api",
+      rotulo_link: "API Olinda PTAX / Dados Abertos BCB",
       frequencia: "Diária / Média Anual",
       ultima_atualizacao: "2026-03-24"
     },
@@ -390,7 +404,9 @@ export const INDICADORES_REAIS: Indicator[] = [
     fonte: {
       orgao: "INEP / Ministério da Educação",
       pesquisa: "Censo Escolar e Sistema de Avaliação da Educação Básica (Saeb)",
-      url_oficial: "https://www.gov.br/inep/pt-br/areas-de-atuacao/pesquisas-estatisticas-e-indicadores/ideb",
+      url_oficial: "https://dadosabertos.inep.gov.br/dataset/indicadores-educacionais-ideb",
+      tipo_recurso: "dados_abertos",
+      rotulo_link: "Portal de Dados Abertos do INEP (Série IDEB)",
       frequencia: "Bienal (a cada 2 anos)",
       ultima_atualizacao: "2024-08-14"
     },
@@ -473,7 +489,9 @@ export const INDICADORES_REAIS: Indicator[] = [
     fonte: {
       orgao: "Instituto Brasileiro de Geografia e Estatística (IBGE)",
       pesquisa: "PNAD Contínua — Educação",
-      url_oficial: "https://www.ibge.gov.br/estatisticas/sociais/educacao/9173-pesquisa-nacional-por-amostra-de-domicilios-continua-anual.html",
+      url_oficial: "https://sidra.ibge.gov.br/tabela/7113",
+      tipo_recurso: "api",
+      rotulo_link: "API SIDRA / Tabela 7113 (PNAD Educação IBGE)",
       frequencia: "Anual",
       ultima_atualizacao: "2024-03-22"
     },
@@ -524,7 +542,9 @@ export const INDICADORES_REAIS: Indicator[] = [
     fonte: {
       orgao: "INEP / Ministério da Educação",
       pesquisa: "Censo da Educação Básica — Indicadores de Rendimento Escolar",
-      url_oficial: "https://www.gov.br/inep/pt-br/areas-de-atuacao/pesquisas-estatisticas-e-indicadores/taxas-de-rendimento-escolar",
+      url_oficial: "https://dadosabertos.inep.gov.br/dataset/taxas-de-rendimento-escolar",
+      tipo_recurso: "dados_abertos",
+      rotulo_link: "Dados Abertos INEP (Taxas de Rendimento e Fluxo)",
       frequencia: "Anual",
       ultima_atualizacao: "2024-05-18"
     },
@@ -580,7 +600,9 @@ export const INDICADORES_REAIS: Indicator[] = [
     fonte: {
       orgao: "Ministério da Saúde / DataSUS",
       pesquisa: "Programa Nacional de Imunizações (SI-PNI / Rede Nacional de Dados em Saúde - RNDS)",
-      url_oficial: "https://infoms.saude.gov.br/extensions/SEIDIGI_PNI_COBERTURA_ESTADOS/SEIDIGI_PNI_COBERTURA_ESTADOS.html",
+      url_oficial: "https://infoms.saude.gov.br/extensions/SEIDIGI_DEMAS_VACINACAO_CALENDARIO_NACIONAL/SEIDIGI_DEMAS_VACINACAO_CALENDARIO_NACIONAL.html",
+      tipo_recurso: "painel",
+      rotulo_link: "Painel Oficial de Cobertura Vacinal (InfoMS / DataSUS)",
       frequencia: "Anual / Mensal",
       ultima_atualizacao: "2025-01-20"
     },
@@ -634,7 +656,9 @@ export const INDICADORES_REAIS: Indicator[] = [
     fonte: {
       orgao: "Ministério da Saúde / DataSUS / IBGE",
       pesquisa: "Sistema de Informações sobre Mortalidade (SIM) e Nascidos Vivos (SINASC)",
-      url_oficial: "https://datasus.saude.gov.br/mortalidade-desde-1996-pela-cid-10",
+      url_oficial: "https://datasus.saude.gov.br/informacoes-de-saude-tabnet/",
+      tipo_recurso: "dados_abertos",
+      rotulo_link: "Portal TabNet / DataSUS (SIM & Sinasc)",
       frequencia: "Anual",
       ultima_atualizacao: "2024-11-30"
     },
@@ -687,6 +711,8 @@ export const INDICADORES_REAIS: Indicator[] = [
       orgao: "Instituto Brasileiro de Geografia e Estatística (IBGE)",
       pesquisa: "Tábua Completa de Mortalidade do Brasil",
       url_oficial: "https://www.ibge.gov.br/estatisticas/sociais/populacao/9126-tabuas-completas-de-mortalidade.html",
+      tipo_recurso: "relatorio_oficial",
+      rotulo_link: "Tábua Completa de Mortalidade (IBGE)",
       frequencia: "Anual (publicada em 1º de dezembro)",
       ultima_atualizacao: "2024-12-01"
     },
@@ -744,6 +770,8 @@ export const INDICADORES_REAIS: Indicator[] = [
       orgao: "Fórum Brasileiro de Segurança Pública (FBSP) / IPEA",
       pesquisa: "Anuário Brasileiro de Segurança Pública & Atlas da Violência",
       url_oficial: "https://forumseguranca.org.br/anuario-brasileiro-seguranca-publica/",
+      tipo_recurso: "relatorio_oficial",
+      rotulo_link: "Relatório Oficial FBSP / Atlas da Violência",
       frequencia: "Anual",
       ultima_atualizacao: "2025-07-18"
     },
@@ -825,7 +853,9 @@ export const INDICADORES_REAIS: Indicator[] = [
     fonte: {
       orgao: "SENAPPEN / Ministério da Justiça e Segurança Pública",
       pesquisa: "Sistema de Informações Penitenciárias (SISDEPEN)",
-      url_oficial: "https://www.gov.br/senappen/pt-br/assuntos/sisdepen",
+      url_oficial: "https://www.gov.br/senappen/pt-br/assuntos/sisdepen/relatorios-e-dados",
+      tipo_recurso: "dados_abertos",
+      rotulo_link: "Painel e Dados Abertos SISDEPEN (MJSP)",
       frequencia: "Semestral / Anual",
       ultima_atualizacao: "2024-10-15"
     },
@@ -886,7 +916,9 @@ export const INDICADORES_REAIS: Indicator[] = [
     fonte: {
       orgao: "Fórum Brasileiro de Segurança Pública (FBSP)",
       pesquisa: "Anuário Brasileiro de Segurança Pública & Monitor da Violência",
-      url_oficial: "https://forumseguranca.org.br",
+      url_oficial: "https://forumseguranca.org.br/publicacoes/",
+      tipo_recurso: "relatorio_oficial",
+      rotulo_link: "Publicações Oficiais FBSP",
       frequencia: "Anual",
       ultima_atualizacao: "2024-07-20"
     },
@@ -942,6 +974,8 @@ export const INDICADORES_REAIS: Indicator[] = [
       orgao: "Instituto Nacional de Pesquisas Espaciais (INPE)",
       pesquisa: "Programa de Monitoramento da Floresta Amazônica Brasileira por Satélite (PRODES)",
       url_oficial: "http://terrabrasilis.dpi.inpe.br/app/dashboard/deforestation/biomes/legal_amazon/rates",
+      tipo_recurso: "painel",
+      rotulo_link: "Painel Interativo TerraBrasilis (PRODES/INPE)",
       frequencia: "Anual (ano PRODES de agosto a julho)",
       ultima_atualizacao: "2024-11-06"
     },
@@ -995,7 +1029,9 @@ export const INDICADORES_REAIS: Indicator[] = [
     fonte: {
       orgao: "Instituto Nacional de Pesquisas Espaciais (INPE)",
       pesquisa: "Programa Queimadas — Satélite de Referência (Aqua Tarde)",
-      url_oficial: "https://terrabrasilis.dpi.inpe.br/queimadas/portal/",
+      url_oficial: "https://terrabrasilis.dpi.inpe.br/queimadas/bdqueimadas/",
+      tipo_recurso: "dados_abertos",
+      rotulo_link: "BDQueimadas / TerraBrasilis (INPE)",
       frequencia: "Diária / Anual",
       ultima_atualizacao: "2025-01-10"
     },
@@ -1052,7 +1088,9 @@ export const INDICADORES_REAIS: Indicator[] = [
     fonte: {
       orgao: "OCDE / INEP / Banco Mundial",
       pesquisa: "Programme for International Student Assessment (PISA)",
-      url_oficial: "https://www.oecd.org/pisa/",
+      url_oficial: "https://www.oecd.org/en/about/programmes/pisa/pisa-data.html",
+      tipo_recurso: "dados_abertos",
+      rotulo_link: "OECD PISA Open Database",
       frequencia: "Trienal (a cada 3 anos)",
       ultima_atualizacao: "2023-12-05"
     },
@@ -1122,7 +1160,9 @@ export const INDICADORES_REAIS: Indicator[] = [
     fonte: {
       orgao: "Ministério do Desenvolvimento, Indústria, Comércio e Serviços (MDIC)",
       pesquisa: "Comex Stat — Estatísticas de Comércio Exterior do Brasil",
-      url_oficial: "https://comexstat.mdic.gov.br",
+      url_oficial: "https://comexstat.mdic.gov.br/pt/geral",
+      tipo_recurso: "painel",
+      rotulo_link: "Portal Comex Stat (MDIC/SECEX)",
       frequencia: "Mensal / Anual",
       ultima_atualizacao: "2026-02-10"
     },
@@ -1175,7 +1215,9 @@ export const INDICADORES_REAIS: Indicator[] = [
     fonte: {
       orgao: "Transparência Internacional",
       pesquisa: "Corruption Perceptions Index (CPI)",
-      url_oficial: "https://www.transparency.org/en/cpi",
+      url_oficial: "https://www.transparency.org/en/cpi/2024",
+      tipo_recurso: "relatorio_oficial",
+      rotulo_link: "Dataset Global CPI (Transparency International)",
       frequencia: "Anual",
       ultima_atualizacao: "2025-01-30"
     },
@@ -1229,6 +1271,8 @@ export const INDICADORES_REAIS: Indicator[] = [
       orgao: "Banco Central do Brasil (BCB)",
       pesquisa: "Estatísticas de Pagamentos do Varejo e Canais de Atendimento",
       url_oficial: "https://dadosabertos.bcb.gov.br/dataset/pix",
+      tipo_recurso: "dados_abertos",
+      rotulo_link: "Portal de Dados Abertos do BCB (Arranjo Pix)",
       frequencia: "Mensal / Anual",
       ultima_atualizacao: "2025-12-31"
     },
@@ -1280,7 +1324,9 @@ export const INDICADORES_REAIS: Indicator[] = [
     fonte: {
       orgao: "Instituto Brasileiro de Geografia e Estatística (IBGE)",
       pesquisa: "Censo Demográfico & Projeções da População do Brasil (Revisão 2024)",
-      url_oficial: "https://www.ibge.gov.br/estatisticas/sociais/populacao/9109-projecao-da-populacao.html",
+      url_oficial: "https://sidra.ibge.gov.br/pesquisa/censo-demografico/demografico-2022/universo-populacao-e-domicilios",
+      tipo_recurso: "api",
+      rotulo_link: "API SIDRA / Censo 2022 & Projeções (IBGE)",
       frequencia: "Decenal (Censo) e Projeções Anuais",
       ultima_atualizacao: "2024-08-22"
     },
@@ -1362,7 +1408,9 @@ export const INDICADORES_REAIS: Indicator[] = [
     fonte: {
       orgao: "Câmara dos Deputados",
       pesquisa: "Portal de Dados Abertos — Cota para o Exercício da Atividade Parlamentar (CEAP)",
-      url_oficial: "https://dadosabertos.camara.leg.br/",
+      url_oficial: "https://dadosabertos.camara.leg.br/swagger/api.html",
+      tipo_recurso: "api",
+      rotulo_link: "API REST Dados Abertos (Câmara dos Deputados)",
       frequencia: "Contínua / Mensal",
       ultima_atualizacao: "2025-12-31"
     },
@@ -1414,7 +1462,9 @@ export const INDICADORES_REAIS: Indicator[] = [
     fonte: {
       orgao: "SEEG / Observatório do Clima",
       pesquisa: "Sistema de Estimativas de Emissões e Remoções de Gases de Efeito Estufa",
-      url_oficial: "https://seeg.eco.br/",
+      url_oficial: "https://seeg.eco.br/dados/",
+      tipo_recurso: "dados_abertos",
+      rotulo_link: "Plataforma Aberta de Dados SEEG",
       frequencia: "Anual",
       ultima_atualizacao: "2024-11-07"
     },
@@ -1467,7 +1517,9 @@ export const INDICADORES_REAIS: Indicator[] = [
     fonte: {
       orgao: "OMS / Banco Mundial / IBGE",
       pesquisa: "Conta Satélite de Saúde & WHO Global Health Expenditure Database",
-      url_oficial: "https://data.worldbank.org/indicator/SH.XPD.CHEX.GD.ZS",
+      url_oficial: "https://data.worldbank.org/indicator/SH.XPD.CHEX.GD.ZS?locations=BR",
+      tipo_recurso: "api",
+      rotulo_link: "API World Bank Open Data (Série SH.XPD.CHEX.GD.ZS)",
       frequencia: "Anual",
       ultima_atualizacao: "2024-12-15"
     },
@@ -1520,7 +1572,9 @@ export const INDICADORES_REAIS: Indicator[] = [
     fonte: {
       orgao: "INEP / Ministério da Educação",
       pesquisa: "Censo da Educação Superior",
-      url_oficial: "https://www.gov.br/inep/pt-br/areas-de-atuacao/pesquisas-estatisticas-e-indicadores/censo-da-educacao-superior",
+      url_oficial: "https://dadosabertos.inep.gov.br/dataset/censo-da-educacao-superior",
+      tipo_recurso: "dados_abertos",
+      rotulo_link: "Dados Abertos INEP (Censo Educação Superior)",
       frequencia: "Anual",
       ultima_atualizacao: "2024-10-03"
     },
@@ -1574,56 +1628,57 @@ export const INDICADORES_REAIS: Indicator[] = [
     }
   },
   {
-    id: "saude-cobertura-vacinal-polio",
-    slug: "cobertura-vacinal-poliomielite-menores-1-ano-pni",
-    titulo: "Vigilância Imunológica — Cobertura Vacinal contra Poliomielite (%)",
+    id: "saude-leitos-uti-sus",
+    slug: "leitos-uti-adulto-brasil-cnes",
+    titulo: "Capacidade Hospitalar — Leitos de UTI Adulto no Brasil (em milhares)",
     categoria: "saude",
-    subcategoria: "imunizacao-vigilancia",
-    tags: ["saúde", "vacinação", "poliomielite", "pni", "datasus", "infância", "sus", "imunização"],
+    subcategoria: "capacidade-hospitalar",
+    tags: ["saúde", "uti", "leitos", "hospital", "cnes", "sus", "datasus"],
     fonte: {
       orgao: "Ministério da Saúde / DataSUS",
-      pesquisa: "Programa Nacional de Imunizações (SI-PNI / RNDS)",
-      url_oficial: "https://infoms.saude.gov.br/extensions/SEIDIGI_DEMAS_VACINACAO_CALENDARIO_NACIONAL/SEIDIGI_DEMAS_VACINACAO_CALENDARIO_NACIONAL.html",
-      frequencia: "Mensal / Anual",
-      ultima_atualizacao: "2024-11-20"
+      pesquisa: "Cadastro Nacional de Estabelecimentos de Saúde (CNES / TabNet)",
+      url_oficial: "http://cnes.datasus.gov.br/",
+      tipo_recurso: "painel",
+      rotulo_link: "Portal CNES / TabNet (DataSUS)",
+      frequencia: "Mensal",
+      ultima_atualizacao: "2024-12-15"
     },
     explicacao_leiga: {
-      resumo: "Mede a porcentagem de bebês com menos de 1 ano de idade que receberam o esquema completo de três doses da vacina contra a paralisia infantil (poliomielite).",
-      como_interpretar: "A meta de segurança da OMS e do Ministério da Saúde é de 95%. Índices abaixo desse valor criam bolsões populacionais vulneráveis à reintrodução do vírus.",
-      por_que_importa: "O Brasil erradicou a paralisia infantil em 1989. O recuo vacinal na última década acendeu alertas globais pela perda da imunidade coletiva.",
-      pontos_de_atencao: "Após atingir um piso preocupante de 71% em 2021 durante a pandemia, a cobertura iniciou recuperação progressiva, voltando a superar 86% em 2024."
+      resumo: "Mede o número total de leitos de Unidade de Terapia Intensiva (UTI) adulto disponíveis no Brasil, somando a rede pública do SUS e hospitais privados conveniados.",
+      como_interpretar: "A OMS recomenda de 1 a 3 leitos de UTI para cada 10 mil habitantes. A média nacional supera esse patamar, mas esconde grande concentração nas capitais do Sul e Sudeste.",
+      por_que_importa: "São leitos indispensáveis para cirurgias de alta complexidade, politraumatismos e suporte a falências orgânicas agudas.",
+      pontos_de_atencao: "Durante a pandemia de Covid-19, o país criou mais de 20 mil leitos emergenciais provisórios, atingindo o pico de 66,5 mil leitos em 2021 antes da desmobilização gradual."
     },
     detalhamento_tecnico: {
-      formula_calculo: "Taxa de Cobertura = (Total de 3ªs doses de VIP aplicadas em menores de 1 ano / População estimada de menores de 1 ano pelo IBGE/Sinasc) * 100.",
-      unidade_medida: "% da população alvo",
-      amostra_cobertura: "Todas as salas de vacina da rede pública (SUS) e clínicas privadas conveniadas registradas no CNES.",
-      anonimizacao_sigilo: "Registros nominais centralizados na RNDS com anonimização epidemiológica agregada.",
-      limitacoes_e_quebras_metodologicas: "Migração gradual do antigo SI-PNI para o e-SUS APS e RNDS entre 2019 e 2022 causou represamentos pontuais de digitação municipal.",
-      orientacoes_fact_checking: "O indicador refere-se à Vacina Inativada Poliomielite (VIP injetável de 3 doses); não confundir com campanhas extras de reforço com a gotinha (VOP)."
+      formula_calculo: "Total de leitos complementares cadastrados sob o código de especialidade de UTI Adulto (Tipo II e Tipo III) em estabelecimentos de saúde ativos no CNES.",
+      unidade_medida: "Milhares de leitos de UTI",
+      amostra_cobertura: "Censo contínuo de estabelecimentos hospitalares públicos e privados em território nacional.",
+      anonimizacao_sigilo: "Dados públicos agregados por município, CNPJ e tipo de gestão.",
+      limitacoes_e_quebras_metodologicas: "Desabilitação de leitos de campanha após a emergência sanitária de Covid-19 reduz o estoque total nos anos seguintes.",
+      orientacoes_fact_checking: "Diferencie 'Leitos de UTI Adulto' (foco em pacientes graves) de 'Leitos de Internação Geral' (enfermarias comuns) e de 'Leitos UTI Pediátricos/Neonatais'."
     },
     visualizacao: {
       tipo_padrao: "line",
       eixo_x: { tipo: "temporal", rotulo: "Ano" },
-      eixo_y: { rotulo: "Cobertura Vacinal (%)", unidade: "%", escala_min: 60, escala_max: 105 },
+      eixo_y: { rotulo: "Leitos UTI (Milhares)", unidade: "mil leitos", escala_min: 30, escala_max: 75 },
       series: [
         {
-          id: "cobertura_polio",
-          nome: "Cobertura Poliomielite (< 1 ano)",
-          cor: "#e11d48",
+          id: "leitos_uti",
+          nome: "Leitos de UTI Adulto (Milhares)",
+          cor: "#0284c7",
           dados: [
-            [2015, 98.3], [2016, 84.4], [2017, 84.7], [2018, 89.5],
-            [2019, 84.2], [2020, 76.8], [2021, 71.0], [2022, 77.2],
-            [2023, 84.6], [2024, 86.8]
+            [2018, 41.2], [2019, 42.6], [2020, 59.8], [2021, 66.5],
+            [2022, 52.3], [2023, 50.1], [2024, 51.4]
           ]
         }
       ],
       marcos_historicos: [
-        { ano: 2021, rotulo: "Menor patamar histórico recente (71,0%) sob impacto da pandemia" },
-        { ano: 2024, rotulo: "Recuperação para 86,8%, aproximando-se da meta internacional de 95%" }
+        { ano: 2021, rotulo: "Pico histórico de 66,5 mil leitos durante o ápice da Covid-19" },
+        { ano: 2024, rotulo: "Estabilização estrutural em 51,4 mil leitos operacionais" }
       ]
     },
     citacao_sugerida: {
-      abnt: "BRASIL. Ministério da Saúde. Sistema de Informações do Programa Nacional de Imunizações (SI-PNI): Cobertura Vacinal contra Poliomielite. Brasília: Ministério da Saúde/DataSUS, 2024. Acesso via Brasa Dados."
+      abnt: "BRASIL. Ministério da Saúde. Cadastro Nacional de Estabelecimentos de Saúde (CNES): Leitos de UTI no Brasil. Brasília: DataSUS, 2024. Acesso via Brasa Dados."
     }
   },
   {
@@ -1637,6 +1692,8 @@ export const INDICADORES_REAIS: Indicator[] = [
       orgao: "Empresa de Pesquisa Energética (EPE) / MME",
       pesquisa: "Balanço Energético Nacional (BEN)",
       url_oficial: "https://www.epe.gov.br/pt/publicacoes-dados-abertos/publicacoes/balanco-energetico-nacional-ben",
+      tipo_recurso: "relatorio_oficial",
+      rotulo_link: "Relatórios Oficiais BEN (EPE/MME)",
       frequencia: "Anual",
       ultima_atualizacao: "2025-06-30"
     },
@@ -1690,6 +1747,8 @@ export const INDICADORES_REAIS: Indicator[] = [
       orgao: "Ministério das Cidades / SNIS / SINISA",
       pesquisa: "Sistema Nacional de Informações sobre Saneamento (IN024/IN056)",
       url_oficial: "https://www.gov.br/cidades/pt-br/assuntos/saneamento/sinisa",
+      tipo_recurso: "serie_temporal",
+      rotulo_link: "Sistema de Séries Históricas SINISA / SNIS",
       frequencia: "Anual",
       ultima_atualizacao: "2024-12-10"
     },
@@ -1762,56 +1821,57 @@ export const INDICADORES_REAIS: Indicator[] = [
     }
   },
   {
-    id: "economia-balanca-comercial",
-    slug: "saldo-balanca-comercial-comex-stat-mdic",
-    titulo: "Comércio Exterior — Saldo da Balança Comercial (US$ Bilhões)",
+    id: "economia-arrecadacao-federal",
+    slug: "arrecadacao-receitas-federais-rfb",
+    titulo: "Finanças Públicas — Arrecadação de Tributos Federais (R$ Trilhões)",
     categoria: "economia",
-    subcategoria: "comercio-exterior",
-    tags: ["economia", "balança comercial", "exportações", "importações", "mdic", "secex", "comex stat", "dólar", "superávit"],
+    subcategoria: "financas-publicas",
+    tags: ["economia", "tributos", "impostos", "receita federal", "arrecadação", "dados abertos"],
     fonte: {
-      orgao: "MDIC / Secretaria de Comércio Exterior (SECEX)",
-      pesquisa: "Comex Stat — Estatísticas de Comércio Exterior do Brasil",
-      url_oficial: "https://comexstat.mdic.gov.br/",
+      orgao: "Receita Federal do Brasil (RFB) / Ministério da Fazenda",
+      pesquisa: "Relatório de Arrecadação das Receitas Federais & Carga Tributária",
+      url_oficial: "https://dados.gov.br/dados/conjuntos-dados/arrecadacao-tributaria-federal",
+      tipo_recurso: "dados_abertos",
+      rotulo_link: "Dados Abertos Gov.br / Receita Federal",
       frequencia: "Mensal / Anual",
-      ultima_atualizacao: "2025-01-10"
+      ultima_atualizacao: "2025-01-25"
     },
     explicacao_leiga: {
-      resumo: "Mede a diferença líquida entre tudo o que o Brasil vendeu ao exterior (exportações) e tudo o que comprou de outros países (importações), em bilhões de dólares americanos.",
-      como_interpretar: "Um saldo positivo (superávit) indica entrada líquida de dólares na economia pelo comércio de mercadorias, fortalecendo as reservas cambiais e a estabilidade externa do país.",
-      por_que_importa: "O superávit comercial brasileiro é o principal âncora das contas externas nacionais, impulsionado por safras recordes de soja, milho, minério de ferro e petróleo bruto.",
-      pontos_de_atencao: "Em 2023, o Brasil registrou o maior superávit comercial de toda a sua história: quase US$ 99 bilhões, consolidando o país entre os grandes exportadores globais de alimentos e energia."
+      resumo: "Mede o total arrecadado pela União em tributos (IR, PIS/Cofins, CSLL, IPI, Previdência e demais receitas administradas) em trilhões de reais.",
+      como_interpretar: "O crescimento nominal reflete tanto a atividade econômica e inflação quanto alterações na legislação tributária e ganhos em contenciosos judiciais.",
+      por_que_importa: "Financia os serviços públicos federais, Previdência Social, SUS, universidades federais e as transferências obrigatórias a estados e municípios (FPE e FPM).",
+      pontos_de_atencao: "Em 2024, a arrecadação federal bateu recorde histórico nominal superando R$ 2,65 trilhões, impulsionada pela tributação de fundos exclusivos e offshores."
     },
     detalhamento_tecnico: {
-      formula_calculo: "Saldo Comercial = Valor FOB Total das Exportações - Valor FOB Total das Importações apuradas via declarações aduaneiras do Siscomex.",
-      unidade_medida: "US$ Bilhões (FOB)",
-      amostra_cobertura: "Registro censitário aduaneiro de todas as operações de comércio exterior formalizadas perante a Receita Federal do Brasil.",
-      anonimizacao_sigilo: "Dados agregados por Nomenclatura Comum do Mercosul (NCM), países parceiros e Unidades da Federação.",
-      limitacoes_e_quebras_metodologicas: "Valores em dólares correntes sujeitos a flutuações das cotações internacionais de commodities (efeito preço vs efeito volume).",
-      orientacoes_fact_checking: "O saldo comercial abrange apenas mercadorias físicas (bens tangíveis); o saldo de transações correntes do Banco Central inclui também serviços (fretes, turismo) e remessas de lucros."
+      formula_calculo: "Somatório das receitas administradas pela RFB mais as receitas administradas por outros órgãos (como royalties de petróleo) no exercício fiscal.",
+      unidade_medida: "R$ Trilhões correntes",
+      amostra_cobertura: "Universo das arrecadações federais registradas no Sistema Integrado de Administração Financeira (SIAFI).",
+      anonimizacao_sigilo: "Dados fiscais agregados sem violação do sigilo fiscal do contribuinte (CTN art. 198).",
+      limitacoes_e_quebras_metodologicas: "Valores nominais sem deflacionamento pelo IPCA; receitas atípicas (como parcelamentos especiais e dividendos extraordinários) podem distorcer o fluxo recorrente.",
+      orientacoes_fact_checking: "Diferencie 'Arrecadação Federal' (tributos da União) de 'Carga Tributária Total' (que inclui também ICMS dos estados e ISS/IPTU dos municípios, atingindo ~33% do PIB)."
     },
     visualizacao: {
       tipo_padrao: "bar",
       eixo_x: { tipo: "temporal", rotulo: "Ano" },
-      eixo_y: { rotulo: "Saldo Comercial (US$ Bi)", unidade: "US$ bi", escala_min: 0, escala_max: 110 },
+      eixo_y: { rotulo: "Arrecadação (R$ Tri)", unidade: "R$ tri", escala_min: 1.0, escala_max: 3.0 },
       series: [
         {
-          id: "saldo_comercial",
-          nome: "Superávit Comercial (US$ Bilhões)",
-          cor: "#059669",
+          id: "arrecadacao_total",
+          nome: "Arrecadação Federal (R$ Tri)",
+          cor: "#0284c7",
           dados: [
-            [2015, 19.68], [2016, 47.69], [2017, 66.99], [2018, 58.66],
-            [2019, 48.04], [2020, 50.90], [2021, 61.41], [2022, 62.31],
-            [2023, 98.90], [2024, 74.10], [2025, 68.50]
+            [2018, 1.46], [2019, 1.54], [2020, 1.48], [2021, 1.88],
+            [2022, 2.22], [2023, 2.32], [2024, 2.65]
           ]
         }
       ],
       marcos_historicos: [
-        { ano: 2023, rotulo: "Recorde histórico absoluto de US$ 98,9 bilhões de superávit" },
-        { ano: 2024, rotulo: "Superávit robusto de US$ 74,1 bi com expansão da produção petrolífera" }
+        { ano: 2020, rotulo: "Queda na pandemia para R$ 1,48 tri com diferimentos fiscais" },
+        { ano: 2024, rotulo: "Recorde histórico nominal superando R$ 2,65 trilhões" }
       ]
     },
     citacao_sugerida: {
-      abnt: "BRASIL. Ministério do Desenvolvimento, Indústria, Comércio e Serviços. Comex Stat: Balança Comercial Brasileira. Brasília: MDIC/SECEX, 2025. Acesso via Brasa Dados."
+      abnt: "RECEITA FEDERAL DO BRASIL. Carga Tributária e Relatórios de Arrecadação das Receitas Federais. Brasília: Ministério da Fazenda/RFB, 2025. Acesso via Brasa Dados."
     }
   },
   {
@@ -1825,6 +1885,8 @@ export const INDICADORES_REAIS: Indicator[] = [
       orgao: "Ministério do Desenvolvimento e Assistência Social (MDS)",
       pesquisa: "SAGICAD / Cadastro Único para Programas Sociais (CadÚnico)",
       url_oficial: "https://paineis.mds.gov.br/",
+      tipo_recurso: "painel",
+      rotulo_link: "Painel SAGICAD / Observatório do CadÚnico (MDS)",
       frequencia: "Mensal / Anual",
       ultima_atualizacao: "2025-08-01"
     },
@@ -1871,7 +1933,7 @@ export const INDICADORES_REAIS: Indicator[] = [
 
 export const CATEGORIAS_INFO = [
   { id: 'economia', nome: 'Economia & Trabalho', icone: 'TrendingUp', cor: 'emerald', count: 12 },
-  { id: 'educacao', nome: 'Educação & Aprendizado', icone: 'GraduationCap', cor: 'blue', count: 5 },
+  { id: 'educacao', nome: 'Educação & Aprendizado', icone: 'GraduationCap', cor: 'blue', count: 4 },
   { id: 'saude', nome: 'Saúde & Vigilância', icone: 'HeartPulse', cor: 'rose', count: 5 },
   { id: 'seguranca', nome: 'Segurança Pública', icone: 'ShieldAlert', cor: 'red', count: 3 },
   { id: 'meio-ambiente', nome: 'Meio Ambiente & Clima', icone: 'Trees', cor: 'amber', count: 5 },

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Indicator } from '../types/indicator';
+import { Indicator, SourceResourceType } from '../types/indicator';
 import { 
   Sparkles, 
   FileText, 
@@ -8,7 +8,8 @@ import {
   ShieldCheck, 
   Copy, 
   Check,
-  Info
+  Info,
+  Link2
 } from 'lucide-react';
 
 interface FactCheckingDrawerProps {
@@ -26,6 +27,49 @@ export function FactCheckingDrawer({ indicator }: FactCheckingDrawerProps) {
       setTimeout(() => setCopied(false), 2000);
     }
   }
+
+  function getResourceMeta(tipo?: SourceResourceType) {
+    switch (tipo) {
+      case 'api':
+        return {
+          rotulo: 'API Aberta / Endpoint REST',
+          descricao: 'Dados consultáveis de forma automatizada por chamadas HTTP REST.',
+          badgeColor: 'bg-emerald-100 text-emerald-800 dark:bg-emerald-950/80 dark:text-emerald-300 border-emerald-300 dark:border-emerald-800'
+        };
+      case 'dados_abertos':
+        return {
+          rotulo: 'Portal de Dados Abertos',
+          descricao: 'Conjunto de dados brutos para download em formatos abertos (CSV, JSON, microdados).',
+          badgeColor: 'bg-blue-100 text-blue-800 dark:bg-blue-950/80 dark:text-blue-300 border-blue-300 dark:border-blue-800'
+        };
+      case 'painel':
+        return {
+          rotulo: 'Painel Interativo / Dashboard',
+          descricao: 'Plataforma oficial de exploração visual com filtros temáticos e espaciais.',
+          badgeColor: 'bg-purple-100 text-purple-800 dark:bg-purple-950/80 dark:text-purple-300 border-purple-300 dark:border-purple-800'
+        };
+      case 'serie_temporal':
+        return {
+          rotulo: 'Série Histórica Estruturada',
+          descricao: 'Banco de séries temporais oficiais parametrizadas pela instituição de pesquisa.',
+          badgeColor: 'bg-amber-100 text-amber-800 dark:bg-amber-950/80 dark:text-amber-300 border-amber-300 dark:border-amber-800'
+        };
+      case 'relatorio_oficial':
+        return {
+          rotulo: 'Relatório Técnico / Estatístico',
+          descricao: 'Publicação oficial consolidada com notas metodológicas integrais e auditoria.',
+          badgeColor: 'bg-zinc-100 text-zinc-800 dark:bg-zinc-800 dark:text-zinc-200 border-zinc-300 dark:border-zinc-700'
+        };
+      default:
+        return {
+          rotulo: 'Fonte Oficial Primária',
+          descricao: 'Portal institucional governamental do órgão responsável.',
+          badgeColor: 'bg-zinc-100 text-zinc-800 dark:bg-zinc-800 dark:text-zinc-200 border-zinc-300 dark:border-zinc-700'
+        };
+    }
+  }
+
+  const resMeta = getResourceMeta(indicator.fonte.tipo_recurso);
 
   return (
     <div className="rounded-2xl border border-zinc-200/80 bg-white/95 shadow-sm dark:border-zinc-800/80 dark:bg-zinc-900/95 overflow-hidden transition-all">
@@ -59,15 +103,19 @@ export function FactCheckingDrawer({ indicator }: FactCheckingDrawerProps) {
           </button>
         </div>
 
-        {/* Link Oficial da Fonte */}
-        <div className="flex items-center gap-3">
+        {/* Link Oficial da Fonte com Badge Explícito de Tipo */}
+        <div className="flex items-center gap-2 flex-wrap">
+          <span className={`inline-flex items-center px-2 py-0.5 rounded-md text-[10px] font-bold border ${resMeta.badgeColor}`}>
+            {resMeta.rotulo}
+          </span>
           <a
             href={indicator.fonte.url_oficial}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1 text-[11px] font-semibold text-emerald-600 hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300"
+            title={`Acessar dados brutos/oficiais em: ${indicator.fonte.url_oficial}`}
+            className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-bold text-emerald-700 bg-emerald-50 hover:bg-emerald-100 dark:bg-emerald-950/40 dark:text-emerald-300 dark:hover:bg-emerald-900/60 border border-emerald-200 dark:border-emerald-800/60 transition-all cursor-pointer"
           >
-            <span>Fonte Primária ({indicator.fonte.orgao.split('/')[0]})</span>
+            <span>{indicator.fonte.rotulo_link || `Fonte Oficial (${indicator.fonte.orgao.split('/')[0]})`}</span>
             <ExternalLink className="h-3 w-3" />
           </a>
         </div>
@@ -151,6 +199,41 @@ export function FactCheckingDrawer({ indicator }: FactCheckingDrawerProps) {
             <p className="text-[11px] leading-relaxed pl-5 text-zinc-600 dark:text-zinc-400">
               <strong>Limitações e Quebras de Série:</strong> {indicator.detalhamento_tecnico.limitacoes_e_quebras_metodologicas}
             </p>
+          </div>
+
+          {/* Card de Transparência e Acesso aos Dados Oficiais */}
+          <div className="rounded-xl border border-zinc-200/80 bg-zinc-50/80 dark:border-zinc-800/80 dark:bg-zinc-850/80 p-3.5 space-y-2">
+            <div className="flex flex-wrap items-center justify-between gap-2 border-b border-zinc-200/60 dark:border-zinc-800/60 pb-2">
+              <div className="flex items-center gap-2">
+                <Link2 className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
+                <span className="font-bold text-xs text-zinc-900 dark:text-zinc-100 uppercase tracking-wider">
+                  Origem dos Dados & Acesso à Fonte Bruta
+                </span>
+              </div>
+              <span className={`inline-flex items-center px-2 py-0.5 rounded-md text-[10px] font-bold border ${resMeta.badgeColor}`}>
+                {resMeta.rotulo}
+              </span>
+            </div>
+            
+            <p className="text-[11px] text-zinc-600 dark:text-zinc-300">
+              {resMeta.descricao}
+            </p>
+
+            <div className="flex flex-wrap items-center justify-between gap-3 pt-1 text-[11px]">
+              <div className="text-zinc-500">
+                <strong>Órgão:</strong> {indicator.fonte.orgao} • <strong>Pesquisa:</strong> {indicator.fonte.pesquisa}
+              </div>
+
+              <a
+                href={indicator.fonte.url_oficial}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs transition-colors cursor-pointer shadow-xs"
+              >
+                <span>Acessar {indicator.fonte.rotulo_link || 'Fonte Oficial'}</span>
+                <ExternalLink className="h-3.5 w-3.5" />
+              </a>
+            </div>
           </div>
 
           {/* Citação ABNT */}
