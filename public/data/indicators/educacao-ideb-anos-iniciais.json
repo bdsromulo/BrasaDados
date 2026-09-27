@@ -1,0 +1,80 @@
+{
+  "id": "educacao-ideb-anos-iniciais",
+  "slug": "educacao-ideb-anos-iniciais",
+  "titulo": "IDEB · Anos iniciais do fundamental",
+  "categoria": "educacao",
+  "tags": [
+    "educacao",
+    "IDEB · Anos iniciais do fundamental",
+    "INEP / Ministério da Educação"
+  ],
+  "fonte": {
+    "orgao": "INEP / Ministério da Educação",
+    "pesquisa": "IDEB · Anos iniciais do fundamental",
+    "url_oficial": "https://www.gov.br/inep/pt-br/centrais-de-conteudo/noticias/ideb/ideb-avanca-em-todas-as-etapas-da-educacao-basica",
+    "frequencia": "biennial"
+  },
+  "explicacao_leiga": {
+    "resumo": "Índice de Desenvolvimento da Educação Básica, que combina desempenho no Saeb e aprovação escolar.",
+    "como_interpretar": "A escala vai de zero a dez. As séries total e pública representam universos distintos e não devem ser somadas.",
+    "por_que_importa": "Contextualiza aprendizagem e progressão escolar em cada etapa."
+  },
+  "detalhamento_tecnico": {
+    "formula_calculo": "Índice de Desenvolvimento da Educação Básica, que combina desempenho no Saeb e aprovação escolar.",
+    "unidade_medida": "pontos",
+    "amostra_cobertura": "Brasil: total das redes pública e privada e, separadamente, rede pública.",
+    "limitacoes_e_quebras_metodologicas": "Recorte de 2023 e 2025 conferido na divulgação oficial. Histórico anterior e UFs não são reaproveitados do acervo sem conferência; comparar a mesma etapa e rede.",
+    "orientacoes_fact_checking": "Compare conceitos, unidades e períodos equivalentes. Ausência de observação não significa zero."
+  },
+  "visualizacao": {
+    "tipo_padrao": "line",
+    "eixo_y": {
+      "rotulo": "IDEB · Anos iniciais do fundamental",
+      "unidade": "pontos"
+    },
+    "series": [
+      {
+        "id": "total",
+        "nome": "Total · pública e privada",
+        "dados": [
+          [
+            "2023",
+            6
+          ],
+          [
+            "2025",
+            6.3
+          ]
+        ]
+      },
+      {
+        "id": "publica",
+        "nome": "Rede pública",
+        "dados": [
+          [
+            "2023",
+            5.7
+          ],
+          [
+            "2025",
+            6.1
+          ]
+        ]
+      }
+    ]
+  },
+  "provenance": {
+    "status": "verified",
+    "organizationType": "government",
+    "sourceUrl": "https://www.gov.br/inep/pt-br/centrais-de-conteudo/noticias/ideb/ideb-avanca-em-todas-as-etapas-da-educacao-basica",
+    "reference": "2025",
+    "frequency": "biennial",
+    "observationStatus": "official",
+    "transformation": "Transcrição conferida da publicação oficial. Divulgação de 5 de agosto de 2026, parágrafo comparativo 2023–2025. Sem interpolação ou preenchimento de anos ausentes.",
+    "issues": [],
+    "retrievedAt": "2026-09-27",
+    "publishedAt": "2026-08-05",
+    "datasetCode": "INEP / IDEB 2025",
+    "sha256": "b43b990ef3d3c4d3814ce846af26a5f8136bc36f38d79d1e60cc887f81d6871e"
+  }
+}

@@ -1,0 +1,428 @@
+{
+  "id": "economia-desemprego-pnad",
+  "slug": "taxa-de-desocupacao-pnad-continua",
+  "titulo": "Taxa de desocupação",
+  "categoria": "economia",
+  "tags": [
+    "economia",
+    "Taxa de desocupação",
+    "Instituto Brasileiro de Geografia e Estatística (IBGE)"
+  ],
+  "fonte": {
+    "orgao": "Instituto Brasileiro de Geografia e Estatística (IBGE)",
+    "pesquisa": "Taxas de desocupação e de subutilização da força de trabalho, na semana de referência, das pessoas de 14 anos ou mais de idade",
+    "url_oficial": "https://sidra.ibge.gov.br/tabela/4099",
+    "frequencia": "trimestral"
+  },
+  "explicacao_leiga": {
+    "resumo": "Parcela da força de trabalho de 14 anos ou mais que estava sem ocupação, procurou trabalho e estava disponível para trabalhar.",
+    "como_interpretar": "A taxa representa pessoas na força de trabalho; não toda a população. Cada ponto corresponde a um trimestre civil.",
+    "por_que_importa": "Ajuda a acompanhar as condições de acesso ao trabalho."
+  },
+  "detalhamento_tecnico": {
+    "formula_calculo": "Parcela da força de trabalho de 14 anos ou mais que estava sem ocupação, procurou trabalho e estava disponível para trabalhar.",
+    "unidade_medida": "%",
+    "amostra_cobertura": "Brasil; recortes estaduais quando publicados pela fonte.",
+    "limitacoes_e_quebras_metodologicas": "Pesquisa por amostragem sujeita a incerteza e revisão de pesos. Trimestres civis não devem ser confundidos com trimestres móveis.",
+    "orientacoes_fact_checking": "Compare conceitos, unidades e períodos equivalentes. Ausência de observação não significa zero."
+  },
+  "visualizacao": {
+    "tipo_padrao": "line",
+    "eixo_y": {
+      "rotulo": "Taxa de desocupação",
+      "unidade": "%"
+    },
+    "series": [
+      {
+        "id": "economia-desemprego-pnad-0",
+        "nome": "Taxa de desocupação",
+        "dados": [
+          [
+            "2012-Q1",
+            8
+          ],
+          [
+            "2012-Q2",
+            7.6
+          ],
+          [
+            "2012-Q3",
+            7.1
+          ],
+          [
+            "2012-Q4",
+            6.9
+          ],
+          [
+            "2013-Q1",
+            8
+          ],
+          [
+            "2013-Q2",
+            7.5
+          ],
+          [
+            "2013-Q3",
+            7
+          ],
+          [
+            "2013-Q4",
+            6.2
+          ],
+          [
+            "2014-Q1",
+            7.2
+          ],
+          [
+            "2014-Q2",
+            6.9
+          ],
+          [
+            "2014-Q3",
+            6.8
+          ],
+          [
+            "2014-Q4",
+            6.6
+          ],
+          [
+            "2015-Q1",
+            8
+          ],
+          [
+            "2015-Q2",
+            8.4
+          ],
+          [
+            "2015-Q3",
+            9
+          ],
+          [
+            "2015-Q4",
+            9.1
+          ],
+          [
+            "2016-Q1",
+            11
+          ],
+          [
+            "2016-Q2",
+            11.4
+          ],
+          [
+            "2016-Q3",
+            11.9
+          ],
+          [
+            "2016-Q4",
+            12.1
+          ],
+          [
+            "2017-Q1",
+            13.9
+          ],
+          [
+            "2017-Q2",
+            13.1
+          ],
+          [
+            "2017-Q3",
+            12.5
+          ],
+          [
+            "2017-Q4",
+            11.9
+          ],
+          [
+            "2018-Q1",
+            13.2
+          ],
+          [
+            "2018-Q2",
+            12.6
+          ],
+          [
+            "2018-Q3",
+            12
+          ],
+          [
+            "2018-Q4",
+            11.7
+          ],
+          [
+            "2019-Q1",
+            12.8
+          ],
+          [
+            "2019-Q2",
+            12.1
+          ],
+          [
+            "2019-Q3",
+            11.9
+          ],
+          [
+            "2019-Q4",
+            11.1
+          ],
+          [
+            "2020-Q1",
+            12.4
+          ],
+          [
+            "2020-Q2",
+            13.6
+          ],
+          [
+            "2020-Q3",
+            14.9
+          ],
+          [
+            "2020-Q4",
+            14.2
+          ],
+          [
+            "2021-Q1",
+            14.9
+          ],
+          [
+            "2021-Q2",
+            14.2
+          ],
+          [
+            "2021-Q3",
+            12.7
+          ],
+          [
+            "2021-Q4",
+            11.1
+          ],
+          [
+            "2022-Q1",
+            11.1
+          ],
+          [
+            "2022-Q2",
+            9.3
+          ],
+          [
+            "2022-Q3",
+            8.7
+          ],
+          [
+            "2022-Q4",
+            7.9
+          ],
+          [
+            "2023-Q1",
+            8.8
+          ],
+          [
+            "2023-Q2",
+            8
+          ],
+          [
+            "2023-Q3",
+            7.7
+          ],
+          [
+            "2023-Q4",
+            7.4
+          ],
+          [
+            "2024-Q1",
+            7.9
+          ],
+          [
+            "2024-Q2",
+            6.9
+          ],
+          [
+            "2024-Q3",
+            6.4
+          ],
+          [
+            "2024-Q4",
+            6.2
+          ],
+          [
+            "2025-Q1",
+            7
+          ],
+          [
+            "2025-Q2",
+            5.8
+          ],
+          [
+            "2025-Q3",
+            5.6
+          ],
+          [
+            "2025-Q4",
+            5.1
+          ],
+          [
+            "2026-Q1",
+            6.1
+          ],
+          [
+            "2026-Q2",
+            5.4
+          ]
+        ]
+      }
+    ],
+    "dados_uf": [
+      {
+        "uf": "RO",
+        "nome": "Rondônia",
+        "valor": 2.6
+      },
+      {
+        "uf": "AC",
+        "nome": "Acre",
+        "valor": 6.6
+      },
+      {
+        "uf": "AM",
+        "nome": "Amazonas",
+        "valor": 7.5
+      },
+      {
+        "uf": "RR",
+        "nome": "Roraima",
+        "valor": 5
+      },
+      {
+        "uf": "PA",
+        "nome": "Pará",
+        "valor": 6.2
+      },
+      {
+        "uf": "AP",
+        "nome": "Amapá",
+        "valor": 9.8
+      },
+      {
+        "uf": "TO",
+        "nome": "Tocantins",
+        "valor": 4.1
+      },
+      {
+        "uf": "MA",
+        "nome": "Maranhão",
+        "valor": 6
+      },
+      {
+        "uf": "PI",
+        "nome": "Piauí",
+        "valor": 8.3
+      },
+      {
+        "uf": "CE",
+        "nome": "Ceará",
+        "valor": 6.6
+      },
+      {
+        "uf": "RN",
+        "nome": "Rio Grande do Norte",
+        "valor": 5.6
+      },
+      {
+        "uf": "PB",
+        "nome": "Paraíba",
+        "valor": 5.4
+      },
+      {
+        "uf": "PE",
+        "nome": "Pernambuco",
+        "valor": 8.3
+      },
+      {
+        "uf": "AL",
+        "nome": "Alagoas",
+        "valor": 7.9
+      },
+      {
+        "uf": "SE",
+        "nome": "Sergipe",
+        "valor": 7.9
+      },
+      {
+        "uf": "BA",
+        "nome": "Bahia",
+        "valor": 9.1
+      },
+      {
+        "uf": "MG",
+        "nome": "Minas Gerais",
+        "valor": 3.8
+      },
+      {
+        "uf": "ES",
+        "nome": "Espírito Santo",
+        "valor": 2.3
+      },
+      {
+        "uf": "RJ",
+        "nome": "Rio de Janeiro",
+        "valor": 7.1
+      },
+      {
+        "uf": "SP",
+        "nome": "São Paulo",
+        "valor": 5.4
+      },
+      {
+        "uf": "PR",
+        "nome": "Paraná",
+        "valor": 3.1
+      },
+      {
+        "uf": "SC",
+        "nome": "Santa Catarina",
+        "valor": 2.1
+      },
+      {
+        "uf": "RS",
+        "nome": "Rio Grande do Sul",
+        "valor": 4.2
+      },
+      {
+        "uf": "MS",
+        "nome": "Mato Grosso do Sul",
+        "valor": 2.7
+      },
+      {
+        "uf": "MT",
+        "nome": "Mato Grosso",
+        "valor": 2.2
+      },
+      {
+        "uf": "GO",
+        "nome": "Goiás",
+        "valor": 4
+      },
+      {
+        "uf": "DF",
+        "nome": "Distrito Federal",
+        "valor": 6.5
+      }
+    ]
+  },
+  "provenance": {
+    "status": "verified",
+    "organizationType": "government",
+    "sourceUrl": "https://servicodados.ibge.gov.br/api/v3/agregados/4099/periodos/all/variaveis/4099?localidades=N1%5Ball%5D%7CN3%5Ball%5D",
+    "reference": "2026-Q2",
+    "frequency": "quarterly",
+    "observationStatus": "official",
+    "transformation": "Valores publicados, com conversão dos códigos de período e marcadores de ausência para null; sem interpolação.",
+    "issues": [],
+    "stateReference": "2026-Q2",
+    "expectedStates": 27,
+    "retrievedAt": "2026-09-27",
+    "datasetCode": "IBGE 4099 / variável 4099",
+    "sha256": "7848422943b90e955e126fcfdef62945dbd6aa3de25bd82082eb4c78ea4f8c4f"
+  }
+}

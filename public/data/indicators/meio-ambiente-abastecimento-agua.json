@@ -1,0 +1,82 @@
+{
+  "id": "meio-ambiente-abastecimento-agua",
+  "slug": "meio-ambiente-abastecimento-agua",
+  "titulo": "Abastecimento de água · Atendimento por rede",
+  "categoria": "meio-ambiente",
+  "tags": [
+    "meio-ambiente",
+    "Abastecimento de água · Atendimento por rede",
+    "Ministério das Cidades / SINISA"
+  ],
+  "fonte": {
+    "orgao": "Ministério das Cidades / SINISA",
+    "pesquisa": "Abastecimento de água · Atendimento por rede",
+    "url_oficial": "https://www.gov.br/cidades/pt-br/acesso-a-informacao/acoes-e-programas/saneamento/sinisa/resultados-sinisa/013_RELATORIO_SINISA_ABASTECIMENTO_DE_AGUA_2024_defeso.pdf",
+    "frequencia": "annual"
+  },
+  "explicacao_leiga": {
+    "resumo": "Parcela da população atendida por rede de abastecimento de água, segundo o SINISA, no ano de referência 2023.",
+    "como_interpretar": "Acesso à rede não mede, por si só, continuidade ou qualidade do fornecimento. Total, urbano e rural têm denominadores diferentes.",
+    "por_que_importa": "Mostra a cobertura da infraestrutura básica de abastecimento."
+  },
+  "detalhamento_tecnico": {
+    "formula_calculo": "Parcela da população atendida por rede de abastecimento de água, segundo o SINISA, no ano de referência 2023.",
+    "unidade_medida": "%",
+    "amostra_cobertura": "Brasil; população total, urbana e rural no universo dos indicadores consolidados do SINISA.",
+    "limitacoes_e_quebras_metodologicas": "SINISA 2024, referência 2023, versão de 8 de abril de 2025. Não emendar automaticamente com SNIS devido a mudanças de população de referência e cobertura dos prestadores. A edição 2025 estava restrita no portal na coleta.",
+    "orientacoes_fact_checking": "Compare conceitos, unidades e períodos equivalentes. Ausência de observação não significa zero."
+  },
+  "visualizacao": {
+    "tipo_padrao": "bar",
+    "eixo_y": {
+      "rotulo": "Abastecimento de água · Atendimento por rede",
+      "unidade": "%"
+    },
+    "series": [
+      {
+        "id": "total",
+        "nome": "População total · IAG0001",
+        "dados": [
+          [
+            "2023",
+            83.1
+          ]
+        ]
+      },
+      {
+        "id": "urbana",
+        "nome": "População urbana · IAG0002",
+        "dados": [
+          [
+            "2023",
+            93.3
+          ]
+        ]
+      },
+      {
+        "id": "rural",
+        "nome": "População rural · IAG0003",
+        "dados": [
+          [
+            "2023",
+            24.2
+          ]
+        ]
+      }
+    ]
+  },
+  "provenance": {
+    "status": "verified",
+    "organizationType": "government",
+    "sourceUrl": "https://www.gov.br/cidades/pt-br/acesso-a-informacao/acoes-e-programas/saneamento/sinisa/resultados-sinisa/013_RELATORIO_SINISA_ABASTECIMENTO_DE_AGUA_2024_defeso.pdf",
+    "reference": "2023",
+    "frequency": "annual",
+    "observationStatus": "official",
+    "transformation": "Transcrição conferida da publicação oficial. Relatório de Abastecimento de Água, página 19. Sem interpolação ou preenchimento de anos ausentes.",
+    "issues": [],
+    "retrievedAt": "2026-09-27",
+    "publishedAt": "2025-04-08",
+    "datasetCode": "SINISA 2024 / IAG0001, IAG0002, IAG0003",
+    "sha256": "02ecbd9a23125a2e90970214bc8d8bb19f36c9f5bed91120afb14e06f7cc39ee"
+  }
+}

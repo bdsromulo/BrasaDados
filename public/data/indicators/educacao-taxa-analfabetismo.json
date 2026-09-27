@@ -1,0 +1,228 @@
+{
+  "id": "educacao-taxa-analfabetismo",
+  "slug": "taxa-de-analfabetismo-brasil-ibge",
+  "titulo": "Taxa de analfabetismo · 15 anos ou mais",
+  "categoria": "educacao",
+  "tags": [
+    "educacao",
+    "Taxa de analfabetismo · 15 anos ou mais",
+    "Instituto Brasileiro de Geografia e Estatística (IBGE)"
+  ],
+  "fonte": {
+    "orgao": "Instituto Brasileiro de Geografia e Estatística (IBGE)",
+    "pesquisa": "Taxa de analfabetismo das pessoas de 15 anos ou mais de idade, por sexo e grupo de idade",
+    "url_oficial": "https://sidra.ibge.gov.br/tabela/7113",
+    "frequencia": "anual"
+  },
+  "explicacao_leiga": {
+    "resumo": "Percentual de pessoas de 15 anos ou mais que não sabem ler e escrever um bilhete simples, segundo a PNAD Contínua.",
+    "como_interpretar": "A taxa se refere à alfabetização declarada; não mede analfabetismo funcional ou capacidade de interpretar textos complexos.",
+    "por_que_importa": "Ajuda a identificar barreiras ao acesso à educação, ao trabalho e à participação social."
+  },
+  "detalhamento_tecnico": {
+    "formula_calculo": "Pessoas de 15 anos ou mais que não sabem ler/escrever divididas pela população dessa faixa etária, vezes 100.",
+    "unidade_medida": "%",
+    "amostra_cobertura": "Brasil e 27 UFs, ambos os sexos, 15 anos ou mais; PNAD Contínua anual.",
+    "limitacoes_e_quebras_metodologicas": "O módulo ampliado não foi publicado em 2020 e 2021. As lacunas permanecem sem dados; não há interpolação. Pesos amostrais e séries podem ser revisados.",
+    "orientacoes_fact_checking": "Compare conceitos, unidades e períodos equivalentes. Ausência de observação não significa zero."
+  },
+  "visualizacao": {
+    "tipo_padrao": "line",
+    "eixo_y": {
+      "rotulo": "Taxa de analfabetismo · 15 anos ou mais",
+      "unidade": "%"
+    },
+    "series": [
+      {
+        "id": "educacao-taxa-analfabetismo-0",
+        "nome": "Taxa de analfabetismo · 15 anos ou mais",
+        "dados": [
+          [
+            "2016",
+            6.7
+          ],
+          [
+            "2017",
+            6.5
+          ],
+          [
+            "2018",
+            6.3
+          ],
+          [
+            "2019",
+            6.1
+          ],
+          [
+            "2022",
+            5.6
+          ],
+          [
+            "2023",
+            5.4
+          ],
+          [
+            "2024",
+            5.3
+          ],
+          [
+            "2025",
+            4.9
+          ]
+        ]
+      }
+    ],
+    "dados_uf": [
+      {
+        "uf": "RO",
+        "nome": "Rondônia",
+        "valor": 5.1
+      },
+      {
+        "uf": "AC",
+        "nome": "Acre",
+        "valor": 8.9
+      },
+      {
+        "uf": "AM",
+        "nome": "Amazonas",
+        "valor": 4.3
+      },
+      {
+        "uf": "RR",
+        "nome": "Roraima",
+        "valor": 3.4
+      },
+      {
+        "uf": "PA",
+        "nome": "Pará",
+        "valor": 6.2
+      },
+      {
+        "uf": "AP",
+        "nome": "Amapá",
+        "valor": 4.5
+      },
+      {
+        "uf": "TO",
+        "nome": "Tocantins",
+        "valor": 6.8
+      },
+      {
+        "uf": "MA",
+        "nome": "Maranhão",
+        "valor": 10.9
+      },
+      {
+        "uf": "PI",
+        "nome": "Piauí",
+        "valor": 13.1
+      },
+      {
+        "uf": "CE",
+        "nome": "Ceará",
+        "valor": 11.1
+      },
+      {
+        "uf": "RN",
+        "nome": "Rio Grande do Norte",
+        "valor": 9.3
+      },
+      {
+        "uf": "PB",
+        "nome": "Paraíba",
+        "valor": 11.6
+      },
+      {
+        "uf": "PE",
+        "nome": "Pernambuco",
+        "valor": 10.1
+      },
+      {
+        "uf": "AL",
+        "nome": "Alagoas",
+        "valor": 13.1
+      },
+      {
+        "uf": "SE",
+        "nome": "Sergipe",
+        "valor": 10.3
+      },
+      {
+        "uf": "BA",
+        "nome": "Bahia",
+        "valor": 9.5
+      },
+      {
+        "uf": "MG",
+        "nome": "Minas Gerais",
+        "valor": 3.8
+      },
+      {
+        "uf": "ES",
+        "nome": "Espírito Santo",
+        "valor": 3.8
+      },
+      {
+        "uf": "RJ",
+        "nome": "Rio de Janeiro",
+        "valor": 1.6
+      },
+      {
+        "uf": "SP",
+        "nome": "São Paulo",
+        "valor": 1.9
+      },
+      {
+        "uf": "PR",
+        "nome": "Paraná",
+        "valor": 3.3
+      },
+      {
+        "uf": "SC",
+        "nome": "Santa Catarina",
+        "valor": 1.5
+      },
+      {
+        "uf": "RS",
+        "nome": "Rio Grande do Sul",
+        "valor": 2.2
+      },
+      {
+        "uf": "MS",
+        "nome": "Mato Grosso do Sul",
+        "valor": 3.9
+      },
+      {
+        "uf": "MT",
+        "nome": "Mato Grosso",
+        "valor": 3.5
+      },
+      {
+        "uf": "GO",
+        "nome": "Goiás",
+        "valor": 3.5
+      },
+      {
+        "uf": "DF",
+        "nome": "Distrito Federal",
+        "valor": 2
+      }
+    ]
+  },
+  "provenance": {
+    "status": "verified",
+    "organizationType": "government",
+    "sourceUrl": "https://servicodados.ibge.gov.br/api/v3/agregados/7113/periodos/all/variaveis/10267?localidades=N1%5Ball%5D%7CN3%5Ball%5D&classificacao=2%5B6794%5D%7C58%5B2795%5D",
+    "reference": "2025",
+    "frequency": "annual",
+    "observationStatus": "official",
+    "transformation": "Valores publicados, com conversão dos códigos de período e marcadores de ausência para null; sem interpolação.",
+    "issues": [],
+    "stateReference": "2025",
+    "expectedStates": 27,
+    "retrievedAt": "2026-09-27",
+    "datasetCode": "IBGE 7113 / variável 10267",
+    "sha256": "d588bca66e9367cfa2e10be08bb8cac6e8632f68377e5ba8b7cdd17665f7defb"
+  }
+}

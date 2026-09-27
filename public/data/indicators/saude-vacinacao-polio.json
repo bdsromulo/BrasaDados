@@ -1,0 +1,134 @@
+{
+  "id": "saude-vacinacao-polio",
+  "slug": "cobertura-vacinal-poliomielite-datasus",
+  "titulo": "Imunização — Cobertura Vacinal contra Poliomielite (%)",
+  "categoria": "saude",
+  "subcategoria": "imunizacao",
+  "tags": [
+    "saúde",
+    "vacinação",
+    "poliomielite",
+    "datasus",
+    "pni",
+    "sus",
+    "crianças"
+  ],
+  "fonte": {
+    "orgao": "Ministério da Saúde / DataSUS",
+    "pesquisa": "Programa Nacional de Imunizações (SI-PNI / Rede Nacional de Dados em Saúde - RNDS)",
+    "url_oficial": "https://infoms.saude.gov.br/extensions/SEIDIGI_DEMAS_VACINACAO_CALENDARIO_NACIONAL/SEIDIGI_DEMAS_VACINACAO_CALENDARIO_NACIONAL.html",
+    "tipo_recurso": "painel",
+    "rotulo_link": "Painel Oficial de Cobertura Vacinal (InfoMS / DataSUS)",
+    "frequencia": "Anual / Mensal",
+    "ultima_atualizacao": "2025-01-20"
+  },
+  "explicacao_leiga": {
+    "resumo": "Mede o percentual de bebês de até 1 ano que receberam as 3 doses obrigatórias da vacina contra a paralisia infantil.",
+    "como_interpretar": "A meta segura recomendada pelo Ministério da Saúde e OMS é de 95%. Valores abaixo de 80% criam sério risco de reintrodução do vírus.",
+    "por_que_importa": "O Brasil foi declarado livre da poliomielite em 1994. A queda na vacinação entre 2016 e 2021 acendeu alerta máximo na saúde pública.",
+    "pontos_de_atencao": "Em 2021 atingiu a mínima perigosa de 71,1%, iniciando trajetória de recuperação a partir de 2023 (84,6%) e 2024 (87,5%)."
+  },
+  "detalhamento_tecnico": {
+    "formula_calculo": "(Doses aplicadas da 3ª dose de Poliomielite em menores de 1 ano / População estimada de menores de 1 ano pelo IBGE/Sinasc) * 100.",
+    "unidade_medida": "% de cobertura",
+    "amostra_cobertura": "Todas as salas de vacina da rede municipal e estadual do SUS e clínicas privadas credenciadas.",
+    "anonimizacao_sigilo": "Dados consolidados por município e UF através do sistema SI-PNI/RNDS.",
+    "limitacoes_e_quebras_metodologicas": "Migração do sistema SI-PNI clássico para o módulo RNDS gerou instabilidade e atrasos de digitação em 2020 e 2021.",
+    "orientacoes_fact_checking": "Em alguns municípios a taxa calculada pode ultrapassar 100% por imprecisão de projeção demográfica ou atendimento a não-residentes."
+  },
+  "visualizacao": {
+    "tipo_padrao": "line",
+    "eixo_x": {
+      "tipo": "temporal",
+      "rotulo": "Ano"
+    },
+    "eixo_y": {
+      "rotulo": "Cobertura Vacinal (%)",
+      "unidade": "%",
+      "escala_min": 50,
+      "escala_max": 105
+    },
+    "series": [
+      {
+        "id": "cobertura_polio",
+        "nome": "Cobertura Poliomielite (Meta: 95%)",
+        "dados": [
+          [
+            "2015",
+            98.3
+          ],
+          [
+            "2016",
+            84.4
+          ],
+          [
+            "2017",
+            84.7
+          ],
+          [
+            "2018",
+            89.5
+          ],
+          [
+            "2019",
+            84.2
+          ],
+          [
+            "2020",
+            76.2
+          ],
+          [
+            "2021",
+            71.1
+          ],
+          [
+            "2022",
+            77.2
+          ],
+          [
+            "2023",
+            84.6
+          ],
+          [
+            "2024",
+            87.5
+          ],
+          [
+            "2025",
+            89.2
+          ]
+        ]
+      }
+    ],
+    "marcos_historicos": [
+      {
+        "ano": 2015,
+        "rotulo": "Último ano acima da meta de 95% (98,3%)"
+      },
+      {
+        "ano": 2021,
+        "rotulo": "Ponto mais baixo da série histórica (71,1%)"
+      },
+      {
+        "ano": 2024,
+        "rotulo": "Recuperação para 87,5%"
+      }
+    ]
+  },
+  "citacao_sugerida": {
+    "abnt": "MINISTÉRIO DA SAÚDE. Programa Nacional de Imunizações (PNI): Cobertura Vacinal contra Poliomielite. Brasília: DataSUS, 2025. Acesso via Brasa Dados."
+  },
+  "provenance": {
+    "status": "review",
+    "organizationType": "government",
+    "sourceUrl": "https://infoms.saude.gov.br/extensions/SEIDIGI_DEMAS_VACINACAO_CALENDARIO_NACIONAL/SEIDIGI_DEMAS_VACINACAO_CALENDARIO_NACIONAL.html",
+    "reference": "2025",
+    "frequency": "annual",
+    "observationStatus": "undocumented",
+    "transformation": "Série anual legada. Agregação e valores aguardam conferência na fonte.",
+    "issues": [
+      "Valores legados sem arquivo de extração: conferência numérica pendente.",
+      "A frequência anunciada na fonte difere dos pontos anuais armazenados; agregação original não documentada."
+    ]
+  }
+}

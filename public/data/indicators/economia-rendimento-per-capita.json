@@ -1,0 +1,252 @@
+{
+  "id": "economia-rendimento-per-capita",
+  "slug": "economia-rendimento-per-capita",
+  "titulo": "Rendimento domiciliar per capita · real",
+  "categoria": "economia",
+  "tags": [
+    "economia",
+    "Rendimento domiciliar per capita · real",
+    "Instituto Brasileiro de Geografia e Estatística (IBGE)"
+  ],
+  "fonte": {
+    "orgao": "Instituto Brasileiro de Geografia e Estatística (IBGE)",
+    "pesquisa": "Rendimento médio mensal real domiciliar per capita, a preços médios do último ano, por classes simples de percentual das pessoas em ordem crescente de rendimento domiciliar per capita",
+    "url_oficial": "https://sidra.ibge.gov.br/tabela/7533",
+    "frequencia": "anual"
+  },
+  "explicacao_leiga": {
+    "resumo": "Renda média mensal por morador, ajustada pelo IBGE para os preços médios do último ano da série.",
+    "como_interpretar": "Os valores reais permitem comparação no tempo. A média não equivale à renda recebida pela maioria.",
+    "por_que_importa": "Aproxima a análise do poder de compra das famílias."
+  },
+  "detalhamento_tecnico": {
+    "formula_calculo": "Renda média mensal por morador, ajustada pelo IBGE para os preços médios do último ano da série.",
+    "unidade_medida": "R$",
+    "amostra_cobertura": "Brasil; recortes estaduais quando publicados pela fonte.",
+    "limitacoes_e_quebras_metodologicas": "A base de preços muda quando a fonte publica novo ano. Toda a série é reimportada conjuntamente para evitar misturar bases.",
+    "orientacoes_fact_checking": "Compare conceitos, unidades e períodos equivalentes. Ausência de observação não significa zero."
+  },
+  "visualizacao": {
+    "tipo_padrao": "line",
+    "eixo_y": {
+      "rotulo": "Rendimento domiciliar per capita · real",
+      "unidade": "R$"
+    },
+    "series": [
+      {
+        "id": "economia-rendimento-per-capita-0",
+        "nome": "Rendimento domiciliar per capita · real",
+        "dados": [
+          [
+            "2012",
+            1782
+          ],
+          [
+            "2013",
+            1840
+          ],
+          [
+            "2014",
+            1891
+          ],
+          [
+            "2015",
+            1830
+          ],
+          [
+            "2016",
+            1806
+          ],
+          [
+            "2017",
+            1811
+          ],
+          [
+            "2018",
+            1879
+          ],
+          [
+            "2019",
+            1904
+          ],
+          [
+            "2020",
+            1820
+          ],
+          [
+            "2021",
+            1692
+          ],
+          [
+            "2022",
+            1809
+          ],
+          [
+            "2023",
+            2018
+          ],
+          [
+            "2024",
+            2118
+          ],
+          [
+            "2025",
+            2264
+          ]
+        ]
+      }
+    ],
+    "dados_uf": [
+      {
+        "uf": "RO",
+        "nome": "Rondônia",
+        "valor": 1970
+      },
+      {
+        "uf": "AC",
+        "nome": "Acre",
+        "valor": 1372
+      },
+      {
+        "uf": "AM",
+        "nome": "Amazonas",
+        "valor": 1450
+      },
+      {
+        "uf": "RR",
+        "nome": "Roraima",
+        "valor": 1870
+      },
+      {
+        "uf": "PA",
+        "nome": "Pará",
+        "valor": 1435
+      },
+      {
+        "uf": "AP",
+        "nome": "Amapá",
+        "valor": 1675
+      },
+      {
+        "uf": "TO",
+        "nome": "Tocantins",
+        "valor": 1979
+      },
+      {
+        "uf": "MA",
+        "nome": "Maranhão",
+        "valor": 1231
+      },
+      {
+        "uf": "PI",
+        "nome": "Piauí",
+        "valor": 1534
+      },
+      {
+        "uf": "CE",
+        "nome": "Ceará",
+        "valor": 1379
+      },
+      {
+        "uf": "RN",
+        "nome": "Rio Grande do Norte",
+        "valor": 1779
+      },
+      {
+        "uf": "PB",
+        "nome": "Paraíba",
+        "valor": 1542
+      },
+      {
+        "uf": "PE",
+        "nome": "Pernambuco",
+        "valor": 1568
+      },
+      {
+        "uf": "AL",
+        "nome": "Alagoas",
+        "valor": 1401
+      },
+      {
+        "uf": "SE",
+        "nome": "Sergipe",
+        "valor": 1688
+      },
+      {
+        "uf": "BA",
+        "nome": "Bahia",
+        "valor": 1452
+      },
+      {
+        "uf": "MG",
+        "nome": "Minas Gerais",
+        "valor": 2289
+      },
+      {
+        "uf": "ES",
+        "nome": "Espírito Santo",
+        "valor": 2209
+      },
+      {
+        "uf": "RJ",
+        "nome": "Rio de Janeiro",
+        "valor": 2732
+      },
+      {
+        "uf": "SP",
+        "nome": "São Paulo",
+        "valor": 2862
+      },
+      {
+        "uf": "PR",
+        "nome": "Paraná",
+        "valor": 2687
+      },
+      {
+        "uf": "SC",
+        "nome": "Santa Catarina",
+        "valor": 2752
+      },
+      {
+        "uf": "RS",
+        "nome": "Rio Grande do Sul",
+        "valor": 2772
+      },
+      {
+        "uf": "MS",
+        "nome": "Mato Grosso do Sul",
+        "valor": 2369
+      },
+      {
+        "uf": "MT",
+        "nome": "Mato Grosso",
+        "valor": 2297
+      },
+      {
+        "uf": "GO",
+        "nome": "Goiás",
+        "valor": 2378
+      },
+      {
+        "uf": "DF",
+        "nome": "Distrito Federal",
+        "valor": 4401
+      }
+    ]
+  },
+  "provenance": {
+    "status": "verified",
+    "organizationType": "government",
+    "sourceUrl": "https://servicodados.ibge.gov.br/api/v3/agregados/7533/periodos/all/variaveis/10816?localidades=N1%5Ball%5D%7CN3%5Ball%5D&classificacao=1019%5B49243%5D",
+    "reference": "2025",
+    "frequency": "annual",
+    "observationStatus": "official",
+    "transformation": "Valores reais a preços médios de 2025, conforme o IBGE. Categorias totais; série reimportada integralmente.",
+    "issues": [],
+    "stateReference": "2025",
+    "expectedStates": 27,
+    "retrievedAt": "2026-09-27",
+    "datasetCode": "IBGE 7533 / variável 10816",
+    "sha256": "780dcd2bd4ae702c9fce48c9d0cdb32119ac5457a176ace31689a47e925fdb64"
+  }
+}

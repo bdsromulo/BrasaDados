@@ -1,0 +1,171 @@
+{
+  "id": "educacao-censo-superior-ead",
+  "slug": "ingressantes-ensino-superior-presencial-vs-ead-inep",
+  "titulo": "Ensino Superior — Novos Ingressantes: Presencial vs. EaD (Milhões)",
+  "categoria": "educacao",
+  "subcategoria": "ensino-superior",
+  "tags": [
+    "educação",
+    "ensino superior",
+    "faculdade",
+    "ead",
+    "ensino presencial",
+    "inep",
+    "censo da educação superior"
+  ],
+  "fonte": {
+    "orgao": "INEP / Ministério da Educação",
+    "pesquisa": "Censo da Educação Superior",
+    "url_oficial": "https://dadosabertos.inep.gov.br/dataset/censo-da-educacao-superior",
+    "tipo_recurso": "dados_abertos",
+    "rotulo_link": "Dados Abertos INEP (Censo Educação Superior)",
+    "frequencia": "Anual",
+    "ultima_atualizacao": "2024-10-03"
+  },
+  "explicacao_leiga": {
+    "resumo": "Mede o número anual de novos estudantes que ingressam em cursos de graduação no Brasil, separando quem estuda presencialmente de quem faz Educação a Distância (EaD).",
+    "como_interpretar": "Uma virada histórica ocorreu em 2020: pela primeira vez, mais calouros entraram na faculdade pelo formato EaD do que no modelo presencial. Em 2023, o EaD já concentrava 66,4% de todos os novos alunos.",
+    "por_que_importa": "Permite avaliar a democratização do acesso ao ensino superior pelo interior do país, ao mesmo tempo em que desperta debates sobre qualidade pedagógica e taxas de evasão em cursos remotos.",
+    "pontos_de_atencao": "O ingresso presencial caiu de 2,12 milhões de alunos em 2017 para 1,68 milhão em 2023, enquanto o EaD saltou de 770 mil para 3,31 milhões no mesmo período."
+  },
+  "detalhamento_tecnico": {
+    "formula_calculo": "Contagem censitária de alunos ingressantes (matrículas no primeiro ano de graduação regular) por modalidade de ensino em instituições públicas e privadas credenciadas.",
+    "unidade_medida": "Milhões de alunos ingressantes",
+    "amostra_cobertura": "Censitário para todas as Instituições de Educação Superior (IES) com cursos de graduação ativos no país.",
+    "anonimizacao_sigilo": "Microdados desidentificados protegidos pelo segredo estatístico do INEP e LGPD.",
+    "limitacoes_e_quebras_metodologicas": "A expansão de polos EaD foi desregulamentada pelo Decreto nº 9.057/2017, acelerando a oferta de vagas virtuais pela rede privada.",
+    "orientacoes_fact_checking": "Não confunda 'Alunos Ingressantes' (novos calouros no ano) com o 'Total de Matrículas' acumuladas em todos os anos do curso (cerca de 10 milhões)."
+  },
+  "visualizacao": {
+    "tipo_padrao": "line",
+    "eixo_x": {
+      "tipo": "temporal",
+      "rotulo": "Ano"
+    },
+    "eixo_y": {
+      "rotulo": "Ingressantes (Milhões)",
+      "unidade": "mi alunos",
+      "escala_min": 0,
+      "escala_max": 4.5
+    },
+    "series": [
+      {
+        "id": "ead",
+        "nome": "Educação a Distância (EaD)",
+        "dados": [
+          [
+            "2015",
+            0.5
+          ],
+          [
+            "2016",
+            0.59
+          ],
+          [
+            "2017",
+            0.77
+          ],
+          [
+            "2018",
+            1.07
+          ],
+          [
+            "2019",
+            1.56
+          ],
+          [
+            "2020",
+            2.01
+          ],
+          [
+            "2021",
+            2.17
+          ],
+          [
+            "2022",
+            3.1
+          ],
+          [
+            "2023",
+            3.31
+          ],
+          [
+            "2024",
+            3.55
+          ]
+        ]
+      },
+      {
+        "id": "presencial",
+        "nome": "Ensino Presencial",
+        "dados": [
+          [
+            "2015",
+            2.05
+          ],
+          [
+            "2016",
+            2.13
+          ],
+          [
+            "2017",
+            2.12
+          ],
+          [
+            "2018",
+            2.07
+          ],
+          [
+            "2019",
+            2.08
+          ],
+          [
+            "2020",
+            1.54
+          ],
+          [
+            "2021",
+            1.56
+          ],
+          [
+            "2022",
+            1.61
+          ],
+          [
+            "2023",
+            1.68
+          ],
+          [
+            "2024",
+            1.7
+          ]
+        ]
+      }
+    ],
+    "marcos_historicos": [
+      {
+        "ano": 2020,
+        "rotulo": "EaD supera o presencial pela 1ª vez na história (2,01 mi vs 1,54 mi)"
+      },
+      {
+        "ano": 2023,
+        "rotulo": "EaD alcança 66,4% de todos os novos ingressos universitários"
+      }
+    ]
+  },
+  "citacao_sugerida": {
+    "abnt": "INEP. Censo da Educação Superior 2023: Divulgação dos Resultados. Brasília: Ministério da Educação/INEP, 2024. Acesso via Brasa Dados."
+  },
+  "provenance": {
+    "status": "review",
+    "organizationType": "government",
+    "sourceUrl": "https://dadosabertos.inep.gov.br/dataset/censo-da-educacao-superior",
+    "reference": "2024",
+    "frequency": "annual",
+    "observationStatus": "undocumented",
+    "transformation": "Série anual legada. Agregação e valores aguardam conferência na fonte.",
+    "issues": [
+      "Valores legados sem arquivo de extração: conferência numérica pendente."
+    ]
+  }
+}

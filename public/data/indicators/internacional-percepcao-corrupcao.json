@@ -1,0 +1,115 @@
+{
+  "id": "internacional-percepcao-corrupcao",
+  "slug": "indice-percepcao-da-corrupcao-transparencia-internacional",
+  "titulo": "Índice de percepção da corrupção · Brasil",
+  "categoria": "internacional",
+  "tags": [
+    "internacional",
+    "Índice de percepção da corrupção · Brasil",
+    "Transparência Internacional"
+  ],
+  "fonte": {
+    "orgao": "Transparência Internacional",
+    "pesquisa": "Índice de percepção da corrupção · Brasil",
+    "url_oficial": "https://www.transparency.org/en/countries/brazil",
+    "frequencia": "annual"
+  },
+  "explicacao_leiga": {
+    "resumo": "Pontuação do Brasil no Índice de Percepção da Corrupção, baseada em avaliações de especialistas e empresários sobre o setor público.",
+    "como_interpretar": "A escala vai de zero a cem; pontuação maior indica menor percepção de corrupção no setor público. Não mede diretamente todos os episódios de corrupção.",
+    "por_que_importa": "Oferece uma comparação internacional da percepção sobre integridade institucional."
+  },
+  "detalhamento_tecnico": {
+    "formula_calculo": "Pontuação harmonizada das fontes elegíveis segundo a metodologia anual do CPI da Transparência Internacional.",
+    "unidade_medida": "pontos",
+    "amostra_cobertura": "Brasil, pontuação nacional na escala internacional 0–100, 2012 em diante.",
+    "limitacoes_e_quebras_metodologicas": "O índice agrega fontes e percepções; mudanças pequenas devem ser interpretadas com cautela. A metodologia foi revisada em 2012, início da série comparável importada. Não confundir posição no ranking com pontuação.",
+    "orientacoes_fact_checking": "Compare conceitos, unidades e períodos equivalentes. Ausência de observação não significa zero."
+  },
+  "visualizacao": {
+    "tipo_padrao": "line",
+    "eixo_y": {
+      "rotulo": "Índice de percepção da corrupção · Brasil",
+      "unidade": "pontos"
+    },
+    "series": [
+      {
+        "id": "internacional-percepcao-corrupcao",
+        "nome": "Brasil",
+        "dados": [
+          [
+            "2012",
+            43
+          ],
+          [
+            "2013",
+            42
+          ],
+          [
+            "2014",
+            43
+          ],
+          [
+            "2015",
+            38
+          ],
+          [
+            "2016",
+            40
+          ],
+          [
+            "2017",
+            37
+          ],
+          [
+            "2018",
+            35
+          ],
+          [
+            "2019",
+            35
+          ],
+          [
+            "2020",
+            38
+          ],
+          [
+            "2021",
+            38
+          ],
+          [
+            "2022",
+            38
+          ],
+          [
+            "2023",
+            36
+          ],
+          [
+            "2024",
+            34
+          ],
+          [
+            "2025",
+            35
+          ]
+        ]
+      }
+    ]
+  },
+  "provenance": {
+    "status": "verified",
+    "organizationType": "civil",
+    "sourceUrl": "https://www.transparency.org/en/countries/brazil",
+    "reference": "2025",
+    "frequency": "annual",
+    "observationStatus": "official",
+    "transformation": "Valores da série anual 2012 em diante publicados no perfil do Brasil pela Transparência Internacional. Sem cálculo de ranking ou preenchimento de anos.",
+    "issues": [
+      "A data de atualização desta página não identifica a publicação de cada ponto histórico."
+    ],
+    "datasetCode": "CPI / Brazil country profile / linechartData",
+    "retrievedAt": "2026-09-27",
+    "sha256": "85f0bf2eaa41fdfa54dbe9063776d65479afdea77896c98b747c1324e38955d5"
+  }
+}

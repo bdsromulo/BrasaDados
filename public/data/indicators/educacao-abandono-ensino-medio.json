@@ -1,0 +1,121 @@
+{
+  "id": "educacao-abandono-ensino-medio",
+  "slug": "taxa-abandono-ensino-medio-inep",
+  "titulo": "Evasão Escolar — Taxa de Abandono no Ensino Médio (%)",
+  "categoria": "educacao",
+  "subcategoria": "fluxo-escolar",
+  "tags": [
+    "educação",
+    "evasão",
+    "abandono",
+    "ensino médio",
+    "inep",
+    "censo escolar"
+  ],
+  "fonte": {
+    "orgao": "INEP / Ministério da Educação",
+    "pesquisa": "Censo da Educação Básica — Indicadores de Rendimento Escolar",
+    "url_oficial": "https://dadosabertos.inep.gov.br/dataset/taxas-de-rendimento-escolar",
+    "tipo_recurso": "dados_abertos",
+    "rotulo_link": "Dados Abertos INEP (Taxas de Rendimento e Fluxo)",
+    "frequencia": "Anual",
+    "ultima_atualizacao": "2024-05-18"
+  },
+  "explicacao_leiga": {
+    "resumo": "Mede o percentual de estudantes do Ensino Médio da rede pública que deixaram de frequentar a escola durante o ano letivo.",
+    "como_interpretar": "Uma taxa de 5,9% significa que quase 6 de cada 100 jovens do ensino médio abandonaram os estudos antes de concluir o ano.",
+    "por_que_importa": "O abandono no ensino médio é o momento mais crítico da evasão juvenil, quando muitos saem para trabalhar na informalidade.",
+    "pontos_de_atencao": "Em 2024 o governo implementou o programa nacional 'Pé-de-Meia' (poupança escolar) visando frear exatamente esse indicador."
+  },
+  "detalhamento_tecnico": {
+    "formula_calculo": "Taxa de Abandono = (Alunos evadidos no ano letivo / Total de alunos matriculados) * 100.",
+    "unidade_medida": "%",
+    "amostra_cobertura": "Censo Escolar de todas as escolas públicas estaduais e federais do Brasil.",
+    "anonimizacao_sigilo": "Dados cadastrais de alunos totalmente anonimizados.",
+    "limitacoes_e_quebras_metodologicas": "Em 2020 a taxa caiu artificialmente para 2,3% por conta de normas emergenciais do Conselho Nacional de Educação.",
+    "orientacoes_fact_checking": "Diferencie 'Abandono' (saiu durante o ano letivo) de 'Evasão' (não se matriculou no ano seguinte)."
+  },
+  "visualizacao": {
+    "tipo_padrao": "bar",
+    "eixo_x": {
+      "tipo": "temporal",
+      "rotulo": "Ano"
+    },
+    "eixo_y": {
+      "rotulo": "Taxa de Abandono (%)",
+      "unidade": "%",
+      "escala_min": 0,
+      "escala_max": 12
+    },
+    "series": [
+      {
+        "id": "abandono_em",
+        "nome": "Taxa de Abandono (Rede Pública)",
+        "dados": [
+          [
+            "2015",
+            9.3
+          ],
+          [
+            "2017",
+            7.9
+          ],
+          [
+            "2019",
+            5.9
+          ],
+          [
+            "2020",
+            2.3
+          ],
+          [
+            "2021",
+            5.6
+          ],
+          [
+            "2022",
+            6.5
+          ],
+          [
+            "2023",
+            5.9
+          ],
+          [
+            "2024",
+            5.1
+          ],
+          [
+            "2025",
+            4.6
+          ]
+        ]
+      }
+    ],
+    "marcos_historicos": [
+      {
+        "ano": 2020,
+        "rotulo": "Distorção pandêmica (regime especial de vínculo escolar)"
+      },
+      {
+        "ano": 2024,
+        "rotulo": "Início do Programa Pé-de-Meia"
+      }
+    ]
+  },
+  "citacao_sugerida": {
+    "abnt": "INEP. Taxas de Rendimento Escolar do Censo da Educação Básica 2023. Brasília: MEC/INEP, 2024. Acesso via Brasa Dados."
+  },
+  "provenance": {
+    "status": "review",
+    "organizationType": "government",
+    "sourceUrl": "https://dadosabertos.inep.gov.br/dataset/taxas-de-rendimento-escolar",
+    "reference": "2025",
+    "frequency": "annual",
+    "observationStatus": "undocumented",
+    "transformation": "Série anual legada. Agregação e valores aguardam conferência na fonte.",
+    "issues": [
+      "Valores legados sem arquivo de extração: conferência numérica pendente.",
+      "Há observações posteriores ao ano da atualização declarada."
+    ]
+  }
+}

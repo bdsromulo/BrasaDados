@@ -1,123 +1,44 @@
-# 📊 Metodologia de Obtenção de Dados & Estratégia Gráfica — Brasa Dados
+# Metodologia e confiabilidade
 
-Este documento esclarece em detalhes **de onde vêm os dados**, **o que significa "dado bruto" vs. "dado agregado"** no contexto público brasileiro e **qual é o nível de esforço e transformação** necessário para exibir cada indicador no **Brasa Dados**.
+## O que foi conferido
 
----
+O acervo original de 32 indicadores foi inventariado. A implementação acrescentou oito indicadores, chegando a 40. Há 27 com valores reimportados ou transcritos de publicações identificadas e 13 legados aguardando conferência numérica. O [inventário](docs/AUDITORIA.md) detalha fontes, unidades, frequências, cobertura e pendências; `public/data/legacy-audit.json` preserva os achados iniciais.
 
-## 1. O Dilema: Adaptar Gráficos Prontos vs. Regerar a partir de Dados Crus
+“Extração conferida” significa que o conjunto exibido foi obtido de uma fonte identificada, com transformação registrada. Não garante que a própria fonte nunca revisará o dado. “Em revisão” significa que o acervo anterior não tinha evidência suficiente para confirmar seus valores e agregações. Avisos são visíveis na consulta e no CSV/PNG; essas séries não entram na mesclagem.
 
-Para construir uma plataforma limpa, rápida, sem backend e que suporte o **Comparador de 4 Quadrantes com Mesclagem de Gráficos**, dividimos a obtenção de dados em 3 níveis:
+## Datas e natureza do dado
 
-```
-┌──────────────────────────────────────────────────────────────────────────────┐
-│                              ESPECTRO DE DADOS                               │
-├───────────────────────┬──────────────────────────────┬───────────────────────┤
-│ NÍVEL 1: APIs DIRETA  │ NÍVEL 2: TABELAS AGREGADAS   │ NÍVEL 3: MICRODADOS   │
-│ (Automatização Total) │ (Extração Anual Leve)        │ (Bases Crús Pesadas)  │
-├───────────────────────┼──────────────────────────────┼───────────────────────┤
-│ • IBGE SIDRA          │ • Anuário de Seg. Pública    │ • Microdados Censo    │
-│ • Banco Central (SGS) │ • Relatório do PISA (OCDE)   │ • Microdados PNAD     │
-│ • Banco Mundial / OWID│ • Resumo Técnico do IDEB     │ • Microdados Enem     │
-│                       │                              │                       │
-│ ➡️ O dado já vem em   │ ➡️ O dado já vem somado em   │ ❌ Gigabytes de linhas│
-│ JSON [ano, valor].    │ planilhas oficiais anuais.   │ individuais de alunos │
-│ Zero esforço manual.  │ Conversão única para JSON.   │ ou questionários.     │
-│                       │                              │                       │
-│ 🌟 ~50% do site       │ 🌟 ~45% do site              │ ⚠️ EVITAR (< 5%)     │
-└───────────────────────┴──────────────────────────────┴───────────────────────┘
-```
+- **Referência:** período medido pela observação; em ranking, um recorte comum explícito.
+- **Publicação:** data da divulgação, quando documentada. Não é inferida da coleta.
+- **Coleta:** data em que o importador consultou a fonte ou a transcrição foi conferida.
+- **Situação:** publicado pela fonte, provisório, estimativa ou não documentada. “Publicado pela fonte” não é sinônimo de definitivo.
 
----
+O acervo não ganha uma data de atualização artificial só por passar pelo build. Metadados de publicação ausentes são mostrados como não informados.
 
-## 2. Por Que NÃO Usar *Iframes* / Gráficos Embutidos de Terceiros?
+## Consulta e cobertura
 
-Poderíamos ser tentados a simplesmente colocar um `<iframe>` de um gráfico pronto do Datawrapper, PowerBI do governo ou Our World in Data. **Por que isso inviabilizaria o Brasa Dados?**
+Cinco e dez anos são janelas de anos-calendário encerradas no ano mais recente dos dados selecionados. “Série completa” remove esse corte. Séries com diferentes frequências mantêm suas datas exatas na tabela; um valor anual não é repetido em todos os meses. Ausências são `null`, aparecem como “Sem dado”, geram célula vazia no CSV e interrompem linhas.
 
-1. **Quebra o Comparador de 4 Quadrantes:** Dois iframes diferentes não conversam entre si. Você não consegue sincronizar o cursor, o zoom temporal ou passar o mouse em 2020 em um e destacar o mesmo ano no outro.
-2. **Impossibilita a Mesclagem (Merge):** Você jamais conseguiria colocar uma linha do PIB e uma linha do Desemprego sobre o mesmo eixo se ambas fossem iframes externos fechados.
-3. **Quebra o Tema Claro/Escuro:** Gráficos externos vêm com fundo branco ou cinza fixo, estragando o modo escuro.
-4. **Instabilidade:** Se o portal terceiro mudar o link, seu gráfico fica em branco.
+Rankings só aparecem quando há referência documentada. A nova importação de UFs usa o último período da série nacional e conserva ausências naquele período, em vez de buscar silenciosamente o último dado de cada UF. Os rankings legados sem ano conhecido ficam indisponíveis. Contagem de cobertura e limitações acompanham o indicador.
 
-### A Abordagem Vencedora do Brasa Dados:
-Nós **NÃO** pegamos a imagem nem o iframe. Nós pegamos **apenas as coordenadas da série temporal** (ex: `[[2020, 3.8], [2021, 4.2], [2022, 4.5]]`) e **desenhamos o gráfico dentro do nosso próprio motor (Apache ECharts)**.
+Linhas são o padrão para séries de evolução; colunas para fluxos/variações discretas e retratos de categorias; UFs usam barras horizontais. Curvas e área são escolhas secundárias. Alterações manuais são locais ao cartão.
 
-> **Vantagem:** O arquivo de dados tem menos de **10 KB**, carrega instantaneamente, tem identidade visual brasileira limpa, responde ao modo escuro e pode ser mesclado livremente no comparador.
+## Limitações relevantes
 
----
+- PIB usa Contas Nacionais Anuais consolidadas, com referência 2023. Não foi emendado a estimativas trimestrais mais recentes.
+- IDEB usa apenas os anos 2023 e 2025 conferidos na divulgação, total e rede pública. Histórico e UFs anteriores não foram certificados por reaproveitamento do acervo.
+- Água, coleta e tratamento de esgoto usam SINISA 2024, referência 2023. Há apenas um retrato nacional nessa edição importada; não é uma série histórica ampliada.
+- População usa estimativas anuais do IBGE, em pessoas, sem misturar dados do Censo ou preencher 2022–2023. Esperança de vida usa anos selecionados das tábuas de 2024; lacunas do histórico permanecem visíveis.
+- PRODES usa o ano de monitoramento agosto–julho e a Amazônia Legal. O valor consolidado de 2025 substitui a estimativa inicial; o ranking estadual conserva referência explícita em 2024. Recortes territoriais diferentes bloqueiam a mesclagem.
+- Mortes violentas intencionais e feminicídios seguem a edição 2026 do FBSP, incluindo as revisões históricas publicadas nessa edição. A taxa de MVI tem ranking das 27 UFs em 2025; a contagem de feminicídios não recebeu ranking nesta transcrição.
+- O Índice de Percepção da Corrupção usa a série de pontuação 2012–2025 na página da Transparência Internacional para o Brasil. Pontuação e posição no ranking são medidas diferentes.
+- A matriz elétrica renovável usa a oferta interna de eletricidade no BEN 2026. O gráfico da fonte também exibe geração centralizada com outro universo; essa barra não foi misturada à série. O relatório revisa o valor de 2023 para 89,2%.
+- Focos ativos de fogo usam somente o satélite de referência do INPE, com anos completos desde 2013. A série antiga agregava valores sem evidência de comparabilidade e foi substituída. O dado é contagem de detecções, não de incêndios nem de área queimada; o ranking soma os biomas de cada UF em 2025.
+- Gasto corrente em saúde é o total público e privado, com fonte OMS/Banco Mundial. O identificador antigo foi preservado para os links, mas não significa gasto exclusivo do governo. A série termina no último ano com valor publicado, sem preencher anos recentes ausentes.
+- Os dois percentuais de tratamento de esgoto têm denominadores distintos (água consumida e esgoto coletado). Não devem ser somados ou tomados como medidas idênticas.
+- Pobreza usa as linhas US$ 6,85 e US$ 2,15 em PPC 2017 da SIS 2025. Não combina outras linhas/PPC.
+- Insegurança alimentar reúne a PNAD Contínua 2023–2024; não une automaticamente PNAD e POF anteriores.
+- O rendimento real muda de base de preços quando a fonte atualiza a edição. A série inteira precisa ser reimportada.
+- Fontes governamentais, organismos internacionais e sociedade civil são identificados separadamente. FBSP, SEEG e Transparência Internacional não são órgãos governamentais.
 
-## 3. Análise Detalhada dos Indicadores Básicos
-
-Vejamos como funcionam na prática os exemplos solicitados:
-
-### Caso A: Índice PISA (Programa Internacional de Avaliação de Alunos)
-* **O que é:** Avaliação internacional trienal coordenada pela OCDE e aplicada no Brasil pelo INEP em estudantes de 15 anos (Leitura, Matemática e Ciências).
-* **Precisa de dados crus (respostas individuais de cada aluno)?**
-  * **NÃO.** A OCDE avalia cerca de 600 mil alunos no mundo (sendo ~14 mil no Brasil). Você não precisa processar o caderno de provas de cada aluno.
-* **Onde o dado oficial já existe pronto:**
-  * O Banco Mundial disponibiliza a série histórica do PISA via API aberta em JSON (`World Bank Indicator: LO.PISA.MAT`, `LO.PISA.REA`).
-  * O INEP publica a cada 3 anos o *Relatório Brasil no PISA* com uma tabela consolidada: nota média do Brasil vs. média da OCDE vs. países vizinhos (Chile, México, Argentina, Colômbia).
-* **O que o Brasa Dados faz:**
-  * Armazenamos um JSON simples contendo os anos das edições (`2000, 2003, 2006, 2009, 2012, 2015, 2018, 2022`) e as notas médias.
-  * **Trabalho necessário:** Zero dados crus. O arquivo JSON leva 5 minutos para ser montado ou sincronizado e só muda a cada 3 anos.
-
----
-
-### Caso B: PIB (Produto Interno Bruto)
-* **O que é:** A soma de todas as riquezas e serviços produzidos no país. Pode ser medido em:
-  1. *Crescimento Percentual Anual (%):* Mede se a economia expandiu ou encolheu.
-  2. *Variação Trimestral contra trimestre anterior (com ajuste sazonal).*
-  3. *PIB per capita (R$ ou US$ correntes):* Riqueza dividida pela população.
-* **Precisa de dados crus (notas fiscais ou balanços de empresas)?**
-  * **NÃO.** Nem o IBGE divulga dados brutos de empresas (por sigilo fiscal). O IBGE calcula o Sistema de Contas Nacionais e entrega a série 100% pronta.
-* **Onde o dado oficial já existe pronto:**
-  * **IBGE SIDRA (Tabela 6784):** Endpoint direto que retorna as taxas de crescimento do PIB trimestral e anual.
-  * **Banco Central SGS (Série 4380 / 1211):** Retorna o PIB consolidado mensal ou anual em formato JSON limpo.
-* **O que o Brasa Dados faz:**
-  * Um script leve de 20 linhas faz uma chamada HTTP na API do SIDRA ou BCB uma vez por trimestre, pega o array de datas e valores e salva no arquivo `/public/data/indicators/economia-pib.json`.
-  * O ECharts plota o gráfico de barras (com valores positivos em verde e negativos/recessões em vermelho).
-
----
-
-### Caso C: IDEB (Índice de Desenvolvimento da Educação Básica)
-* **O que é:** Nota de 0 a 10 para o Ensino Fundamental e Médio, calculada a cada 2 anos pelo INEP.
-* **Precisa de dados crus do Censo Escolar e do Saeb?**
-  * **NÃO.** O INEP já divulga a planilha oficial consolidada com a nota do Brasil, das Regiões, dos Estados e das Redes (Pública vs. Privada).
-* **O que o Brasa Dados faz:**
-  * Extrai a tabela de resumo nacional que tem apenas ~10 linhas por rede e transforma no JSON padronizado.
-  * Permite ao usuário comparar no gráfico a evolução da escola pública vs. escola privada nos últimos 15 anos.
-
----
-
-### Caso D: Segurança Pública (Mortes Violentas Intencionais - MVI)
-* **O que é:** O indicador mais confiável de criminalidade letal do Brasil, somando homicídios dolosos, latrocínios, lesões corporais seguidas de morte e mortes decorrentes de intervenção policial.
-* **Precisa de dados crus (boletins de ocorrência das delegacias)?**
-  * **NÃO.** As secretarias de segurança estaduais têm formatos heterogêneos e sigilosos.
-* **Onde o dado oficial já existe pronto:**
-  * O **Fórum Brasileiro de Segurança Pública (FBSP)** consolida todos os estados e publica anualmente as *Tabelas Oficiais do Anuário*.
-  * O **IPEA** publica o *Atlas da Violência* com a série histórica por estado e perfil da vítima (jovens, negros, mulheres).
-* **O que o Brasa Dados faz:**
-  * Pegamos a tabela consolidada do Anuário/Atlas, que já traz a taxa calculada por 100 mil habitantes de 2011 até o ano mais recente.
-  * Salvamos no JSON estático do indicador. Atualização necessária: apenas 1 vez por ano (quando o anuário é publicado em julho).
-
----
-
-## 4. O Que Fica na Ficha de Metodologia e Fact-Checking?
-
-Para garantir a credibilidade editorial do Brasa Dados, cada indicador armazena em seu JSON metadados rigorosos:
-
-| Campo do Metadado | Função no Fact-Checking | Exemplo Prático |
-| :--- | :--- | :--- |
-| **`orgao_emissor`** | Identifica a autoridade oficial do dado | INEP / MEC |
-| **`amostra_cobertura`** | Diz quem foi ou não medido | Escolas com pelo menos 10 alunos matriculados na 3ª série do EM |
-| **`taxa_resposta`** | Critério de validade estatística | Exige 80% de presença dos alunos no dia do exame |
-| **`anonimizacao`** | Regra de privacidade (LGPD) | Escolas com menos de 10 alunos são suprimidas da divulgação pública |
-| **`quebra_metodologica`** | Evita comparações desonestas ou enganosas | *Exemplo:* Em 2021, o IDEB subiu em vários estados por causa de regras emergenciais de aprovação automática durante a pandemia |
-| **`url_oficial`** | Link para a fonte primária | Link direto para o portal do governo ou da instituição |
-
----
-
-## 5. Resumo da Estratégia de Engenharia
-
-1. **Nunca reinventar a roda estatística:** Todo órgão de excelência (IBGE, IPEA, BCB, INEP, Fiocruz, FBSP, OCDE) já publica indicadores consolidados. Nosso papel é a curadoria, padronização, contextualização e cruzamento visual.
-2. **Dados em JSON estático (< 20 KB cada):** As séries temporais são leves e servidas diretamente via CDN (Cloudflare ou GitHub Pages), garantindo carregamento instantâneo sem banco de dados.
-3. **Regeneração visual própria (ECharts):** Com os pontos em mãos, temos 100% de liberdade para controlar cores, tema claro/escuro, zoom compartilhado e o comparador de 4 quadrantes.
+O roteiro posterior inclui completar a conferência dos 13 legados, recuperar históricos oficiais de IDEB/saneamento, ampliar UFs e, depois, inclusão digital, moradia, mobilidade, estrutura etária e cobertura municipal. O indicador prisional permanece em revisão: os relatórios SISDEPEN separam celas estaduais, sistema federal e outras prisões, e esses universos precisam ser conciliados antes de formar uma série nacional única.

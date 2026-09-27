@@ -1,0 +1,73 @@
+{
+  "kind": "reviewed-transcription",
+  "source": "https://forumseguranca.org.br/wp-content/uploads/2026/07/anuario-2026.pdf",
+  "datasetCode": "FBSP 20º Anuário 2026 / Tabelas 01 e 02",
+  "reference": "2025",
+  "reviewedAt": "2026-09-27",
+  "pointer": "Transcrição conferida da publicação oficial. Tabela 02, página 30: série nacional; Tabela 01, página 28: ranking 2025. Extração reproduzível em scripts/parse-fbsp.py. Sem interpolação ou preenchimento de anos ausentes.",
+  "manifestSha256": "75a4bc3b9509a90aa8acf95b74b18e0fce99bed8d79d0c7a729b7f71085f9c55",
+  "series": [
+    {
+      "id": "taxa",
+      "nome": "Brasil · taxa de MVI",
+      "dados": [
+        [
+          "2012",
+          27.7
+        ],
+        [
+          "2013",
+          28
+        ],
+        [
+          "2014",
+          29.7
+        ],
+        [
+          "2015",
+          28.9
+        ],
+        [
+          "2016",
+          30.2
+        ],
+        [
+          "2017",
+          31.2
+        ],
+        [
+          "2018",
+          27.9
+        ],
+        [
+          "2019",
+          23
+        ],
+        [
+          "2020",
+          24.1
+        ],
+        [
+          "2021",
+          23
+        ],
+        [
+          "2022",
+          22.7
+        ],
+        [
+          "2023",
+          21.9
+        ],
+        [
+          "2024",
+          20.8
+        ],
+        [
+          "2025",
+          19.1
+        ]
+      ]
+    }
+  ]
+}

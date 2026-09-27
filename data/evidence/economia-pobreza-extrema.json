@@ -1,0 +1,127 @@
+{
+  "kind": "reviewed-transcription",
+  "source": "https://agenciadenoticias.ibge.gov.br/media/com_mediaibge/arquivos/71016b2eb0a5feb8f7685271b1233db7.pdf",
+  "datasetCode": "SIS 2025 / Tabela 2.18",
+  "reference": "2024",
+  "reviewedAt": "2026-09-27",
+  "pointer": "Transcrição conferida da publicação oficial. Gráfico “Proporção de pessoas, por classes de rendimento domiciliar per capita selecionadas — Brasil 2012–2024”. Sem interpolação ou preenchimento de anos ausentes.",
+  "manifestSha256": "0da76236be143d9974143465a3b24a5b249ace0a78cef744ce057c7dba1a7d19",
+  "series": [
+    {
+      "id": "pobreza",
+      "nome": "Pobreza · US$ 6,85 PPC 2017",
+      "dados": [
+        [
+          "2012",
+          34.7
+        ],
+        [
+          "2013",
+          32.5
+        ],
+        [
+          "2014",
+          30.9
+        ],
+        [
+          "2015",
+          31.7
+        ],
+        [
+          "2016",
+          33.7
+        ],
+        [
+          "2017",
+          33.7
+        ],
+        [
+          "2018",
+          33.4
+        ],
+        [
+          "2019",
+          32.6
+        ],
+        [
+          "2020",
+          31.1
+        ],
+        [
+          "2021",
+          36.8
+        ],
+        [
+          "2022",
+          31.6
+        ],
+        [
+          "2023",
+          27.3
+        ],
+        [
+          "2024",
+          23.1
+        ]
+      ]
+    },
+    {
+      "id": "extrema",
+      "nome": "Extrema pobreza · US$ 2,15 PPC 2017",
+      "dados": [
+        [
+          "2012",
+          6.6
+        ],
+        [
+          "2013",
+          5.8
+        ],
+        [
+          "2014",
+          5.2
+        ],
+        [
+          "2015",
+          5.6
+        ],
+        [
+          "2016",
+          6.7
+        ],
+        [
+          "2017",
+          7.3
+        ],
+        [
+          "2018",
+          7.4
+        ],
+        [
+          "2019",
+          7.4
+        ],
+        [
+          "2020",
+          6.1
+        ],
+        [
+          "2021",
+          9
+        ],
+        [
+          "2022",
+          5.9
+        ],
+        [
+          "2023",
+          4.4
+        ],
+        [
+          "2024",
+          3.5
+        ]
+      ]
+    }
+  ]
+}

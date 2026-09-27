@@ -1,0 +1,168 @@
+{
+  "id": "economia-pobreza-extrema",
+  "slug": "economia-pobreza-extrema",
+  "titulo": "Pobreza e extrema pobreza",
+  "categoria": "economia",
+  "tags": [
+    "economia",
+    "Pobreza e extrema pobreza",
+    "Instituto Brasileiro de Geografia e Estatística (IBGE)"
+  ],
+  "fonte": {
+    "orgao": "Instituto Brasileiro de Geografia e Estatística (IBGE)",
+    "pesquisa": "Pobreza e extrema pobreza",
+    "url_oficial": "https://agenciadenoticias.ibge.gov.br/media/com_mediaibge/arquivos/71016b2eb0a5feb8f7685271b1233db7.pdf",
+    "frequencia": "annual"
+  },
+  "explicacao_leiga": {
+    "resumo": "Parcela da população com rendimento domiciliar per capita abaixo das linhas de pobreza e extrema pobreza usadas na Síntese de Indicadores Sociais 2025.",
+    "como_interpretar": "A linha de pobreza inclui as pessoas em extrema pobreza. As duas séries não são parcelas que se somam.",
+    "por_que_importa": "Permite acompanhar a insuficiência de renda para condições básicas de vida."
+  },
+  "detalhamento_tecnico": {
+    "formula_calculo": "Parcela da população com rendimento domiciliar per capita abaixo das linhas de pobreza e extrema pobreza usadas na Síntese de Indicadores Sociais 2025.",
+    "unidade_medida": "%",
+    "amostra_cobertura": "Brasil; recortes estaduais quando publicados pela fonte.",
+    "limitacoes_e_quebras_metodologicas": "Linhas de US$ 6,85 e US$ 2,15 por dia em PPC de 2017, conforme a edição 2025 do IBGE. Não combinar com séries calculadas com outra PPC ou linha. Pesos da PNAD podem ser revisados.",
+    "orientacoes_fact_checking": "Compare conceitos, unidades e períodos equivalentes. Ausência de observação não significa zero."
+  },
+  "visualizacao": {
+    "tipo_padrao": "line",
+    "eixo_y": {
+      "rotulo": "Pobreza e extrema pobreza",
+      "unidade": "%"
+    },
+    "series": [
+      {
+        "id": "pobreza",
+        "nome": "Pobreza · US$ 6,85 PPC 2017",
+        "dados": [
+          [
+            "2012",
+            34.7
+          ],
+          [
+            "2013",
+            32.5
+          ],
+          [
+            "2014",
+            30.9
+          ],
+          [
+            "2015",
+            31.7
+          ],
+          [
+            "2016",
+            33.7
+          ],
+          [
+            "2017",
+            33.7
+          ],
+          [
+            "2018",
+            33.4
+          ],
+          [
+            "2019",
+            32.6
+          ],
+          [
+            "2020",
+            31.1
+          ],
+          [
+            "2021",
+            36.8
+          ],
+          [
+            "2022",
+            31.6
+          ],
+          [
+            "2023",
+            27.3
+          ],
+          [
+            "2024",
+            23.1
+          ]
+        ]
+      },
+      {
+        "id": "extrema",
+        "nome": "Extrema pobreza · US$ 2,15 PPC 2017",
+        "dados": [
+          [
+            "2012",
+            6.6
+          ],
+          [
+            "2013",
+            5.8
+          ],
+          [
+            "2014",
+            5.2
+          ],
+          [
+            "2015",
+            5.6
+          ],
+          [
+            "2016",
+            6.7
+          ],
+          [
+            "2017",
+            7.3
+          ],
+          [
+            "2018",
+            7.4
+          ],
+          [
+            "2019",
+            7.4
+          ],
+          [
+            "2020",
+            6.1
+          ],
+          [
+            "2021",
+            9
+          ],
+          [
+            "2022",
+            5.9
+          ],
+          [
+            "2023",
+            4.4
+          ],
+          [
+            "2024",
+            3.5
+          ]
+        ]
+      }
+    ]
+  },
+  "provenance": {
+    "status": "verified",
+    "organizationType": "government",
+    "sourceUrl": "https://agenciadenoticias.ibge.gov.br/media/com_mediaibge/arquivos/71016b2eb0a5feb8f7685271b1233db7.pdf",
+    "reference": "2024",
+    "frequency": "annual",
+    "observationStatus": "official",
+    "transformation": "Transcrição conferida da publicação oficial. Gráfico “Proporção de pessoas, por classes de rendimento domiciliar per capita selecionadas — Brasil 2012–2024”. Sem interpolação ou preenchimento de anos ausentes.",
+    "issues": [],
+    "retrievedAt": "2026-09-27",
+    "publishedAt": "2025-12-03",
+    "datasetCode": "SIS 2025 / Tabela 2.18",
+    "sha256": "0da76236be143d9974143465a3b24a5b249ace0a78cef744ce057c7dba1a7d19"
+  }
+}

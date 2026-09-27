@@ -1,0 +1,131 @@
+{
+  "id": "economia-bolsa-familia-beneficiarios",
+  "slug": "familias-beneficiarias-bolsa-familia-mds",
+  "titulo": "Proteção Social — Famílias Beneficiárias do Bolsa Família (Milhões)",
+  "categoria": "economia",
+  "subcategoria": "transferencia-de-renda",
+  "tags": [
+    "economia",
+    "bolsa família",
+    "auxílio brasil",
+    "mds",
+    "cadúnico",
+    "pobreza",
+    "beneficiários",
+    "dados abertos"
+  ],
+  "fonte": {
+    "orgao": "Ministério do Desenvolvimento e Assistência Social (MDS)",
+    "pesquisa": "SAGICAD / Cadastro Único para Programas Sociais (CadÚnico)",
+    "url_oficial": "https://paineis.mds.gov.br/",
+    "tipo_recurso": "painel",
+    "rotulo_link": "Painel SAGICAD / Observatório do CadÚnico (MDS)",
+    "frequencia": "Mensal / Anual",
+    "ultima_atualizacao": "2025-08-01"
+  },
+  "explicacao_leiga": {
+    "resumo": "Mede a quantidade total de famílias de baixa renda atendidas mensalmente pelo principal programa de transferência direta de renda do governo federal.",
+    "como_interpretar": "Durante quase uma década o programa atendeu entre 13 e 14 milhões de lares. Com a pandemia e a reformulação do benefício mínimo para R$ 600, a cobertura expandiu para mais de 21 milhões de famílias.",
+    "por_que_importa": "É a política pública de alívio à pobreza de maior alcance no Brasil, com impacto comprovado na redução da desnutrição infantil, evasão escolar e dinamização do comércio em pequenos municípios.",
+    "pontos_de_atencao": "A partir de 2024, revisões rigorosas do Cadastro Único (em especial sobre cadastros unipessoais) e o mecanismo da 'Regra de Proteção' ajustaram a folha para cerca de 19,6 milhões de lares."
+  },
+  "detalhamento_tecnico": {
+    "formula_calculo": "Total de famílias elegíveis com Registro Ativo no CadÚnico com renda familiar per capita inferior ao teto do programa (R$ 218 mensais) que tiveram benefício emitido na folha de pagamento da Caixa Econômica Federal.",
+    "unidade_medida": "Milhões de famílias",
+    "amostra_cobertura": "Universo das famílias cadastradas em situação de pobreza e extrema pobreza em todos os 5.570 municípios do Brasil.",
+    "anonimizacao_sigilo": "Anonimização nominal em respeito ao sigilo bancário e à LGPD; dados abertos desagregados por município e estado.",
+    "limitacoes_e_quebras_metodologicas": "Substituição do Bolsa Família pelo 'Auxílio Brasil' entre novembro de 2021 e início de 2023, quando a nova lei reinstituiu o programa com benefícios complementares para a primeira infância.",
+    "orientacoes_fact_checking": "Não confunda o número de 'famílias atendidas' (cerca de 20 milhões) com o número total de 'pessoas beneficiadas' (mais de 50 milhões de cidadãos que compõem esses núcleos familiares)."
+  },
+  "visualizacao": {
+    "tipo_padrao": "line",
+    "eixo_x": {
+      "tipo": "temporal",
+      "rotulo": "Ano"
+    },
+    "eixo_y": {
+      "rotulo": "Famílias (Milhões)",
+      "unidade": "mi famílias",
+      "escala_min": 10,
+      "escala_max": 24
+    },
+    "series": [
+      {
+        "id": "familias_bolsa_familia",
+        "nome": "Famílias Beneficiárias (Milhões)",
+        "dados": [
+          [
+            "2015",
+            13.9
+          ],
+          [
+            "2016",
+            13.5
+          ],
+          [
+            "2017",
+            13.8
+          ],
+          [
+            "2018",
+            14.1
+          ],
+          [
+            "2019",
+            13.8
+          ],
+          [
+            "2020",
+            14.3
+          ],
+          [
+            "2021",
+            14.5
+          ],
+          [
+            "2022",
+            21.6
+          ],
+          [
+            "2023",
+            21.1
+          ],
+          [
+            "2024",
+            20.8
+          ],
+          [
+            "2025",
+            19.6
+          ]
+        ]
+      }
+    ],
+    "marcos_historicos": [
+      {
+        "ano": 2022,
+        "rotulo": "Expansão para 21,6 milhões com o piso de R$ 600"
+      },
+      {
+        "ano": 2025,
+        "rotulo": "Revisão cadastral focalizada e Regra de Proteção estabilizam atendimento em 19,6 mi"
+      }
+    ]
+  },
+  "citacao_sugerida": {
+    "abnt": "BRASIL. Ministério do Desenvolvimento e Assistência Social, Família e Combate à Fome. Dados Abertos do Programa Bolsa Família e Cadastro Único. Brasília: MDS/SAGICAD, 2025. Acesso via Brasa Dados."
+  },
+  "provenance": {
+    "status": "review",
+    "organizationType": "government",
+    "sourceUrl": "https://paineis.mds.gov.br/",
+    "reference": "2025",
+    "frequency": "annual",
+    "observationStatus": "undocumented",
+    "transformation": "Série anual legada. Agregação e valores aguardam conferência na fonte.",
+    "issues": [
+      "Valores legados sem arquivo de extração: conferência numérica pendente.",
+      "A frequência anunciada na fonte difere dos pontos anuais armazenados; agregação original não documentada."
+    ]
+  }
+}

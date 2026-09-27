@@ -1,0 +1,86 @@
+{
+  "executedAt": "2026-09-27T23:30:11.920Z",
+  "results": [
+    {
+      "id": "economia-desemprego-pnad",
+      "status": "updated",
+      "reference": "2026-Q2"
+    },
+    {
+      "id": "economia-inflacao-ipca",
+      "status": "updated",
+      "reference": "2026-08"
+    },
+    {
+      "id": "economia-pib-variacao",
+      "status": "updated",
+      "reference": "2023"
+    },
+    {
+      "id": "economia-indice-gini",
+      "status": "updated",
+      "reference": "2025"
+    },
+    {
+      "id": "economia-rendimento-per-capita",
+      "status": "updated",
+      "reference": "2025"
+    },
+    {
+      "id": "economia-informalidade",
+      "status": "updated",
+      "reference": "2026-Q2"
+    },
+    {
+      "id": "economia-taxa-selic",
+      "status": "updated",
+      "reference": "2026-09"
+    },
+    {
+      "id": "economia-cambio-dolar",
+      "status": "updated",
+      "reference": "2026-09"
+    },
+    {
+      "id": "economia-divida-bruta",
+      "status": "updated",
+      "reference": "2026-07"
+    },
+    {
+      "id": "saude-inseguranca-alimentar",
+      "status": "updated",
+      "reference": "2024",
+      "checkedAt": "2026-09-27T12:03:30.663Z"
+    },
+    {
+      "id": "educacao-taxa-analfabetismo",
+      "status": "updated",
+      "reference": "2025",
+      "checkedAt": "2026-09-27T18:10:48.757Z"
+    },
+    {
+      "id": "demografia-populacao-brasil",
+      "status": "updated",
+      "reference": "2026",
+      "checkedAt": "2026-09-27T18:10:49.784Z"
+    },
+    {
+      "id": "saude-gastos-publicos-pib",
+      "status": "updated",
+      "reference": "2023",
+      "checkedAt": "2026-09-27T18:21:57.093Z"
+    },
+    {
+      "id": "internacional-percepcao-corrupcao",
+      "status": "updated",
+      "reference": "2025",
+      "checkedAt": "2026-09-27T23:13:19.232Z"
+    },
+    {
+      "id": "meio-ambiente-queimadas-focos",
+      "status": "updated",
+      "reference": "2025",
+      "checkedAt": "2026-09-27T23:30:11.920Z"
+    }
+  ]
+}

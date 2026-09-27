@@ -1,0 +1,25 @@
+{
+  "method": "Tamanho dos artefatos do build e compressão gzip local; não mede latência, LCP ou desempenho em telefone físico.",
+  "assets": [
+    {
+      "file": "assets/index-iggfb5JI.css",
+      "bytes": 30187,
+      "gzipBytes": 6844
+    },
+    {
+      "file": "assets/index-VMPqm8Mw.js",
+      "bytes": 285043,
+      "gzipBytes": 87330
+    },
+    {
+      "file": "assets/AtlasChart-BDyTd50H.js",
+      "bytes": 510153,
+      "gzipBytes": 171772
+    },
+    {
+      "file": "data/catalog.json",
+      "bytes": 27249,
+      "gzipBytes": 5661
+    }
+  ]
+}

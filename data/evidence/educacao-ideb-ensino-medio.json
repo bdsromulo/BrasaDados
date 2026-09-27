@@ -1,0 +1,39 @@
+{
+  "kind": "reviewed-transcription",
+  "source": "https://www.gov.br/inep/pt-br/centrais-de-conteudo/noticias/ideb/ideb-avanca-em-todas-as-etapas-da-educacao-basica",
+  "datasetCode": "INEP / IDEB 2025",
+  "reference": "2025",
+  "reviewedAt": "2026-09-27",
+  "pointer": "Transcrição conferida da publicação oficial. Divulgação de 5 de agosto de 2026, parágrafo comparativo 2023–2025. Sem interpolação ou preenchimento de anos ausentes.",
+  "manifestSha256": "a1cbe6055bc252d6fa9d25e5a383277108d6f372e42931db7ddb27441614a6f6",
+  "series": [
+    {
+      "id": "total",
+      "nome": "Total · pública e privada",
+      "dados": [
+        [
+          "2023",
+          4.3
+        ],
+        [
+          "2025",
+          4.5
+        ]
+      ]
+    },
+    {
+      "id": "publica",
+      "nome": "Rede pública",
+      "dados": [
+        [
+          "2023",
+          4.1
+        ],
+        [
+          "2025",
+          4.3
+        ]
+      ]
+    }
+  ]
+}

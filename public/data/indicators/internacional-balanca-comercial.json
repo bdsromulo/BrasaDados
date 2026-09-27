@@ -1,0 +1,133 @@
+{
+  "id": "internacional-balanca-comercial",
+  "slug": "saldo-balanca-comercial-brasil-comexstat",
+  "titulo": "Comércio Exterior — Saldo da Balança Comercial (US$ Bilhões)",
+  "categoria": "internacional",
+  "subcategoria": "comercio-exterior",
+  "tags": [
+    "internacional",
+    "exportação",
+    "importação",
+    "comércio",
+    "balança comercial",
+    "mdic"
+  ],
+  "fonte": {
+    "orgao": "Ministério do Desenvolvimento, Indústria, Comércio e Serviços (MDIC)",
+    "pesquisa": "Comex Stat — Estatísticas de Comércio Exterior do Brasil",
+    "url_oficial": "https://comexstat.mdic.gov.br/pt/geral",
+    "tipo_recurso": "painel",
+    "rotulo_link": "Portal Comex Stat (MDIC/SECEX)",
+    "frequencia": "Mensal / Anual",
+    "ultima_atualizacao": "2026-02-10"
+  },
+  "explicacao_leiga": {
+    "resumo": "Mede a diferença entre tudo o que o Brasil exportou (vendeu para o exterior) e tudo o que importou (comprou de fora).",
+    "como_interpretar": "Valores positivos representam superávit comercial (entrou mais dólares no país do que saiu). Valores negativos representam déficit.",
+    "por_que_importa": "Um superávit robusto fortalece as reservas internacionais do Banco Central e dá sustentação à moeda brasileira.",
+    "pontos_de_atencao": "Em 2023 o país bateu recorde histórico absoluto com superávit de US$ 98,8 bilhões, impulsionado por safras recordes de soja, milho, minério e petróleo."
+  },
+  "detalhamento_tecnico": {
+    "formula_calculo": "Saldo = Exportações Totais FOB (Free on Board) - Importações Totais FOB em Dólares dos EUA.",
+    "unidade_medida": "US$ Bilhões",
+    "amostra_cobertura": "Universo das declarações aduaneiras de exportação (DU-E) e importação (DU-IMP) registradas na Receita Federal.",
+    "anonimizacao_sigilo": "Dados agregados por produto, estado e país parceiro sem identificação individual de empresas.",
+    "limitacoes_e_quebras_metodologicas": "Adoção do Portal Único do Comércio Exterior modernizou a captação aduaneira.",
+    "orientacoes_fact_checking": "A balança comercial mede mercadorias físicas; a conta corrente (balanço de pagamentos) inclui serviços e remessas de juros."
+  },
+  "visualizacao": {
+    "tipo_padrao": "bar",
+    "eixo_x": {
+      "tipo": "temporal",
+      "rotulo": "Ano"
+    },
+    "eixo_y": {
+      "rotulo": "Superávit (US$ Bilhões)",
+      "unidade": "US$ bi",
+      "escala_min": -10,
+      "escala_max": 110
+    },
+    "series": [
+      {
+        "id": "saldo_balanca",
+        "nome": "Superávit Comercial Anual (US$ Bi)",
+        "dados": [
+          [
+            "2014",
+            -4
+          ],
+          [
+            "2015",
+            19.7
+          ],
+          [
+            "2016",
+            47.7
+          ],
+          [
+            "2017",
+            67
+          ],
+          [
+            "2018",
+            58
+          ],
+          [
+            "2019",
+            48
+          ],
+          [
+            "2020",
+            50.4
+          ],
+          [
+            "2021",
+            61.4
+          ],
+          [
+            "2022",
+            61.5
+          ],
+          [
+            "2023",
+            98.8
+          ],
+          [
+            "2024",
+            74.2
+          ],
+          [
+            "2025",
+            78
+          ]
+        ]
+      }
+    ],
+    "marcos_historicos": [
+      {
+        "ano": 2014,
+        "rotulo": "Último déficit comercial anual (-US$ 4 bi)"
+      },
+      {
+        "ano": 2023,
+        "rotulo": "Recorde histórico brasileiro (+US$ 98,8 bi)"
+      }
+    ]
+  },
+  "citacao_sugerida": {
+    "abnt": "MDIC. Comex Stat: Balança Comercial Brasileira Consolidada 2024. Brasília: SECEX/MDIC, 2025. Acesso via Brasa Dados."
+  },
+  "provenance": {
+    "status": "review",
+    "organizationType": "government",
+    "sourceUrl": "https://comexstat.mdic.gov.br/pt/geral",
+    "reference": "2025",
+    "frequency": "annual",
+    "observationStatus": "undocumented",
+    "transformation": "Série anual legada. Agregação e valores aguardam conferência na fonte.",
+    "issues": [
+      "Valores legados sem arquivo de extração: conferência numérica pendente.",
+      "A frequência anunciada na fonte difere dos pontos anuais armazenados; agregação original não documentada."
+    ]
+  }
+}

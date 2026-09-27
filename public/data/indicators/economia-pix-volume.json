@@ -1,0 +1,110 @@
+{
+  "id": "economia-pix-volume",
+  "slug": "volume-transacoes-pix-bcb",
+  "titulo": "Pagamentos Instantâneos — Volume Anual de Transações PIX (Bilhões)",
+  "categoria": "economia",
+  "subcategoria": "sistema-financeiro",
+  "tags": [
+    "economia",
+    "pix",
+    "banco central",
+    "pagamentos",
+    "fintech",
+    "banco",
+    "dados abertos"
+  ],
+  "fonte": {
+    "orgao": "Banco Central do Brasil (BCB)",
+    "pesquisa": "Estatísticas de Pagamentos do Varejo e Canais de Atendimento",
+    "url_oficial": "https://dadosabertos.bcb.gov.br/dataset/pix",
+    "tipo_recurso": "dados_abertos",
+    "rotulo_link": "Portal de Dados Abertos do BCB (Arranjo Pix)",
+    "frequencia": "Mensal / Anual",
+    "ultima_atualizacao": "2025-12-31"
+  },
+  "explicacao_leiga": {
+    "resumo": "Mede o número total de transações financeiras realizadas pelo sistema PIX em cada ano, em bilhões de operações.",
+    "como_interpretar": "O crescimento exponencial mostra a rapidez da inclusão digital e bancária no Brasil após a introdução do sistema gratuito pelo Banco Central.",
+    "por_que_importa": "O PIX revolucionou o comércio, reduziu o custo de transação para micro e pequenas empresas e superou somados boletos, TED, DOC e cartões de débito.",
+    "pontos_de_atencao": "Lançado em novembro de 2020, o PIX atingiu a marca recorde de 224 milhões de transações em um único dia em 2024."
+  },
+  "detalhamento_tecnico": {
+    "formula_calculo": "Soma das liquidações brutas cursadas no Sistema de Pagamentos Instantâneos (SPI) e registradas pelas instituições participantes do arranjo Pix.",
+    "unidade_medida": "Bilhões de transações",
+    "amostra_cobertura": "Universo censitário de todas as transações PIX liquidadas em instituições autorizadas pelo BCB.",
+    "anonimizacao_sigilo": "Dados agregados sem identificação individual de chaves, CPFs ou contas bancárias.",
+    "limitacoes_e_quebras_metodologicas": "Início em novembro de 2020; o ano de 2020 reflete apenas dois meses parciais de funcionamento.",
+    "orientacoes_fact_checking": "Não confunda a quantidade de transações (em bilhões de operações) com o valor financeiro movimentado (em trilhões de reais)."
+  },
+  "visualizacao": {
+    "tipo_padrao": "bar",
+    "eixo_x": {
+      "tipo": "temporal",
+      "rotulo": "Ano"
+    },
+    "eixo_y": {
+      "rotulo": "Transações (Bi)",
+      "unidade": "bi transações",
+      "escala_min": 0,
+      "escala_max": 90
+    },
+    "series": [
+      {
+        "id": "transacoes_pix",
+        "nome": "Transações PIX (Bilhões)",
+        "dados": [
+          [
+            "2020",
+            0.35
+          ],
+          [
+            "2021",
+            9.4
+          ],
+          [
+            "2022",
+            24.1
+          ],
+          [
+            "2023",
+            41.9
+          ],
+          [
+            "2024",
+            63.8
+          ],
+          [
+            "2025",
+            78.5
+          ]
+        ]
+      }
+    ],
+    "marcos_historicos": [
+      {
+        "ano": 2020,
+        "rotulo": "Lançamento oficial pelo Banco Central (nov/2020)"
+      },
+      {
+        "ano": 2023,
+        "rotulo": "Supera todas as demais formas de pagamento de varejo somadas"
+      }
+    ]
+  },
+  "citacao_sugerida": {
+    "abnt": "BANCO CENTRAL DO BRASIL. Dados Abertos: Estatísticas do Pix. Brasília: Departamento de Operações Bancárias e de Sistema de Pagamentos (Deban/BCB), 2025. Acesso via Brasa Dados."
+  },
+  "provenance": {
+    "status": "review",
+    "organizationType": "government",
+    "sourceUrl": "https://dadosabertos.bcb.gov.br/dataset/pix",
+    "reference": "2025",
+    "frequency": "annual",
+    "observationStatus": "undocumented",
+    "transformation": "Série anual legada. Agregação e valores aguardam conferência na fonte.",
+    "issues": [
+      "Valores legados sem arquivo de extração: conferência numérica pendente.",
+      "A frequência anunciada na fonte difere dos pontos anuais armazenados; agregação original não documentada."
+    ]
+  }
+}

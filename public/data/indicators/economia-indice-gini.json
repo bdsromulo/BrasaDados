@@ -1,0 +1,252 @@
+{
+  "id": "economia-indice-gini",
+  "slug": "indice-de-gini-desigualdade-renda-ibge",
+  "titulo": "Desigualdade · Índice de Gini",
+  "categoria": "economia",
+  "tags": [
+    "economia",
+    "Desigualdade · Índice de Gini",
+    "Instituto Brasileiro de Geografia e Estatística (IBGE)"
+  ],
+  "fonte": {
+    "orgao": "Instituto Brasileiro de Geografia e Estatística (IBGE)",
+    "pesquisa": "Índice de Gini do rendimento domiciliar per capita, a preços médios do ano",
+    "url_oficial": "https://sidra.ibge.gov.br/tabela/7435",
+    "frequencia": "anual"
+  },
+  "explicacao_leiga": {
+    "resumo": "Mede a desigualdade do rendimento domiciliar per capita na PNAD Contínua.",
+    "como_interpretar": "Quanto mais próximo de zero, menor a desigualdade; quanto mais próximo de um, maior.",
+    "por_que_importa": "Complementa a renda média ao revelar concentração dos rendimentos."
+  },
+  "detalhamento_tecnico": {
+    "formula_calculo": "Mede a desigualdade do rendimento domiciliar per capita na PNAD Contínua.",
+    "unidade_medida": "índice",
+    "amostra_cobertura": "Brasil; recortes estaduais quando publicados pela fonte.",
+    "limitacoes_e_quebras_metodologicas": "Pesquisas domiciliares têm limitações para captar rendimentos muito altos. Pesos e séries podem ser revisados.",
+    "orientacoes_fact_checking": "Compare conceitos, unidades e períodos equivalentes. Ausência de observação não significa zero."
+  },
+  "visualizacao": {
+    "tipo_padrao": "line",
+    "eixo_y": {
+      "rotulo": "Desigualdade · Índice de Gini",
+      "unidade": "índice"
+    },
+    "series": [
+      {
+        "id": "economia-indice-gini-0",
+        "nome": "Desigualdade · Índice de Gini",
+        "dados": [
+          [
+            "2012",
+            0.54
+          ],
+          [
+            "2013",
+            0.532
+          ],
+          [
+            "2014",
+            0.526
+          ],
+          [
+            "2015",
+            0.524
+          ],
+          [
+            "2016",
+            0.537
+          ],
+          [
+            "2017",
+            0.539
+          ],
+          [
+            "2018",
+            0.545
+          ],
+          [
+            "2019",
+            0.543
+          ],
+          [
+            "2020",
+            0.523
+          ],
+          [
+            "2021",
+            0.543
+          ],
+          [
+            "2022",
+            0.517
+          ],
+          [
+            "2023",
+            0.517
+          ],
+          [
+            "2024",
+            0.504
+          ],
+          [
+            "2025",
+            0.511
+          ]
+        ]
+      }
+    ],
+    "dados_uf": [
+      {
+        "uf": "RO",
+        "nome": "Rondônia",
+        "valor": 0.458
+      },
+      {
+        "uf": "AC",
+        "nome": "Acre",
+        "valor": 0.509
+      },
+      {
+        "uf": "AM",
+        "nome": "Amazonas",
+        "valor": 0.488
+      },
+      {
+        "uf": "RR",
+        "nome": "Roraima",
+        "valor": 0.506
+      },
+      {
+        "uf": "PA",
+        "nome": "Pará",
+        "valor": 0.492
+      },
+      {
+        "uf": "AP",
+        "nome": "Amapá",
+        "valor": 0.496
+      },
+      {
+        "uf": "TO",
+        "nome": "Tocantins",
+        "valor": 0.472
+      },
+      {
+        "uf": "MA",
+        "nome": "Maranhão",
+        "valor": 0.491
+      },
+      {
+        "uf": "PI",
+        "nome": "Piauí",
+        "valor": 0.508
+      },
+      {
+        "uf": "CE",
+        "nome": "Ceará",
+        "valor": 0.506
+      },
+      {
+        "uf": "RN",
+        "nome": "Rio Grande do Norte",
+        "valor": 0.54
+      },
+      {
+        "uf": "PB",
+        "nome": "Paraíba",
+        "valor": 0.507
+      },
+      {
+        "uf": "PE",
+        "nome": "Pernambuco",
+        "valor": 0.52
+      },
+      {
+        "uf": "AL",
+        "nome": "Alagoas",
+        "valor": 0.512
+      },
+      {
+        "uf": "SE",
+        "nome": "Sergipe",
+        "valor": 0.532
+      },
+      {
+        "uf": "BA",
+        "nome": "Bahia",
+        "valor": 0.466
+      },
+      {
+        "uf": "MG",
+        "nome": "Minas Gerais",
+        "valor": 0.473
+      },
+      {
+        "uf": "ES",
+        "nome": "Espírito Santo",
+        "valor": 0.48
+      },
+      {
+        "uf": "RJ",
+        "nome": "Rio de Janeiro",
+        "valor": 0.543
+      },
+      {
+        "uf": "SP",
+        "nome": "São Paulo",
+        "valor": 0.491
+      },
+      {
+        "uf": "PR",
+        "nome": "Paraná",
+        "valor": 0.47
+      },
+      {
+        "uf": "SC",
+        "nome": "Santa Catarina",
+        "valor": 0.425
+      },
+      {
+        "uf": "RS",
+        "nome": "Rio Grande do Sul",
+        "valor": 0.468
+      },
+      {
+        "uf": "MS",
+        "nome": "Mato Grosso do Sul",
+        "valor": 0.457
+      },
+      {
+        "uf": "MT",
+        "nome": "Mato Grosso",
+        "valor": 0.439
+      },
+      {
+        "uf": "GO",
+        "nome": "Goiás",
+        "valor": 0.479
+      },
+      {
+        "uf": "DF",
+        "nome": "Distrito Federal",
+        "valor": 0.57
+      }
+    ]
+  },
+  "provenance": {
+    "status": "verified",
+    "organizationType": "government",
+    "sourceUrl": "https://servicodados.ibge.gov.br/api/v3/agregados/7435/periodos/all/variaveis/10681?localidades=N1%5Ball%5D%7CN3%5Ball%5D",
+    "reference": "2025",
+    "frequency": "annual",
+    "observationStatus": "official",
+    "transformation": "Valores publicados, com conversão dos códigos de período e marcadores de ausência para null; sem interpolação.",
+    "issues": [],
+    "stateReference": "2025",
+    "expectedStates": 27,
+    "retrievedAt": "2026-09-27",
+    "datasetCode": "IBGE 7435 / variável 10681",
+    "sha256": "d0ef868a95d1d7567c839eea46f801dcea8a7378b809acee81fa4a6a556b4835"
+  }
+}

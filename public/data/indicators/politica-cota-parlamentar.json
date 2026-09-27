@@ -1,0 +1,119 @@
+{
+  "id": "politica-cota-parlamentar",
+  "slug": "gasto-cota-parlamentar-ceap-camara",
+  "titulo": "Transparência Pública — Gasto da Cota Parlamentar CEAP (R$ Milhões)",
+  "categoria": "economia",
+  "subcategoria": "transparencia-publica",
+  "tags": [
+    "política",
+    "congresso",
+    "câmara",
+    "ceap",
+    "transparência",
+    "gastos públicos",
+    "deputados",
+    "dados abertos"
+  ],
+  "fonte": {
+    "orgao": "Câmara dos Deputados",
+    "pesquisa": "Portal de Dados Abertos — Cota para o Exercício da Atividade Parlamentar (CEAP)",
+    "url_oficial": "https://dadosabertos.camara.leg.br/swagger/api.html",
+    "tipo_recurso": "api",
+    "rotulo_link": "API REST Dados Abertos (Câmara dos Deputados)",
+    "frequencia": "Contínua / Mensal",
+    "ultima_atualizacao": "2025-12-31"
+  },
+  "explicacao_leiga": {
+    "resumo": "Mede o total reembolsado anualmente aos 513 deputados federais para despesas de mandato (passagens aéreas, combustível, divulgação, aluguel de escritório).",
+    "como_interpretar": "Cada deputado tem um limite mensal variável conforme a distância de seu estado até Brasília (de R$ 33,6 mil para DF até R$ 50,4 mil para Roraima).",
+    "por_que_importa": "Permite monitorar a transparência e eficiência do uso de recursos públicos diretamente pelos representantes eleitos.",
+    "pontos_de_atencao": "Em 2020 houve queda expressiva nas despesas com passagens e hospedagens em razão do sistema de deliberação remota implementado na pandemia."
+  },
+  "detalhamento_tecnico": {
+    "formula_calculo": "Somatório do valor líquido dos documentos fiscais homologados e reembolsados pela Diretoria-Geral da Câmara sob o Ato da Mesa nº 43/2009.",
+    "unidade_medida": "R$ Milhões correntes",
+    "amostra_cobertura": "Totalidade dos 513 deputados federais em exercício ao longo de cada ano da legislatura.",
+    "anonimizacao_sigilo": "Dados 100% públicos com número de nota fiscal, CNPJ/CPF do fornecedor e descrição do serviço.",
+    "limitacoes_e_quebras_metodologicas": "Valores nominais sem correção inflacionária pelo IPCA; reajustes periódicos autorizados pela Mesa Diretora da Câmara.",
+    "orientacoes_fact_checking": "A CEAP é exclusiva para ressarcimento de custos operacionais do mandato e não se confunde com os salários (subsídios) ou verba de gabinete para assessores."
+  },
+  "visualizacao": {
+    "tipo_padrao": "bar",
+    "eixo_x": {
+      "tipo": "temporal",
+      "rotulo": "Ano"
+    },
+    "eixo_y": {
+      "rotulo": "Gasto CEAP (R$ Mi)",
+      "unidade": "R$ mi",
+      "escala_min": 100,
+      "escala_max": 300
+    },
+    "series": [
+      {
+        "id": "gasto_ceap",
+        "nome": "Despesa CEAP (R$ Milhões)",
+        "dados": [
+          [
+            "2018",
+            206.5
+          ],
+          [
+            "2019",
+            212.8
+          ],
+          [
+            "2020",
+            167.3
+          ],
+          [
+            "2021",
+            198.4
+          ],
+          [
+            "2022",
+            215.1
+          ],
+          [
+            "2023",
+            236.4
+          ],
+          [
+            "2024",
+            242.1
+          ],
+          [
+            "2025",
+            248.5
+          ]
+        ]
+      }
+    ],
+    "marcos_historicos": [
+      {
+        "ano": 2020,
+        "rotulo": "Queda para R$ 167 mi com votações remotas na pandemia"
+      },
+      {
+        "ano": 2024,
+        "rotulo": "Retomada integral de viagens e sessões presenciais"
+      }
+    ]
+  },
+  "citacao_sugerida": {
+    "abnt": "BRASIL. Congresso Nacional. Câmara dos Deputados. Dados Abertos: Despesas da Cota para o Exercício da Atividade Parlamentar (CEAP). Brasília: Câmara dos Deputados, 2025. Acesso via Brasa Dados."
+  },
+  "provenance": {
+    "status": "review",
+    "organizationType": "government",
+    "sourceUrl": "https://dadosabertos.camara.leg.br/swagger/api.html",
+    "reference": "2025",
+    "frequency": "annual",
+    "observationStatus": "undocumented",
+    "transformation": "Série anual legada. Agregação e valores aguardam conferência na fonte.",
+    "issues": [
+      "Valores legados sem arquivo de extração: conferência numérica pendente.",
+      "A frequência anunciada na fonte difere dos pontos anuais armazenados; agregação original não documentada."
+    ]
+  }
+}

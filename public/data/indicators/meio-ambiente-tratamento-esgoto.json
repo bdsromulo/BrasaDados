@@ -1,0 +1,72 @@
+{
+  "id": "meio-ambiente-tratamento-esgoto",
+  "slug": "meio-ambiente-tratamento-esgoto",
+  "titulo": "Tratamento de esgoto · Dois denominadores",
+  "categoria": "meio-ambiente",
+  "tags": [
+    "meio-ambiente",
+    "Tratamento de esgoto · Dois denominadores",
+    "Ministério das Cidades / SINISA"
+  ],
+  "fonte": {
+    "orgao": "Ministério das Cidades / SINISA",
+    "pesquisa": "Tratamento de esgoto · Dois denominadores",
+    "url_oficial": "https://www.gov.br/cidades/pt-br/acesso-a-informacao/acoes-e-programas/saneamento/sinisa/resultados-sinisa/014_RELATORIO_SINISA_ESGOTAMENTO_SANITARIO_2024_defeso.pdf",
+    "frequencia": "annual"
+  },
+  "explicacao_leiga": {
+    "resumo": "Volume de esgoto tratado comparado ao volume de água consumida e, separadamente, ao volume de esgoto coletado.",
+    "como_interpretar": "Os percentuais respondem a perguntas diferentes. Tratar grande parte do esgoto coletado não significa atender toda a população.",
+    "por_que_importa": "Distingue cobertura de coleta e efetivo tratamento dos volumes."
+  },
+  "detalhamento_tecnico": {
+    "formula_calculo": "Volume de esgoto tratado comparado ao volume de água consumida e, separadamente, ao volume de esgoto coletado.",
+    "unidade_medida": "%",
+    "amostra_cobertura": "Brasil; recortes estaduais quando publicados pela fonte.",
+    "limitacoes_e_quebras_metodologicas": "SINISA 2024, referência 2023. O denominador do IES2003 é a água consumida; o IES2004 usa esgoto coletado. Não são taxas de domicílios atendidos. A transição SNIS–SINISA exige avaliação antes de unir históricos.",
+    "orientacoes_fact_checking": "Compare conceitos, unidades e períodos equivalentes. Ausência de observação não significa zero."
+  },
+  "visualizacao": {
+    "tipo_padrao": "bar",
+    "eixo_y": {
+      "rotulo": "Tratamento de esgoto · Dois denominadores",
+      "unidade": "%"
+    },
+    "series": [
+      {
+        "id": "agua-consumida",
+        "nome": "Tratado / água consumida · IES2003",
+        "dados": [
+          [
+            "2023",
+            49.4
+          ]
+        ]
+      },
+      {
+        "id": "esgoto-coletado",
+        "nome": "Tratado / esgoto coletado · IES2004",
+        "dados": [
+          [
+            "2023",
+            78.7
+          ]
+        ]
+      }
+    ]
+  },
+  "provenance": {
+    "status": "verified",
+    "organizationType": "government",
+    "sourceUrl": "https://www.gov.br/cidades/pt-br/acesso-a-informacao/acoes-e-programas/saneamento/sinisa/resultados-sinisa/014_RELATORIO_SINISA_ESGOTAMENTO_SANITARIO_2024_defeso.pdf",
+    "reference": "2023",
+    "frequency": "annual",
+    "observationStatus": "official",
+    "transformation": "Transcrição conferida da publicação oficial. Relatório de Esgotamento Sanitário, página 22. Sem interpolação ou preenchimento de anos ausentes.",
+    "issues": [],
+    "retrievedAt": "2026-09-27",
+    "publishedAt": "2025-03-12",
+    "datasetCode": "SINISA 2024 / IES2003, IES2004",
+    "sha256": "1be37f7e2bba1cf59e6f779a79efaba258337c12f632ba6c1ac6b92fa1a43a8d"
+  }
+}

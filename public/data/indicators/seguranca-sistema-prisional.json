@@ -1,0 +1,143 @@
+{
+  "id": "seguranca-sistema-prisional",
+  "slug": "populacao-carceraria-vs-vagas-sisdepen",
+  "titulo": "Sistema Prisional — Presos vs. Vagas Oficiais (em milhares)",
+  "categoria": "seguranca",
+  "subcategoria": "sistema-penitenciario",
+  "tags": [
+    "segurança",
+    "presídios",
+    "presos",
+    "vagas",
+    "sisdepen",
+    "senappen",
+    "justiça"
+  ],
+  "fonte": {
+    "orgao": "SENAPPEN / Ministério da Justiça e Segurança Pública",
+    "pesquisa": "Sistema de Informações Penitenciárias (SISDEPEN)",
+    "url_oficial": "https://www.gov.br/senappen/pt-br/assuntos/sisdepen/relatorios-e-dados",
+    "tipo_recurso": "dados_abertos",
+    "rotulo_link": "Painel e Dados Abertos SISDEPEN (MJSP)",
+    "frequencia": "Semestral / Anual",
+    "ultima_atualizacao": "2024-10-15"
+  },
+  "explicacao_leiga": {
+    "resumo": "Compara o número total de pessoas privadas de liberdade no Brasil com a capacidade oficial de vagas nos presídios.",
+    "como_interpretar": "A diferença entre as duas linhas representa a superlotação do sistema penitenciário (déficit de vagas).",
+    "por_que_importa": "A superlotação prisional facilita o controle de estabelecimentos penais por facções criminosas e viola direitos fundamentais.",
+    "pontos_de_atencao": "Em 2024 o Brasil contava com cerca de 864 mil presos para 525 mil vagas, gerando um déficit de mais de 330 mil vagas."
+  },
+  "detalhamento_tecnico": {
+    "formula_calculo": "Soma censitária dos presos em celas físicas e prisão domiciliar monitorada por tornozeleira contra a capacidade de engenharia prisional.",
+    "unidade_medida": "Milhares de pessoas",
+    "amostra_cobertura": "Todas as unidades prisionais estaduais e penitenciárias federais.",
+    "anonimizacao_sigilo": "Dados públicos quantitativos sem quebra de sigilo de identidade dos custodiados.",
+    "limitacoes_e_quebras_metodologicas": "A inclusão de pessoas em prisão domiciliar monitorada por tornozeleira passou a ser uniformizada no Sisdepen a partir de 2019.",
+    "orientacoes_fact_checking": "Cerca de 40% da população prisional do país é formada por presos provisórios (sem julgamento condenatório definitivo)."
+  },
+  "visualizacao": {
+    "tipo_padrao": "line",
+    "eixo_x": {
+      "tipo": "temporal",
+      "rotulo": "Ano"
+    },
+    "eixo_y": {
+      "rotulo": "Pessoas (Milhares)",
+      "unidade": "mil pessoas",
+      "escala_min": 300,
+      "escala_max": 950
+    },
+    "series": [
+      {
+        "id": "presos_total",
+        "nome": "População Prisional Total",
+        "dados": [
+          [
+            "2015",
+            622.2
+          ],
+          [
+            "2017",
+            726.7
+          ],
+          [
+            "2019",
+            755.3
+          ],
+          [
+            "2021",
+            820.7
+          ],
+          [
+            "2022",
+            832.3
+          ],
+          [
+            "2023",
+            852
+          ],
+          [
+            "2024",
+            864.5
+          ]
+        ]
+      },
+      {
+        "id": "vagas_total",
+        "nome": "Capacidade / Vagas Oficiais",
+        "dados": [
+          [
+            "2015",
+            371.9
+          ],
+          [
+            "2017",
+            423.2
+          ],
+          [
+            "2019",
+            442.3
+          ],
+          [
+            "2021",
+            478.4
+          ],
+          [
+            "2022",
+            495.1
+          ],
+          [
+            "2023",
+            512.4
+          ],
+          [
+            "2024",
+            525
+          ]
+        ]
+      }
+    ],
+    "marcos_historicos": [
+      {
+        "ano": 2024,
+        "rotulo": "Déficit de quase 340 mil vagas"
+      }
+    ]
+  },
+  "citacao_sugerida": {
+    "abnt": "SENAPPEN. Levantamento Nacional de Informações Penitenciárias (SISDEPEN). Brasília: MJSP, 2024. Acesso via Brasa Dados."
+  },
+  "provenance": {
+    "status": "review",
+    "organizationType": "government",
+    "sourceUrl": "https://www.gov.br/senappen/pt-br/assuntos/sisdepen/relatorios-e-dados",
+    "reference": "2024",
+    "frequency": "annual",
+    "observationStatus": "undocumented",
+    "transformation": "Série anual legada. Agregação e valores aguardam conferência na fonte.",
+    "issues": [
+      "Valores legados sem arquivo de extração: conferência numérica pendente."
+    ]
+  }
+}

@@ -1,138 +1,67 @@
-# 🔌 Guia de Pipelines & Fontes de Dados Pré-Agregadas
+# Importação e atualização de dados
 
-Este guia orienta como alimentar o **Brasa Dados** sem precisar baixar nem processar microdados pesados (como as bases de vários gigabytes do Censo Escolar ou PNAD Contínua), aproveitando endpoints públicos que já fornecem os dados agregados prontos para visualização.
+## Comandos implementados
 
----
-
-## 1. APIs Oficiais com Dados Agregados Prontos (JSON)
-
-### A. Banco Central do Brasil — Sistema Gerenciador de Séries Temporais (SGS)
-O SGS do Banco Central é uma das fontes mais limpas e estáveis do Brasil. O retorno é um JSON direto contendo data e valor.
-
-* **Exemplo de Séries Relevantes:**
-  * `432`: Taxa de juros - Selic acumulada no mês (% a.m.)
-  * `4189`: Taxa Selic fixada pelo Copom (% a.a.)
-  * `10844`: IPCA acumulado nos últimos 12 meses (%)
-  * `1`: Taxa de câmbio - Livre - Dólar americano (compra)
-  * `4505`: Dívida Líquida do Setor Público (% do PIB)
-
-* **Exemplo de Chamada de API Direta:**
-  ```http
-  GET https://api.bcb.gov.br/dados/serie/bcdata.sgs.4189/dados/ultimos/120?formato=json
-  ```
-
-* **Estrutura do Retorno:**
-  ```json
-  [
-    { "data": "01/01/2024", "valor": "11.75" },
-    { "data": "01/02/2024", "valor": "11.25" }
-  ]
-  ```
-
----
-
-### B. IBGE — API SIDRA (Sistema de Recuperação Automática)
-O SIDRA permite consultar tabelas agregadas oficiais do IBGE para o Brasil, Grandes Regiões, Estados e Municípios.
-
-* **Exemplo de Tabelas Estruturais:**
-  * **Tabela 1737 (IPCA):** Número-índice e variação mensal e acumulada.
-  * **Tabela 4099 (PNAD Contínua):** Taxa de desocupação das pessoas de 14 anos ou mais de idade (trimestral).
-  * **Tabela 6784 (PIB Trimestral):** Taxa de variação do PIB em relação ao mesmo período do ano anterior.
-
-* **Exemplo de Chamada para a Taxa de Desocupação (Brasil):**
-  ```http
-  GET https://servicodados.ibge.gov.br/api/v3/agregados/4099/periodos/-20/variaveis/4099?localidades=BR
-  ```
-
----
-
-### C. IpeaData (Instituto de Pesquisa Econômica Aplicada)
-O IpeaData possui um repositório gigantesco de indicadores sociais históricos de educação, saúde, segurança e desigualdade (ex: Coeficiente de Gini desde a década de 1970).
-
-* **Exemplo de Chamada via OData (JSON):**
-  ```http
-  GET http://www.ipeadata.gov.br/api/odata4/ValoresSerie(SERCODIGO='AD_GINI')?$format=json
-  ```
-  *(Retorna o Índice de Gini anual do Brasil).*
-
----
-
-### D. Our World in Data (OWID) & Banco Mundial
-Para dados internacionais e posição do Brasil em relação ao mundo (ex: Emissões de CO2, Expectativa de Vida, Gastos Públicos em Saúde):
-
-* **Banco Mundial API:**
-  ```http
-  GET https://api.worldbank.org/v2/country/BRA/indicator/NY.GDP.PCAP.CD?format=json
-  ```
-  *(Retorna PIB per capita em dólares correntes para o Brasil).*
-
----
-
-## 2. Fontes Especiais Sem API Direta (Planilhas Oficiais Consolidadas)
-
-Algumas das instituições mais importantes do país publicam relatórios anuais em arquivos consolidados (Excel/CSV ou relatórios técnicos), dispensando o uso de microdados:
-
-| Instituição | Temática | Como Obter o Dado Agregado |
-| :--- | :--- | :--- |
-| **Fórum Brasileiro de Segurança Pública (FBSP)** | Mortes Violentas Intencionais (MVI), Feminicídios, Armas | Baixar as *Tabelas do Anuário Brasileiro de Segurança Pública* (divulgadas anualmente em planilhas limpas por estado). |
-| **INEP / MEC** | IDEB, Censo Escolar (Resumo Técnico), Taxas de Rendimento | O INEP publica a página de **Resultados do IDEB** em arquivos consolidados por escola, município, estado e Brasil. |
-| **DataSUS / Ministério da Saúde** | Cobertura Vacinal (SI-PNI), Mortalidade (SIM) | Utilizar as tabelas de séries históricas compiladas pelo Ministério da Saúde ou extração via biblioteca comunitária `pysus` para gerar o resumo agregado. |
-
----
-
-## 3. Modelo de Automação Leve via GitHub Actions (Zero Backend)
-
-Para manter o site 100% estático e sem custos de servidor, utilizamos uma rotina simples no GitHub Actions:
-
-```
-[ Agendamento Cron (Semanal / Mensal) ]
-                 │
-                 ▼
-[ GitHub Action: Executa script de sync em Python / Node.js ]
-                 │
-                 ├── 1. Chama as APIs públicas (BCB, IBGE, IPEA)
-                 ├── 2. Formata para o padrão leve do Brasa Dados
-                 └── 3. Salva em /public/data/indicators/*.json
-                 │
-                 ▼
-[ Git Commit & Push Automático no Repositório ]
-                 │
-                 ▼
-[ Cloudflare Pages / GitHub Pages recompila o site estático ]
+```sh
+npm run data:sync
+npm run data:sync -- --id=economia-taxa-selic
+npm run data:import
+node scripts/import-reviewed.mjs caminho/manifesto.json
+npm run validate:data
+npm run data:audit
+npm test
+npm run build
 ```
 
-### Exemplo de Script de Sincronização Simples (`scripts/sync_bcb.mjs`):
-```javascript
-// Exemplo de script Node.js nativo (sem dependências) para atualizar uma série do BCB
-import fs from 'fs';
+`scripts/migrate-legacy.mjs` é uma migração única do acervo anterior. Não sobrescreve indicadores já existentes. Não deve ser usado para atualização periódica.
 
-async function updateSelic() {
-  const url = 'https://api.bcb.gov.br/dados/serie/bcdata.sgs.4189/dados/ultimos/60?formato=json';
-  const response = await fetch(url);
-  const data = await response.json();
+## Fontes automatizadas
 
-  const formattedSeries = data.map(item => {
-    const [dia, mes, ano] = item.data.split('/');
-    return [`${ano}-${mes}-${dia}`, parseFloat(item.valor)];
-  });
+| Indicador | Código | Frequência exibida / transformação |
+| --- | --- | --- |
+| Selic Meta | BCB SGS 432 | Último valor diário publicado no mês, % a.a. |
+| Dólar comercial de venda | BCB SGS 1 | Média aritmética mensal dos dias publicados, R$/US$ |
+| Dívida bruta do governo geral | BCB SGS 13762 | Última observação mensal, % do PIB |
+| Desocupação | IBGE 4099 / variável 4099 | Trimestres civis; Brasil e UFs |
+| IPCA acumulado em 12 meses | IBGE 1737 / 2265 | Mensal; Brasil |
+| Crescimento real do PIB | IBGE 6784 / 9810 | Contas Nacionais Anuais consolidadas |
+| Gini | IBGE 7435 / 10681 | Anual; Brasil e UFs |
+| Rendimento domiciliar per capita real | IBGE 7533 / 10816 | Anual; preços médios do último ano da fonte |
+| Informalidade | IBGE 4093 / 12466 | Trimestral; Brasil e UFs |
+| Insegurança alimentar | IBGE 9552 / 9784 | Anual; total, leve, moderada e grave; UFs no total |
+| Analfabetismo, 15 anos ou mais | IBGE 7113 / 10267 | Anual; lacunas em 2020 e 2021 preservadas |
+| População estimada | IBGE 6579 / 9324 | Anual; pessoas; estimativas, não Censo |
+| Gasto corrente total em saúde | Banco Mundial / OMS SH.XPD.CHEX.GD.ZS | Anual; público e privado, % do PIB |
+| Índice de percepção da corrupção | Transparência Internacional / perfil do Brasil | Anual; pontuação 0–100 desde 2012 |
+| Focos ativos de fogo | INPE Programa Queimadas / `brasil.json` | Anual; soma por estado/bioma, apenas anos completos desde 2013 |
 
-  const indicatorPath = './public/data/indicators/economia-taxa-selic.json';
-  const existingData = JSON.parse(fs.readFileSync(indicatorPath, 'utf-8'));
-  
-  existingData.visualizacao.series[0].dados = formattedSeries;
-  existingData.fonte.ultima_atualizacao = new Date().toISOString().split('T')[0];
+Classificações estão explícitas em `scripts/sources.mjs`. A tabela 9552 usa o percentual de domicílios por situação de segurança alimentar; não a distribuição interna de um subgrupo. SGS 432 é Meta Selic, não Selic acumulada mensal. SGS 1 é dólar de venda, não de compra. A tabela 6784 é anual, não trimestral.
 
-  fs.writeFileSync(indicatorPath, JSON.stringify(existingData, null, 2));
-  console.log('✅ Série da Selic atualizada com sucesso!');
-}
+O BCB é consultado em janelas de até nove anos. O IBGE é consultado para todos os períodos disponíveis. Reimportar toda a série captura revisões históricas e, no rendimento real, mantém uma única base de preços. Não há interpolação. O mês em andamento é sinalizado como potencialmente incompleto.
 
-updateSelic();
-```
+## Arquivos e divulgações oficiais
 
----
+`scripts/curated-sources.mjs` é o manifesto versionado de transcrições conferidas: pobreza (SIS 2025), IDEB (divulgação INEP 2025), saneamento (SINISA 2024, referência 2023), esperança de vida (TCMB 2024), violência (FBSP 2026), matriz elétrica (BEN 2026) e desmatamento (PRODES). O importador também aceita uma lista JSON no mesmo esquema, para reproduzir uma edição revisada.
 
-## 4. Estratégia para Incorporação de Gráficos de Terceiros (Quando aplicável)
+`scripts/parse-life-table.py` extrai a Tabela 1 do PDF TCMB 2024 arquivado em `data/official-files/`, validando edição, estrutura, número de linhas e cobertura. Requer Python com `pypdf`. Execute `python scripts/parse-life-table.py data/official-files/tcmb_2024.pdf`; o JSON resultante é comparado com os dados publicados nos testes. Os PDFs usados na revisão são preservados com hashes no inventário da pasta.
 
-Quando uma instituição já disponibiliza um gráfico interativo no **Datawrapper** ou **Flourish** sob licença aberta (Creative Commons ou uso governamental aberto):
-1. **Opção A (Recomendada):** Extrair a série de dados subjacente e renderizar no motor próprio do Brasa Dados (ECharts). Vantagens: permite mesclagem no comparador, suporte nativo a tema escuro e visual uniforme.
-2. **Opção B (Modo Incorporado):** Para gráficos complexos de mapas coropléticos ou diagramas muito específicos, permitir a opção de exibição em modo *Embed Sandbox* com créditos explícitos, ficha metodológica e link para o autor original.
+`scripts/parse-fbsp.py` extrai a série nacional de MVI (página 30), o ranking das 27 UFs (página 28) e os feminicídios (página 159) do Anuário 2026 arquivado. `scripts/parse-ben.py` extrai apenas as barras comparáveis da oferta interna elétrica de 2023–2025 do BEN 2026 (página 35), excluindo a geração centralizada. Ambos exigem `pypdf`, verificam a edição/estrutura e geram JSONs versionados em `data/official-files/`. Os testes comparam esses JSONs com os indicadores publicados e verificam os hashes dos PDFs no manifesto.
+
+O importador do Banco Mundial confere país, indicador, paginação e status das observações. Mantém lacunas internas e exclui somente anos vazios fora da cobertura publicada. A data de atualização geral do WDI é registrada como tal, sem confundi-la com a referência ou a publicação de cada observação.
+
+O importador da Transparência Internacional lê a série de pontuação publicada na página do Brasil, registra a resposta original e valida anos e valores antes de substituir o conjunto anterior. O índice mede percepção; não é uma contagem de casos de corrupção.
+
+O importador do INPE valida os 12 meses de cada recorte, reconcilia a soma com `total_focos`, exige 27 UFs por ano e cruza os códigos de estado com o cadastro do IBGE. Exclui 2012, ano de troca do satélite de referência, e o ano ainda incompleto. Preserva a resposta original, inclusive os biomas, para reprodução e revisão histórica.
+
+Essas transcrições não são um robô que baixa futuras edições nem um parser universal de PDFs/XLSX. Uma nova edição exige conferir a tabela, atualizar o manifesto e suas notas de origem. Evidências guardam fonte, posição na publicação, referência, séries e hash do manifesto. Nos importadores de API, o hash é da resposta bruta; não confundir os dois.
+
+## Garantias e publicação
+
+- Uma resposta vazia, HTTP inválido, valor não numérico, período inválido/duplicado ou metadado obrigatório ausente interrompe a atualização daquele indicador.
+- A escrita do JSON validado é atômica. Falhas preservam o arquivo anterior daquele indicador.
+- A sincronização registra sucesso/falha e horário por indicador em `data/sync-report.json`, mantém resultados anteriores dos IDs não consultados e retorna erro se qualquer job falhar.
+- Uma execução local pode atualizar alguns indicadores antes de outro falhar. O lote **não deve ser publicado** quando o comando retorna erro; o último site publicado continua intacto.
+- O workflow `refresh-data.yml`, acionado manualmente, só disponibiliza o artefato de atualização se sincronização, importação, testes e build passarem. Em falha, publica apenas o relatório de diagnóstico. Não faz commit nem deploy automático.
+- O workflow de Pages valida testes e dados antes de disponibilizar `dist`. Nenhuma atualização remota foi acionada nesta implementação.
+
+Agendamento, abertura automática de PRs e revisão humana de novas edições podem ser adicionados quando houver uma rotina editorial definida.

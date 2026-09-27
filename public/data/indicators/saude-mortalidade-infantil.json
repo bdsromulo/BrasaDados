@@ -1,0 +1,126 @@
+{
+  "id": "saude-mortalidade-infantil",
+  "slug": "taxa-de-mortalidade-infantil-datasus",
+  "titulo": "Vigilância em Saúde — Mortalidade Infantil (por 1.000 nascidos vivos)",
+  "categoria": "saude",
+  "subcategoria": "mortalidade",
+  "tags": [
+    "saúde",
+    "mortalidade",
+    "infância",
+    "nascimentos",
+    "datasus",
+    "sinasc",
+    "sim"
+  ],
+  "fonte": {
+    "orgao": "Ministério da Saúde / DataSUS / IBGE",
+    "pesquisa": "Sistema de Informações sobre Mortalidade (SIM) e Nascidos Vivos (SINASC)",
+    "url_oficial": "https://datasus.saude.gov.br/informacoes-de-saude-tabnet/",
+    "tipo_recurso": "dados_abertos",
+    "rotulo_link": "Portal TabNet / DataSUS (SIM & Sinasc)",
+    "frequencia": "Anual",
+    "ultima_atualizacao": "2024-11-30"
+  },
+  "explicacao_leiga": {
+    "resumo": "Mede quantas crianças morrem antes de completar 1 ano de vida para cada grupo de 1.000 bebês nascidos vivos.",
+    "como_interpretar": "Uma taxa de 11,9 significa que quase 12 em cada 1.000 bebês não sobreviveram ao primeiro ano.",
+    "por_que_importa": "É considerado mundialmente o melhor indicador geral da qualidade do pré-natal, saneamento básico e atendimento médico de um país.",
+    "pontos_de_atencao": "O Brasil reduziu drasticamente esse indicador desde 1990 (quando era de quase 50 por mil), atingindo menos de 12 por mil atualmente."
+  },
+  "detalhamento_tecnico": {
+    "formula_calculo": "(Óbitos de menores de 1 ano residentes / Nascidos vivos de mães residentes) * 1.000.",
+    "unidade_medida": "Óbitos por 1.000 nascidos vivos",
+    "amostra_cobertura": "Universo das declarações de óbito (DO) e de nascido vivo (DN) registradas no SIM e SINASC.",
+    "anonimizacao_sigilo": "Dados epidemiológicos consolidados sem quebra de sigilo dos prontuários de saúde.",
+    "limitacoes_e_quebras_metodologicas": "Ainda há subnotificação residual de nascimentos e óbitos em comunidades isoladas e aldeias indígenas no Norte.",
+    "orientacoes_fact_checking": "Diferencie 'Mortalidade Infantil' (menores de 1 ano) de 'Mortalidade na Infância' (menores de 5 anos)."
+  },
+  "visualizacao": {
+    "tipo_padrao": "line",
+    "eixo_x": {
+      "tipo": "temporal",
+      "rotulo": "Ano"
+    },
+    "eixo_y": {
+      "rotulo": "Taxa por mil",
+      "unidade": "por mil",
+      "escala_min": 8,
+      "escala_max": 18
+    },
+    "series": [
+      {
+        "id": "mortalidade_infantil",
+        "nome": "Taxa de Mortalidade Infantil",
+        "dados": [
+          [
+            "2012",
+            14.4
+          ],
+          [
+            "2014",
+            13.8
+          ],
+          [
+            "2016",
+            14
+          ],
+          [
+            "2018",
+            13.4
+          ],
+          [
+            "2019",
+            13.3
+          ],
+          [
+            "2020",
+            12.8
+          ],
+          [
+            "2021",
+            13
+          ],
+          [
+            "2022",
+            12.6
+          ],
+          [
+            "2023",
+            12.2
+          ],
+          [
+            "2024",
+            11.9
+          ],
+          [
+            "2025",
+            11.6
+          ]
+        ]
+      }
+    ],
+    "marcos_historicos": [
+      {
+        "ano": 2024,
+        "rotulo": "Menor taxa da história brasileira (11,9 por mil)"
+      }
+    ]
+  },
+  "citacao_sugerida": {
+    "abnt": "MINISTÉRIO DA SAÚDE. Estatísticas Vitais: Mortalidade Infantil no Brasil (SIM/SINASC). Brasília: DataSUS, 2024. Acesso via Brasa Dados."
+  },
+  "provenance": {
+    "status": "review",
+    "organizationType": "government",
+    "sourceUrl": "https://datasus.saude.gov.br/informacoes-de-saude-tabnet/",
+    "reference": "2025",
+    "frequency": "annual",
+    "observationStatus": "undocumented",
+    "transformation": "Série anual legada. Agregação e valores aguardam conferência na fonte.",
+    "issues": [
+      "Valores legados sem arquivo de extração: conferência numérica pendente.",
+      "Há observações posteriores ao ano da atualização declarada."
+    ]
+  }
+}

@@ -1,0 +1,315 @@
+[
+  {
+    "id": "economia-taxa-selic",
+    "source": "https://dadosabertos.bcb.gov.br/dataset/432-taxa-de-juros---meta-selic-definida-pelo-copom",
+    "previousUpdate": "2026-03-20",
+    "lastReference": "2026",
+    "issues": [
+      "Valores legados sem arquivo de extração: conferência numérica pendente.",
+      "Fonte original apontava para SGS 4189, que não é Meta Selic. Corrigida para 432; valores dependem da sincronização."
+    ]
+  },
+  {
+    "id": "economia-inflacao-ipca",
+    "source": "https://sidra.ibge.gov.br/tabela/7060",
+    "previousUpdate": "2026-03-12",
+    "lastReference": "2026",
+    "issues": [
+      "Valores legados sem arquivo de extração: conferência numérica pendente.",
+      "A frequência anunciada na fonte difere dos pontos anuais armazenados; agregação original não documentada."
+    ]
+  },
+  {
+    "id": "economia-desemprego-pnad",
+    "source": "https://sidra.ibge.gov.br/tabela/6381",
+    "previousUpdate": "2026-02-28",
+    "lastReference": "2025",
+    "issues": [
+      "Valores legados sem arquivo de extração: conferência numérica pendente.",
+      "A frequência anunciada na fonte difere dos pontos anuais armazenados; agregação original não documentada."
+    ]
+  },
+  {
+    "id": "economia-pib-variacao",
+    "source": "https://sidra.ibge.gov.br/tabela/1620",
+    "previousUpdate": "2026-03-05",
+    "lastReference": "2025",
+    "issues": [
+      "Valores legados sem arquivo de extração: conferência numérica pendente.",
+      "A frequência anunciada na fonte difere dos pontos anuais armazenados; agregação original não documentada."
+    ]
+  },
+  {
+    "id": "economia-indice-gini",
+    "source": "https://sidra.ibge.gov.br/tabela/7435",
+    "previousUpdate": "2025-05-10",
+    "lastReference": "2025",
+    "issues": [
+      "Valores legados sem arquivo de extração: conferência numérica pendente."
+    ]
+  },
+  {
+    "id": "economia-divida-bruta",
+    "source": "https://dadosabertos.bcb.gov.br/dataset/13762-divida-bruta-do-governo-geral---metodologia-a-partir-de-2008",
+    "previousUpdate": "2026-02-15",
+    "lastReference": "2025",
+    "issues": [
+      "Valores legados sem arquivo de extração: conferência numérica pendente.",
+      "A frequência anunciada na fonte difere dos pontos anuais armazenados; agregação original não documentada."
+    ]
+  },
+  {
+    "id": "economia-cambio-dolar",
+    "source": "https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/aplicacao#!/recursos",
+    "previousUpdate": "2026-03-24",
+    "lastReference": "2025",
+    "issues": [
+      "Valores legados sem arquivo de extração: conferência numérica pendente.",
+      "A frequência anunciada na fonte difere dos pontos anuais armazenados; agregação original não documentada."
+    ]
+  },
+  {
+    "id": "educacao-ideb-ensino-medio",
+    "source": "https://dadosabertos.inep.gov.br/dataset/indicadores-educacionais-ideb",
+    "previousUpdate": "2024-08-14",
+    "lastReference": "2023",
+    "issues": [
+      "Valores legados sem arquivo de extração: conferência numérica pendente.",
+      "Recorte com 20/27 UFs; período não registrado no acervo original. Ranking indisponível até conferência."
+    ]
+  },
+  {
+    "id": "educacao-taxa-analfabetismo",
+    "source": "https://sidra.ibge.gov.br/tabela/7113",
+    "previousUpdate": "2024-03-22",
+    "lastReference": "2025",
+    "issues": [
+      "Valores legados sem arquivo de extração: conferência numérica pendente.",
+      "Há observações posteriores ao ano da atualização declarada."
+    ]
+  },
+  {
+    "id": "educacao-abandono-ensino-medio",
+    "source": "https://dadosabertos.inep.gov.br/dataset/taxas-de-rendimento-escolar",
+    "previousUpdate": "2024-05-18",
+    "lastReference": "2025",
+    "issues": [
+      "Valores legados sem arquivo de extração: conferência numérica pendente.",
+      "Há observações posteriores ao ano da atualização declarada."
+    ]
+  },
+  {
+    "id": "saude-vacinacao-polio",
+    "source": "https://infoms.saude.gov.br/extensions/SEIDIGI_DEMAS_VACINACAO_CALENDARIO_NACIONAL/SEIDIGI_DEMAS_VACINACAO_CALENDARIO_NACIONAL.html",
+    "previousUpdate": "2025-01-20",
+    "lastReference": "2025",
+    "issues": [
+      "Valores legados sem arquivo de extração: conferência numérica pendente.",
+      "A frequência anunciada na fonte difere dos pontos anuais armazenados; agregação original não documentada."
+    ]
+  },
+  {
+    "id": "saude-mortalidade-infantil",
+    "source": "https://datasus.saude.gov.br/informacoes-de-saude-tabnet/",
+    "previousUpdate": "2024-11-30",
+    "lastReference": "2025",
+    "issues": [
+      "Valores legados sem arquivo de extração: conferência numérica pendente.",
+      "Há observações posteriores ao ano da atualização declarada."
+    ]
+  },
+  {
+    "id": "saude-expectativa-vida",
+    "source": "https://www.ibge.gov.br/estatisticas/sociais/populacao/9126-tabuas-completas-de-mortalidade.html",
+    "previousUpdate": "2024-12-01",
+    "lastReference": "2025",
+    "issues": [
+      "Valores legados sem arquivo de extração: conferência numérica pendente.",
+      "Há observações posteriores ao ano da atualização declarada."
+    ]
+  },
+  {
+    "id": "seguranca-taxa-mvi",
+    "source": "https://forumseguranca.org.br/anuario-brasileiro-seguranca-publica/",
+    "previousUpdate": "2025-07-18",
+    "lastReference": "2024",
+    "issues": [
+      "Valores legados sem arquivo de extração: conferência numérica pendente.",
+      "Recorte com 27/27 UFs; período não registrado no acervo original. Ranking indisponível até conferência."
+    ]
+  },
+  {
+    "id": "seguranca-sistema-prisional",
+    "source": "https://www.gov.br/senappen/pt-br/assuntos/sisdepen/relatorios-e-dados",
+    "previousUpdate": "2024-10-15",
+    "lastReference": "2024",
+    "issues": [
+      "Valores legados sem arquivo de extração: conferência numérica pendente."
+    ]
+  },
+  {
+    "id": "seguranca-feminicidios",
+    "source": "https://forumseguranca.org.br/publicacoes/",
+    "previousUpdate": "2024-07-20",
+    "lastReference": "2025",
+    "issues": [
+      "Valores legados sem arquivo de extração: conferência numérica pendente.",
+      "Há observações posteriores ao ano da atualização declarada."
+    ]
+  },
+  {
+    "id": "meio-ambiente-desmatamento-amazonia",
+    "source": "https://terrabrasilis.dpi.inpe.br/app/dashboard/deforestation/biomes/legal_amazon/rates",
+    "previousUpdate": "2024-11-06",
+    "lastReference": "2025",
+    "issues": [
+      "Valores legados sem arquivo de extração: conferência numérica pendente.",
+      "Há observações posteriores ao ano da atualização declarada."
+    ]
+  },
+  {
+    "id": "meio-ambiente-queimadas-focos",
+    "source": "https://terrabrasilis.dpi.inpe.br/queimadas/bdqueimadas/",
+    "previousUpdate": "2025-01-10",
+    "lastReference": "2025",
+    "issues": [
+      "Valores legados sem arquivo de extração: conferência numérica pendente.",
+      "A frequência anunciada na fonte difere dos pontos anuais armazenados; agregação original não documentada."
+    ]
+  },
+  {
+    "id": "educacao-pisa-matematica",
+    "source": "https://www.oecd.org/en/about/programmes/pisa/pisa-data.html",
+    "previousUpdate": "2023-12-05",
+    "lastReference": "2022",
+    "issues": [
+      "Valores legados sem arquivo de extração: conferência numérica pendente."
+    ]
+  },
+  {
+    "id": "internacional-balanca-comercial",
+    "source": "https://comexstat.mdic.gov.br/pt/geral",
+    "previousUpdate": "2026-02-10",
+    "lastReference": "2025",
+    "issues": [
+      "Valores legados sem arquivo de extração: conferência numérica pendente.",
+      "A frequência anunciada na fonte difere dos pontos anuais armazenados; agregação original não documentada."
+    ]
+  },
+  {
+    "id": "internacional-percepcao-corrupcao",
+    "source": "https://www.transparency.org/en/cpi/2024",
+    "previousUpdate": "2025-01-30",
+    "lastReference": "2025",
+    "issues": [
+      "Valores legados sem arquivo de extração: conferência numérica pendente."
+    ]
+  },
+  {
+    "id": "economia-pix-volume",
+    "source": "https://dadosabertos.bcb.gov.br/dataset/pix",
+    "previousUpdate": "2025-12-31",
+    "lastReference": "2025",
+    "issues": [
+      "Valores legados sem arquivo de extração: conferência numérica pendente.",
+      "A frequência anunciada na fonte difere dos pontos anuais armazenados; agregação original não documentada."
+    ]
+  },
+  {
+    "id": "demografia-populacao-brasil",
+    "source": "https://sidra.ibge.gov.br/pesquisa/censo-demografico/demografico-2022/universo-populacao-e-domicilios",
+    "previousUpdate": "2024-08-22",
+    "lastReference": "2026",
+    "issues": [
+      "Valores legados sem arquivo de extração: conferência numérica pendente.",
+      "Há observações posteriores ao ano da atualização declarada.",
+      "Recorte com 27/27 UFs; período não registrado no acervo original. Ranking indisponível até conferência."
+    ]
+  },
+  {
+    "id": "politica-cota-parlamentar",
+    "source": "https://dadosabertos.camara.leg.br/swagger/api.html",
+    "previousUpdate": "2025-12-31",
+    "lastReference": "2025",
+    "issues": [
+      "Valores legados sem arquivo de extração: conferência numérica pendente.",
+      "A frequência anunciada na fonte difere dos pontos anuais armazenados; agregação original não documentada."
+    ]
+  },
+  {
+    "id": "meio-ambiente-emissoes-gee",
+    "source": "https://seeg.eco.br/dados/",
+    "previousUpdate": "2024-11-07",
+    "lastReference": "2024",
+    "issues": [
+      "Valores legados sem arquivo de extração: conferência numérica pendente."
+    ]
+  },
+  {
+    "id": "saude-gastos-publicos-pib",
+    "source": "https://data.worldbank.org/indicator/SH.XPD.CHEX.GD.ZS?locations=BR",
+    "previousUpdate": "2024-12-15",
+    "lastReference": "2024",
+    "issues": [
+      "Valores legados sem arquivo de extração: conferência numérica pendente."
+    ]
+  },
+  {
+    "id": "educacao-censo-superior-ead",
+    "source": "https://dadosabertos.inep.gov.br/dataset/censo-da-educacao-superior",
+    "previousUpdate": "2024-10-03",
+    "lastReference": "2024",
+    "issues": [
+      "Valores legados sem arquivo de extração: conferência numérica pendente."
+    ]
+  },
+  {
+    "id": "saude-leitos-uti-sus",
+    "source": "https://cnes.datasus.gov.br/",
+    "previousUpdate": "2024-12-15",
+    "lastReference": "2024",
+    "issues": [
+      "Valores legados sem arquivo de extração: conferência numérica pendente.",
+      "A frequência anunciada na fonte difere dos pontos anuais armazenados; agregação original não documentada."
+    ]
+  },
+  {
+    "id": "meio-ambiente-matriz-eletrica-renovavel",
+    "source": "https://www.epe.gov.br/pt/publicacoes-dados-abertos/publicacoes/balanco-energetico-nacional-ben",
+    "previousUpdate": "2025-06-30",
+    "lastReference": "2024",
+    "issues": [
+      "Valores legados sem arquivo de extração: conferência numérica pendente."
+    ]
+  },
+  {
+    "id": "meio-ambiente-saneamento-esgoto",
+    "source": "https://www.gov.br/cidades/pt-br/assuntos/saneamento/sinisa",
+    "previousUpdate": "2024-12-10",
+    "lastReference": "2024",
+    "issues": [
+      "Valores legados sem arquivo de extração: conferência numérica pendente.",
+      "Recorte com 27/27 UFs; período não registrado no acervo original. Ranking indisponível até conferência."
+    ]
+  },
+  {
+    "id": "economia-arrecadacao-federal",
+    "source": "https://dados.gov.br/dados/conjuntos-dados/arrecadacao-tributaria-federal",
+    "previousUpdate": "2025-01-25",
+    "lastReference": "2024",
+    "issues": [
+      "Valores legados sem arquivo de extração: conferência numérica pendente.",
+      "A frequência anunciada na fonte difere dos pontos anuais armazenados; agregação original não documentada."
+    ]
+  },
+  {
+    "id": "economia-bolsa-familia-beneficiarios",
+    "source": "https://paineis.mds.gov.br/",
+    "previousUpdate": "2025-08-01",
+    "lastReference": "2025",
+    "issues": [
+      "Valores legados sem arquivo de extração: conferência numérica pendente.",
+      "A frequência anunciada na fonte difere dos pontos anuais armazenados; agregação original não documentada."
+    ]
+  }
+]

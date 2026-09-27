@@ -1,0 +1,57 @@
+{
+  "kind": "reviewed-transcription",
+  "source": "https://forumseguranca.org.br/wp-content/uploads/2026/07/anuario-2026.pdf",
+  "datasetCode": "FBSP 20º Anuário 2026 / Gráfico 35",
+  "reference": "2025",
+  "reviewedAt": "2026-09-27",
+  "pointer": "Transcrição conferida da publicação oficial. Gráfico 35, página 159. Extração reproduzível em scripts/parse-fbsp.py; distinguir da série de homicídios femininos do mesmo gráfico. Sem interpolação ou preenchimento de anos ausentes.",
+  "manifestSha256": "86a073a2c57a008be16f57fc867e7c4b3646a52a2658937825261a1a716175dd",
+  "series": [
+    {
+      "id": "feminicidios",
+      "nome": "Vítimas de feminicídio",
+      "dados": [
+        [
+          "2016",
+          929
+        ],
+        [
+          "2017",
+          1075
+        ],
+        [
+          "2018",
+          1229
+        ],
+        [
+          "2019",
+          1330
+        ],
+        [
+          "2020",
+          1354
+        ],
+        [
+          "2021",
+          1347
+        ],
+        [
+          "2022",
+          1455
+        ],
+        [
+          "2023",
+          1475
+        ],
+        [
+          "2024",
+          1504
+        ],
+        [
+          "2025",
+          1571
+        ]
+      ]
+    }
+  ]
+}

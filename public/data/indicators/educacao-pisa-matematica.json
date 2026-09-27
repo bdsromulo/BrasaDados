@@ -1,0 +1,176 @@
+{
+  "id": "educacao-pisa-matematica",
+  "slug": "pisa-matematica-brasil-ocde",
+  "titulo": "PISA — Matemática: Brasil vs. OCDE e Chile (Pontos)",
+  "categoria": "internacional",
+  "subcategoria": "educacao-comparada",
+  "tags": [
+    "internacional",
+    "pisa",
+    "ocde",
+    "matemática",
+    "inep",
+    "educação"
+  ],
+  "fonte": {
+    "orgao": "OCDE / INEP / Banco Mundial",
+    "pesquisa": "Programme for International Student Assessment (PISA)",
+    "url_oficial": "https://www.oecd.org/en/about/programmes/pisa/pisa-data.html",
+    "tipo_recurso": "dados_abertos",
+    "rotulo_link": "OECD PISA Open Database",
+    "frequencia": "Trienal (a cada 3 anos)",
+    "ultima_atualizacao": "2023-12-05"
+  },
+  "explicacao_leiga": {
+    "resumo": "Exame internacional que avalia a proficiência de estudantes de 15 anos em aplicar raciocínio matemático em desafios cotidianos.",
+    "como_interpretar": "A média dos países desenvolvidos da OCDE gira entre 470 e 500 pontos. O Brasil situa-se historicamente abaixo de 400 pontos.",
+    "por_que_importa": "Mostra como a formação técnica e científica dos jovens brasileiros se posiciona perante a concorrência global.",
+    "pontos_de_atencao": "No PISA 2022, mais de 70% dos alunos brasileiros de 15 anos não alcançaram o nível mínimo de proficiência básica."
+  },
+  "detalhamento_tecnico": {
+    "formula_calculo": "Escala calibrada pela Teoria de Resposta ao Item (TRI) com média OCDE histórica de 500 pontos.",
+    "unidade_medida": "Pontuação TRI",
+    "amostra_cobertura": "Amostra probabilística de estudantes de 15 anos matriculados a partir do 7º ano do Fundamental.",
+    "anonimizacao_sigilo": "Dados abertos anonimizados divulgados pela OCDE.",
+    "limitacoes_e_quebras_metodologicas": "A aplicação prevista para 2021 ocorreu em 2022 devido ao fechamento global das escolas.",
+    "orientacoes_fact_checking": "O PISA afere jovens de 15 anos em geral, independentemente de estarem com atraso escolar."
+  },
+  "visualizacao": {
+    "tipo_padrao": "line",
+    "eixo_x": {
+      "tipo": "temporal",
+      "rotulo": "Ano do Exame"
+    },
+    "eixo_y": {
+      "rotulo": "Pontuação Média",
+      "unidade": "pontos",
+      "escala_min": 300,
+      "escala_max": 550
+    },
+    "series": [
+      {
+        "id": "brasil",
+        "nome": "Brasil",
+        "dados": [
+          [
+            "2003",
+            356
+          ],
+          [
+            "2006",
+            370
+          ],
+          [
+            "2009",
+            386
+          ],
+          [
+            "2012",
+            391
+          ],
+          [
+            "2015",
+            377
+          ],
+          [
+            "2018",
+            384
+          ],
+          [
+            "2022",
+            379
+          ]
+        ]
+      },
+      {
+        "id": "ocde",
+        "nome": "Média Países da OCDE",
+        "dados": [
+          [
+            "2003",
+            500
+          ],
+          [
+            "2006",
+            498
+          ],
+          [
+            "2009",
+            496
+          ],
+          [
+            "2012",
+            494
+          ],
+          [
+            "2015",
+            490
+          ],
+          [
+            "2018",
+            489
+          ],
+          [
+            "2022",
+            472
+          ]
+        ]
+      },
+      {
+        "id": "chile",
+        "nome": "Chile (Referência América Latina)",
+        "dados": [
+          [
+            "2003",
+            387
+          ],
+          [
+            "2006",
+            411
+          ],
+          [
+            "2009",
+            421
+          ],
+          [
+            "2012",
+            423
+          ],
+          [
+            "2015",
+            423
+          ],
+          [
+            "2018",
+            417
+          ],
+          [
+            "2022",
+            412
+          ]
+        ]
+      }
+    ],
+    "marcos_historicos": [
+      {
+        "ano": 2022,
+        "rotulo": "Queda generalizada na pandemia (OCDE caiu 17 pontos)"
+      }
+    ]
+  },
+  "citacao_sugerida": {
+    "abnt": "OECD. PISA 2022 Results: The State of Learning and Equity in Education. Paris: OECD Publishing, 2023. Acesso via Brasa Dados."
+  },
+  "provenance": {
+    "status": "review",
+    "organizationType": "international",
+    "sourceUrl": "https://www.oecd.org/en/about/programmes/pisa/pisa-data.html",
+    "reference": "2022",
+    "frequency": "annual",
+    "observationStatus": "undocumented",
+    "transformation": "Série anual legada. Agregação e valores aguardam conferência na fonte.",
+    "issues": [
+      "Valores legados sem arquivo de extração: conferência numérica pendente."
+    ]
+  }
+}

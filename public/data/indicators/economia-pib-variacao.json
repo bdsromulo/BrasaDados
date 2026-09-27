@@ -1,0 +1,169 @@
+{
+  "id": "economia-pib-variacao",
+  "slug": "pib-variacao-real-anual-ibge",
+  "titulo": "Crescimento real do PIB",
+  "categoria": "economia",
+  "tags": [
+    "economia",
+    "Crescimento real do PIB",
+    "Instituto Brasileiro de Geografia e Estatística (IBGE)"
+  ],
+  "fonte": {
+    "orgao": "Instituto Brasileiro de Geografia e Estatística (IBGE)",
+    "pesquisa": "Produto Interno Bruto, Produto Interno Bruto per capita, População residente e Deflator",
+    "url_oficial": "https://sidra.ibge.gov.br/tabela/6784",
+    "frequencia": "anual"
+  },
+  "explicacao_leiga": {
+    "resumo": "Variação anual do volume de bens e serviços finais produzidos no Brasil.",
+    "como_interpretar": "O crescimento real desconta a variação de preços. Valores negativos indicam retração.",
+    "por_que_importa": "Mede a evolução da atividade econômica, sem substituir indicadores de distribuição de renda."
+  },
+  "detalhamento_tecnico": {
+    "formula_calculo": "Variação anual do volume de bens e serviços finais produzidos no Brasil.",
+    "unidade_medida": "%",
+    "amostra_cobertura": "Brasil; recortes estaduais quando publicados pela fonte.",
+    "limitacoes_e_quebras_metodologicas": "Contas Nacionais Anuais consolidadas. O último ano pode anteceder estimativas das Contas Trimestrais; as duas fontes não são emendadas automaticamente.",
+    "orientacoes_fact_checking": "Compare conceitos, unidades e períodos equivalentes. Ausência de observação não significa zero."
+  },
+  "visualizacao": {
+    "tipo_padrao": "bar",
+    "eixo_y": {
+      "rotulo": "Crescimento real do PIB",
+      "unidade": "%"
+    },
+    "series": [
+      {
+        "id": "economia-pib-variacao-0",
+        "nome": "Crescimento real do PIB",
+        "dados": [
+          [
+            "1996",
+            2.2
+          ],
+          [
+            "1997",
+            3.4
+          ],
+          [
+            "1998",
+            0.3
+          ],
+          [
+            "1999",
+            0.5
+          ],
+          [
+            "2000",
+            4.4
+          ],
+          [
+            "2001",
+            1.4
+          ],
+          [
+            "2002",
+            3.1
+          ],
+          [
+            "2003",
+            1.1
+          ],
+          [
+            "2004",
+            5.8
+          ],
+          [
+            "2005",
+            3.2
+          ],
+          [
+            "2006",
+            4
+          ],
+          [
+            "2007",
+            6.1
+          ],
+          [
+            "2008",
+            5.1
+          ],
+          [
+            "2009",
+            -0.1
+          ],
+          [
+            "2010",
+            7.5
+          ],
+          [
+            "2011",
+            4
+          ],
+          [
+            "2012",
+            1.9
+          ],
+          [
+            "2013",
+            3
+          ],
+          [
+            "2014",
+            0.5
+          ],
+          [
+            "2015",
+            -3.5
+          ],
+          [
+            "2016",
+            -3.3
+          ],
+          [
+            "2017",
+            1.3
+          ],
+          [
+            "2018",
+            1.7
+          ],
+          [
+            "2019",
+            1.3
+          ],
+          [
+            "2020",
+            -3.3
+          ],
+          [
+            "2021",
+            4.8
+          ],
+          [
+            "2022",
+            3
+          ],
+          [
+            "2023",
+            3.2
+          ]
+        ]
+      }
+    ]
+  },
+  "provenance": {
+    "status": "verified",
+    "organizationType": "government",
+    "sourceUrl": "https://servicodados.ibge.gov.br/api/v3/agregados/6784/periodos/all/variaveis/9810?localidades=N1%5Ball%5D",
+    "reference": "2023",
+    "frequency": "annual",
+    "observationStatus": "official",
+    "transformation": "Valores publicados, com conversão dos códigos de período e marcadores de ausência para null; sem interpolação.",
+    "issues": [],
+    "retrievedAt": "2026-09-27",
+    "datasetCode": "IBGE 6784 / variável 9810",
+    "sha256": "7e3ae4a1bde0a9ab6fcd558cab5b78d746fe530d4d60b7c2600744770c0eda51"
+  }
+}

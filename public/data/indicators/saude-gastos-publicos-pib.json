@@ -1,0 +1,155 @@
+{
+  "id": "saude-gastos-publicos-pib",
+  "slug": "gasto-total-saude-percentual-pib",
+  "titulo": "Gasto corrente em saúde · Público e privado",
+  "categoria": "saude",
+  "tags": [
+    "saude",
+    "Gasto corrente em saúde · Público e privado",
+    "Organização Mundial da Saúde (OMS) / Banco Mundial"
+  ],
+  "fonte": {
+    "orgao": "Organização Mundial da Saúde (OMS) / Banco Mundial",
+    "pesquisa": "Gasto corrente em saúde · Público e privado",
+    "url_oficial": "https://data.worldbank.org/indicator/SH.XPD.CHEX.GD.ZS?locations=BR",
+    "frequencia": "annual"
+  },
+  "explicacao_leiga": {
+    "resumo": "Despesas correntes com bens e serviços de saúde consumidos no ano, dos setores público e privado, como proporção do PIB.",
+    "como_interpretar": "Mede o gasto corrente total em saúde. O percentual pode mudar tanto pelo gasto quanto pela evolução do PIB.",
+    "por_que_importa": "Contextualiza os recursos destinados à saúde na economia."
+  },
+  "detalhamento_tecnico": {
+    "formula_calculo": "Despesa corrente total em saúde dividida pelo PIB do mesmo ano, multiplicada por 100.",
+    "unidade_medida": "% do PIB",
+    "amostra_cobertura": "Brasil; total nacional de despesas correntes, públicas e privadas.",
+    "limitacoes_e_quebras_metodologicas": "Estimativas da OMS (Global Health Expenditure Database) distribuídas pelo Banco Mundial. Exclui despesas de capital, como edifícios, máquinas e estoques de emergência. Não representa apenas gasto público ou orçamento do SUS. Anos ainda sem valor publicado não são estimados pelo site.",
+    "orientacoes_fact_checking": "Compare conceitos, unidades e períodos equivalentes. Ausência de observação não significa zero."
+  },
+  "visualizacao": {
+    "tipo_padrao": "line",
+    "eixo_y": {
+      "rotulo": "Gasto corrente em saúde · Público e privado",
+      "unidade": "% do PIB"
+    },
+    "series": [
+      {
+        "id": "saude-gastos-publicos-pib",
+        "nome": "Gasto corrente em saúde · Público e privado",
+        "dados": [
+          [
+            "2000",
+            8.33457184
+          ],
+          [
+            "2001",
+            8.54963303
+          ],
+          [
+            "2002",
+            8.69686985
+          ],
+          [
+            "2003",
+            8.18899441
+          ],
+          [
+            "2004",
+            8.12491989
+          ],
+          [
+            "2005",
+            8.03539562
+          ],
+          [
+            "2006",
+            8.24952507
+          ],
+          [
+            "2007",
+            8.20182991
+          ],
+          [
+            "2008",
+            8.01128483
+          ],
+          [
+            "2009",
+            8.39480495
+          ],
+          [
+            "2010",
+            7.94516611
+          ],
+          [
+            "2011",
+            7.78819132
+          ],
+          [
+            "2012",
+            7.73637724
+          ],
+          [
+            "2013",
+            7.9766016
+          ],
+          [
+            "2014",
+            8.39644146
+          ],
+          [
+            "2015",
+            8.90929985
+          ],
+          [
+            "2016",
+            9.16901684
+          ],
+          [
+            "2017",
+            9.47125053
+          ],
+          [
+            "2018",
+            9.46475029
+          ],
+          [
+            "2019",
+            9.61449146
+          ],
+          [
+            "2020",
+            9.62326527
+          ],
+          [
+            "2021",
+            9.63646507
+          ],
+          [
+            "2022",
+            9.38739491
+          ],
+          [
+            "2023",
+            9.73092747
+          ]
+        ]
+      }
+    ]
+  },
+  "provenance": {
+    "status": "verified",
+    "organizationType": "international",
+    "sourceUrl": "https://api.worldbank.org/v2/country/BRA/indicator/SH.XPD.CHEX.GD.ZS?format=json&per_page=20000",
+    "reference": "2023",
+    "frequency": "annual",
+    "observationStatus": "estimate",
+    "transformation": "Valores numéricos preservados da API WDI. Apenas anos vazios antes da primeira e após a última observação são excluídos; lacunas internas permanecem ausentes. Metadados da origem: Global Health Expenditure Database, updated December 12th, 2025, World Health Organization (WHO), uri: https://apps.who.int/nha/database",
+    "issues": [
+      "Atualização do conjunto WDI: 2026-07-13. Esta data não é a referência nem a data individual de publicação de cada observação."
+    ],
+    "retrievedAt": "2026-09-27",
+    "datasetCode": "WDI / SH.XPD.CHEX.GD.ZS",
+    "sha256": "4d628e9e501541a872c3bdd2c87106f40b067206a323bf9257434a4f948a5182"
+  }
+}

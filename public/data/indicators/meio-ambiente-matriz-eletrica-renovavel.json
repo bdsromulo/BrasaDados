@@ -1,0 +1,69 @@
+{
+  "id": "meio-ambiente-matriz-eletrica-renovavel",
+  "slug": "participacao-fontes-renovaveis-matriz-eletrica-epe",
+  "titulo": "Renováveis na matriz elétrica brasileira",
+  "categoria": "meio-ambiente",
+  "tags": [
+    "meio-ambiente",
+    "Renováveis na matriz elétrica brasileira",
+    "Empresa de Pesquisa Energética (EPE) / MME"
+  ],
+  "fonte": {
+    "orgao": "Empresa de Pesquisa Energética (EPE) / MME",
+    "pesquisa": "Renováveis na matriz elétrica brasileira",
+    "url_oficial": "https://www.epe.gov.br/sites-pt/publicacoes-dados-abertos/publicacoes/PublicacoesArquivos/publicacao-975/topico-847/BEN_S%C3%ADntese_2026_PT.pdf",
+    "frequencia": "annual"
+  },
+  "explicacao_leiga": {
+    "resumo": "Participação de fontes renováveis na oferta interna de energia elétrica brasileira, conforme o BEN 2026.",
+    "como_interpretar": "A parcela renovável considera toda a oferta elétrica, inclusive importação líquida. Não é a participação de renováveis em toda a matriz energética do país.",
+    "por_que_importa": "Mostra a composição da oferta elétrica e a exposição a fontes fósseis e às condições hidrológicas."
+  },
+  "detalhamento_tecnico": {
+    "formula_calculo": "Oferta interna de eletricidade de fontes renováveis dividida pela oferta interna de eletricidade total, multiplicada por 100; inclui geração nacional e importação líquida.",
+    "unidade_medida": "%",
+    "amostra_cobertura": "Brasil, oferta interna de energia elétrica de 2023 a 2025.",
+    "limitacoes_e_quebras_metodologicas": "A edição BEN 2026 revisa 2023 para 89,2%; o valor de 87,9% no acervo antigo era de outra edição. Foram preservados somente os três anos identificados numericamente no gráfico da mesma edição. O gráfico também traz uma barra de geração centralizada (89,9% em 2025), com denominador diferente, excluída desta série.",
+    "orientacoes_fact_checking": "Compare conceitos, unidades e períodos equivalentes. Ausência de observação não significa zero."
+  },
+  "visualizacao": {
+    "tipo_padrao": "line",
+    "eixo_y": {
+      "rotulo": "Renováveis na matriz elétrica brasileira",
+      "unidade": "%"
+    },
+    "series": [
+      {
+        "id": "renovaveis_matriz",
+        "nome": "Participação renovável",
+        "dados": [
+          [
+            "2023",
+            89.2
+          ],
+          [
+            "2024",
+            88.2
+          ],
+          [
+            "2025",
+            86.8
+          ]
+        ]
+      }
+    ]
+  },
+  "provenance": {
+    "status": "verified",
+    "organizationType": "government",
+    "sourceUrl": "https://www.epe.gov.br/sites-pt/publicacoes-dados-abertos/publicacoes/PublicacoesArquivos/publicacao-975/topico-847/BEN_S%C3%ADntese_2026_PT.pdf",
+    "reference": "2025",
+    "frequency": "annual",
+    "observationStatus": "official",
+    "transformation": "Transcrição conferida da publicação oficial. Gráfico Brasil (2023–2025), página impressa 35; extração reproduzível em scripts/parse-ben.py. Somente OIEE, sem a barra de geração centralizada. Sem interpolação ou preenchimento de anos ausentes.",
+    "issues": [],
+    "retrievedAt": "2026-09-27",
+    "datasetCode": "BEN 2026 / Relatório Síntese, página 35",
+    "sha256": "ae0d19b65e322c6aa2845afecd82fdbb103e5e477a5b32542e74a45709641af4"
+  }
+}

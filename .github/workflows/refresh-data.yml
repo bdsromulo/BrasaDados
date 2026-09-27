@@ -1,0 +1,33 @@
+name: Prepare validated data update
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run data:sync
+      - run: npm run data:import
+      - run: npm run data:audit
+      - run: npm test
+      - run: npm run build
+      - uses: actions/upload-artifact@v4
+        with:
+          name: validated-data
+          path: |
+            public/data
+            data/evidence
+            data/sync-report.json
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: failed-import-report
+          path: data/sync-report.json

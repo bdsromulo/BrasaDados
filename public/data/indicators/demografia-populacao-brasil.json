@@ -1,0 +1,284 @@
+{
+  "id": "demografia-populacao-brasil",
+  "slug": "populacao-residente-censo-projecao-ibge",
+  "titulo": "População residente · estimativas anuais",
+  "categoria": "economia",
+  "tags": [
+    "economia",
+    "População residente · estimativas anuais",
+    "Instituto Brasileiro de Geografia e Estatística (IBGE)"
+  ],
+  "fonte": {
+    "orgao": "Instituto Brasileiro de Geografia e Estatística (IBGE)",
+    "pesquisa": "População residente estimada",
+    "url_oficial": "https://sidra.ibge.gov.br/tabela/6579",
+    "frequencia": "anual"
+  },
+  "explicacao_leiga": {
+    "resumo": "Estimativa da população residente com referência em 1º de julho, publicada pelo IBGE para Brasil e UFs.",
+    "como_interpretar": "São estimativas anuais, não a contagem do Censo nem a projeção de longo prazo. Revisões de base podem alterar o nível da série.",
+    "por_que_importa": "Contextualiza o tamanho da população e o planejamento de serviços públicos."
+  },
+  "detalhamento_tecnico": {
+    "formula_calculo": "Estimativas oficiais do IBGE; valores inteiros em pessoas, sem conversão ou arredondamento.",
+    "unidade_medida": "pessoas",
+    "amostra_cobertura": "População residente no Brasil e nas 27 UFs em 1º de julho de cada ano disponível.",
+    "limitacoes_e_quebras_metodologicas": "A tabela reúne edições anuais das estimativas, com bases censitárias e revisões metodológicas distintas. Ausências em anos censitários não são preenchidas com contagens do Censo. O acervo anterior misturava Censo e projeções e foi substituído por esta fonte explicitamente identificada.",
+    "orientacoes_fact_checking": "Compare conceitos, unidades e períodos equivalentes. Ausência de observação não significa zero."
+  },
+  "visualizacao": {
+    "tipo_padrao": "line",
+    "eixo_y": {
+      "rotulo": "População residente · estimativas anuais",
+      "unidade": "pessoas"
+    },
+    "series": [
+      {
+        "id": "demografia-populacao-brasil-0",
+        "nome": "População residente · estimativas anuais",
+        "dados": [
+          [
+            "2001",
+            172385826
+          ],
+          [
+            "2002",
+            174632960
+          ],
+          [
+            "2003",
+            176871437
+          ],
+          [
+            "2004",
+            181569056
+          ],
+          [
+            "2005",
+            184184264
+          ],
+          [
+            "2006",
+            186770562
+          ],
+          [
+            "2008",
+            189605006
+          ],
+          [
+            "2009",
+            191480630
+          ],
+          [
+            "2011",
+            192379287
+          ],
+          [
+            "2012",
+            193904015
+          ],
+          [
+            "2013",
+            201032714
+          ],
+          [
+            "2014",
+            202768562
+          ],
+          [
+            "2015",
+            204450049
+          ],
+          [
+            "2016",
+            206081432
+          ],
+          [
+            "2017",
+            207660929
+          ],
+          [
+            "2018",
+            208494900
+          ],
+          [
+            "2019",
+            210147125
+          ],
+          [
+            "2020",
+            211755692
+          ],
+          [
+            "2021",
+            213317639
+          ],
+          [
+            "2024",
+            212583750
+          ],
+          [
+            "2025",
+            213421037
+          ],
+          [
+            "2026",
+            214211951
+          ]
+        ]
+      }
+    ],
+    "dados_uf": [
+      {
+        "uf": "RO",
+        "nome": "Rondônia",
+        "valor": 1757338
+      },
+      {
+        "uf": "AC",
+        "nome": "Acre",
+        "valor": 887794
+      },
+      {
+        "uf": "AM",
+        "nome": "Amazonas",
+        "valor": 4360926
+      },
+      {
+        "uf": "RR",
+        "nome": "Roraima",
+        "valor": 761012
+      },
+      {
+        "uf": "PA",
+        "nome": "Pará",
+        "valor": 8756324
+      },
+      {
+        "uf": "AP",
+        "nome": "Amapá",
+        "valor": 809953
+      },
+      {
+        "uf": "TO",
+        "nome": "Tocantins",
+        "valor": 1595994
+      },
+      {
+        "uf": "MA",
+        "nome": "Maranhão",
+        "valor": 7024557
+      },
+      {
+        "uf": "PI",
+        "nome": "Piauí",
+        "valor": 3392617
+      },
+      {
+        "uf": "CE",
+        "nome": "Ceará",
+        "valor": 9302211
+      },
+      {
+        "uf": "RN",
+        "nome": "Rio Grande do Norte",
+        "valor": 3463737
+      },
+      {
+        "uf": "PB",
+        "nome": "Paraíba",
+        "valor": 4182828
+      },
+      {
+        "uf": "PE",
+        "nome": "Pernambuco",
+        "valor": 9583176
+      },
+      {
+        "uf": "AL",
+        "nome": "Alagoas",
+        "valor": 3221128
+      },
+      {
+        "uf": "SE",
+        "nome": "Sergipe",
+        "valor": 2307255
+      },
+      {
+        "uf": "BA",
+        "nome": "Bahia",
+        "valor": 14889472
+      },
+      {
+        "uf": "MG",
+        "nome": "Minas Gerais",
+        "valor": 21460311
+      },
+      {
+        "uf": "ES",
+        "nome": "Espírito Santo",
+        "valor": 4150692
+      },
+      {
+        "uf": "RJ",
+        "nome": "Rio de Janeiro",
+        "valor": 17225410
+      },
+      {
+        "uf": "SP",
+        "nome": "São Paulo",
+        "valor": 46179008
+      },
+      {
+        "uf": "PR",
+        "nome": "Paraná",
+        "valor": 11952456
+      },
+      {
+        "uf": "SC",
+        "nome": "Santa Catarina",
+        "valor": 8312759
+      },
+      {
+        "uf": "RS",
+        "nome": "Rio Grande do Sul",
+        "valor": 11233317
+      },
+      {
+        "uf": "MS",
+        "nome": "Mato Grosso do Sul",
+        "valor": 2946317
+      },
+      {
+        "uf": "MT",
+        "nome": "Mato Grosso",
+        "valor": 3950330
+      },
+      {
+        "uf": "GO",
+        "nome": "Goiás",
+        "valor": 7495033
+      },
+      {
+        "uf": "DF",
+        "nome": "Distrito Federal",
+        "valor": 3009996
+      }
+    ]
+  },
+  "provenance": {
+    "status": "verified",
+    "organizationType": "government",
+    "sourceUrl": "https://servicodados.ibge.gov.br/api/v3/agregados/6579/periodos/all/variaveis/9324?localidades=N1%5Ball%5D%7CN3%5Ball%5D",
+    "reference": "2026",
+    "frequency": "annual",
+    "observationStatus": "estimate",
+    "transformation": "Valores publicados, com conversão dos códigos de período e marcadores de ausência para null; sem interpolação.",
+    "issues": [],
+    "stateReference": "2026",
+    "expectedStates": 27,
+    "retrievedAt": "2026-09-27",
+    "datasetCode": "IBGE 6579 / variável 9324",
+    "sha256": "df4c34eb96e07db33fba49c228fdc136873f94c1e41801f2a37b34c837ab66c4"
+  }
+}

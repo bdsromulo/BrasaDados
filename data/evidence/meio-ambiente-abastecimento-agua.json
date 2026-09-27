@@ -1,0 +1,41 @@
+{
+  "kind": "reviewed-transcription",
+  "source": "https://www.gov.br/cidades/pt-br/acesso-a-informacao/acoes-e-programas/saneamento/sinisa/resultados-sinisa/013_RELATORIO_SINISA_ABASTECIMENTO_DE_AGUA_2024_defeso.pdf",
+  "datasetCode": "SINISA 2024 / IAG0001, IAG0002, IAG0003",
+  "reference": "2023",
+  "reviewedAt": "2026-09-27",
+  "pointer": "Transcrição conferida da publicação oficial. Relatório de Abastecimento de Água, página 19. Sem interpolação ou preenchimento de anos ausentes.",
+  "manifestSha256": "02ecbd9a23125a2e90970214bc8d8bb19f36c9f5bed91120afb14e06f7cc39ee",
+  "series": [
+    {
+      "id": "total",
+      "nome": "População total · IAG0001",
+      "dados": [
+        [
+          "2023",
+          83.1
+        ]
+      ]
+    },
+    {
+      "id": "urbana",
+      "nome": "População urbana · IAG0002",
+      "dados": [
+        [
+          "2023",
+          93.3
+        ]
+      ]
+    },
+    {
+      "id": "rural",
+      "nome": "População rural · IAG0003",
+      "dados": [
+        [
+          "2023",
+          24.2
+        ]
+      ]
+    }
+  ]
+}

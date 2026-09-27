@@ -1,0 +1,114 @@
+{
+  "id": "saude-leitos-uti-sus",
+  "slug": "leitos-uti-adulto-brasil-cnes",
+  "titulo": "Capacidade Hospitalar — Leitos de UTI Adulto no Brasil (em milhares)",
+  "categoria": "saude",
+  "subcategoria": "capacidade-hospitalar",
+  "tags": [
+    "saúde",
+    "uti",
+    "leitos",
+    "hospital",
+    "cnes",
+    "sus",
+    "datasus"
+  ],
+  "fonte": {
+    "orgao": "Ministério da Saúde / DataSUS",
+    "pesquisa": "Cadastro Nacional de Estabelecimentos de Saúde (CNES / TabNet)",
+    "url_oficial": "https://cnes.datasus.gov.br/",
+    "tipo_recurso": "painel",
+    "rotulo_link": "Portal CNES / TabNet (DataSUS)",
+    "frequencia": "Mensal",
+    "ultima_atualizacao": "2024-12-15"
+  },
+  "explicacao_leiga": {
+    "resumo": "Mede o número total de leitos de Unidade de Terapia Intensiva (UTI) adulto disponíveis no Brasil, somando a rede pública do SUS e hospitais privados conveniados.",
+    "como_interpretar": "A OMS recomenda de 1 a 3 leitos de UTI para cada 10 mil habitantes. A média nacional supera esse patamar, mas esconde grande concentração nas capitais do Sul e Sudeste.",
+    "por_que_importa": "São leitos indispensáveis para cirurgias de alta complexidade, politraumatismos e suporte a falências orgânicas agudas.",
+    "pontos_de_atencao": "Durante a pandemia de Covid-19, o país criou mais de 20 mil leitos emergenciais provisórios, atingindo o pico de 66,5 mil leitos em 2021 antes da desmobilização gradual."
+  },
+  "detalhamento_tecnico": {
+    "formula_calculo": "Total de leitos complementares cadastrados sob o código de especialidade de UTI Adulto (Tipo II e Tipo III) em estabelecimentos de saúde ativos no CNES.",
+    "unidade_medida": "Milhares de leitos de UTI",
+    "amostra_cobertura": "Censo contínuo de estabelecimentos hospitalares públicos e privados em território nacional.",
+    "anonimizacao_sigilo": "Dados públicos agregados por município, CNPJ e tipo de gestão.",
+    "limitacoes_e_quebras_metodologicas": "Desabilitação de leitos de campanha após a emergência sanitária de Covid-19 reduz o estoque total nos anos seguintes.",
+    "orientacoes_fact_checking": "Diferencie 'Leitos de UTI Adulto' (foco em pacientes graves) de 'Leitos de Internação Geral' (enfermarias comuns) e de 'Leitos UTI Pediátricos/Neonatais'."
+  },
+  "visualizacao": {
+    "tipo_padrao": "line",
+    "eixo_x": {
+      "tipo": "temporal",
+      "rotulo": "Ano"
+    },
+    "eixo_y": {
+      "rotulo": "Leitos UTI (Milhares)",
+      "unidade": "mil leitos",
+      "escala_min": 30,
+      "escala_max": 75
+    },
+    "series": [
+      {
+        "id": "leitos_uti",
+        "nome": "Leitos de UTI Adulto (Milhares)",
+        "dados": [
+          [
+            "2018",
+            41.2
+          ],
+          [
+            "2019",
+            42.6
+          ],
+          [
+            "2020",
+            59.8
+          ],
+          [
+            "2021",
+            66.5
+          ],
+          [
+            "2022",
+            52.3
+          ],
+          [
+            "2023",
+            50.1
+          ],
+          [
+            "2024",
+            51.4
+          ]
+        ]
+      }
+    ],
+    "marcos_historicos": [
+      {
+        "ano": 2021,
+        "rotulo": "Pico histórico de 66,5 mil leitos durante o ápice da Covid-19"
+      },
+      {
+        "ano": 2024,
+        "rotulo": "Estabilização estrutural em 51,4 mil leitos operacionais"
+      }
+    ]
+  },
+  "citacao_sugerida": {
+    "abnt": "BRASIL. Ministério da Saúde. Cadastro Nacional de Estabelecimentos de Saúde (CNES): Leitos de UTI no Brasil. Brasília: DataSUS, 2024. Acesso via Brasa Dados."
+  },
+  "provenance": {
+    "status": "review",
+    "organizationType": "government",
+    "sourceUrl": "https://cnes.datasus.gov.br/",
+    "reference": "2024",
+    "frequency": "annual",
+    "observationStatus": "undocumented",
+    "transformation": "Série anual legada. Agregação e valores aguardam conferência na fonte.",
+    "issues": [
+      "Valores legados sem arquivo de extração: conferência numérica pendente.",
+      "A frequência anunciada na fonte difere dos pontos anuais armazenados; agregação original não documentada."
+    ]
+  }
+}

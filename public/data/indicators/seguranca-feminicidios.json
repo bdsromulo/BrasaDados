@@ -1,0 +1,97 @@
+{
+  "id": "seguranca-feminicidios",
+  "slug": "vitimas-de-feminicidio-brasil",
+  "titulo": "Feminicídios registrados · Vítimas",
+  "categoria": "seguranca",
+  "tags": [
+    "seguranca",
+    "Feminicídios registrados · Vítimas",
+    "Fórum Brasileiro de Segurança Pública (FBSP)"
+  ],
+  "fonte": {
+    "orgao": "Fórum Brasileiro de Segurança Pública (FBSP)",
+    "pesquisa": "Feminicídios registrados · Vítimas",
+    "url_oficial": "https://forumseguranca.org.br/wp-content/uploads/2026/07/anuario-2026.pdf",
+    "frequencia": "annual"
+  },
+  "explicacao_leiga": {
+    "resumo": "Número de mulheres vítimas de feminicídio registrado pelas secretarias estaduais de segurança e consolidado pelo FBSP.",
+    "como_interpretar": "É uma contagem anual de vítimas classificadas como feminicídio, não a taxa por população nem o total de homicídios de mulheres.",
+    "por_que_importa": "Acompanha a violência letal motivada por gênero e a capacidade de reconhecimento desses crimes."
+  },
+  "detalhamento_tecnico": {
+    "formula_calculo": "Soma das vítimas de feminicídio registradas pelas unidades federativas e consolidadas pelo FBSP.",
+    "unidade_medida": "vítimas",
+    "amostra_cobertura": "Brasil, vítimas registradas em 2016–2025; sem ranking estadual nesta extração.",
+    "limitacoes_e_quebras_metodologicas": "Depende da classificação policial e da cobertura dos registros estaduais. A edição 2026 revisou anos anteriores; use a série inteira dessa edição. O total de 2025 é 1.571 vítimas; a estimativa anterior de 1.568 e os números sem evidência do acervo foram descartados.",
+    "orientacoes_fact_checking": "Compare conceitos, unidades e períodos equivalentes. Ausência de observação não significa zero."
+  },
+  "visualizacao": {
+    "tipo_padrao": "bar",
+    "eixo_y": {
+      "rotulo": "Feminicídios registrados · Vítimas",
+      "unidade": "vítimas"
+    },
+    "series": [
+      {
+        "id": "feminicidios",
+        "nome": "Vítimas de feminicídio",
+        "dados": [
+          [
+            "2016",
+            929
+          ],
+          [
+            "2017",
+            1075
+          ],
+          [
+            "2018",
+            1229
+          ],
+          [
+            "2019",
+            1330
+          ],
+          [
+            "2020",
+            1354
+          ],
+          [
+            "2021",
+            1347
+          ],
+          [
+            "2022",
+            1455
+          ],
+          [
+            "2023",
+            1475
+          ],
+          [
+            "2024",
+            1504
+          ],
+          [
+            "2025",
+            1571
+          ]
+        ]
+      }
+    ]
+  },
+  "provenance": {
+    "status": "verified",
+    "organizationType": "civil",
+    "sourceUrl": "https://forumseguranca.org.br/wp-content/uploads/2026/07/anuario-2026.pdf",
+    "reference": "2025",
+    "frequency": "annual",
+    "observationStatus": "official",
+    "transformation": "Transcrição conferida da publicação oficial. Gráfico 35, página 159. Extração reproduzível em scripts/parse-fbsp.py; distinguir da série de homicídios femininos do mesmo gráfico. Sem interpolação ou preenchimento de anos ausentes.",
+    "issues": [],
+    "retrievedAt": "2026-09-27",
+    "datasetCode": "FBSP 20º Anuário 2026 / Gráfico 35",
+    "sha256": "86a073a2c57a008be16f57fc867e7c4b3646a52a2658937825261a1a716175dd"
+  }
+}

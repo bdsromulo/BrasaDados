@@ -1,0 +1,82 @@
+{
+  "id": "meio-ambiente-saneamento-esgoto",
+  "slug": "coleta-esgotamento-sanitario-snis-brasil",
+  "titulo": "Coleta de esgoto · Atendimento por rede",
+  "categoria": "meio-ambiente",
+  "tags": [
+    "meio-ambiente",
+    "Coleta de esgoto · Atendimento por rede",
+    "Ministério das Cidades / SINISA"
+  ],
+  "fonte": {
+    "orgao": "Ministério das Cidades / SINISA",
+    "pesquisa": "Coleta de esgoto · Atendimento por rede",
+    "url_oficial": "https://www.gov.br/cidades/pt-br/acesso-a-informacao/acoes-e-programas/saneamento/sinisa/resultados-sinisa/014_RELATORIO_SINISA_ESGOTAMENTO_SANITARIO_2024_defeso.pdf",
+    "frequencia": "annual"
+  },
+  "explicacao_leiga": {
+    "resumo": "Parcela da população atendida com rede coletora de esgoto, no ano de referência 2023 do SINISA 2024.",
+    "como_interpretar": "A cobertura total, urbana e rural usa populações de referência distintas. Atendimento por rede coletora não significa que todo o volume coletado receba tratamento.",
+    "por_que_importa": "Ajuda a identificar a cobertura e as desigualdades de acesso à infraestrutura de esgotamento sanitário."
+  },
+  "detalhamento_tecnico": {
+    "formula_calculo": "População atendida com rede coletora dividida pela população de referência de cada indicador, multiplicada por 100.",
+    "unidade_medida": "%",
+    "amostra_cobertura": "Brasil; indicadores consolidados de população total, urbana e rural no universo do SINISA.",
+    "limitacoes_e_quebras_metodologicas": "Valores consolidados do SINISA 2024, referência 2023. O acervo anterior sem rastreabilidade foi substituído por este recorte conferido. Não emendar automaticamente séries SNIS e SINISA: bases populacionais e participação de prestadores podem mudar. O ranking estadual não foi transcrito nesta edição.",
+    "orientacoes_fact_checking": "Compare conceitos, unidades e períodos equivalentes. Ausência de observação não significa zero."
+  },
+  "visualizacao": {
+    "tipo_padrao": "bar",
+    "eixo_y": {
+      "rotulo": "Coleta de esgoto · Atendimento por rede",
+      "unidade": "%"
+    },
+    "series": [
+      {
+        "id": "total",
+        "nome": "População total · IES0001",
+        "dados": [
+          [
+            "2023",
+            59.7
+          ]
+        ]
+      },
+      {
+        "id": "urbana",
+        "nome": "População urbana · IES0002",
+        "dados": [
+          [
+            "2023",
+            67.5
+          ]
+        ]
+      },
+      {
+        "id": "rural",
+        "nome": "População rural · IES0003",
+        "dados": [
+          [
+            "2023",
+            5.6
+          ]
+        ]
+      }
+    ]
+  },
+  "provenance": {
+    "status": "verified",
+    "organizationType": "government",
+    "sourceUrl": "https://www.gov.br/cidades/pt-br/acesso-a-informacao/acoes-e-programas/saneamento/sinisa/resultados-sinisa/014_RELATORIO_SINISA_ESGOTAMENTO_SANITARIO_2024_defeso.pdf",
+    "reference": "2023",
+    "frequency": "annual",
+    "observationStatus": "official",
+    "transformation": "Transcrição conferida da publicação oficial. Relatório de Esgotamento Sanitário, página 19. PDF arquivado em data/official-files/sinisa_esgoto_2024.pdf. Sem interpolação ou preenchimento de anos ausentes.",
+    "issues": [],
+    "retrievedAt": "2026-09-27",
+    "publishedAt": "2025-03-12",
+    "datasetCode": "SINISA 2024 / IES0001, IES0002, IES0003",
+    "sha256": "70d1ee31eba83b6ab3e41a9cac17066c7d1aecee30120cfe9b59eedb9c17da54"
+  }
+}

@@ -1,0 +1,428 @@
+{
+  "id": "economia-informalidade",
+  "slug": "economia-informalidade",
+  "titulo": "Trabalho · Taxa de informalidade",
+  "categoria": "economia",
+  "tags": [
+    "economia",
+    "Trabalho · Taxa de informalidade",
+    "Instituto Brasileiro de Geografia e Estatística (IBGE)"
+  ],
+  "fonte": {
+    "orgao": "Instituto Brasileiro de Geografia e Estatística (IBGE)",
+    "pesquisa": "Pessoas de 14 anos ou mais de idade, total, na força de trabalho, ocupadas, desocupadas, fora da força de trabalho, em situação de informalidade e respectivas taxas e níveis, por sexo",
+    "url_oficial": "https://sidra.ibge.gov.br/tabela/4093",
+    "frequencia": "trimestral"
+  },
+  "explicacao_leiga": {
+    "resumo": "Proporção das pessoas ocupadas de 14 anos ou mais em ocupações informais, segundo a definição da PNAD Contínua.",
+    "como_interpretar": "Informalidade é medida entre ocupados. Desocupação usa a força de trabalho como denominador; as taxas não devem ser somadas.",
+    "por_que_importa": "Mostra uma dimensão da proteção e da qualidade das ocupações."
+  },
+  "detalhamento_tecnico": {
+    "formula_calculo": "Proporção das pessoas ocupadas de 14 anos ou mais em ocupações informais, segundo a definição da PNAD Contínua.",
+    "unidade_medida": "%",
+    "amostra_cobertura": "Brasil; recortes estaduais quando publicados pela fonte.",
+    "limitacoes_e_quebras_metodologicas": "Empregados sem carteira, trabalhadores por conta própria e empregadores sem CNPJ e trabalhadores familiares auxiliares integram o conceito. A cobertura temporal depende da disponibilidade da variável.",
+    "orientacoes_fact_checking": "Compare conceitos, unidades e períodos equivalentes. Ausência de observação não significa zero."
+  },
+  "visualizacao": {
+    "tipo_padrao": "line",
+    "eixo_y": {
+      "rotulo": "Trabalho · Taxa de informalidade",
+      "unidade": "%"
+    },
+    "series": [
+      {
+        "id": "economia-informalidade-0",
+        "nome": "Trabalho · Taxa de informalidade",
+        "dados": [
+          [
+            "2012-Q1",
+            null
+          ],
+          [
+            "2012-Q2",
+            null
+          ],
+          [
+            "2012-Q3",
+            null
+          ],
+          [
+            "2012-Q4",
+            null
+          ],
+          [
+            "2013-Q1",
+            null
+          ],
+          [
+            "2013-Q2",
+            null
+          ],
+          [
+            "2013-Q3",
+            null
+          ],
+          [
+            "2013-Q4",
+            null
+          ],
+          [
+            "2014-Q1",
+            null
+          ],
+          [
+            "2014-Q2",
+            null
+          ],
+          [
+            "2014-Q3",
+            null
+          ],
+          [
+            "2014-Q4",
+            null
+          ],
+          [
+            "2015-Q1",
+            null
+          ],
+          [
+            "2015-Q2",
+            null
+          ],
+          [
+            "2015-Q3",
+            null
+          ],
+          [
+            "2015-Q4",
+            38.3
+          ],
+          [
+            "2016-Q1",
+            38.3
+          ],
+          [
+            "2016-Q2",
+            38.7
+          ],
+          [
+            "2016-Q3",
+            38.4
+          ],
+          [
+            "2016-Q4",
+            39.1
+          ],
+          [
+            "2017-Q1",
+            39.3
+          ],
+          [
+            "2017-Q2",
+            39.8
+          ],
+          [
+            "2017-Q3",
+            40.2
+          ],
+          [
+            "2017-Q4",
+            40.3
+          ],
+          [
+            "2018-Q1",
+            40.2
+          ],
+          [
+            "2018-Q2",
+            40.3
+          ],
+          [
+            "2018-Q3",
+            40.7
+          ],
+          [
+            "2018-Q4",
+            40.8
+          ],
+          [
+            "2019-Q1",
+            40.5
+          ],
+          [
+            "2019-Q2",
+            40.9
+          ],
+          [
+            "2019-Q3",
+            41
+          ],
+          [
+            "2019-Q4",
+            40.7
+          ],
+          [
+            "2020-Q1",
+            39.6
+          ],
+          [
+            "2020-Q2",
+            36.6
+          ],
+          [
+            "2020-Q3",
+            38.1
+          ],
+          [
+            "2020-Q4",
+            39.1
+          ],
+          [
+            "2021-Q1",
+            39.2
+          ],
+          [
+            "2021-Q2",
+            40.1
+          ],
+          [
+            "2021-Q3",
+            40.7
+          ],
+          [
+            "2021-Q4",
+            40.8
+          ],
+          [
+            "2022-Q1",
+            40.2
+          ],
+          [
+            "2022-Q2",
+            40
+          ],
+          [
+            "2022-Q3",
+            39.5
+          ],
+          [
+            "2022-Q4",
+            38.9
+          ],
+          [
+            "2023-Q1",
+            39
+          ],
+          [
+            "2023-Q2",
+            39.2
+          ],
+          [
+            "2023-Q3",
+            39.1
+          ],
+          [
+            "2023-Q4",
+            39.2
+          ],
+          [
+            "2024-Q1",
+            38.9
+          ],
+          [
+            "2024-Q2",
+            38.7
+          ],
+          [
+            "2024-Q3",
+            38.8
+          ],
+          [
+            "2024-Q4",
+            38.6
+          ],
+          [
+            "2025-Q1",
+            38
+          ],
+          [
+            "2025-Q2",
+            37.8
+          ],
+          [
+            "2025-Q3",
+            37.8
+          ],
+          [
+            "2025-Q4",
+            37.6
+          ],
+          [
+            "2026-Q1",
+            37.3
+          ],
+          [
+            "2026-Q2",
+            37.4
+          ]
+        ]
+      }
+    ],
+    "dados_uf": [
+      {
+        "uf": "RO",
+        "nome": "Rondônia",
+        "valor": 42
+      },
+      {
+        "uf": "AC",
+        "nome": "Acre",
+        "valor": 43.7
+      },
+      {
+        "uf": "AM",
+        "nome": "Amazonas",
+        "valor": 51.7
+      },
+      {
+        "uf": "RR",
+        "nome": "Roraima",
+        "valor": 42.7
+      },
+      {
+        "uf": "PA",
+        "nome": "Pará",
+        "valor": 55.9
+      },
+      {
+        "uf": "AP",
+        "nome": "Amapá",
+        "valor": 44.5
+      },
+      {
+        "uf": "TO",
+        "nome": "Tocantins",
+        "valor": 37.8
+      },
+      {
+        "uf": "MA",
+        "nome": "Maranhão",
+        "valor": 56.9
+      },
+      {
+        "uf": "PI",
+        "nome": "Piauí",
+        "valor": 49.5
+      },
+      {
+        "uf": "CE",
+        "nome": "Ceará",
+        "valor": 48.7
+      },
+      {
+        "uf": "RN",
+        "nome": "Rio Grande do Norte",
+        "valor": 41.3
+      },
+      {
+        "uf": "PB",
+        "nome": "Paraíba",
+        "valor": 45.8
+      },
+      {
+        "uf": "PE",
+        "nome": "Pernambuco",
+        "valor": 45.4
+      },
+      {
+        "uf": "AL",
+        "nome": "Alagoas",
+        "valor": 43.4
+      },
+      {
+        "uf": "SE",
+        "nome": "Sergipe",
+        "valor": 47.3
+      },
+      {
+        "uf": "BA",
+        "nome": "Bahia",
+        "valor": 50.7
+      },
+      {
+        "uf": "MG",
+        "nome": "Minas Gerais",
+        "valor": 36.5
+      },
+      {
+        "uf": "ES",
+        "nome": "Espírito Santo",
+        "valor": 40
+      },
+      {
+        "uf": "RJ",
+        "nome": "Rio de Janeiro",
+        "valor": 37.1
+      },
+      {
+        "uf": "SP",
+        "nome": "São Paulo",
+        "valor": 30.1
+      },
+      {
+        "uf": "PR",
+        "nome": "Paraná",
+        "valor": 30.5
+      },
+      {
+        "uf": "SC",
+        "nome": "Santa Catarina",
+        "valor": 25.4
+      },
+      {
+        "uf": "RS",
+        "nome": "Rio Grande do Sul",
+        "valor": 29.6
+      },
+      {
+        "uf": "MS",
+        "nome": "Mato Grosso do Sul",
+        "valor": 29.2
+      },
+      {
+        "uf": "MT",
+        "nome": "Mato Grosso",
+        "valor": 34.1
+      },
+      {
+        "uf": "GO",
+        "nome": "Goiás",
+        "valor": 36.1
+      },
+      {
+        "uf": "DF",
+        "nome": "Distrito Federal",
+        "valor": 28.7
+      }
+    ]
+  },
+  "provenance": {
+    "status": "verified",
+    "organizationType": "government",
+    "sourceUrl": "https://servicodados.ibge.gov.br/api/v3/agregados/4093/periodos/all/variaveis/12466?localidades=N1%5Ball%5D%7CN3%5Ball%5D&classificacao=2%5B6794%5D",
+    "reference": "2026-Q2",
+    "frequency": "quarterly",
+    "observationStatus": "official",
+    "transformation": "Valores publicados, com conversão dos códigos de período e marcadores de ausência para null; sem interpolação.",
+    "issues": [],
+    "stateReference": "2026-Q2",
+    "expectedStates": 27,
+    "retrievedAt": "2026-09-27",
+    "datasetCode": "IBGE 4093 / variável 12466",
+    "sha256": "53af22a60a5d63c624344431c8b3564ddfcd0fefdb0b74911efda66249bd2764"
+  }
+}

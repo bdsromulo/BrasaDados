@@ -1,0 +1,246 @@
+{
+  "id": "saude-inseguranca-alimentar",
+  "slug": "saude-inseguranca-alimentar",
+  "titulo": "Insegurança alimentar nos domicílios",
+  "categoria": "saude",
+  "tags": [
+    "saude",
+    "Insegurança alimentar nos domicílios",
+    "Instituto Brasileiro de Geografia e Estatística (IBGE)"
+  ],
+  "fonte": {
+    "orgao": "Instituto Brasileiro de Geografia e Estatística (IBGE)",
+    "pesquisa": "Domicílios e moradores, por situação do domicílio e situação de segurança alimentar existente no domicílio",
+    "url_oficial": "https://sidra.ibge.gov.br/tabela/9552",
+    "frequencia": "anual"
+  },
+  "explicacao_leiga": {
+    "resumo": "Percentual de domicílios com insegurança alimentar, classificada pela Escala Brasileira de Insegurança Alimentar (EBIA).",
+    "como_interpretar": "A série total inclui os níveis leve, moderado e grave. Não some o total às três categorias.",
+    "por_que_importa": "Mostra restrições no acesso regular e adequado a alimentos."
+  },
+  "detalhamento_tecnico": {
+    "formula_calculo": "Percentual de domicílios com insegurança alimentar, classificada pela Escala Brasileira de Insegurança Alimentar (EBIA).",
+    "unidade_medida": "%",
+    "amostra_cobertura": "Brasil; recortes estaduais quando publicados pela fonte.",
+    "limitacoes_e_quebras_metodologicas": "Esta série usa apenas a PNAD Contínua; dados de PNAD e POF anteriores não são unidos sem avaliação metodológica.",
+    "orientacoes_fact_checking": "Compare conceitos, unidades e períodos equivalentes. Ausência de observação não significa zero."
+  },
+  "visualizacao": {
+    "tipo_padrao": "line",
+    "eixo_y": {
+      "rotulo": "Insegurança alimentar nos domicílios",
+      "unidade": "%"
+    },
+    "series": [
+      {
+        "id": "saude-inseguranca-alimentar-0",
+        "nome": "Com insegurança alimentar",
+        "dados": [
+          [
+            "2023",
+            27.6
+          ],
+          [
+            "2024",
+            24.2
+          ]
+        ]
+      },
+      {
+        "id": "saude-inseguranca-alimentar-1",
+        "nome": "Com insegurança alimentar leve",
+        "dados": [
+          [
+            "2023",
+            18.2
+          ],
+          [
+            "2024",
+            16.4
+          ]
+        ]
+      },
+      {
+        "id": "saude-inseguranca-alimentar-2",
+        "nome": "Com insegurança alimentar moderada",
+        "dados": [
+          [
+            "2023",
+            5.3
+          ],
+          [
+            "2024",
+            4.5
+          ]
+        ]
+      },
+      {
+        "id": "saude-inseguranca-alimentar-3",
+        "nome": "Com insegurança alimentar grave",
+        "dados": [
+          [
+            "2023",
+            4.1
+          ],
+          [
+            "2024",
+            3.2
+          ]
+        ]
+      }
+    ],
+    "dados_uf": [
+      {
+        "uf": "RO",
+        "nome": "Rondônia",
+        "valor": 18.5
+      },
+      {
+        "uf": "AC",
+        "nome": "Acre",
+        "valor": 23.5
+      },
+      {
+        "uf": "AM",
+        "nome": "Amazonas",
+        "valor": 38.9
+      },
+      {
+        "uf": "RR",
+        "nome": "Roraima",
+        "valor": 43.6
+      },
+      {
+        "uf": "PA",
+        "nome": "Pará",
+        "valor": 44.6
+      },
+      {
+        "uf": "AP",
+        "nome": "Amapá",
+        "valor": 32.5
+      },
+      {
+        "uf": "TO",
+        "nome": "Tocantins",
+        "valor": 29.6
+      },
+      {
+        "uf": "MA",
+        "nome": "Maranhão",
+        "valor": 35.2
+      },
+      {
+        "uf": "PI",
+        "nome": "Piauí",
+        "valor": 39.3
+      },
+      {
+        "uf": "CE",
+        "nome": "Ceará",
+        "valor": 30.5
+      },
+      {
+        "uf": "RN",
+        "nome": "Rio Grande do Norte",
+        "valor": 29.4
+      },
+      {
+        "uf": "PB",
+        "nome": "Paraíba",
+        "valor": 32.4
+      },
+      {
+        "uf": "PE",
+        "nome": "Pernambuco",
+        "valor": 35.3
+      },
+      {
+        "uf": "AL",
+        "nome": "Alagoas",
+        "valor": 35
+      },
+      {
+        "uf": "SE",
+        "nome": "Sergipe",
+        "valor": 35
+      },
+      {
+        "uf": "BA",
+        "nome": "Bahia",
+        "valor": 37.8
+      },
+      {
+        "uf": "MG",
+        "nome": "Minas Gerais",
+        "valor": 19.5
+      },
+      {
+        "uf": "ES",
+        "nome": "Espírito Santo",
+        "valor": 13.5
+      },
+      {
+        "uf": "RJ",
+        "nome": "Rio de Janeiro",
+        "valor": 22.3
+      },
+      {
+        "uf": "SP",
+        "nome": "São Paulo",
+        "valor": 19.3
+      },
+      {
+        "uf": "PR",
+        "nome": "Paraná",
+        "valor": 15.3
+      },
+      {
+        "uf": "SC",
+        "nome": "Santa Catarina",
+        "valor": 9.4
+      },
+      {
+        "uf": "RS",
+        "nome": "Rio Grande do Sul",
+        "valor": 14.8
+      },
+      {
+        "uf": "MS",
+        "nome": "Mato Grosso do Sul",
+        "valor": 18.5
+      },
+      {
+        "uf": "MT",
+        "nome": "Mato Grosso",
+        "valor": 22.1
+      },
+      {
+        "uf": "GO",
+        "nome": "Goiás",
+        "valor": 17.9
+      },
+      {
+        "uf": "DF",
+        "nome": "Distrito Federal",
+        "valor": 27
+      }
+    ]
+  },
+  "provenance": {
+    "status": "verified",
+    "organizationType": "government",
+    "sourceUrl": "https://servicodados.ibge.gov.br/api/v3/agregados/9552/periodos/all/variaveis/9784?localidades=N1%5Ball%5D%7CN3%5Ball%5D&classificacao=1%5B6795%5D%7C12404%5B109099%2C109100%2C109101%2C109102%5D",
+    "reference": "2024",
+    "frequency": "annual",
+    "observationStatus": "official",
+    "transformation": "Valores publicados, com conversão dos códigos de período e marcadores de ausência para null; sem interpolação.",
+    "issues": [],
+    "stateReference": "2024",
+    "expectedStates": 27,
+    "retrievedAt": "2026-09-27",
+    "datasetCode": "IBGE 9552 / variável 9784",
+    "sha256": "2ee2e5062fcbda6787b203c7ff97b493d9b06441982246dcb7e93ff77da05cd8"
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "id": "economia-arrecadacao-federal",
+  "slug": "arrecadacao-receitas-federais-rfb",
+  "titulo": "Finanças Públicas — Arrecadação de Tributos Federais (R$ Trilhões)",
+  "categoria": "economia",
+  "subcategoria": "financas-publicas",
+  "tags": [
+    "economia",
+    "tributos",
+    "impostos",
+    "receita federal",
+    "arrecadação",
+    "dados abertos"
+  ],
+  "fonte": {
+    "orgao": "Receita Federal do Brasil (RFB) / Ministério da Fazenda",
+    "pesquisa": "Relatório de Arrecadação das Receitas Federais & Carga Tributária",
+    "url_oficial": "https://dados.gov.br/dados/conjuntos-dados/arrecadacao-tributaria-federal",
+    "tipo_recurso": "dados_abertos",
+    "rotulo_link": "Dados Abertos Gov.br / Receita Federal",
+    "frequencia": "Mensal / Anual",
+    "ultima_atualizacao": "2025-01-25"
+  },
+  "explicacao_leiga": {
+    "resumo": "Mede o total arrecadado pela União em tributos (IR, PIS/Cofins, CSLL, IPI, Previdência e demais receitas administradas) em trilhões de reais.",
+    "como_interpretar": "O crescimento nominal reflete tanto a atividade econômica e inflação quanto alterações na legislação tributária e ganhos em contenciosos judiciais.",
+    "por_que_importa": "Financia os serviços públicos federais, Previdência Social, SUS, universidades federais e as transferências obrigatórias a estados e municípios (FPE e FPM).",
+    "pontos_de_atencao": "Em 2024, a arrecadação federal bateu recorde histórico nominal superando R$ 2,65 trilhões, impulsionada pela tributação de fundos exclusivos e offshores."
+  },
+  "detalhamento_tecnico": {
+    "formula_calculo": "Somatório das receitas administradas pela RFB mais as receitas administradas por outros órgãos (como royalties de petróleo) no exercício fiscal.",
+    "unidade_medida": "R$ Trilhões correntes",
+    "amostra_cobertura": "Universo das arrecadações federais registradas no Sistema Integrado de Administração Financeira (SIAFI).",
+    "anonimizacao_sigilo": "Dados fiscais agregados sem violação do sigilo fiscal do contribuinte (CTN art. 198).",
+    "limitacoes_e_quebras_metodologicas": "Valores nominais sem deflacionamento pelo IPCA; receitas atípicas (como parcelamentos especiais e dividendos extraordinários) podem distorcer o fluxo recorrente.",
+    "orientacoes_fact_checking": "Diferencie 'Arrecadação Federal' (tributos da União) de 'Carga Tributária Total' (que inclui também ICMS dos estados e ISS/IPTU dos municípios, atingindo ~33% do PIB)."
+  },
+  "visualizacao": {
+    "tipo_padrao": "bar",
+    "eixo_x": {
+      "tipo": "temporal",
+      "rotulo": "Ano"
+    },
+    "eixo_y": {
+      "rotulo": "Arrecadação (R$ Tri)",
+      "unidade": "R$ tri",
+      "escala_min": 1,
+      "escala_max": 3
+    },
+    "series": [
+      {
+        "id": "arrecadacao_total",
+        "nome": "Arrecadação Federal (R$ Tri)",
+        "dados": [
+          [
+            "2018",
+            1.46
+          ],
+          [
+            "2019",
+            1.54
+          ],
+          [
+            "2020",
+            1.48
+          ],
+          [
+            "2021",
+            1.88
+          ],
+          [
+            "2022",
+            2.22
+          ],
+          [
+            "2023",
+            2.32
+          ],
+          [
+            "2024",
+            2.65
+          ]
+        ]
+      }
+    ],
+    "marcos_historicos": [
+      {
+        "ano": 2020,
+        "rotulo": "Queda na pandemia para R$ 1,48 tri com diferimentos fiscais"
+      },
+      {
+        "ano": 2024,
+        "rotulo": "Recorde histórico nominal superando R$ 2,65 trilhões"
+      }
+    ]
+  },
+  "citacao_sugerida": {
+    "abnt": "RECEITA FEDERAL DO BRASIL. Carga Tributária e Relatórios de Arrecadação das Receitas Federais. Brasília: Ministério da Fazenda/RFB, 2025. Acesso via Brasa Dados."
+  },
+  "provenance": {
+    "status": "review",
+    "organizationType": "government",
+    "sourceUrl": "https://dados.gov.br/dados/conjuntos-dados/arrecadacao-tributaria-federal",
+    "reference": "2024",
+    "frequency": "annual",
+    "observationStatus": "undocumented",
+    "transformation": "Série anual legada. Agregação e valores aguardam conferência na fonte.",
+    "issues": [
+      "Valores legados sem arquivo de extração: conferência numérica pendente.",
+      "A frequência anunciada na fonte difere dos pontos anuais armazenados; agregação original não documentada."
+    ]
+  }
+}

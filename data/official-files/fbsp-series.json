@@ -1,0 +1,239 @@
+{
+  "mvi": [
+    [
+      "2012",
+      27.7
+    ],
+    [
+      "2013",
+      28.0
+    ],
+    [
+      "2014",
+      29.7
+    ],
+    [
+      "2015",
+      28.9
+    ],
+    [
+      "2016",
+      30.2
+    ],
+    [
+      "2017",
+      31.2
+    ],
+    [
+      "2018",
+      27.9
+    ],
+    [
+      "2019",
+      23.0
+    ],
+    [
+      "2020",
+      24.1
+    ],
+    [
+      "2021",
+      23.0
+    ],
+    [
+      "2022",
+      22.7
+    ],
+    [
+      "2023",
+      21.9
+    ],
+    [
+      "2024",
+      20.8
+    ],
+    [
+      "2025",
+      19.1
+    ]
+  ],
+  "states": [
+    {
+      "uf": "AC",
+      "nome": "Acre",
+      "valor": 21.6
+    },
+    {
+      "uf": "AL",
+      "nome": "Alagoas",
+      "valor": 33.1
+    },
+    {
+      "uf": "AP",
+      "nome": "Amapá",
+      "valor": 42.5
+    },
+    {
+      "uf": "AM",
+      "nome": "Amazonas",
+      "valor": 18.5
+    },
+    {
+      "uf": "BA",
+      "nome": "Bahia",
+      "valor": 36.8
+    },
+    {
+      "uf": "CE",
+      "nome": "Ceará",
+      "valor": 34.7
+    },
+    {
+      "uf": "DF",
+      "nome": "Distrito Federal",
+      "valor": 9.6
+    },
+    {
+      "uf": "ES",
+      "nome": "Espírito Santo",
+      "valor": 22.0
+    },
+    {
+      "uf": "GO",
+      "nome": "Goiás",
+      "valor": 16.5
+    },
+    {
+      "uf": "MA",
+      "nome": "Maranhão",
+      "valor": 29.7
+    },
+    {
+      "uf": "MT",
+      "nome": "Mato Grosso",
+      "valor": 22.9
+    },
+    {
+      "uf": "MS",
+      "nome": "Mato Grosso do Sul",
+      "valor": 20.2
+    },
+    {
+      "uf": "MG",
+      "nome": "Minas Gerais",
+      "valor": 12.9
+    },
+    {
+      "uf": "PA",
+      "nome": "Pará",
+      "valor": 28.4
+    },
+    {
+      "uf": "PB",
+      "nome": "Paraíba",
+      "valor": 24.6
+    },
+    {
+      "uf": "PR",
+      "nome": "Paraná",
+      "valor": 15.5
+    },
+    {
+      "uf": "PE",
+      "nome": "Pernambuco",
+      "valor": 33.0
+    },
+    {
+      "uf": "PI",
+      "nome": "Piauí",
+      "valor": 17.1
+    },
+    {
+      "uf": "RJ",
+      "nome": "Rio de Janeiro",
+      "valor": 22.6
+    },
+    {
+      "uf": "RN",
+      "nome": "Rio Grande do Norte",
+      "valor": 29.1
+    },
+    {
+      "uf": "RS",
+      "nome": "Rio Grande do Sul",
+      "valor": 11.3
+    },
+    {
+      "uf": "RO",
+      "nome": "Rondônia",
+      "valor": 28.1
+    },
+    {
+      "uf": "RR",
+      "nome": "Roraima",
+      "valor": 19.5
+    },
+    {
+      "uf": "SC",
+      "nome": "Santa Catarina",
+      "valor": 7.6
+    },
+    {
+      "uf": "SP",
+      "nome": "São Paulo",
+      "valor": 7.8
+    },
+    {
+      "uf": "SE",
+      "nome": "Sergipe",
+      "valor": 22.1
+    },
+    {
+      "uf": "TO",
+      "nome": "Tocantins",
+      "valor": 19.3
+    }
+  ],
+  "feminicides": [
+    [
+      "2016",
+      929
+    ],
+    [
+      "2017",
+      1075
+    ],
+    [
+      "2018",
+      1229
+    ],
+    [
+      "2019",
+      1330
+    ],
+    [
+      "2020",
+      1354
+    ],
+    [
+      "2021",
+      1347
+    ],
+    [
+      "2022",
+      1455
+    ],
+    [
+      "2023",
+      1475
+    ],
+    [
+      "2024",
+      1504
+    ],
+    [
+      "2025",
+      1571
+    ]
+  ]
+}

@@ -1,0 +1,248 @@
+{
+  "id": "meio-ambiente-queimadas-focos",
+  "slug": "focos-de-queimadas-anuais-brasil-inpe",
+  "titulo": "Focos ativos de fogo · Satélite de referência",
+  "categoria": "meio-ambiente",
+  "tags": [
+    "meio-ambiente",
+    "Focos ativos de fogo · Satélite de referência",
+    "Instituto Nacional de Pesquisas Espaciais (INPE)"
+  ],
+  "fonte": {
+    "orgao": "Instituto Nacional de Pesquisas Espaciais (INPE)",
+    "pesquisa": "Focos ativos de fogo · Satélite de referência",
+    "url_oficial": "https://data.inpe.br/queimadas/estatisticas/media/estatistica/paises/brasil.json",
+    "frequencia": "annual"
+  },
+  "explicacao_leiga": {
+    "resumo": "Número de focos ativos de fogo detectados pelo satélite de referência no Brasil durante o ano civil.",
+    "como_interpretar": "Cada foco é uma detecção por satélite; não equivale a um incêndio individual nem mede diretamente a área queimada.",
+    "por_que_importa": "Permite acompanhar a variação anual da atividade de fogo com um método de observação padronizado."
+  },
+  "detalhamento_tecnico": {
+    "formula_calculo": "Soma dos totais de focos por estado e bioma da base mensal nacional do INPE. Ranking estadual soma os biomas de cada UF no último ano completo.",
+    "unidade_medida": "focos",
+    "amostra_cobertura": "Brasil e 27 UFs; anos civis completos desde 2013, satélite de referência do Programa Queimadas.",
+    "limitacoes_e_quebras_metodologicas": "Série iniciada em 2013 para não misturar a transição do satélite de referência NOAA-12 para AQUA em 2012. Nuvens, horário de passagem e resolução afetam a detecção. O ano corrente fica fora até todos os 12 meses estarem completos. Não somar focos de todos os satélites como se fossem detecções independentes.",
+    "orientacoes_fact_checking": "Compare conceitos, unidades e períodos equivalentes. Ausência de observação não significa zero."
+  },
+  "visualizacao": {
+    "tipo_padrao": "bar",
+    "eixo_y": {
+      "rotulo": "Focos ativos de fogo · Satélite de referência",
+      "unidade": "focos"
+    },
+    "series": [
+      {
+        "id": "focos",
+        "nome": "Brasil · focos ativos",
+        "dados": [
+          [
+            "2013",
+            128145
+          ],
+          [
+            "2014",
+            175892
+          ],
+          [
+            "2015",
+            216778
+          ],
+          [
+            "2016",
+            184217
+          ],
+          [
+            "2017",
+            207508
+          ],
+          [
+            "2018",
+            132870
+          ],
+          [
+            "2019",
+            197632
+          ],
+          [
+            "2020",
+            222797
+          ],
+          [
+            "2021",
+            184081
+          ],
+          [
+            "2022",
+            200763
+          ],
+          [
+            "2023",
+            189901
+          ],
+          [
+            "2024",
+            278299
+          ],
+          [
+            "2025",
+            136393
+          ]
+        ]
+      }
+    ],
+    "dados_uf": [
+      {
+        "uf": "RO",
+        "nome": "Rondônia",
+        "valor": 1879
+      },
+      {
+        "uf": "AC",
+        "nome": "Acre",
+        "valor": 2184
+      },
+      {
+        "uf": "AM",
+        "nome": "Amazonas",
+        "valor": 4545
+      },
+      {
+        "uf": "PA",
+        "nome": "Pará",
+        "valor": 18367
+      },
+      {
+        "uf": "TO",
+        "nome": "Tocantins",
+        "valor": 11548
+      },
+      {
+        "uf": "MA",
+        "nome": "Maranhão",
+        "valor": 24300
+      },
+      {
+        "uf": "PI",
+        "nome": "Piauí",
+        "valor": 11806
+      },
+      {
+        "uf": "CE",
+        "nome": "Ceará",
+        "valor": 7852
+      },
+      {
+        "uf": "RN",
+        "nome": "Rio Grande do Norte",
+        "valor": 639
+      },
+      {
+        "uf": "PB",
+        "nome": "Paraíba",
+        "valor": 1061
+      },
+      {
+        "uf": "PE",
+        "nome": "Pernambuco",
+        "valor": 2335
+      },
+      {
+        "uf": "BA",
+        "nome": "Bahia",
+        "valor": 12089
+      },
+      {
+        "uf": "MG",
+        "nome": "Minas Gerais",
+        "valor": 8716
+      },
+      {
+        "uf": "ES",
+        "nome": "Espírito Santo",
+        "valor": 385
+      },
+      {
+        "uf": "RJ",
+        "nome": "Rio de Janeiro",
+        "valor": 512
+      },
+      {
+        "uf": "SP",
+        "nome": "São Paulo",
+        "valor": 2376
+      },
+      {
+        "uf": "PR",
+        "nome": "Paraná",
+        "valor": 1812
+      },
+      {
+        "uf": "SC",
+        "nome": "Santa Catarina",
+        "valor": 1478
+      },
+      {
+        "uf": "MS",
+        "nome": "Mato Grosso do Sul",
+        "valor": 1844
+      },
+      {
+        "uf": "MT",
+        "nome": "Mato Grosso",
+        "valor": 11061
+      },
+      {
+        "uf": "GO",
+        "nome": "Goiás",
+        "valor": 4878
+      },
+      {
+        "uf": "DF",
+        "nome": "Distrito Federal",
+        "valor": 234
+      },
+      {
+        "uf": "RR",
+        "nome": "Roraima",
+        "valor": 1539
+      },
+      {
+        "uf": "AP",
+        "nome": "Amapá",
+        "valor": 948
+      },
+      {
+        "uf": "AL",
+        "nome": "Alagoas",
+        "valor": 228
+      },
+      {
+        "uf": "RS",
+        "nome": "Rio Grande do Sul",
+        "valor": 1620
+      },
+      {
+        "uf": "SE",
+        "nome": "Sergipe",
+        "valor": 157
+      }
+    ]
+  },
+  "provenance": {
+    "status": "verified",
+    "organizationType": "government",
+    "sourceUrl": "https://data.inpe.br/queimadas/estatisticas/media/estatistica/paises/brasil.json",
+    "reference": "2025",
+    "frequency": "annual",
+    "observationStatus": "official",
+    "transformation": "Soma dos totais por estado e bioma em cada ano civil completo a partir de 2013. Meses e UFs validados; anos parciais e a transição de satélite de 2012 excluídos.",
+    "issues": [],
+    "datasetCode": "INPE Programa Queimadas / brasil.json / satélite de referência",
+    "stateReference": "2025",
+    "expectedStates": 27,
+    "retrievedAt": "2026-09-27",
+    "sha256": "37b39b918d422baf537a5bd8f7ca155f0adc89027500de19b8edd90fff5b7129"
+  }
+}

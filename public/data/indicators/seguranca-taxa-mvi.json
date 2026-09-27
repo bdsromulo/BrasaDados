@@ -1,0 +1,252 @@
+{
+  "id": "seguranca-taxa-mvi",
+  "slug": "mortes-violentas-intencionais-brasil",
+  "titulo": "Mortes violentas intencionais · Taxa nacional",
+  "categoria": "seguranca",
+  "tags": [
+    "seguranca",
+    "Mortes violentas intencionais · Taxa nacional",
+    "Fórum Brasileiro de Segurança Pública (FBSP)"
+  ],
+  "fonte": {
+    "orgao": "Fórum Brasileiro de Segurança Pública (FBSP)",
+    "pesquisa": "Mortes violentas intencionais · Taxa nacional",
+    "url_oficial": "https://forumseguranca.org.br/wp-content/uploads/2026/07/anuario-2026.pdf",
+    "frequencia": "annual"
+  },
+  "explicacao_leiga": {
+    "resumo": "Mortes violentas intencionais registradas para cada 100 mil habitantes, segundo consolidação do FBSP.",
+    "como_interpretar": "A taxa relaciona vítimas de MVI e população de referência. O número absoluto de mortes é outro indicador; não confunda taxa com contagem.",
+    "por_que_importa": "Ajuda a acompanhar a violência letal e comparar níveis entre períodos e UFs."
+  },
+  "detalhamento_tecnico": {
+    "formula_calculo": "(Vítimas de MVI / estimativa populacional de referência) × 100.000, conforme FBSP.",
+    "unidade_medida": "por 100 mil hab.",
+    "amostra_cobertura": "Brasil e 27 UFs; série nacional 2012–2025 e ranking estadual de 2025.",
+    "limitacoes_e_quebras_metodologicas": "Categoria MVI do FBSP soma vítimas de homicídio doloso, latrocínio, lesão corporal seguida de morte e morte decorrente de intervenção policial. O ano 2012 foi calculado retrospectivamente pela fonte; números de edições anteriores podem ser revistos. A edição 2026 usa estimativas populacionais do IBGE de 1º de julho. Classificação e registro podem variar entre polícias.",
+    "orientacoes_fact_checking": "Compare conceitos, unidades e períodos equivalentes. Ausência de observação não significa zero."
+  },
+  "visualizacao": {
+    "tipo_padrao": "line",
+    "eixo_y": {
+      "rotulo": "Mortes violentas intencionais · Taxa nacional",
+      "unidade": "por 100 mil hab."
+    },
+    "series": [
+      {
+        "id": "taxa",
+        "nome": "Brasil · taxa de MVI",
+        "dados": [
+          [
+            "2012",
+            27.7
+          ],
+          [
+            "2013",
+            28
+          ],
+          [
+            "2014",
+            29.7
+          ],
+          [
+            "2015",
+            28.9
+          ],
+          [
+            "2016",
+            30.2
+          ],
+          [
+            "2017",
+            31.2
+          ],
+          [
+            "2018",
+            27.9
+          ],
+          [
+            "2019",
+            23
+          ],
+          [
+            "2020",
+            24.1
+          ],
+          [
+            "2021",
+            23
+          ],
+          [
+            "2022",
+            22.7
+          ],
+          [
+            "2023",
+            21.9
+          ],
+          [
+            "2024",
+            20.8
+          ],
+          [
+            "2025",
+            19.1
+          ]
+        ]
+      }
+    ],
+    "dados_uf": [
+      {
+        "uf": "AC",
+        "nome": "Acre",
+        "valor": 21.6
+      },
+      {
+        "uf": "AL",
+        "nome": "Alagoas",
+        "valor": 33.1
+      },
+      {
+        "uf": "AP",
+        "nome": "Amapá",
+        "valor": 42.5
+      },
+      {
+        "uf": "AM",
+        "nome": "Amazonas",
+        "valor": 18.5
+      },
+      {
+        "uf": "BA",
+        "nome": "Bahia",
+        "valor": 36.8
+      },
+      {
+        "uf": "CE",
+        "nome": "Ceará",
+        "valor": 34.7
+      },
+      {
+        "uf": "DF",
+        "nome": "Distrito Federal",
+        "valor": 9.6
+      },
+      {
+        "uf": "ES",
+        "nome": "Espírito Santo",
+        "valor": 22
+      },
+      {
+        "uf": "GO",
+        "nome": "Goiás",
+        "valor": 16.5
+      },
+      {
+        "uf": "MA",
+        "nome": "Maranhão",
+        "valor": 29.7
+      },
+      {
+        "uf": "MT",
+        "nome": "Mato Grosso",
+        "valor": 22.9
+      },
+      {
+        "uf": "MS",
+        "nome": "Mato Grosso do Sul",
+        "valor": 20.2
+      },
+      {
+        "uf": "MG",
+        "nome": "Minas Gerais",
+        "valor": 12.9
+      },
+      {
+        "uf": "PA",
+        "nome": "Pará",
+        "valor": 28.4
+      },
+      {
+        "uf": "PB",
+        "nome": "Paraíba",
+        "valor": 24.6
+      },
+      {
+        "uf": "PR",
+        "nome": "Paraná",
+        "valor": 15.5
+      },
+      {
+        "uf": "PE",
+        "nome": "Pernambuco",
+        "valor": 33
+      },
+      {
+        "uf": "PI",
+        "nome": "Piauí",
+        "valor": 17.1
+      },
+      {
+        "uf": "RJ",
+        "nome": "Rio de Janeiro",
+        "valor": 22.6
+      },
+      {
+        "uf": "RN",
+        "nome": "Rio Grande do Norte",
+        "valor": 29.1
+      },
+      {
+        "uf": "RS",
+        "nome": "Rio Grande do Sul",
+        "valor": 11.3
+      },
+      {
+        "uf": "RO",
+        "nome": "Rondônia",
+        "valor": 28.1
+      },
+      {
+        "uf": "RR",
+        "nome": "Roraima",
+        "valor": 19.5
+      },
+      {
+        "uf": "SC",
+        "nome": "Santa Catarina",
+        "valor": 7.6
+      },
+      {
+        "uf": "SP",
+        "nome": "São Paulo",
+        "valor": 7.8
+      },
+      {
+        "uf": "SE",
+        "nome": "Sergipe",
+        "valor": 22.1
+      },
+      {
+        "uf": "TO",
+        "nome": "Tocantins",
+        "valor": 19.3
+      }
+    ]
+  },
+  "provenance": {
+    "status": "verified",
+    "organizationType": "civil",
+    "sourceUrl": "https://forumseguranca.org.br/wp-content/uploads/2026/07/anuario-2026.pdf",
+    "reference": "2025",
+    "frequency": "annual",
+    "observationStatus": "official",
+    "transformation": "Transcrição conferida da publicação oficial. Tabela 02, página 30: série nacional; Tabela 01, página 28: ranking 2025. Extração reproduzível em scripts/parse-fbsp.py. Sem interpolação ou preenchimento de anos ausentes.",
+    "issues": [],
+    "retrievedAt": "2026-09-27",
+    "datasetCode": "FBSP 20º Anuário 2026 / Tabelas 01 e 02",
+    "stateReference": "2025",
+    "expectedStates": 27,
+    "sha256": "75a4bc3b9509a90aa8acf95b74b18e0fce99bed8d79d0c7a729b7f71085f9c55"
+  }
+}

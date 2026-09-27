@@ -1,0 +1,41 @@
+{
+  "kind": "reviewed-transcription",
+  "source": "https://www.gov.br/cidades/pt-br/acesso-a-informacao/acoes-e-programas/saneamento/sinisa/resultados-sinisa/014_RELATORIO_SINISA_ESGOTAMENTO_SANITARIO_2024_defeso.pdf",
+  "datasetCode": "SINISA 2024 / IES0001, IES0002, IES0003",
+  "reference": "2023",
+  "reviewedAt": "2026-09-27",
+  "pointer": "Transcrição conferida da publicação oficial. Relatório de Esgotamento Sanitário, página 19. PDF arquivado em data/official-files/sinisa_esgoto_2024.pdf. Sem interpolação ou preenchimento de anos ausentes.",
+  "manifestSha256": "70d1ee31eba83b6ab3e41a9cac17066c7d1aecee30120cfe9b59eedb9c17da54",
+  "series": [
+    {
+      "id": "total",
+      "nome": "População total · IES0001",
+      "dados": [
+        [
+          "2023",
+          59.7
+        ]
+      ]
+    },
+    {
+      "id": "urbana",
+      "nome": "População urbana · IES0002",
+      "dados": [
+        [
+          "2023",
+          67.5
+        ]
+      ]
+    },
+    {
+      "id": "rural",
+      "nome": "População rural · IES0003",
+      "dados": [
+        [
+          "2023",
+          5.6
+        ]
+      ]
+    }
+  ]
+}

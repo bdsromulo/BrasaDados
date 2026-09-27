@@ -1,48 +1,48 @@
-# 🇧🇷 Brasa Dados
+# Brasa Dados · Atlas Cívico
 
-> **O Panorama Visual e Fidedigno do Brasil:** Agregação, contextualização e visualização didática de dados socioeconômicos públicos brasileiros com foco em fact-checking, neutralidade metodológica e análise cruzada em multiquadrantes.
+Consulta e comparação de indicadores públicos brasileiros. React, TypeScript e ECharts, com hospedagem estática e navegação por hash compatível com GitHub Pages.
 
----
+Site publicado: [bdsromulo.github.io/BrasaDados](https://bdsromulo.github.io/BrasaDados/).
 
-## ⚡ Diferenciais do Projeto
+## Executar
 
-- **Zero Backend de Runtime:** 100% estático (JAMstack), preparado para deploy instantâneo no **GitHub Pages** ou **Cloudflare Pages**.
-- **Acervo de 20 Indicadores Oficiais Reais:** Cobrindo todas as áreas sociais com séries históricas do **Banco Central**, **IBGE**, **INEP/MEC**, **DataSUS**, **INPE (PRODES/Queimadas)**, **FBSP (Anuário de Segurança)**, **MDIC (Comex Stat)** e **OCDE**.
-- **Variedade de Visualizações no Motor ECharts:**
-  - 📈 **Linhas Curvas (*Spline*)** para visão fluida de tendências.
-  - 📉 **Linhas Retas (*Linear*)** para rigor metodológico de auditoria e fact-checking.
-  - 🌊 **Gráfico de Área com Gradiente** para visualização elegante de densidade temporal.
-  - 📊 **Gráfico de Barras / Colunas** para comparação discreta ano a ano.
-- **Bancada Multiquadrante (1, 2 ou 4 Telas):** Permite colocar até 4 gráficos lado a lado e sincronizar análises.
-- **Fusão de Séries com Eixo Duplo Inteligente (⚡ Mesclar):** Possibilidade de cruzar quaisquer indicadores no mesmo gráfico (usando escala única para unidades iguais ou **Eixo Y Duplo** para unidades distintas, como PIB em % x Dólar em R$).
-- **Cards de Métricas Rápidas (KPIs):** Cada quadrante exibe o último valor registrado, variação (*delta* recente com indicação visual) e valores mínimo/máximo do período.
-- **Exportação de Dados:** Download da imagem do gráfico em alta resolução (PNG) com carimbo oficial e download dos dados em planilha (CSV).
-- **Dupla Leitura Editorial:** Cada dado tem uma aba para leigos (*"O que isso significa na prática?"*) e uma aba técnica para fact-checking (*"Amostra, fórmula, sigilo estatístico e cópia da citação ABNT"*).
-- **Menu Lateral Colapsável:** Alternância suave entre modo expandido e modo compacto de ícones.
-- **Switch de Tema Claro / Escuro:** Estilo pílula segmentada com persistência local e zero *flicker* no carregamento.
+Use Node.js 22.18+ ou 24.
 
----
-
-## 🚀 Como Rodar Localmente
-
-Certifique-se de ter o [Node.js](https://nodejs.org/) instalado.
-
-```bash
-# 1. Instalar as dependências (já instaladas nesta máquina)
-npm install
-
-# 2. Rodar o servidor de desenvolvimento
+```sh
+npm ci
 npm run dev
-
-# 3. Compilar para produção (gera pasta /dist estática pronta para deploy)
+npm test
 npm run build
+npm run preview
 ```
 
----
+O build valida os arquivos de dados antes da compilação. A publicação existente no GitHub Pages também exige testes aprovados.
 
-## 📚 Documentação Técnica
+## Experiência
 
-- [`REPOSITORIO.md`](./REPOSITORIO.md): Visão geral, arquitetura JAMstack, taxonomia e especificações.
-- [`METODOLOGIA_DADOS.md`](./METODOLOGIA_DADOS.md): Como obter séries pré-agregadas sem usar microdados brutos pesados.
-- [`PIPELINES.md`](./PIPELINES.md): Endpoints das APIs oficiais (SIDRA, SGS, IpeaData, Banco Mundial).
-- [`TAREFAS.md`](./TAREFAS.md): Roadmap detalhado e próximas etapas.
+- Identidade Atlas Cívico: logo SVG, Outfit e Inter locais, temas claro e escuro.
+- Até quatro gráficos, adicionados por botão, seletor ou arraste. Preview de disposição, substituição explícita, remover/desfazer e maximização sem descartar cartões.
+- Linhas ou colunas recomendadas por indicador; ranking horizontal, opções secundárias e restauração da recomendação.
+- Abaixo de 768 px: explorar, consultar e comparar por toque. De 768 a 1023 px: catálogo recolhido. A partir de 1024 px: bancada com catálogo lateral.
+- Períodos relativos aos dados disponíveis, tabela comparativa, CSV do recorte e PNG identificado.
+- Busca sem distinção de acentos e com sinônimos; links de indicadores/comparações e persistência local.
+- Catálogo, arquivos por indicador e motor gráfico carregados separadamente; gráficos fora da tela são adiados.
+
+## Situação dos dados
+
+Em 27/09/2026: **40 indicadores, dos quais 27 têm extração/transcrição conferida e 13 continuam em revisão numérica**. O inventário dos 32 indicadores originais registra divergências de referências, frequência e cobertura. Não é uma certificação de todos os valores do acervo.
+
+O primeiro lote acrescenta rendimento domiciliar per capita, pobreza/extrema pobreza, informalidade, insegurança alimentar por gravidade, abastecimento de água, tratamento de esgoto e IDEB dos anos iniciais e finais. A Selic Meta foi corrigida para a série SGS 432. Também foram revisadas as séries de mortes violentas, feminicídios, percepção da corrupção, matriz elétrica renovável e focos ativos de fogo. Rankings legados sem período documentado não são apresentados como rankings atuais.
+
+Indicadores em revisão têm aviso nos cartões, no catálogo e nas exportações e ficam fora da mesclagem. O filtro “Conferidos na fonte” permite restringir a consulta.
+
+## Documentação
+
+- [Arquitetura](REPOSITORIO.md)
+- [Importadores e atualização](PIPELINES.md)
+- [Metodologia e limites](METODOLOGIA_DADOS.md)
+- [Inventário de auditoria](docs/AUDITORIA.md)
+- [Validação da interface](docs/VALIDACAO.md)
+- [Entregas e pendências](TAREFAS.md)
+
+![Atlas Cívico desktop](docs/screenshots/atlas-desktop.png)

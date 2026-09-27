@@ -1,0 +1,893 @@
+[
+  {
+    "id": "demografia-populacao-brasil",
+    "slug": "populacao-residente-censo-projecao-ibge",
+    "titulo": "População residente · estimativas anuais",
+    "categoria": "economia",
+    "tags": [
+      "economia",
+      "População residente · estimativas anuais",
+      "Instituto Brasileiro de Geografia e Estatística (IBGE)"
+    ],
+    "source": "Instituto Brasileiro de Geografia e Estatística (IBGE)",
+    "summary": "Estimativa da população residente com referência em 1º de julho, publicada pelo IBGE para Brasil e UFs.",
+    "unit": "pessoas",
+    "latest": [
+      "2026",
+      214211951
+    ],
+    "status": "verified",
+    "frequency": "annual",
+    "hasStates": true
+  },
+  {
+    "id": "economia-arrecadacao-federal",
+    "slug": "arrecadacao-receitas-federais-rfb",
+    "titulo": "Finanças Públicas — Arrecadação de Tributos Federais (R$ Trilhões)",
+    "categoria": "economia",
+    "tags": [
+      "economia",
+      "tributos",
+      "impostos",
+      "receita federal",
+      "arrecadação",
+      "dados abertos"
+    ],
+    "source": "Receita Federal do Brasil (RFB) / Ministério da Fazenda",
+    "summary": "Mede o total arrecadado pela União em tributos (IR, PIS/Cofins, CSLL, IPI, Previdência e demais receitas administradas) em trilhões de reais.",
+    "unit": "R$ tri",
+    "latest": [
+      "2024",
+      2.65
+    ],
+    "status": "review",
+    "frequency": "annual",
+    "hasStates": false
+  },
+  {
+    "id": "economia-bolsa-familia-beneficiarios",
+    "slug": "familias-beneficiarias-bolsa-familia-mds",
+    "titulo": "Proteção Social — Famílias Beneficiárias do Bolsa Família (Milhões)",
+    "categoria": "economia",
+    "tags": [
+      "economia",
+      "bolsa família",
+      "auxílio brasil",
+      "mds",
+      "cadúnico",
+      "pobreza",
+      "beneficiários",
+      "dados abertos"
+    ],
+    "source": "Ministério do Desenvolvimento e Assistência Social (MDS)",
+    "summary": "Mede a quantidade total de famílias de baixa renda atendidas mensalmente pelo principal programa de transferência direta de renda do governo federal.",
+    "unit": "mi famílias",
+    "latest": [
+      "2025",
+      19.6
+    ],
+    "status": "review",
+    "frequency": "annual",
+    "hasStates": false
+  },
+  {
+    "id": "economia-cambio-dolar",
+    "slug": "taxa-de-cambio-dolar-comercial-bcb",
+    "titulo": "Dólar comercial · média mensal de venda",
+    "categoria": "economia",
+    "tags": [
+      "economia",
+      "Dólar comercial · média mensal de venda",
+      "Banco Central do Brasil (BCB)"
+    ],
+    "source": "Banco Central do Brasil (BCB)",
+    "summary": "Média aritmética das cotações diárias de venda do dólar comercial publicadas no SGS.",
+    "unit": "R$/US$",
+    "latest": [
+      "2026-09",
+      5.1347
+    ],
+    "status": "verified",
+    "frequency": "monthly",
+    "hasStates": false
+  },
+  {
+    "id": "economia-desemprego-pnad",
+    "slug": "taxa-de-desocupacao-pnad-continua",
+    "titulo": "Taxa de desocupação",
+    "categoria": "economia",
+    "tags": [
+      "economia",
+      "Taxa de desocupação",
+      "Instituto Brasileiro de Geografia e Estatística (IBGE)"
+    ],
+    "source": "Instituto Brasileiro de Geografia e Estatística (IBGE)",
+    "summary": "Parcela da força de trabalho de 14 anos ou mais que estava sem ocupação, procurou trabalho e estava disponível para trabalhar.",
+    "unit": "%",
+    "latest": [
+      "2026-Q2",
+      5.4
+    ],
+    "status": "verified",
+    "frequency": "quarterly",
+    "hasStates": true
+  },
+  {
+    "id": "economia-divida-bruta",
+    "slug": "divida-bruta-governo-geral-bcb",
+    "titulo": "Dívida bruta do governo geral",
+    "categoria": "economia",
+    "tags": [
+      "economia",
+      "Dívida bruta do governo geral",
+      "Banco Central do Brasil (BCB)"
+    ],
+    "source": "Banco Central do Brasil (BCB)",
+    "summary": "Dívida bruta do governo geral em proporção ao PIB, segundo a metodologia utilizada pelo BCB a partir de 2008.",
+    "unit": "% do PIB",
+    "latest": [
+      "2026-07",
+      82.56
+    ],
+    "status": "verified",
+    "frequency": "monthly",
+    "hasStates": false
+  },
+  {
+    "id": "economia-indice-gini",
+    "slug": "indice-de-gini-desigualdade-renda-ibge",
+    "titulo": "Desigualdade · Índice de Gini",
+    "categoria": "economia",
+    "tags": [
+      "economia",
+      "Desigualdade · Índice de Gini",
+      "Instituto Brasileiro de Geografia e Estatística (IBGE)"
+    ],
+    "source": "Instituto Brasileiro de Geografia e Estatística (IBGE)",
+    "summary": "Mede a desigualdade do rendimento domiciliar per capita na PNAD Contínua.",
+    "unit": "índice",
+    "latest": [
+      "2025",
+      0.511
+    ],
+    "status": "verified",
+    "frequency": "annual",
+    "hasStates": true
+  },
+  {
+    "id": "economia-inflacao-ipca",
+    "slug": "inflacao-ipca-acumulada-ibge",
+    "titulo": "Inflação · IPCA em 12 meses",
+    "categoria": "economia",
+    "tags": [
+      "economia",
+      "Inflação · IPCA em 12 meses",
+      "Instituto Brasileiro de Geografia e Estatística (IBGE)"
+    ],
+    "source": "Instituto Brasileiro de Geografia e Estatística (IBGE)",
+    "summary": "Variação acumulada dos preços ao consumidor nos 12 meses terminados em cada mês.",
+    "unit": "%",
+    "latest": [
+      "2026-08",
+      4.22
+    ],
+    "status": "verified",
+    "frequency": "monthly",
+    "hasStates": false
+  },
+  {
+    "id": "economia-informalidade",
+    "slug": "economia-informalidade",
+    "titulo": "Trabalho · Taxa de informalidade",
+    "categoria": "economia",
+    "tags": [
+      "economia",
+      "Trabalho · Taxa de informalidade",
+      "Instituto Brasileiro de Geografia e Estatística (IBGE)"
+    ],
+    "source": "Instituto Brasileiro de Geografia e Estatística (IBGE)",
+    "summary": "Proporção das pessoas ocupadas de 14 anos ou mais em ocupações informais, segundo a definição da PNAD Contínua.",
+    "unit": "%",
+    "latest": [
+      "2026-Q2",
+      37.4
+    ],
+    "status": "verified",
+    "frequency": "quarterly",
+    "hasStates": true
+  },
+  {
+    "id": "economia-pib-variacao",
+    "slug": "pib-variacao-real-anual-ibge",
+    "titulo": "Crescimento real do PIB",
+    "categoria": "economia",
+    "tags": [
+      "economia",
+      "Crescimento real do PIB",
+      "Instituto Brasileiro de Geografia e Estatística (IBGE)"
+    ],
+    "source": "Instituto Brasileiro de Geografia e Estatística (IBGE)",
+    "summary": "Variação anual do volume de bens e serviços finais produzidos no Brasil.",
+    "unit": "%",
+    "latest": [
+      "2023",
+      3.2
+    ],
+    "status": "verified",
+    "frequency": "annual",
+    "hasStates": false
+  },
+  {
+    "id": "economia-pix-volume",
+    "slug": "volume-transacoes-pix-bcb",
+    "titulo": "Pagamentos Instantâneos — Volume Anual de Transações PIX (Bilhões)",
+    "categoria": "economia",
+    "tags": [
+      "economia",
+      "pix",
+      "banco central",
+      "pagamentos",
+      "fintech",
+      "banco",
+      "dados abertos"
+    ],
+    "source": "Banco Central do Brasil (BCB)",
+    "summary": "Mede o número total de transações financeiras realizadas pelo sistema PIX em cada ano, em bilhões de operações.",
+    "unit": "bi transações",
+    "latest": [
+      "2025",
+      78.5
+    ],
+    "status": "review",
+    "frequency": "annual",
+    "hasStates": false
+  },
+  {
+    "id": "economia-pobreza-extrema",
+    "slug": "economia-pobreza-extrema",
+    "titulo": "Pobreza e extrema pobreza",
+    "categoria": "economia",
+    "tags": [
+      "economia",
+      "Pobreza e extrema pobreza",
+      "Instituto Brasileiro de Geografia e Estatística (IBGE)"
+    ],
+    "source": "Instituto Brasileiro de Geografia e Estatística (IBGE)",
+    "summary": "Parcela da população com rendimento domiciliar per capita abaixo das linhas de pobreza e extrema pobreza usadas na Síntese de Indicadores Sociais 2025.",
+    "unit": "%",
+    "latest": [
+      "2024",
+      23.1
+    ],
+    "status": "verified",
+    "frequency": "annual",
+    "hasStates": false
+  },
+  {
+    "id": "economia-rendimento-per-capita",
+    "slug": "economia-rendimento-per-capita",
+    "titulo": "Rendimento domiciliar per capita · real",
+    "categoria": "economia",
+    "tags": [
+      "economia",
+      "Rendimento domiciliar per capita · real",
+      "Instituto Brasileiro de Geografia e Estatística (IBGE)"
+    ],
+    "source": "Instituto Brasileiro de Geografia e Estatística (IBGE)",
+    "summary": "Renda média mensal por morador, ajustada pelo IBGE para os preços médios do último ano da série.",
+    "unit": "R$",
+    "latest": [
+      "2025",
+      2264
+    ],
+    "status": "verified",
+    "frequency": "annual",
+    "hasStates": true
+  },
+  {
+    "id": "economia-taxa-selic",
+    "slug": "taxa-selic-over-bcb",
+    "titulo": "Taxa Selic Meta · fim do mês",
+    "categoria": "economia",
+    "tags": [
+      "economia",
+      "Taxa Selic Meta · fim do mês",
+      "Banco Central do Brasil (BCB)"
+    ],
+    "source": "Banco Central do Brasil (BCB)",
+    "summary": "Meta anual da taxa Selic definida pelo Copom, observada no último registro disponível de cada mês.",
+    "unit": "% a.a.",
+    "latest": [
+      "2026-09",
+      13.75
+    ],
+    "status": "verified",
+    "frequency": "monthly",
+    "hasStates": false
+  },
+  {
+    "id": "educacao-abandono-ensino-medio",
+    "slug": "taxa-abandono-ensino-medio-inep",
+    "titulo": "Evasão Escolar — Taxa de Abandono no Ensino Médio (%)",
+    "categoria": "educacao",
+    "tags": [
+      "educação",
+      "evasão",
+      "abandono",
+      "ensino médio",
+      "inep",
+      "censo escolar"
+    ],
+    "source": "INEP / Ministério da Educação",
+    "summary": "Mede o percentual de estudantes do Ensino Médio da rede pública que deixaram de frequentar a escola durante o ano letivo.",
+    "unit": "%",
+    "latest": [
+      "2025",
+      4.6
+    ],
+    "status": "review",
+    "frequency": "annual",
+    "hasStates": false
+  },
+  {
+    "id": "educacao-censo-superior-ead",
+    "slug": "ingressantes-ensino-superior-presencial-vs-ead-inep",
+    "titulo": "Ensino Superior — Novos Ingressantes: Presencial vs. EaD (Milhões)",
+    "categoria": "educacao",
+    "tags": [
+      "educação",
+      "ensino superior",
+      "faculdade",
+      "ead",
+      "ensino presencial",
+      "inep",
+      "censo da educação superior"
+    ],
+    "source": "INEP / Ministério da Educação",
+    "summary": "Mede o número anual de novos estudantes que ingressam em cursos de graduação no Brasil, separando quem estuda presencialmente de quem faz Educação a Distância (EaD).",
+    "unit": "mi alunos",
+    "latest": [
+      "2024",
+      3.55
+    ],
+    "status": "review",
+    "frequency": "annual",
+    "hasStates": false
+  },
+  {
+    "id": "educacao-ideb-anos-finais",
+    "slug": "educacao-ideb-anos-finais",
+    "titulo": "IDEB · Anos finais do fundamental",
+    "categoria": "educacao",
+    "tags": [
+      "educacao",
+      "IDEB · Anos finais do fundamental",
+      "INEP / Ministério da Educação"
+    ],
+    "source": "INEP / Ministério da Educação",
+    "summary": "Índice de Desenvolvimento da Educação Básica, que combina desempenho no Saeb e aprovação escolar.",
+    "unit": "pontos",
+    "latest": [
+      "2025",
+      5.3
+    ],
+    "status": "verified",
+    "frequency": "biennial",
+    "hasStates": false
+  },
+  {
+    "id": "educacao-ideb-anos-iniciais",
+    "slug": "educacao-ideb-anos-iniciais",
+    "titulo": "IDEB · Anos iniciais do fundamental",
+    "categoria": "educacao",
+    "tags": [
+      "educacao",
+      "IDEB · Anos iniciais do fundamental",
+      "INEP / Ministério da Educação"
+    ],
+    "source": "INEP / Ministério da Educação",
+    "summary": "Índice de Desenvolvimento da Educação Básica, que combina desempenho no Saeb e aprovação escolar.",
+    "unit": "pontos",
+    "latest": [
+      "2025",
+      6.3
+    ],
+    "status": "verified",
+    "frequency": "biennial",
+    "hasStates": false
+  },
+  {
+    "id": "educacao-ideb-ensino-medio",
+    "slug": "ideb-ensino-medio-brasil",
+    "titulo": "IDEB · Ensino médio",
+    "categoria": "educacao",
+    "tags": [
+      "educacao",
+      "IDEB · Ensino médio",
+      "INEP / Ministério da Educação"
+    ],
+    "source": "INEP / Ministério da Educação",
+    "summary": "Índice de Desenvolvimento da Educação Básica, que combina desempenho no Saeb e aprovação escolar.",
+    "unit": "pontos",
+    "latest": [
+      "2025",
+      4.5
+    ],
+    "status": "verified",
+    "frequency": "biennial",
+    "hasStates": false
+  },
+  {
+    "id": "educacao-pisa-matematica",
+    "slug": "pisa-matematica-brasil-ocde",
+    "titulo": "PISA — Matemática: Brasil vs. OCDE e Chile (Pontos)",
+    "categoria": "internacional",
+    "tags": [
+      "internacional",
+      "pisa",
+      "ocde",
+      "matemática",
+      "inep",
+      "educação"
+    ],
+    "source": "OCDE / INEP / Banco Mundial",
+    "summary": "Exame internacional que avalia a proficiência de estudantes de 15 anos em aplicar raciocínio matemático em desafios cotidianos.",
+    "unit": "pontos",
+    "latest": [
+      "2022",
+      379
+    ],
+    "status": "review",
+    "frequency": "annual",
+    "hasStates": false
+  },
+  {
+    "id": "educacao-taxa-analfabetismo",
+    "slug": "taxa-de-analfabetismo-brasil-ibge",
+    "titulo": "Taxa de analfabetismo · 15 anos ou mais",
+    "categoria": "educacao",
+    "tags": [
+      "educacao",
+      "Taxa de analfabetismo · 15 anos ou mais",
+      "Instituto Brasileiro de Geografia e Estatística (IBGE)"
+    ],
+    "source": "Instituto Brasileiro de Geografia e Estatística (IBGE)",
+    "summary": "Percentual de pessoas de 15 anos ou mais que não sabem ler e escrever um bilhete simples, segundo a PNAD Contínua.",
+    "unit": "%",
+    "latest": [
+      "2025",
+      4.9
+    ],
+    "status": "verified",
+    "frequency": "annual",
+    "hasStates": true
+  },
+  {
+    "id": "internacional-balanca-comercial",
+    "slug": "saldo-balanca-comercial-brasil-comexstat",
+    "titulo": "Comércio Exterior — Saldo da Balança Comercial (US$ Bilhões)",
+    "categoria": "internacional",
+    "tags": [
+      "internacional",
+      "exportação",
+      "importação",
+      "comércio",
+      "balança comercial",
+      "mdic"
+    ],
+    "source": "Ministério do Desenvolvimento, Indústria, Comércio e Serviços (MDIC)",
+    "summary": "Mede a diferença entre tudo o que o Brasil exportou (vendeu para o exterior) e tudo o que importou (comprou de fora).",
+    "unit": "US$ bi",
+    "latest": [
+      "2025",
+      78
+    ],
+    "status": "review",
+    "frequency": "annual",
+    "hasStates": false
+  },
+  {
+    "id": "internacional-percepcao-corrupcao",
+    "slug": "indice-percepcao-da-corrupcao-transparencia-internacional",
+    "titulo": "Índice de percepção da corrupção · Brasil",
+    "categoria": "internacional",
+    "tags": [
+      "internacional",
+      "Índice de percepção da corrupção · Brasil",
+      "Transparência Internacional"
+    ],
+    "source": "Transparência Internacional",
+    "summary": "Pontuação do Brasil no Índice de Percepção da Corrupção, baseada em avaliações de especialistas e empresários sobre o setor público.",
+    "unit": "pontos",
+    "latest": [
+      "2025",
+      35
+    ],
+    "status": "verified",
+    "frequency": "annual",
+    "hasStates": false
+  },
+  {
+    "id": "meio-ambiente-abastecimento-agua",
+    "slug": "meio-ambiente-abastecimento-agua",
+    "titulo": "Abastecimento de água · Atendimento por rede",
+    "categoria": "meio-ambiente",
+    "tags": [
+      "meio-ambiente",
+      "Abastecimento de água · Atendimento por rede",
+      "Ministério das Cidades / SINISA"
+    ],
+    "source": "Ministério das Cidades / SINISA",
+    "summary": "Parcela da população atendida por rede de abastecimento de água, segundo o SINISA, no ano de referência 2023.",
+    "unit": "%",
+    "latest": [
+      "2023",
+      83.1
+    ],
+    "status": "verified",
+    "frequency": "annual",
+    "hasStates": false
+  },
+  {
+    "id": "meio-ambiente-desmatamento-amazonia",
+    "slug": "taxa-anual-desmatamento-amazonia-prodes-inpe",
+    "titulo": "Amazônia Legal · Desmatamento anual PRODES",
+    "categoria": "meio-ambiente",
+    "tags": [
+      "meio-ambiente",
+      "Amazônia Legal · Desmatamento anual PRODES",
+      "Instituto Nacional de Pesquisas Espaciais (INPE)"
+    ],
+    "source": "Instituto Nacional de Pesquisas Espaciais (INPE)",
+    "summary": "Área de supressão de floresta primária detectada pelo PRODES na Amazônia Legal em cada ano de monitoramento.",
+    "unit": "km²",
+    "latest": [
+      "2025",
+      5731
+    ],
+    "status": "verified",
+    "frequency": "annual",
+    "hasStates": true
+  },
+  {
+    "id": "meio-ambiente-emissoes-gee",
+    "slug": "emissoes-gases-efeito-estufa-seeg-brasil",
+    "titulo": "Clima & Emissões — Emissões Totais de Gases de Efeito Estufa (Mt CO₂e)",
+    "categoria": "meio-ambiente",
+    "tags": [
+      "meio ambiente",
+      "clima",
+      "emissoes",
+      "co2",
+      "seeg",
+      "observatório do clima",
+      "desmatamento",
+      "amazonia"
+    ],
+    "source": "SEEG / Observatório do Clima",
+    "summary": "Mede o volume bruto de todos os gases causadores do aquecimento global lançados na atmosfera pelo Brasil, convertidos em milhões de toneladas de dióxido de carbono equivalente (Mt CO₂e).",
+    "unit": "Mt CO₂e",
+    "latest": [
+      "2024",
+      1980
+    ],
+    "status": "review",
+    "frequency": "annual",
+    "hasStates": false
+  },
+  {
+    "id": "meio-ambiente-matriz-eletrica-renovavel",
+    "slug": "participacao-fontes-renovaveis-matriz-eletrica-epe",
+    "titulo": "Renováveis na matriz elétrica brasileira",
+    "categoria": "meio-ambiente",
+    "tags": [
+      "meio-ambiente",
+      "Renováveis na matriz elétrica brasileira",
+      "Empresa de Pesquisa Energética (EPE) / MME"
+    ],
+    "source": "Empresa de Pesquisa Energética (EPE) / MME",
+    "summary": "Participação de fontes renováveis na oferta interna de energia elétrica brasileira, conforme o BEN 2026.",
+    "unit": "%",
+    "latest": [
+      "2025",
+      86.8
+    ],
+    "status": "verified",
+    "frequency": "annual",
+    "hasStates": false
+  },
+  {
+    "id": "meio-ambiente-queimadas-focos",
+    "slug": "focos-de-queimadas-anuais-brasil-inpe",
+    "titulo": "Focos ativos de fogo · Satélite de referência",
+    "categoria": "meio-ambiente",
+    "tags": [
+      "meio-ambiente",
+      "Focos ativos de fogo · Satélite de referência",
+      "Instituto Nacional de Pesquisas Espaciais (INPE)"
+    ],
+    "source": "Instituto Nacional de Pesquisas Espaciais (INPE)",
+    "summary": "Número de focos ativos de fogo detectados pelo satélite de referência no Brasil durante o ano civil.",
+    "unit": "focos",
+    "latest": [
+      "2025",
+      136393
+    ],
+    "status": "verified",
+    "frequency": "annual",
+    "hasStates": true
+  },
+  {
+    "id": "meio-ambiente-saneamento-esgoto",
+    "slug": "coleta-esgotamento-sanitario-snis-brasil",
+    "titulo": "Coleta de esgoto · Atendimento por rede",
+    "categoria": "meio-ambiente",
+    "tags": [
+      "meio-ambiente",
+      "Coleta de esgoto · Atendimento por rede",
+      "Ministério das Cidades / SINISA"
+    ],
+    "source": "Ministério das Cidades / SINISA",
+    "summary": "Parcela da população atendida com rede coletora de esgoto, no ano de referência 2023 do SINISA 2024.",
+    "unit": "%",
+    "latest": [
+      "2023",
+      59.7
+    ],
+    "status": "verified",
+    "frequency": "annual",
+    "hasStates": false
+  },
+  {
+    "id": "meio-ambiente-tratamento-esgoto",
+    "slug": "meio-ambiente-tratamento-esgoto",
+    "titulo": "Tratamento de esgoto · Dois denominadores",
+    "categoria": "meio-ambiente",
+    "tags": [
+      "meio-ambiente",
+      "Tratamento de esgoto · Dois denominadores",
+      "Ministério das Cidades / SINISA"
+    ],
+    "source": "Ministério das Cidades / SINISA",
+    "summary": "Volume de esgoto tratado comparado ao volume de água consumida e, separadamente, ao volume de esgoto coletado.",
+    "unit": "%",
+    "latest": [
+      "2023",
+      49.4
+    ],
+    "status": "verified",
+    "frequency": "annual",
+    "hasStates": false
+  },
+  {
+    "id": "politica-cota-parlamentar",
+    "slug": "gasto-cota-parlamentar-ceap-camara",
+    "titulo": "Transparência Pública — Gasto da Cota Parlamentar CEAP (R$ Milhões)",
+    "categoria": "economia",
+    "tags": [
+      "política",
+      "congresso",
+      "câmara",
+      "ceap",
+      "transparência",
+      "gastos públicos",
+      "deputados",
+      "dados abertos"
+    ],
+    "source": "Câmara dos Deputados",
+    "summary": "Mede o total reembolsado anualmente aos 513 deputados federais para despesas de mandato (passagens aéreas, combustível, divulgação, aluguel de escritório).",
+    "unit": "R$ mi",
+    "latest": [
+      "2025",
+      248.5
+    ],
+    "status": "review",
+    "frequency": "annual",
+    "hasStates": false
+  },
+  {
+    "id": "saude-expectativa-vida",
+    "slug": "expectativa-de-vida-ao-nascer-ibge",
+    "titulo": "Esperança de vida ao nascer",
+    "categoria": "saude",
+    "tags": [
+      "saude",
+      "Esperança de vida ao nascer",
+      "Instituto Brasileiro de Geografia e Estatística (IBGE)"
+    ],
+    "source": "Instituto Brasileiro de Geografia e Estatística (IBGE)",
+    "summary": "Número médio de anos que um recém-nascido viveria se os riscos de mortalidade do período permanecessem constantes.",
+    "unit": "anos",
+    "latest": [
+      "2024",
+      76.6
+    ],
+    "status": "verified",
+    "frequency": "annual",
+    "hasStates": false
+  },
+  {
+    "id": "saude-gastos-publicos-pib",
+    "slug": "gasto-total-saude-percentual-pib",
+    "titulo": "Gasto corrente em saúde · Público e privado",
+    "categoria": "saude",
+    "tags": [
+      "saude",
+      "Gasto corrente em saúde · Público e privado",
+      "Organização Mundial da Saúde (OMS) / Banco Mundial"
+    ],
+    "source": "Organização Mundial da Saúde (OMS) / Banco Mundial",
+    "summary": "Despesas correntes com bens e serviços de saúde consumidos no ano, dos setores público e privado, como proporção do PIB.",
+    "unit": "% do PIB",
+    "latest": [
+      "2023",
+      9.73092747
+    ],
+    "status": "verified",
+    "frequency": "annual",
+    "hasStates": false
+  },
+  {
+    "id": "saude-inseguranca-alimentar",
+    "slug": "saude-inseguranca-alimentar",
+    "titulo": "Insegurança alimentar nos domicílios",
+    "categoria": "saude",
+    "tags": [
+      "saude",
+      "Insegurança alimentar nos domicílios",
+      "Instituto Brasileiro de Geografia e Estatística (IBGE)"
+    ],
+    "source": "Instituto Brasileiro de Geografia e Estatística (IBGE)",
+    "summary": "Percentual de domicílios com insegurança alimentar, classificada pela Escala Brasileira de Insegurança Alimentar (EBIA).",
+    "unit": "%",
+    "latest": [
+      "2024",
+      24.2
+    ],
+    "status": "verified",
+    "frequency": "annual",
+    "hasStates": true
+  },
+  {
+    "id": "saude-leitos-uti-sus",
+    "slug": "leitos-uti-adulto-brasil-cnes",
+    "titulo": "Capacidade Hospitalar — Leitos de UTI Adulto no Brasil (em milhares)",
+    "categoria": "saude",
+    "tags": [
+      "saúde",
+      "uti",
+      "leitos",
+      "hospital",
+      "cnes",
+      "sus",
+      "datasus"
+    ],
+    "source": "Ministério da Saúde / DataSUS",
+    "summary": "Mede o número total de leitos de Unidade de Terapia Intensiva (UTI) adulto disponíveis no Brasil, somando a rede pública do SUS e hospitais privados conveniados.",
+    "unit": "mil leitos",
+    "latest": [
+      "2024",
+      51.4
+    ],
+    "status": "review",
+    "frequency": "annual",
+    "hasStates": false
+  },
+  {
+    "id": "saude-mortalidade-infantil",
+    "slug": "taxa-de-mortalidade-infantil-datasus",
+    "titulo": "Vigilância em Saúde — Mortalidade Infantil (por 1.000 nascidos vivos)",
+    "categoria": "saude",
+    "tags": [
+      "saúde",
+      "mortalidade",
+      "infância",
+      "nascimentos",
+      "datasus",
+      "sinasc",
+      "sim"
+    ],
+    "source": "Ministério da Saúde / DataSUS / IBGE",
+    "summary": "Mede quantas crianças morrem antes de completar 1 ano de vida para cada grupo de 1.000 bebês nascidos vivos.",
+    "unit": "por mil",
+    "latest": [
+      "2025",
+      11.6
+    ],
+    "status": "review",
+    "frequency": "annual",
+    "hasStates": false
+  },
+  {
+    "id": "saude-vacinacao-polio",
+    "slug": "cobertura-vacinal-poliomielite-datasus",
+    "titulo": "Imunização — Cobertura Vacinal contra Poliomielite (%)",
+    "categoria": "saude",
+    "tags": [
+      "saúde",
+      "vacinação",
+      "poliomielite",
+      "datasus",
+      "pni",
+      "sus",
+      "crianças"
+    ],
+    "source": "Ministério da Saúde / DataSUS",
+    "summary": "Mede o percentual de bebês de até 1 ano que receberam as 3 doses obrigatórias da vacina contra a paralisia infantil.",
+    "unit": "%",
+    "latest": [
+      "2025",
+      89.2
+    ],
+    "status": "review",
+    "frequency": "annual",
+    "hasStates": false
+  },
+  {
+    "id": "seguranca-feminicidios",
+    "slug": "vitimas-de-feminicidio-brasil",
+    "titulo": "Feminicídios registrados · Vítimas",
+    "categoria": "seguranca",
+    "tags": [
+      "seguranca",
+      "Feminicídios registrados · Vítimas",
+      "Fórum Brasileiro de Segurança Pública (FBSP)"
+    ],
+    "source": "Fórum Brasileiro de Segurança Pública (FBSP)",
+    "summary": "Número de mulheres vítimas de feminicídio registrado pelas secretarias estaduais de segurança e consolidado pelo FBSP.",
+    "unit": "vítimas",
+    "latest": [
+      "2025",
+      1571
+    ],
+    "status": "verified",
+    "frequency": "annual",
+    "hasStates": false
+  },
+  {
+    "id": "seguranca-sistema-prisional",
+    "slug": "populacao-carceraria-vs-vagas-sisdepen",
+    "titulo": "Sistema Prisional — Presos vs. Vagas Oficiais (em milhares)",
+    "categoria": "seguranca",
+    "tags": [
+      "segurança",
+      "presídios",
+      "presos",
+      "vagas",
+      "sisdepen",
+      "senappen",
+      "justiça"
+    ],
+    "source": "SENAPPEN / Ministério da Justiça e Segurança Pública",
+    "summary": "Compara o número total de pessoas privadas de liberdade no Brasil com a capacidade oficial de vagas nos presídios.",
+    "unit": "mil pessoas",
+    "latest": [
+      "2024",
+      864.5
+    ],
+    "status": "review",
+    "frequency": "annual",
+    "hasStates": false
+  },
+  {
+    "id": "seguranca-taxa-mvi",
+    "slug": "mortes-violentas-intencionais-brasil",
+    "titulo": "Mortes violentas intencionais · Taxa nacional",
+    "categoria": "seguranca",
+    "tags": [
+      "seguranca",
+      "Mortes violentas intencionais · Taxa nacional",
+      "Fórum Brasileiro de Segurança Pública (FBSP)"
+    ],
+    "source": "Fórum Brasileiro de Segurança Pública (FBSP)",
+    "summary": "Mortes violentas intencionais registradas para cada 100 mil habitantes, segundo consolidação do FBSP.",
+    "unit": "por 100 mil hab.",
+    "latest": [
+      "2025",
+      19.1
+    ],
+    "status": "verified",
+    "frequency": "annual",
+    "hasStates": true
+  }
+]

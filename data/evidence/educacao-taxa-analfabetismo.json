@@ -1,0 +1,706 @@
+{
+  "retrievedAt": "2026-09-27",
+  "requests": [
+    "https://servicodados.ibge.gov.br/api/v3/agregados/7113/metadados",
+    "https://servicodados.ibge.gov.br/api/v3/agregados/7113/periodos/all/variaveis/10267?localidades=N1%5Ball%5D%7CN3%5Ball%5D&classificacao=2%5B6794%5D%7C58%5B2795%5D"
+  ],
+  "sha256": "d588bca66e9367cfa2e10be08bb8cac6e8632f68377e5ba8b7cdd17665f7defb",
+  "responses": [
+    {
+      "id": 7113,
+      "nome": "Taxa de analfabetismo das pessoas de 15 anos ou mais de idade, por sexo e grupo de idade",
+      "URL": "https://sidra.ibge.gov.br/tabela/7113",
+      "pesquisa": "Pesquisa Nacional por Amostra de Domicílios Contínua anual",
+      "assunto": "Educação",
+      "periodicidade": {
+        "frequencia": "anual",
+        "inicio": 2016,
+        "fim": 2025
+      },
+      "nivelTerritorial": {
+        "Administrativo": [
+          "N1",
+          "N2",
+          "N14",
+          "N7",
+          "N3"
+        ],
+        "Especial": [],
+        "IBGE": []
+      },
+      "variaveis": [
+        {
+          "id": 10267,
+          "nome": "Taxa de analfabetismo das pessoas de 15 anos ou mais de idade",
+          "unidade": "%",
+          "sumarizacao": []
+        },
+        {
+          "id": 10268,
+          "nome": "Coeficiente de variação - Taxa de analfabetismo das pessoas de 15 anos ou mais de idade",
+          "unidade": "%",
+          "sumarizacao": []
+        }
+      ],
+      "classificacoes": [
+        {
+          "id": 2,
+          "nome": "Sexo",
+          "sumarizacao": {
+            "status": true,
+            "excecao": []
+          },
+          "categorias": [
+            {
+              "id": 6794,
+              "nome": "Total",
+              "unidade": null,
+              "nivel": 0
+            },
+            {
+              "id": 4,
+              "nome": "Homens",
+              "unidade": null,
+              "nivel": 1
+            },
+            {
+              "id": 5,
+              "nome": "Mulheres",
+              "unidade": null,
+              "nivel": 1
+            }
+          ]
+        },
+        {
+          "id": 58,
+          "nome": "Grupo de idade",
+          "sumarizacao": {
+            "status": false,
+            "excecao": []
+          },
+          "categorias": [
+            {
+              "id": 2795,
+              "nome": "15 anos ou mais",
+              "unidade": null,
+              "nivel": 0
+            },
+            {
+              "id": 100452,
+              "nome": "18 anos ou mais",
+              "unidade": null,
+              "nivel": 1
+            },
+            {
+              "id": 108866,
+              "nome": "25 anos ou mais",
+              "unidade": null,
+              "nivel": 2
+            },
+            {
+              "id": 109012,
+              "nome": "40 anos ou mais",
+              "unidade": null,
+              "nivel": 3
+            },
+            {
+              "id": 3302,
+              "nome": "60 anos ou mais",
+              "unidade": null,
+              "nivel": 4
+            }
+          ]
+        }
+      ]
+    },
+    [
+      {
+        "id": "10267",
+        "variavel": "Taxa de analfabetismo das pessoas de 15 anos ou mais de idade",
+        "unidade": "%",
+        "resultados": [
+          {
+            "classificacoes": [
+              {
+                "id": "2",
+                "nome": "Sexo",
+                "categoria": {
+                  "6794": "Total"
+                }
+              },
+              {
+                "id": "58",
+                "nome": "Grupo de idade",
+                "categoria": {
+                  "2795": "15 anos ou mais"
+                }
+              }
+            ],
+            "series": [
+              {
+                "localidade": {
+                  "id": "1",
+                  "nivel": {
+                    "id": "N1",
+                    "nome": "Brasil"
+                  },
+                  "nome": "Brasil"
+                },
+                "serie": {
+                  "2016": "6.7",
+                  "2017": "6.5",
+                  "2018": "6.3",
+                  "2019": "6.1",
+                  "2022": "5.6",
+                  "2023": "5.4",
+                  "2024": "5.3",
+                  "2025": "4.9"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "11",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Rondônia"
+                },
+                "serie": {
+                  "2016": "6.0",
+                  "2017": "6.6",
+                  "2018": "5.9",
+                  "2019": "5.8",
+                  "2022": "4.9",
+                  "2023": "5.1",
+                  "2024": "5.2",
+                  "2025": "5.1"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "12",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Acre"
+                },
+                "serie": {
+                  "2016": "12.5",
+                  "2017": "11.7",
+                  "2018": "11.6",
+                  "2019": "11.1",
+                  "2022": "8.7",
+                  "2023": "9.6",
+                  "2024": "9.4",
+                  "2025": "8.9"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "13",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Amazonas"
+                },
+                "serie": {
+                  "2016": "6.6",
+                  "2017": "5.9",
+                  "2018": "5.5",
+                  "2019": "5.1",
+                  "2022": "4.9",
+                  "2023": "5.0",
+                  "2024": "4.8",
+                  "2025": "4.3"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "14",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Roraima"
+                },
+                "serie": {
+                  "2016": "6.0",
+                  "2017": "5.5",
+                  "2018": "5.5",
+                  "2019": "4.5",
+                  "2022": "3.8",
+                  "2023": "4.2",
+                  "2024": "3.8",
+                  "2025": "3.4"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "15",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Pará"
+                },
+                "serie": {
+                  "2016": "8.7",
+                  "2017": "8.3",
+                  "2018": "8.3",
+                  "2019": "7.9",
+                  "2022": "7.5",
+                  "2023": "7.0",
+                  "2024": "6.6",
+                  "2025": "6.2"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "16",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Amapá"
+                },
+                "serie": {
+                  "2016": "4.7",
+                  "2017": "4.9",
+                  "2018": "5.7",
+                  "2019": "5.1",
+                  "2022": "4.9",
+                  "2023": "5.7",
+                  "2024": "5.4",
+                  "2025": "4.5"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "17",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Tocantins"
+                },
+                "serie": {
+                  "2016": "9.5",
+                  "2017": "9.4",
+                  "2018": "9.1",
+                  "2019": "8.9",
+                  "2022": "7.2",
+                  "2023": "7.7",
+                  "2024": "6.6",
+                  "2025": "6.8"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "21",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Maranhão"
+                },
+                "serie": {
+                  "2016": "15.7",
+                  "2017": "15.7",
+                  "2018": "15.1",
+                  "2019": "14.5",
+                  "2022": "12.0",
+                  "2023": "11.3",
+                  "2024": "11.2",
+                  "2025": "10.9"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "22",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Piauí"
+                },
+                "serie": {
+                  "2016": "16.2",
+                  "2017": "15.6",
+                  "2018": "15.5",
+                  "2019": "15.0",
+                  "2022": "14.8",
+                  "2023": "13.2",
+                  "2024": "13.8",
+                  "2025": "13.1"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "23",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Ceará"
+                },
+                "serie": {
+                  "2016": "14.4",
+                  "2017": "13.5",
+                  "2018": "12.5",
+                  "2019": "12.8",
+                  "2022": "12.1",
+                  "2023": "11.5",
+                  "2024": "11.8",
+                  "2025": "11.1"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "24",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Rio Grande do Norte"
+                },
+                "serie": {
+                  "2016": "13.9",
+                  "2017": "12.9",
+                  "2018": "12.2",
+                  "2019": "12.7",
+                  "2022": "10.6",
+                  "2023": "10.9",
+                  "2024": "10.5",
+                  "2025": "9.3"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "25",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Paraíba"
+                },
+                "serie": {
+                  "2016": "15.3",
+                  "2017": "15.7",
+                  "2018": "15.1",
+                  "2019": "15.1",
+                  "2022": "13.6",
+                  "2023": "13.1",
+                  "2024": "12.7",
+                  "2025": "11.6"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "26",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Pernambuco"
+                },
+                "serie": {
+                  "2016": "12.1",
+                  "2017": "12.7",
+                  "2018": "11.1",
+                  "2019": "11.1",
+                  "2022": "11.1",
+                  "2023": "10.2",
+                  "2024": "10.1",
+                  "2025": "10.1"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "27",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Alagoas"
+                },
+                "serie": {
+                  "2016": "18.3",
+                  "2017": "17.3",
+                  "2018": "16.2",
+                  "2019": "15.9",
+                  "2022": "14.3",
+                  "2023": "14.1",
+                  "2024": "14.2",
+                  "2025": "13.1"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "28",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Sergipe"
+                },
+                "serie": {
+                  "2016": "13.9",
+                  "2017": "13.7",
+                  "2018": "13.0",
+                  "2019": "12.7",
+                  "2022": "11.8",
+                  "2023": "11.3",
+                  "2024": "10.8",
+                  "2025": "10.3"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "29",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Bahia"
+                },
+                "serie": {
+                  "2016": "12.3",
+                  "2017": "12.2",
+                  "2018": "12.2",
+                  "2019": "12.2",
+                  "2022": "10.5",
+                  "2023": "10.4",
+                  "2024": "9.9",
+                  "2025": "9.5"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "31",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Minas Gerais"
+                },
+                "serie": {
+                  "2016": "5.8",
+                  "2017": "5.6",
+                  "2018": "5.4",
+                  "2019": "5.1",
+                  "2022": "4.7",
+                  "2023": "4.6",
+                  "2024": "4.3",
+                  "2025": "3.8"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "32",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Espírito Santo"
+                },
+                "serie": {
+                  "2016": "5.7",
+                  "2017": "5.1",
+                  "2018": "5.0",
+                  "2019": "4.8",
+                  "2022": "4.7",
+                  "2023": "4.4",
+                  "2024": "3.9",
+                  "2025": "3.8"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "33",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Rio de Janeiro"
+                },
+                "serie": {
+                  "2016": "2.5",
+                  "2017": "2.4",
+                  "2018": "2.2",
+                  "2019": "1.9",
+                  "2022": "2.1",
+                  "2023": "2.0",
+                  "2024": "2.0",
+                  "2025": "1.6"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "35",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "São Paulo"
+                },
+                "serie": {
+                  "2016": "2.6",
+                  "2017": "2.4",
+                  "2018": "2.4",
+                  "2019": "2.4",
+                  "2022": "2.2",
+                  "2023": "2.3",
+                  "2024": "2.2",
+                  "2025": "1.9"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "41",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Paraná"
+                },
+                "serie": {
+                  "2016": "4.1",
+                  "2017": "4.3",
+                  "2018": "4.6",
+                  "2019": "4.2",
+                  "2022": "4.0",
+                  "2023": "3.5",
+                  "2024": "3.6",
+                  "2025": "3.3"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "42",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Santa Catarina"
+                },
+                "serie": {
+                  "2016": "2.7",
+                  "2017": "2.4",
+                  "2018": "2.3",
+                  "2019": "2.1",
+                  "2022": "2.1",
+                  "2023": "2.0",
+                  "2024": "1.9",
+                  "2025": "1.5"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "43",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Rio Grande do Sul"
+                },
+                "serie": {
+                  "2016": "3.0",
+                  "2017": "2.8",
+                  "2018": "2.8",
+                  "2019": "2.4",
+                  "2022": "2.5",
+                  "2023": "2.7",
+                  "2024": "2.4",
+                  "2025": "2.2"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "50",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Mato Grosso do Sul"
+                },
+                "serie": {
+                  "2016": "5.7",
+                  "2017": "4.6",
+                  "2018": "4.5",
+                  "2019": "4.6",
+                  "2022": "4.0",
+                  "2023": "3.9",
+                  "2024": "3.7",
+                  "2025": "3.9"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "51",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Mato Grosso"
+                },
+                "serie": {
+                  "2016": "5.9",
+                  "2017": "6.0",
+                  "2018": "6.4",
+                  "2019": "5.6",
+                  "2022": "4.9",
+                  "2023": "4.5",
+                  "2024": "3.8",
+                  "2025": "3.5"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "52",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Goiás"
+                },
+                "serie": {
+                  "2016": "5.9",
+                  "2017": "5.4",
+                  "2018": "5.2",
+                  "2019": "4.6",
+                  "2022": "4.5",
+                  "2023": "4.0",
+                  "2024": "3.6",
+                  "2025": "3.5"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "53",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Distrito Federal"
+                },
+                "serie": {
+                  "2016": "2.4",
+                  "2017": "2.3",
+                  "2018": "2.9",
+                  "2019": "2.5",
+                  "2022": "1.9",
+                  "2023": "1.7",
+                  "2024": "1.8",
+                  "2025": "2.0"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  ]
+}

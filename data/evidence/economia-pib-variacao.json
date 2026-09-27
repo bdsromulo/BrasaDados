@@ -1,0 +1,134 @@
+{
+  "retrievedAt": "2026-09-27",
+  "requests": [
+    "https://servicodados.ibge.gov.br/api/v3/agregados/6784/metadados",
+    "https://servicodados.ibge.gov.br/api/v3/agregados/6784/periodos/all/variaveis/9810?localidades=N1%5Ball%5D"
+  ],
+  "sha256": "7e3ae4a1bde0a9ab6fcd558cab5b78d746fe530d4d60b7c2600744770c0eda51",
+  "responses": [
+    {
+      "id": 6784,
+      "nome": "Produto Interno Bruto, Produto Interno Bruto per capita, População residente e Deflator",
+      "URL": "https://sidra.ibge.gov.br/tabela/6784",
+      "pesquisa": "Contas Nacionais Anuais",
+      "assunto": "Geral",
+      "periodicidade": {
+        "frequencia": "anual",
+        "inicio": 1996,
+        "fim": 2023
+      },
+      "nivelTerritorial": {
+        "Administrativo": [
+          "N1"
+        ],
+        "Especial": [],
+        "IBGE": []
+      },
+      "variaveis": [
+        {
+          "id": 9808,
+          "nome": "PIB - valores correntes",
+          "unidade": "Milhões de Reais",
+          "sumarizacao": []
+        },
+        {
+          "id": 9809,
+          "nome": "PIB - preços do ano anterior",
+          "unidade": "Milhões de Reais",
+          "sumarizacao": []
+        },
+        {
+          "id": 9810,
+          "nome": "PIB - variação em volume",
+          "unidade": "%",
+          "sumarizacao": []
+        },
+        {
+          "id": 9811,
+          "nome": "PIB - deflator - variação anual",
+          "unidade": "%",
+          "sumarizacao": []
+        },
+        {
+          "id": 93,
+          "nome": "População residente",
+          "unidade": "Mil pessoas",
+          "sumarizacao": []
+        },
+        {
+          "id": 9812,
+          "nome": "PIB per capita - valores correntes",
+          "unidade": "Reais",
+          "sumarizacao": []
+        },
+        {
+          "id": 9813,
+          "nome": "PIB per capita - preços do ano anterior",
+          "unidade": "Reais",
+          "sumarizacao": []
+        },
+        {
+          "id": 9814,
+          "nome": "PIB per capita - variação em volume",
+          "unidade": "%",
+          "sumarizacao": []
+        }
+      ],
+      "classificacoes": []
+    },
+    [
+      {
+        "id": "9810",
+        "variavel": "PIB - variação em volume",
+        "unidade": "%",
+        "resultados": [
+          {
+            "classificacoes": [],
+            "series": [
+              {
+                "localidade": {
+                  "id": "1",
+                  "nivel": {
+                    "id": "N1",
+                    "nome": "Brasil"
+                  },
+                  "nome": "Brasil"
+                },
+                "serie": {
+                  "1996": "2.2",
+                  "1997": "3.4",
+                  "1998": "0.3",
+                  "1999": "0.5",
+                  "2000": "4.4",
+                  "2001": "1.4",
+                  "2002": "3.1",
+                  "2003": "1.1",
+                  "2004": "5.8",
+                  "2005": "3.2",
+                  "2006": "4.0",
+                  "2007": "6.1",
+                  "2008": "5.1",
+                  "2009": "-0.1",
+                  "2010": "7.5",
+                  "2011": "4.0",
+                  "2012": "1.9",
+                  "2013": "3.0",
+                  "2014": "0.5",
+                  "2015": "-3.5",
+                  "2016": "-3.3",
+                  "2017": "1.3",
+                  "2018": "1.7",
+                  "2019": "1.3",
+                  "2020": "-3.3",
+                  "2021": "4.8",
+                  "2022": "3.0",
+                  "2023": "3.2"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  ]
+}

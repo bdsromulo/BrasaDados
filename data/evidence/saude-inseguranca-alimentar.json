@@ -1,0 +1,1814 @@
+{
+  "retrievedAt": "2026-09-27",
+  "requests": [
+    "https://servicodados.ibge.gov.br/api/v3/agregados/9552/metadados",
+    "https://servicodados.ibge.gov.br/api/v3/agregados/9552/periodos/all/variaveis/9784?localidades=N1%5Ball%5D%7CN3%5Ball%5D&classificacao=1%5B6795%5D%7C12404%5B109099%2C109100%2C109101%2C109102%5D"
+  ],
+  "sha256": "2ee2e5062fcbda6787b203c7ff97b493d9b06441982246dcb7e93ff77da05cd8",
+  "responses": [
+    {
+      "id": 9552,
+      "nome": "Domicílios e moradores, por situação do domicílio e situação de segurança alimentar existente no domicílio",
+      "URL": "https://sidra.ibge.gov.br/tabela/9552",
+      "pesquisa": "Pesquisa Nacional por Amostra de Domicílios Contínua anual",
+      "assunto": "Segurança alimentar",
+      "periodicidade": {
+        "frequencia": "anual",
+        "inicio": 2023,
+        "fim": 2024
+      },
+      "nivelTerritorial": {
+        "Administrativo": [
+          "N1",
+          "N2",
+          "N3"
+        ],
+        "Especial": [],
+        "IBGE": []
+      },
+      "variaveis": [
+        {
+          "id": 162,
+          "nome": "Domicílios",
+          "unidade": "Mil unidades",
+          "sumarizacao": []
+        },
+        {
+          "id": 5123,
+          "nome": "Coeficiente de variação - Domicílios",
+          "unidade": "%",
+          "sumarizacao": []
+        },
+        {
+          "id": 9784,
+          "nome": "Distribuição percentual dos domicílios",
+          "unidade": "%",
+          "sumarizacao": []
+        },
+        {
+          "id": 9785,
+          "nome": "Coeficiente de variação - Distribuição percentual dos domicílios",
+          "unidade": "%",
+          "sumarizacao": []
+        },
+        {
+          "id": 10114,
+          "nome": "Moradores em domicílios",
+          "unidade": "Mil pessoas",
+          "sumarizacao": []
+        },
+        {
+          "id": 10116,
+          "nome": "Coeficiente de variação - Moradores em domicílios",
+          "unidade": "%",
+          "sumarizacao": []
+        },
+        {
+          "id": 10117,
+          "nome": "Distribuição percentual dos moradores em domicílios",
+          "unidade": "%",
+          "sumarizacao": []
+        },
+        {
+          "id": 10118,
+          "nome": "Coeficiente de variação - Distribuição percentual dos moradores em domicílios",
+          "unidade": "%",
+          "sumarizacao": []
+        }
+      ],
+      "classificacoes": [
+        {
+          "id": 1,
+          "nome": "Situação do domicílio",
+          "sumarizacao": {
+            "status": true,
+            "excecao": []
+          },
+          "categorias": [
+            {
+              "id": 6795,
+              "nome": "Total",
+              "unidade": null,
+              "nivel": 0
+            },
+            {
+              "id": 1,
+              "nome": "Urbana",
+              "unidade": null,
+              "nivel": 1
+            },
+            {
+              "id": 2,
+              "nome": "Rural",
+              "unidade": null,
+              "nivel": 1
+            }
+          ]
+        },
+        {
+          "id": 12404,
+          "nome": "Situação de segurança alimentar existente no domicílio",
+          "sumarizacao": {
+            "status": true,
+            "excecao": []
+          },
+          "categorias": [
+            {
+              "id": 109106,
+              "nome": "Total",
+              "unidade": null,
+              "nivel": 0
+            },
+            {
+              "id": 109098,
+              "nome": "Com segurança alimentar",
+              "unidade": null,
+              "nivel": 1
+            },
+            {
+              "id": 109099,
+              "nome": "Com insegurança alimentar",
+              "unidade": null,
+              "nivel": 1
+            },
+            {
+              "id": 109100,
+              "nome": "Com insegurança alimentar leve",
+              "unidade": null,
+              "nivel": 2
+            },
+            {
+              "id": 109101,
+              "nome": "Com insegurança alimentar moderada",
+              "unidade": null,
+              "nivel": 2
+            },
+            {
+              "id": 109102,
+              "nome": "Com insegurança alimentar grave",
+              "unidade": null,
+              "nivel": 2
+            }
+          ]
+        }
+      ]
+    },
+    [
+      {
+        "id": "9784",
+        "variavel": "Distribuição percentual dos domicílios",
+        "unidade": "%",
+        "resultados": [
+          {
+            "classificacoes": [
+              {
+                "id": "1",
+                "nome": "Situação do domicílio",
+                "categoria": {
+                  "6795": "Total"
+                }
+              },
+              {
+                "id": "12404",
+                "nome": "Situação de segurança alimentar existente no domicílio",
+                "categoria": {
+                  "109099": "Com insegurança alimentar"
+                }
+              }
+            ],
+            "series": [
+              {
+                "localidade": {
+                  "id": "1",
+                  "nivel": {
+                    "id": "N1",
+                    "nome": "Brasil"
+                  },
+                  "nome": "Brasil"
+                },
+                "serie": {
+                  "2023": "27.6",
+                  "2024": "24.2"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "11",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Rondônia"
+                },
+                "serie": {
+                  "2023": "20.2",
+                  "2024": "18.5"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "12",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Acre"
+                },
+                "serie": {
+                  "2023": "30.6",
+                  "2024": "23.5"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "13",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Amazonas"
+                },
+                "serie": {
+                  "2023": "42.6",
+                  "2024": "38.9"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "14",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Roraima"
+                },
+                "serie": {
+                  "2023": "36.4",
+                  "2024": "43.6"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "15",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Pará"
+                },
+                "serie": {
+                  "2023": "47.8",
+                  "2024": "44.6"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "16",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Amapá"
+                },
+                "serie": {
+                  "2023": "30.7",
+                  "2024": "32.5"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "17",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Tocantins"
+                },
+                "serie": {
+                  "2023": "28.9",
+                  "2024": "29.6"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "21",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Maranhão"
+                },
+                "serie": {
+                  "2023": "43.8",
+                  "2024": "35.2"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "22",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Piauí"
+                },
+                "serie": {
+                  "2023": "41.9",
+                  "2024": "39.3"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "23",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Ceará"
+                },
+                "serie": {
+                  "2023": "35.1",
+                  "2024": "30.5"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "24",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Rio Grande do Norte"
+                },
+                "serie": {
+                  "2023": "33.7",
+                  "2024": "29.4"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "25",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Paraíba"
+                },
+                "serie": {
+                  "2023": "36.0",
+                  "2024": "32.4"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "26",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Pernambuco"
+                },
+                "serie": {
+                  "2023": "37.5",
+                  "2024": "35.3"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "27",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Alagoas"
+                },
+                "serie": {
+                  "2023": "36.4",
+                  "2024": "35.0"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "28",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Sergipe"
+                },
+                "serie": {
+                  "2023": "49.3",
+                  "2024": "35.0"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "29",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Bahia"
+                },
+                "serie": {
+                  "2023": "40.2",
+                  "2024": "37.8"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "31",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Minas Gerais"
+                },
+                "serie": {
+                  "2023": "21.7",
+                  "2024": "19.5"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "32",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Espírito Santo"
+                },
+                "serie": {
+                  "2023": "20.8",
+                  "2024": "13.5"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "33",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Rio de Janeiro"
+                },
+                "serie": {
+                  "2023": "23.8",
+                  "2024": "22.3"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "35",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "São Paulo"
+                },
+                "serie": {
+                  "2023": "23.5",
+                  "2024": "19.3"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "41",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Paraná"
+                },
+                "serie": {
+                  "2023": "17.9",
+                  "2024": "15.3"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "42",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Santa Catarina"
+                },
+                "serie": {
+                  "2023": "11.3",
+                  "2024": "9.4"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "43",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Rio Grande do Sul"
+                },
+                "serie": {
+                  "2023": "18.8",
+                  "2024": "14.8"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "50",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Mato Grosso do Sul"
+                },
+                "serie": {
+                  "2023": "21.7",
+                  "2024": "18.5"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "51",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Mato Grosso"
+                },
+                "serie": {
+                  "2023": "27.2",
+                  "2024": "22.1"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "52",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Goiás"
+                },
+                "serie": {
+                  "2023": "24.4",
+                  "2024": "17.9"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "53",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Distrito Federal"
+                },
+                "serie": {
+                  "2023": "23.5",
+                  "2024": "27.0"
+                }
+              }
+            ]
+          },
+          {
+            "classificacoes": [
+              {
+                "id": "1",
+                "nome": "Situação do domicílio",
+                "categoria": {
+                  "6795": "Total"
+                }
+              },
+              {
+                "id": "12404",
+                "nome": "Situação de segurança alimentar existente no domicílio",
+                "categoria": {
+                  "109100": "Com insegurança alimentar leve"
+                }
+              }
+            ],
+            "series": [
+              {
+                "localidade": {
+                  "id": "1",
+                  "nivel": {
+                    "id": "N1",
+                    "nome": "Brasil"
+                  },
+                  "nome": "Brasil"
+                },
+                "serie": {
+                  "2023": "18.2",
+                  "2024": "16.4"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "11",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Rondônia"
+                },
+                "serie": {
+                  "2023": "15.2",
+                  "2024": "13.6"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "12",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Acre"
+                },
+                "serie": {
+                  "2023": "19.2",
+                  "2024": "12.9"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "13",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Amazonas"
+                },
+                "serie": {
+                  "2023": "25.3",
+                  "2024": "24.4"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "14",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Roraima"
+                },
+                "serie": {
+                  "2023": "21.8",
+                  "2024": "27.8"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "15",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Pará"
+                },
+                "serie": {
+                  "2023": "27.4",
+                  "2024": "27.5"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "16",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Amapá"
+                },
+                "serie": {
+                  "2023": "12.5",
+                  "2024": "16.2"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "17",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Tocantins"
+                },
+                "serie": {
+                  "2023": "21.3",
+                  "2024": "20.9"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "21",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Maranhão"
+                },
+                "serie": {
+                  "2023": "25.8",
+                  "2024": "22.8"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "22",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Piauí"
+                },
+                "serie": {
+                  "2023": "27.7",
+                  "2024": "27.3"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "23",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Ceará"
+                },
+                "serie": {
+                  "2023": "21.4",
+                  "2024": "19.8"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "24",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Rio Grande do Norte"
+                },
+                "serie": {
+                  "2023": "22.1",
+                  "2024": "19.3"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "25",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Paraíba"
+                },
+                "serie": {
+                  "2023": "21.5",
+                  "2024": "20.7"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "26",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Pernambuco"
+                },
+                "serie": {
+                  "2023": "23.5",
+                  "2024": "23.0"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "27",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Alagoas"
+                },
+                "serie": {
+                  "2023": "23.3",
+                  "2024": "22.6"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "28",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Sergipe"
+                },
+                "serie": {
+                  "2023": "30.4",
+                  "2024": "23.4"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "29",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Bahia"
+                },
+                "serie": {
+                  "2023": "24.4",
+                  "2024": "23.8"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "31",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Minas Gerais"
+                },
+                "serie": {
+                  "2023": "15.0",
+                  "2024": "14.1"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "32",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Espírito Santo"
+                },
+                "serie": {
+                  "2023": "15.8",
+                  "2024": "10.0"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "33",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Rio de Janeiro"
+                },
+                "serie": {
+                  "2023": "16.9",
+                  "2024": "16.2"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "35",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "São Paulo"
+                },
+                "serie": {
+                  "2023": "16.6",
+                  "2024": "13.7"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "41",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Paraná"
+                },
+                "serie": {
+                  "2023": "13.1",
+                  "2024": "11.0"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "42",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Santa Catarina"
+                },
+                "serie": {
+                  "2023": "8.1",
+                  "2024": "6.5"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "43",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Rio Grande do Sul"
+                },
+                "serie": {
+                  "2023": "13.1",
+                  "2024": "10.7"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "50",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Mato Grosso do Sul"
+                },
+                "serie": {
+                  "2023": "15.1",
+                  "2024": "13.1"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "51",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Mato Grosso"
+                },
+                "serie": {
+                  "2023": "17.8",
+                  "2024": "15.8"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "52",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Goiás"
+                },
+                "serie": {
+                  "2023": "17.0",
+                  "2024": "12.7"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "53",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Distrito Federal"
+                },
+                "serie": {
+                  "2023": "14.7",
+                  "2024": "18.0"
+                }
+              }
+            ]
+          },
+          {
+            "classificacoes": [
+              {
+                "id": "1",
+                "nome": "Situação do domicílio",
+                "categoria": {
+                  "6795": "Total"
+                }
+              },
+              {
+                "id": "12404",
+                "nome": "Situação de segurança alimentar existente no domicílio",
+                "categoria": {
+                  "109101": "Com insegurança alimentar moderada"
+                }
+              }
+            ],
+            "series": [
+              {
+                "localidade": {
+                  "id": "1",
+                  "nivel": {
+                    "id": "N1",
+                    "nome": "Brasil"
+                  },
+                  "nome": "Brasil"
+                },
+                "serie": {
+                  "2023": "5.3",
+                  "2024": "4.5"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "11",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Rondônia"
+                },
+                "serie": {
+                  "2023": "2.2",
+                  "2024": "3.0"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "12",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Acre"
+                },
+                "serie": {
+                  "2023": "5.6",
+                  "2024": "4.7"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "13",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Amazonas"
+                },
+                "serie": {
+                  "2023": "8.2",
+                  "2024": "7.3"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "14",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Roraima"
+                },
+                "serie": {
+                  "2023": "8.0",
+                  "2024": "9.2"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "15",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Pará"
+                },
+                "serie": {
+                  "2023": "10.8",
+                  "2024": "10.1"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "16",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Amapá"
+                },
+                "serie": {
+                  "2023": "9.9",
+                  "2024": "7.0"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "17",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Tocantins"
+                },
+                "serie": {
+                  "2023": "5.0",
+                  "2024": "4.4"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "21",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Maranhão"
+                },
+                "serie": {
+                  "2023": "9.8",
+                  "2024": "7.3"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "22",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Piauí"
+                },
+                "serie": {
+                  "2023": "8.8",
+                  "2024": "8.1"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "23",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Ceará"
+                },
+                "serie": {
+                  "2023": "7.5",
+                  "2024": "6.2"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "24",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Rio Grande do Norte"
+                },
+                "serie": {
+                  "2023": "6.7",
+                  "2024": "6.3"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "25",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Paraíba"
+                },
+                "serie": {
+                  "2023": "8.5",
+                  "2024": "7.8"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "26",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Pernambuco"
+                },
+                "serie": {
+                  "2023": "7.5",
+                  "2024": "7.4"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "27",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Alagoas"
+                },
+                "serie": {
+                  "2023": "7.5",
+                  "2024": "7.4"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "28",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Sergipe"
+                },
+                "serie": {
+                  "2023": "13.3",
+                  "2024": "7.6"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "29",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Bahia"
+                },
+                "serie": {
+                  "2023": "9.7",
+                  "2024": "8.5"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "31",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Minas Gerais"
+                },
+                "serie": {
+                  "2023": "3.8",
+                  "2024": "3.3"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "32",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Espírito Santo"
+                },
+                "serie": {
+                  "2023": "2.9",
+                  "2024": "2.0"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "33",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Rio de Janeiro"
+                },
+                "serie": {
+                  "2023": "3.8",
+                  "2024": "3.6"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "35",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "São Paulo"
+                },
+                "serie": {
+                  "2023": "3.9",
+                  "2024": "3.2"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "41",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Paraná"
+                },
+                "serie": {
+                  "2023": "2.6",
+                  "2024": "2.3"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "42",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Santa Catarina"
+                },
+                "serie": {
+                  "2023": "1.6",
+                  "2024": "1.5"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "43",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Rio Grande do Sul"
+                },
+                "serie": {
+                  "2023": "3.5",
+                  "2024": "2.3"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "50",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Mato Grosso do Sul"
+                },
+                "serie": {
+                  "2023": "4.0",
+                  "2024": "3.0"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "51",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Mato Grosso"
+                },
+                "serie": {
+                  "2023": "5.5",
+                  "2024": "3.5"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "52",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Goiás"
+                },
+                "serie": {
+                  "2023": "3.7",
+                  "2024": "2.8"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "53",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Distrito Federal"
+                },
+                "serie": {
+                  "2023": "4.8",
+                  "2024": "4.8"
+                }
+              }
+            ]
+          },
+          {
+            "classificacoes": [
+              {
+                "id": "1",
+                "nome": "Situação do domicílio",
+                "categoria": {
+                  "6795": "Total"
+                }
+              },
+              {
+                "id": "12404",
+                "nome": "Situação de segurança alimentar existente no domicílio",
+                "categoria": {
+                  "109102": "Com insegurança alimentar grave"
+                }
+              }
+            ],
+            "series": [
+              {
+                "localidade": {
+                  "id": "1",
+                  "nivel": {
+                    "id": "N1",
+                    "nome": "Brasil"
+                  },
+                  "nome": "Brasil"
+                },
+                "serie": {
+                  "2023": "4.1",
+                  "2024": "3.2"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "11",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Rondônia"
+                },
+                "serie": {
+                  "2023": "2.9",
+                  "2024": "1.9"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "12",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Acre"
+                },
+                "serie": {
+                  "2023": "5.8",
+                  "2024": "5.9"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "13",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Amazonas"
+                },
+                "serie": {
+                  "2023": "9.1",
+                  "2024": "7.2"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "14",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Roraima"
+                },
+                "serie": {
+                  "2023": "6.7",
+                  "2024": "6.7"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "15",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Pará"
+                },
+                "serie": {
+                  "2023": "9.6",
+                  "2024": "7.0"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "16",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Amapá"
+                },
+                "serie": {
+                  "2023": "8.4",
+                  "2024": "9.3"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "17",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Tocantins"
+                },
+                "serie": {
+                  "2023": "2.6",
+                  "2024": "4.3"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "21",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Maranhão"
+                },
+                "serie": {
+                  "2023": "8.2",
+                  "2024": "5.2"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "22",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Piauí"
+                },
+                "serie": {
+                  "2023": "5.4",
+                  "2024": "4.0"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "23",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Ceará"
+                },
+                "serie": {
+                  "2023": "6.3",
+                  "2024": "4.5"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "24",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Rio Grande do Norte"
+                },
+                "serie": {
+                  "2023": "4.9",
+                  "2024": "3.9"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "25",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Paraíba"
+                },
+                "serie": {
+                  "2023": "6.0",
+                  "2024": "3.9"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "26",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Pernambuco"
+                },
+                "serie": {
+                  "2023": "6.5",
+                  "2024": "4.9"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "27",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Alagoas"
+                },
+                "serie": {
+                  "2023": "5.7",
+                  "2024": "5.0"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "28",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Sergipe"
+                },
+                "serie": {
+                  "2023": "5.6",
+                  "2024": "4.0"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "29",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Bahia"
+                },
+                "serie": {
+                  "2023": "6.1",
+                  "2024": "5.4"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "31",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Minas Gerais"
+                },
+                "serie": {
+                  "2023": "2.8",
+                  "2024": "2.2"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "32",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Espírito Santo"
+                },
+                "serie": {
+                  "2023": "2.2",
+                  "2024": "1.5"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "33",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Rio de Janeiro"
+                },
+                "serie": {
+                  "2023": "3.1",
+                  "2024": "2.5"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "35",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "São Paulo"
+                },
+                "serie": {
+                  "2023": "3.0",
+                  "2024": "2.4"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "41",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Paraná"
+                },
+                "serie": {
+                  "2023": "2.2",
+                  "2024": "1.9"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "42",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Santa Catarina"
+                },
+                "serie": {
+                  "2023": "1.5",
+                  "2024": "1.4"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "43",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Rio Grande do Sul"
+                },
+                "serie": {
+                  "2023": "2.2",
+                  "2024": "1.8"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "50",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Mato Grosso do Sul"
+                },
+                "serie": {
+                  "2023": "2.6",
+                  "2024": "2.4"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "51",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Mato Grosso"
+                },
+                "serie": {
+                  "2023": "3.9",
+                  "2024": "2.8"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "52",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Goiás"
+                },
+                "serie": {
+                  "2023": "3.7",
+                  "2024": "2.4"
+                }
+              },
+              {
+                "localidade": {
+                  "id": "53",
+                  "nivel": {
+                    "id": "N3",
+                    "nome": "Unidade da Federação"
+                  },
+                  "nome": "Distrito Federal"
+                },
+                "serie": {
+                  "2023": "4.0",
+                  "2024": "4.2"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  ]
+}

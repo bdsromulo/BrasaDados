@@ -1,0 +1,31 @@
+{
+  "kind": "reviewed-transcription",
+  "source": "https://www.gov.br/cidades/pt-br/acesso-a-informacao/acoes-e-programas/saneamento/sinisa/resultados-sinisa/014_RELATORIO_SINISA_ESGOTAMENTO_SANITARIO_2024_defeso.pdf",
+  "datasetCode": "SINISA 2024 / IES2003, IES2004",
+  "reference": "2023",
+  "reviewedAt": "2026-09-27",
+  "pointer": "Transcrição conferida da publicação oficial. Relatório de Esgotamento Sanitário, página 22. Sem interpolação ou preenchimento de anos ausentes.",
+  "manifestSha256": "1be37f7e2bba1cf59e6f779a79efaba258337c12f632ba6c1ac6b92fa1a43a8d",
+  "series": [
+    {
+      "id": "agua-consumida",
+      "nome": "Tratado / água consumida · IES2003",
+      "dados": [
+        [
+          "2023",
+          49.4
+        ]
+      ]
+    },
+    {
+      "id": "esgoto-coletado",
+      "nome": "Tratado / esgoto coletado · IES2004",
+      "dados": [
+        [
+          "2023",
+          78.7
+        ]
+      ]
+    }
+  ]
+}

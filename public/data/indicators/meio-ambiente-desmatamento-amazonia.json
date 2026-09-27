@@ -1,0 +1,262 @@
+{
+  "id": "meio-ambiente-desmatamento-amazonia",
+  "slug": "taxa-anual-desmatamento-amazonia-prodes-inpe",
+  "titulo": "Amazônia Legal · Desmatamento anual PRODES",
+  "categoria": "meio-ambiente",
+  "tags": [
+    "meio-ambiente",
+    "Amazônia Legal · Desmatamento anual PRODES",
+    "Instituto Nacional de Pesquisas Espaciais (INPE)"
+  ],
+  "fonte": {
+    "orgao": "Instituto Nacional de Pesquisas Espaciais (INPE)",
+    "pesquisa": "Amazônia Legal · Desmatamento anual PRODES",
+    "url_oficial": "https://www.gov.br/inpe/pt-br/assuntos/ultimas-noticias/sistema-do-inpe-aponta-5-731-km2-de-desmatamento-na-amazonia-em-2025",
+    "frequencia": "annual"
+  },
+  "explicacao_leiga": {
+    "resumo": "Área de supressão de floresta primária detectada pelo PRODES na Amazônia Legal em cada ano de monitoramento.",
+    "como_interpretar": "O ano PRODES vai de agosto do ano anterior a julho do ano indicado. Não equivale ao total de queimadas nem à área de todo o bioma Amazônia.",
+    "por_que_importa": "Permite acompanhar a perda anual de floresta na região monitorada."
+  },
+  "detalhamento_tecnico": {
+    "formula_calculo": "Taxa anual de desmatamento por sensoriamento remoto e metodologia PRODES do INPE.",
+    "unidade_medida": "km²",
+    "amostra_cobertura": "Amazônia Legal; nove UFs, incluindo apenas a área abrangida pela delimitação regional.",
+    "limitacoes_e_quebras_metodologicas": "O valor de 2025 é a taxa consolidada de 5.731 km² publicada em agosto de 2026, substituindo a estimativa inicial de 5.796 km². O ranking mantém os valores consolidados de 2024, com período explícito. Demais UFs não integram a Amazônia Legal. A série histórica considera polígonos maiores que 6,25 hectares.",
+    "orientacoes_fact_checking": "Compare conceitos, unidades e períodos equivalentes. Ausência de observação não significa zero."
+  },
+  "visualizacao": {
+    "tipo_padrao": "bar",
+    "eixo_y": {
+      "rotulo": "Amazônia Legal · Desmatamento anual PRODES",
+      "unidade": "km²"
+    },
+    "series": [
+      {
+        "id": "prodes",
+        "nome": "Amazônia Legal",
+        "dados": [
+          [
+            "1988",
+            21050
+          ],
+          [
+            "1989",
+            17770
+          ],
+          [
+            "1990",
+            13730
+          ],
+          [
+            "1991",
+            11030
+          ],
+          [
+            "1992",
+            13786
+          ],
+          [
+            "1993",
+            14896
+          ],
+          [
+            "1994",
+            14896
+          ],
+          [
+            "1995",
+            29059
+          ],
+          [
+            "1996",
+            18161
+          ],
+          [
+            "1997",
+            13227
+          ],
+          [
+            "1998",
+            17383
+          ],
+          [
+            "1999",
+            17259
+          ],
+          [
+            "2000",
+            18226
+          ],
+          [
+            "2001",
+            18165
+          ],
+          [
+            "2002",
+            21650
+          ],
+          [
+            "2003",
+            25396
+          ],
+          [
+            "2004",
+            27772
+          ],
+          [
+            "2005",
+            19014
+          ],
+          [
+            "2006",
+            14286
+          ],
+          [
+            "2007",
+            11651
+          ],
+          [
+            "2008",
+            12911
+          ],
+          [
+            "2009",
+            7464
+          ],
+          [
+            "2010",
+            7000
+          ],
+          [
+            "2011",
+            6418
+          ],
+          [
+            "2012",
+            4571
+          ],
+          [
+            "2013",
+            5891
+          ],
+          [
+            "2014",
+            5012
+          ],
+          [
+            "2015",
+            6207
+          ],
+          [
+            "2016",
+            7893
+          ],
+          [
+            "2017",
+            6947
+          ],
+          [
+            "2018",
+            7536
+          ],
+          [
+            "2019",
+            10129
+          ],
+          [
+            "2020",
+            10851
+          ],
+          [
+            "2021",
+            13038
+          ],
+          [
+            "2022",
+            11594
+          ],
+          [
+            "2023",
+            9064
+          ],
+          [
+            "2024",
+            6518
+          ],
+          [
+            "2025",
+            5731
+          ]
+        ]
+      }
+    ],
+    "dados_uf": [
+      {
+        "uf": "AC",
+        "nome": "Acre",
+        "valor": 449
+      },
+      {
+        "uf": "AM",
+        "nome": "Amazonas",
+        "valor": 1223
+      },
+      {
+        "uf": "AP",
+        "nome": "Amapá",
+        "valor": 27
+      },
+      {
+        "uf": "MA",
+        "nome": "Maranhão",
+        "valor": 307
+      },
+      {
+        "uf": "MT",
+        "nome": "Mato Grosso",
+        "valor": 1257
+      },
+      {
+        "uf": "PA",
+        "nome": "Pará",
+        "valor": 2395
+      },
+      {
+        "uf": "RO",
+        "nome": "Rondônia",
+        "valor": 360
+      },
+      {
+        "uf": "RR",
+        "nome": "Roraima",
+        "valor": 468
+      },
+      {
+        "uf": "TO",
+        "nome": "Tocantins",
+        "valor": 32
+      }
+    ]
+  },
+  "provenance": {
+    "status": "verified",
+    "organizationType": "government",
+    "sourceUrl": "https://www.gov.br/inpe/pt-br/assuntos/ultimas-noticias/sistema-do-inpe-aponta-5-731-km2-de-desmatamento-na-amazonia-em-2025",
+    "reference": "2025",
+    "frequency": "annual",
+    "observationStatus": "official",
+    "transformation": "Transcrição conferida da publicação oficial. Histórico 1988–2024: Figura 3, página 4 da nota técnica de 15/10/2025 (https://www.gov.br/inpe/pt-br/assuntos/ultimas-noticias/20251015Nota_tcnica_EstimativaPRODES_2025.pdf). Valor 2025: divulgação consolidada de 18/08/2026. Ranking: Tabela 2, coluna consolidada 2024. Sem interpolação ou preenchimento de anos ausentes.",
+    "issues": [
+      "Ranking de 2024: a distribuição estadual consolidada de 2025 não foi transcrita da divulgação. As 18 UFs fora da região estão fora do universo, não são valores zero."
+    ],
+    "retrievedAt": "2026-09-27",
+    "publishedAt": "2026-08-18",
+    "datasetCode": "PRODES / série 1988–2025 / consolidado 2025",
+    "geography": "Amazônia Legal",
+    "stateReference": "2024",
+    "expectedStates": 9,
+    "sha256": "16e895002bd52b5f2f6e23f1e30bac15663a59ba2a64056c6eadd34093fbdaac"
+  }
+}

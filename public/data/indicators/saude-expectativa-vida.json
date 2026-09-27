@@ -1,0 +1,237 @@
+{
+  "id": "saude-expectativa-vida",
+  "slug": "expectativa-de-vida-ao-nascer-ibge",
+  "titulo": "Esperança de vida ao nascer",
+  "categoria": "saude",
+  "tags": [
+    "saude",
+    "Esperança de vida ao nascer",
+    "Instituto Brasileiro de Geografia e Estatística (IBGE)"
+  ],
+  "fonte": {
+    "orgao": "Instituto Brasileiro de Geografia e Estatística (IBGE)",
+    "pesquisa": "Esperança de vida ao nascer",
+    "url_oficial": "https://biblioteca.ibge.gov.br/visualizacao/periodicos/3097/tcmb_2024.pdf",
+    "frequencia": "annual"
+  },
+  "explicacao_leiga": {
+    "resumo": "Número médio de anos que um recém-nascido viveria se os riscos de mortalidade do período permanecessem constantes.",
+    "como_interpretar": "É uma medida de período, não a previsão individual de duração da vida. Total, homens e mulheres são séries distintas.",
+    "por_que_importa": "Sintetiza condições de mortalidade e contribui para o planejamento de saúde e proteção social."
+  },
+  "detalhamento_tecnico": {
+    "formula_calculo": "Esperança de vida no nascimento (e0) derivada da tábua de mortalidade do IBGE.",
+    "unidade_medida": "anos",
+    "amostra_cobertura": "Brasil; ambos os sexos, homens e mulheres; 1940 a 2024 em anos selecionados.",
+    "limitacoes_e_quebras_metodologicas": "Anos selecionados da edição 2024, com revisões históricas. Os anos não publicados nesta tabela permanecem ausentes; o ponto de 2025 do acervo anterior não foi confirmado e foi removido. Os números publicados têm uma casa decimal.",
+    "orientacoes_fact_checking": "Compare conceitos, unidades e períodos equivalentes. Ausência de observação não significa zero."
+  },
+  "visualizacao": {
+    "tipo_padrao": "line",
+    "eixo_y": {
+      "rotulo": "Esperança de vida ao nascer",
+      "unidade": "anos"
+    },
+    "series": [
+      {
+        "id": "total",
+        "nome": "Total",
+        "dados": [
+          [
+            "1940",
+            45.5
+          ],
+          [
+            "1950",
+            48
+          ],
+          [
+            "1960",
+            52.5
+          ],
+          [
+            "1970",
+            57.6
+          ],
+          [
+            "1980",
+            62.5
+          ],
+          [
+            "1991",
+            66.9
+          ],
+          [
+            "2000",
+            71.1
+          ],
+          [
+            "2010",
+            74.4
+          ],
+          [
+            "2019",
+            76.2
+          ],
+          [
+            "2020",
+            74.8
+          ],
+          [
+            "2021",
+            72.8
+          ],
+          [
+            "2022",
+            75.4
+          ],
+          [
+            "2023",
+            76.4
+          ],
+          [
+            "2024",
+            76.6
+          ]
+        ]
+      },
+      {
+        "id": "homens",
+        "nome": "Homens",
+        "dados": [
+          [
+            "1940",
+            42.9
+          ],
+          [
+            "1950",
+            45.3
+          ],
+          [
+            "1960",
+            49.7
+          ],
+          [
+            "1970",
+            54.6
+          ],
+          [
+            "1980",
+            59.6
+          ],
+          [
+            "1991",
+            63.2
+          ],
+          [
+            "2000",
+            67.3
+          ],
+          [
+            "2010",
+            70.7
+          ],
+          [
+            "2019",
+            72.8
+          ],
+          [
+            "2020",
+            71.2
+          ],
+          [
+            "2021",
+            69.3
+          ],
+          [
+            "2022",
+            72.1
+          ],
+          [
+            "2023",
+            73.1
+          ],
+          [
+            "2024",
+            73.3
+          ]
+        ]
+      },
+      {
+        "id": "mulheres",
+        "nome": "Mulheres",
+        "dados": [
+          [
+            "1940",
+            48.3
+          ],
+          [
+            "1950",
+            50.8
+          ],
+          [
+            "1960",
+            55.5
+          ],
+          [
+            "1970",
+            60.8
+          ],
+          [
+            "1980",
+            65.7
+          ],
+          [
+            "1991",
+            70.9
+          ],
+          [
+            "2000",
+            75.1
+          ],
+          [
+            "2010",
+            78.1
+          ],
+          [
+            "2019",
+            79.6
+          ],
+          [
+            "2020",
+            78.5
+          ],
+          [
+            "2021",
+            76.4
+          ],
+          [
+            "2022",
+            78.8
+          ],
+          [
+            "2023",
+            79.7
+          ],
+          [
+            "2024",
+            79.9
+          ]
+        ]
+      }
+    ]
+  },
+  "provenance": {
+    "status": "verified",
+    "organizationType": "government",
+    "sourceUrl": "https://biblioteca.ibge.gov.br/visualizacao/periodicos/3097/tcmb_2024.pdf",
+    "reference": "2024",
+    "frequency": "annual",
+    "observationStatus": "estimate",
+    "transformation": "Transcrição conferida da publicação oficial. Tabela 1, página 8 do PDF. Extração reproduzível com scripts/parse-life-table.py; valores conferidos visualmente. Sem interpolação ou preenchimento de anos ausentes.",
+    "issues": [],
+    "retrievedAt": "2026-09-27",
+    "datasetCode": "TCMB 2024 / Tabela 1",
+    "sha256": "2bed914acf8453cce6edfa07ed88f7ecba214b008309379d6fec085de6902315"
+  }
+}

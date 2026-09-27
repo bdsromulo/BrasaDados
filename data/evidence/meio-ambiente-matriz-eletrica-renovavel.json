@@ -1,0 +1,29 @@
+{
+  "kind": "reviewed-transcription",
+  "source": "https://www.epe.gov.br/sites-pt/publicacoes-dados-abertos/publicacoes/PublicacoesArquivos/publicacao-975/topico-847/BEN_S%C3%ADntese_2026_PT.pdf",
+  "datasetCode": "BEN 2026 / Relatório Síntese, página 35",
+  "reference": "2025",
+  "reviewedAt": "2026-09-27",
+  "pointer": "Transcrição conferida da publicação oficial. Gráfico Brasil (2023–2025), página impressa 35; extração reproduzível em scripts/parse-ben.py. Somente OIEE, sem a barra de geração centralizada. Sem interpolação ou preenchimento de anos ausentes.",
+  "manifestSha256": "ae0d19b65e322c6aa2845afecd82fdbb103e5e477a5b32542e74a45709641af4",
+  "series": [
+    {
+      "id": "renovaveis_matriz",
+      "nome": "Participação renovável",
+      "dados": [
+        [
+          "2023",
+          89.2
+        ],
+        [
+          "2024",
+          88.2
+        ],
+        [
+          "2025",
+          86.8
+        ]
+      ]
+    }
+  ]
+}

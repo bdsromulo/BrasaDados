@@ -1,0 +1,34 @@
+{
+  "files": [
+    {
+      "file": "tcmb_2024.pdf",
+      "url": "https://biblioteca.ibge.gov.br/visualizacao/periodicos/3097/tcmb_2024.pdf",
+      "retrievedAt": "2026-09-27",
+      "sha256": "1d3de7000531854672fa77c7670b4b35f579d6cff31316427c34bae9ac34b03e"
+    },
+    {
+      "file": "prodes_2025.pdf",
+      "url": "https://www.gov.br/inpe/pt-br/assuntos/ultimas-noticias/20251015Nota_tcnica_EstimativaPRODES_2025.pdf",
+      "retrievedAt": "2026-09-27",
+      "sha256": "cb0140d3cc240d0308048617347b670c64ce3f443d2cd8de2a1225989095bcd4"
+    },
+    {
+      "file": "sinisa_esgoto_2024.pdf",
+      "url": "https://www.gov.br/cidades/pt-br/acesso-a-informacao/acoes-e-programas/saneamento/sinisa/resultados-sinisa/014_RELATORIO_SINISA_ESGOTAMENTO_SANITARIO_2024_defeso.pdf",
+      "retrievedAt": "2026-09-27",
+      "sha256": "4e8439136142cd915b9eb70073ad37b916fb5eacf9886af93fcfc0ac65a359c8"
+    },
+    {
+      "file": "anuario_fbsp_2026.pdf",
+      "url": "https://forumseguranca.org.br/wp-content/uploads/2026/07/anuario-2026.pdf",
+      "retrievedAt": "2026-09-27",
+      "sha256": "9c202ab77fdf81c92f8154db027ccfd7e9db539e0cbce854be7cd97b90f01f88"
+    },
+    {
+      "file": "ben_sintese_2026.pdf",
+      "url": "https://www.epe.gov.br/sites-pt/publicacoes-dados-abertos/publicacoes/PublicacoesArquivos/publicacao-975/topico-847/BEN_S%C3%ADntese_2026_PT.pdf",
+      "retrievedAt": "2026-09-27",
+      "sha256": "0b4327c52cf695adc38c97e23533422dbdd5ea40f3098f43602801796061375b"
+    }
+  ]
+}

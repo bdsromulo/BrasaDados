@@ -1,0 +1,126 @@
+{
+  "id": "meio-ambiente-emissoes-gee",
+  "slug": "emissoes-gases-efeito-estufa-seeg-brasil",
+  "titulo": "Clima & Emissões — Emissões Totais de Gases de Efeito Estufa (Mt CO₂e)",
+  "categoria": "meio-ambiente",
+  "subcategoria": "clima-e-carbono",
+  "tags": [
+    "meio ambiente",
+    "clima",
+    "emissoes",
+    "co2",
+    "seeg",
+    "observatório do clima",
+    "desmatamento",
+    "amazonia"
+  ],
+  "fonte": {
+    "orgao": "SEEG / Observatório do Clima",
+    "pesquisa": "Sistema de Estimativas de Emissões e Remoções de Gases de Efeito Estufa",
+    "url_oficial": "https://seeg.eco.br/dados/",
+    "tipo_recurso": "dados_abertos",
+    "rotulo_link": "Plataforma Aberta de Dados SEEG",
+    "frequencia": "Anual",
+    "ultima_atualizacao": "2024-11-07"
+  },
+  "explicacao_leiga": {
+    "resumo": "Mede o volume bruto de todos os gases causadores do aquecimento global lançados na atmosfera pelo Brasil, convertidos em milhões de toneladas de dióxido de carbono equivalente (Mt CO₂e).",
+    "como_interpretar": "Ao contrário dos países desenvolvidos onde energia e transportes dominam as emissões, no Brasil quase metade das emissões vem do desmatamento (mudança no uso da terra).",
+    "por_que_importa": "É a métrica primordial para verificar se o Brasil cumprirá suas metas no Acordo de Paris (NDC) de reduzir em 53% suas emissões até 2030.",
+    "pontos_de_atencao": "Em 2021, o Brasil atingiu 2.420 Mt CO₂e, o nível mais elevado em 15 anos, iniciando trajetória de queda com a redução das queimadas e fiscalização na Amazônia."
+  },
+  "detalhamento_tecnico": {
+    "formula_calculo": "Emissões Brutas Totais = Σ (Atividades setoriais * Fatores de emissão específicos pelo potencial de aquecimento global GWP-AR5 do IPCC) nos 5 setores: Mudança de Uso da Terra, Agropecuária, Energia, Processos Industriais e Resíduos.",
+    "unidade_medida": "Mt CO₂e (Milhões de t de CO₂ eq.)",
+    "amostra_cobertura": "Estimativa de todo o território brasileiro e seus biomas segundo metodologia oficial do Inventário Nacional de GEE e IPCC.",
+    "anonimizacao_sigilo": "Dados agregados por setor econômico, bioma e estado.",
+    "limitacoes_e_quebras_metodologicas": "Adota os fatores de equivalência métrica do IPCC AR5; séries históricas são recalculadas retroativamente a cada nova rodada do SEEG.",
+    "orientacoes_fact_checking": "Diferencie 'Emissões Brutas' (total despejado) de 'Emissões Líquidas' (que deduzem a absorção de carbono por florestas protegidas)."
+  },
+  "visualizacao": {
+    "tipo_padrao": "line",
+    "eixo_x": {
+      "tipo": "temporal",
+      "rotulo": "Ano"
+    },
+    "eixo_y": {
+      "rotulo": "Emissões (Mt CO₂e)",
+      "unidade": "Mt CO₂e",
+      "escala_min": 1500,
+      "escala_max": 2700
+    },
+    "series": [
+      {
+        "id": "emissoes_brutas",
+        "nome": "Emissões Brutas Totais (Mt CO₂e)",
+        "dados": [
+          [
+            "2015",
+            2060
+          ],
+          [
+            "2016",
+            2120
+          ],
+          [
+            "2017",
+            2080
+          ],
+          [
+            "2018",
+            2095
+          ],
+          [
+            "2019",
+            2275
+          ],
+          [
+            "2020",
+            2360
+          ],
+          [
+            "2021",
+            2420
+          ],
+          [
+            "2022",
+            2310
+          ],
+          [
+            "2023",
+            2090
+          ],
+          [
+            "2024",
+            1980
+          ]
+        ]
+      }
+    ],
+    "marcos_historicos": [
+      {
+        "ano": 2021,
+        "rotulo": "Pico de 2.420 Mt CO₂e impulsionado por altas taxas de desmatamento"
+      },
+      {
+        "ano": 2024,
+        "rotulo": "Recuo para 1.980 Mt CO₂e após contenção de alertas florestais"
+      }
+    ]
+  },
+  "citacao_sugerida": {
+    "abnt": "SEEG / OBSERVATÓRIO DO CLIMA. Análise das Emissões Brasileiras de Gases de Efeito Estufa e suas Implicações para as Metas Climáticas do Brasil (1990-2023). São Paulo: Observatório do Clima, 2024. Acesso via Brasa Dados."
+  },
+  "provenance": {
+    "status": "review",
+    "organizationType": "civil",
+    "sourceUrl": "https://seeg.eco.br/dados/",
+    "reference": "2024",
+    "frequency": "annual",
+    "observationStatus": "undocumented",
+    "transformation": "Série anual legada. Agregação e valores aguardam conferência na fonte.",
+    "issues": [
+      "Valores legados sem arquivo de extração: conferência numérica pendente."
+    ]
+  }
+}
