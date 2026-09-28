@@ -4,6 +4,7 @@ import {
   useEffect,
   useMemo,
   useReducer,
+  useRef,
   useState,
 } from "react";
 import {
@@ -19,6 +20,7 @@ import {
   LayoutDashboard,
   Leaf,
   Menu,
+  GripVertical,
   Plus,
   Search,
   Share2,
@@ -60,6 +62,11 @@ import {
 } from "./lib/query";
 import type { QueryResult } from "./lib/query";
 import { detailOptions, detailRoute } from "./lib/routing";
+import {
+  availableRecommendations,
+  recommendationError,
+} from "./lib/recommendations";
+import type { Recommendation } from "./lib/recommendations";
 
 const Chart = lazy(() => import("./components/AtlasChart"));
 const icons = {
@@ -92,10 +99,7 @@ function initialState(catalog: CatalogEntry[]) {
   if (shared) return decodePanel(shared, ids);
   try {
     const saved = decodePanel(localStorage.getItem(STORAGE) ?? "", ids);
-    return {
-      ...saved,
-      preset: detailOptions(readHash()).preset ?? saved.preset,
-    };
+    return saved;
   } catch {
     return { ...initialPanel };
   }
@@ -152,6 +156,12 @@ function AtlasApp({ catalog }: { catalog: CatalogEntry[] }) {
   const [dragged, setDragged] = useState<string | null>(null);
   const [panelTab, setPanelTab] = useState<"charts" | "table">("charts");
   const [message, setMessage] = useState("");
+  const [loadingRecommendation, setLoadingRecommendation] = useState<
+    string | null
+  >(null);
+  const inspectorRef = useRef<HTMLElement>(null);
+  const inspectorTriggerRef = useRef<HTMLElement | null>(null);
+  const previousRouteRef = useRef(readHash());
   const [detailSettings, setDetailSettings] = useState<Record<string, Card>>(
     () => {
       const entry = catalog.find(
@@ -169,6 +179,9 @@ function AtlasApp({ catalog }: { catalog: CatalogEntry[] }) {
     },
   );
   const [focusRequest, setFocusRequest] = useState<string | null>(null);
+  const [detailPreset, setDetailPreset] = useState<Preset>(
+    () => detailOptions(readHash()).preset ?? "10",
+  );
   const pathname = route.split("?")[0];
   const selected = pathname.startsWith("/indicador/")
     ? catalog.find((c) => c.slug === pathname.slice("/indicador/".length))
@@ -176,13 +189,25 @@ function AtlasApp({ catalog }: { catalog: CatalogEntry[] }) {
   const isDetail = Boolean(selected);
   const isExplore = pathname === "/explorar" || (pathname === "/" && mobile);
   const isMissingRoute = pathname.startsWith("/indicador/") && !selected;
+  const canDrag = !mobile && matchMedia("(pointer: fine)").matches;
+  const curated = availableRecommendations(catalog);
   const navigate = (path: string) => {
+    if (!mobile && (path === "/explorar" || path.startsWith("/indicador/"))) {
+      const active = document.activeElement;
+      if (
+        active instanceof HTMLElement &&
+        !inspectorRef.current?.contains(active)
+      )
+        inspectorTriggerRef.current = active;
+    }
     if (readHash() !== path) window.location.hash = path;
   };
 
   useEffect(() => {
     const change = () => {
       const next = readHash();
+      const previous = previousRouteRef.current;
+      previousRouteRef.current = next;
       setRoute(next);
       setPicker(null);
       setAbout(false);
@@ -205,10 +230,25 @@ function AtlasApp({ catalog }: { catalog: CatalogEntry[] }) {
             ...options,
           },
         }));
-        if (options.preset)
-          dispatch({ type: "preset", preset: options.preset });
+        setDetailPreset(options.preset ?? "10");
+      } else if (entry) setDetailPreset("10");
+      if (matchMedia("(max-width: 767px)").matches) window.scrollTo({ top: 0 });
+      else {
+        if (inspectorRef.current) inspectorRef.current.scrollTop = 0;
+        if (
+          (previous.startsWith("/explorar") ||
+            previous.startsWith("/indicador/")) &&
+          (next === "/comparar" || next === "/")
+        )
+          requestAnimationFrame(() => {
+            const target = inspectorTriggerRef.current?.isConnected
+              ? inspectorTriggerRef.current
+              : document.querySelector<HTMLElement>(
+                  ".workspace-panel .heading-actions .primary",
+                );
+            target?.focus({ preventScroll: true });
+          });
       }
-      window.scrollTo({ top: 0 });
     };
     window.addEventListener("hashchange", change);
     return () => window.removeEventListener("hashchange", change);
@@ -262,7 +302,15 @@ function AtlasApp({ catalog }: { catalog: CatalogEntry[] }) {
   useEffect(() => {
     const cancel = () => setDragged(null);
     const key = (e: KeyboardEvent) => {
-      if (e.key === "Escape") cancel();
+      if (e.key !== "Escape") return;
+      cancel();
+      if (
+        !matchMedia("(max-width: 767px)").matches &&
+        !document.querySelector("dialog[open]") &&
+        (readHash().startsWith("/explorar") ||
+          readHash().startsWith("/indicador/"))
+      )
+        window.location.hash = "/comparar";
     };
     window.addEventListener("dragend", cancel);
     window.addEventListener("drop", cancel);
@@ -283,6 +331,22 @@ function AtlasApp({ catalog }: { catalog: CatalogEntry[] }) {
       ),
     [catalog],
   );
+  const sidebarPriority = [
+    "economia-inflacao-ipca",
+    "economia-taxa-selic",
+    "economia-pib-variacao",
+    "economia-desemprego-pnad",
+    "demografia-populacao-brasil",
+  ];
+  const sidebarCatalog =
+    category === "all"
+      ? [
+          ...sidebarPriority.flatMap((id) =>
+            sorted.filter((entry) => entry.id === id),
+          ),
+          ...sorted.filter((entry) => !sidebarPriority.includes(entry.id)),
+        ]
+      : sorted.filter((entry) => entry.categoria === category);
   const filtered = sorted.filter(
     (c) =>
       (category === "all" || category === c.categoria) &&
@@ -293,11 +357,13 @@ function AtlasApp({ catalog }: { catalog: CatalogEntry[] }) {
     data[c.indicatorId] ? [{ card: c, data: data[c.indicatorId] }] : [],
   );
   const range = rangeFor(
-    selected && data[selected.id]
-      ? [data[selected.id]]
-      : loaded.map((x) => x.data),
+    loaded.map((x) => x.data),
     state.preset,
   );
+  const detailRange =
+    selected && data[selected.id]
+      ? rangeFor([data[selected.id]], detailPreset)
+      : undefined;
   const rangeLabel = range ? range[0] + "–" + range[1] : "Série completa";
   const mergeBlocked =
     loaded.length !== state.cards.length
@@ -311,6 +377,12 @@ function AtlasApp({ catalog }: { catalog: CatalogEntry[] }) {
   const previewAdd = Boolean(
     dragged && !activeIds.has(dragged) && state.cards.length < 4,
   );
+  const emptySlots =
+    state.cards.length >= 4 || (state.focusedId && !previewAdd)
+      ? 0
+      : mobile
+        ? 1
+        : 4 - state.cards.length;
   const displayed =
     state.focusedId && !previewAdd
       ? state.cards.filter((c) => c.id === state.focusedId)
@@ -324,7 +396,12 @@ function AtlasApp({ catalog }: { catalog: CatalogEntry[] }) {
     : undefined;
 
   useEffect(() => {
-    if (!focusRequest || isDetail || isExplore || !data[focusRequest]) return;
+    if (
+      !focusRequest ||
+      (mobile && (isDetail || isExplore)) ||
+      !data[focusRequest]
+    )
+      return;
     const card = state.cards.find((c) => c.indicatorId === focusRequest);
     const element = card && document.getElementById(card.id);
     if (element) {
@@ -332,7 +409,79 @@ function AtlasApp({ catalog }: { catalog: CatalogEntry[] }) {
       element.scrollIntoView({ block: "nearest", behavior: "instant" });
       setFocusRequest(null);
     }
-  }, [focusRequest, data, state.cards, isDetail, isExplore]);
+  }, [focusRequest, data, state.cards, isDetail, isExplore, mobile]);
+
+  function openCatalog() {
+    if (mobile) setPicker({});
+    else navigate("/explorar");
+  }
+
+  async function addRecommendation(item: Recommendation) {
+    if (loadingRecommendation) return;
+    const missing = item.indicatorIds.filter((id) => !activeIds.has(id));
+    if (state.cards.length + missing.length > 4) {
+      setMessage("Libere espaço no painel antes de adicionar esta sugestão.");
+      return;
+    }
+    setLoadingRecommendation(item.id);
+    try {
+      const datasets = await Promise.all(item.indicatorIds.map(loadDataset));
+      const reason = recommendationError(item, datasets);
+      if (reason) throw new Error(reason);
+      setData((previous) =>
+        Object.fromEntries([
+          ...Object.entries(previous),
+          ...datasets.map((dataset) => [dataset.id, dataset] as const),
+        ]),
+      );
+      dispatch({ type: "add-group", indicatorIds: item.indicatorIds });
+      setFocusRequest(item.indicatorIds.at(-1)!);
+      setPanelTab("charts");
+      if (mobile) navigate("/comparar");
+    } catch (error) {
+      setMessage(
+        error instanceof Error
+          ? error.message
+          : "Não foi possível abrir esta sugestão.",
+      );
+    } finally {
+      setLoadingRecommendation(null);
+    }
+  }
+
+  function recommendationCards(compact = false) {
+    return (
+      <div className={"recommendations " + (compact ? "compact" : "")}>
+        {curated.map((item) => (
+          <article className="recommendation" key={item.id}>
+            <span className="eyebrow">SUGESTÃO PARA EXPLORAR</span>
+            <h3>{item.question}</h3>
+            <p>{item.context}</p>
+            <div className="recommendation-names">
+              {item.indicatorIds.map((id) => (
+                <span key={id}>
+                  {catalog.find((entry) => entry.id === id)?.titulo}
+                </span>
+              ))}
+            </div>
+            <small>{item.note}</small>
+            <button
+              className="secondary"
+              disabled={Boolean(loadingRecommendation)}
+              onClick={() => void addRecommendation(item)}
+            >
+              <Plus size={16} />
+              {loadingRecommendation === item.id
+                ? "Carregando…"
+                : item.indicatorIds.length === 2
+                  ? "Adicionar dois gráficos"
+                  : "Adicionar gráfico"}
+            </button>
+          </article>
+        ))}
+      </div>
+    );
+  }
 
   function add(id: string) {
     setMessage("");
@@ -350,7 +499,7 @@ function AtlasApp({ catalog }: { catalog: CatalogEntry[] }) {
     setPanelTab("charts");
     setPicker(null);
     setDragged(null);
-    if (!mobile || !isDetail) navigate("/comparar");
+    if (mobile && !isDetail) navigate("/comparar");
   }
   function dragStart(e: React.DragEvent, id: string) {
     e.dataTransfer.setData("application/x-brasa-indicator", id);
@@ -366,11 +515,12 @@ function AtlasApp({ catalog }: { catalog: CatalogEntry[] }) {
     if (catalog.some((c) => c.id === id)) add(id);
     setDragged(null);
   }
-  async function share() {
-    const hash = isDetail
-      ? detailRoute(selected!.slug, detailCard!, state.preset)
-      : "/comparar?" +
-        new URLSearchParams({ s: JSON.stringify(serializable(state)) });
+  async function share(detail = false) {
+    const hash =
+      detail && selected && detailCard
+        ? detailRoute(selected.slug, detailCard, detailPreset)
+        : "/comparar?" +
+          new URLSearchParams({ s: JSON.stringify(serializable(state)) });
     const url = window.location.href.split("#")[0] + "#" + hash;
     try {
       await navigator.clipboard.writeText(url);
@@ -448,10 +598,17 @@ function AtlasApp({ catalog }: { catalog: CatalogEntry[] }) {
               <div
                 key={entry.id}
                 className="catalog-item"
-                draggable={!mobile && !picker}
+                draggable={canDrag && !picker}
                 onDragStart={(e) => dragStart(e, entry.id)}
                 onDragEnd={() => setDragged(null)}
               >
+                {canDrag && (
+                  <GripVertical
+                    className="drag-grip"
+                    size={16}
+                    aria-hidden="true"
+                  />
+                )}
                 <span className={"category-icon " + entry.categoria}>
                   <Icon size={18} />
                 </span>
@@ -508,22 +665,26 @@ function AtlasApp({ catalog }: { catalog: CatalogEntry[] }) {
       </>
     );
   }
-  function periodControls() {
+  function periodControls(forDetail = false) {
     return (
       <div className="period-control">
         <span>Período</span>
         <select
           aria-label="Período da consulta"
-          value={state.preset}
+          value={forDetail ? detailPreset : state.preset}
           onChange={(e) =>
-            dispatch({ type: "preset", preset: e.target.value as Preset })
+            forDetail
+              ? setDetailPreset(e.target.value as Preset)
+              : dispatch({ type: "preset", preset: e.target.value as Preset })
           }
         >
           <option value="5">Últimos 5 anos</option>
           <option value="10">Últimos 10 anos</option>
           <option value="all">Série completa</option>
         </select>
-        <small>{rangeLabel}</small>
+        <small>
+          {forDetail && detailRange ? detailRange.join("–") : rangeLabel}
+        </small>
       </div>
     );
   }
@@ -619,31 +780,35 @@ function AtlasApp({ catalog }: { catalog: CatalogEntry[] }) {
         </nav>
         <div className="sidebar-catalog">
           <div className="sidebar-heading">
-            ADICIONE AO PAINEL <span>↗</span>
+            ARRASTE PARA O PAINEL <span>↗</span>
           </div>
-          {sorted
-            .filter((c) => category === "all" || c.categoria === category)
-            .slice(0, 6)
-            .map((c) => (
-              <div
-                className="sidebar-indicator"
-                key={c.id}
-                draggable
-                onDragStart={(e) => dragStart(e, c.id)}
-                onDragEnd={() => setDragged(null)}
+          {sidebarCatalog.slice(0, 6).map((c) => (
+            <div
+              className="sidebar-indicator"
+              key={c.id}
+              draggable={canDrag}
+              onDragStart={(e) => dragStart(e, c.id)}
+              onDragEnd={() => setDragged(null)}
+            >
+              {canDrag && (
+                <GripVertical
+                  className="drag-grip"
+                  size={14}
+                  aria-hidden="true"
+                />
+              )}
+              <button onClick={() => navigate("/indicador/" + c.slug)}>
+                {c.titulo}
+              </button>
+              <button
+                aria-label={"Adicionar " + c.titulo}
+                onClick={() => add(c.id)}
               >
-                <button onClick={() => navigate("/indicador/" + c.slug)}>
-                  {c.titulo}
-                </button>
-                <button
-                  aria-label={"Adicionar " + c.titulo}
-                  onClick={() => add(c.id)}
-                >
-                  <Plus size={16} />
-                </button>
-              </div>
-            ))}
-          <button className="sidebar-see-all" onClick={() => setPicker({})}>
+                <Plus size={16} />
+              </button>
+            </div>
+          ))}
+          <button className="sidebar-see-all" onClick={openCatalog}>
             Ver todos os indicadores
             <ArrowRight size={16} />
           </button>
@@ -664,7 +829,7 @@ function AtlasApp({ catalog }: { catalog: CatalogEntry[] }) {
             <button
               className="icon-button"
               aria-label="Abrir catálogo"
-              onClick={() => setPicker({})}
+              onClick={openCatalog}
             >
               <Menu size={21} />
             </button>
@@ -673,7 +838,7 @@ function AtlasApp({ catalog }: { catalog: CatalogEntry[] }) {
             </button>
           </div>
           <div className="header-search">
-            <button onClick={() => setPicker({})}>
+            <button onClick={openCatalog}>
               <Search size={18} />
               <span>Buscar indicador, tema ou fonte…</span>
               <span className="search-hint">Explorar</span>
@@ -692,7 +857,13 @@ function AtlasApp({ catalog }: { catalog: CatalogEntry[] }) {
             <button onClick={() => navigate("/")}>Brasa Dados</button>
             <ChevronRight size={13} />
             <span>
-              {isExplore ? "Explorar" : isDetail ? "Indicador" : "Meu painel"}
+              {!mobile
+                ? "Meu painel"
+                : isExplore
+                  ? "Explorar"
+                  : isDetail
+                    ? "Indicador"
+                    : "Meu painel"}
             </span>
           </div>
           {isMissingRoute ? (
@@ -702,361 +873,420 @@ function AtlasApp({ catalog }: { catalog: CatalogEntry[] }) {
                 Explorar catálogo
               </button>
             </div>
-          ) : isExplore ? (
-            <>
-              <div className="page-heading">
-                <div>
-                  <span className="eyebrow">UM OLHAR SOBRE O BRASIL</span>
-                  <h1>
-                    Dados para entender.
-                    <br className="mobile-only" /> Contexto para comparar.
-                  </h1>
-                  <p>
-                    Explore indicadores públicos e construa sua própria leitura
-                    do país.
-                  </p>
-                </div>
-                <span className="catalog-count">
-                  <Database size={18} />
-                  {catalog.length} indicadores
-                </span>
-              </div>
-              <section className="explorer">
-                {catalogSearch()}
-                {categoryChips()}
-                {catalogResults()}
-              </section>
-            </>
-          ) : isDetail && selected ? (
-            <>
-              <div className="detail-top">
-                <button
-                  className="text-button"
-                  onClick={() => navigate("/explorar")}
-                >
-                  <ArrowLeft size={16} />
-                  Explorar indicadores
-                </button>
-                <button className="secondary" onClick={() => void share()}>
-                  <Share2 size={16} />
-                  Compartilhar
-                </button>
-              </div>
-              <div className="detail-controls">
-                {periodControls()}
-                <button className="primary" onClick={() => add(selected.id)}>
-                  {activeIds.has(selected.id) ? (
-                    <Check size={18} />
-                  ) : (
-                    <Plus size={18} />
-                  )}{" "}
-                  {activeIds.has(selected.id)
-                    ? "No painel"
-                    : "Comparar indicador"}
-                </button>
-              </div>
-              {data[selected.id] && detailCard ? (
-                <IndicatorCard
-                  key={selected.id}
-                  detail
-                  card={detailCard}
-                  data={data[selected.id]}
-                  range={range}
-                  onConfigure={(display, scope, reset) =>
-                    setDetailSettings((p) => ({
-                      ...p,
-                      [selected.id]: {
-                        ...detailCard,
-                        display: reset
-                          ? undefined
-                          : (display ?? detailCard.display),
-                        scope: scope ?? detailCard.scope,
-                      },
-                    }))
-                  }
-                />
-              ) : (
-                <LoadingCard
-                  error={errors[selected.id]}
-                  retry={() => setAttempt((x) => x + 1)}
-                />
-              )}
-            </>
           ) : (
-            <>
-              <div className="page-heading">
-                <div>
-                  <span className="eyebrow">SEU ESPAÇO DE DESCOBERTA</span>
-                  <h1>
-                    Meu painel<span className="heading-dot">.</span>
-                  </h1>
-                  <p>Explore, compare e conecte os dados do Brasil.</p>
-                </div>
-                <div className="heading-actions">
-                  <button
-                    className="secondary share-button"
-                    aria-label="Compartilhar comparação"
-                    onClick={() => void share()}
-                  >
-                    <Share2 size={16} />
-                    <span>Compartilhar</span>
-                  </button>
-                  <button
-                    className="primary lime"
-                    onClick={() => setPicker({})}
-                  >
-                    <Plus size={19} />
-                    Adicionar indicador
-                  </button>
-                </div>
-              </div>
-              <div className="panel-controls">
-                {periodControls()}
-                <div className="segmented">
-                  <button
-                    aria-pressed={panelTab === "charts"}
-                    onClick={() => setPanelTab("charts")}
-                  >
-                    <LayoutDashboard size={15} />
-                    Gráficos
-                  </button>
-                  <button
-                    aria-pressed={panelTab === "table"}
-                    onClick={() => setPanelTab("table")}
-                  >
-                    Tabela comparativa
-                  </button>
-                </div>
-                <span className="panel-count">
-                  {state.cards.length} de 4 gráficos
-                </span>
-              </div>
-              {state.cards.length >= 2 && (
-                <div className="merge-toolbar">
-                  <button
-                    className="text-button"
-                    aria-pressed={validMerged}
-                    disabled={Boolean(mergeBlocked) && !state.merged}
-                    onClick={() =>
-                      dispatch({ type: "merge", value: !state.merged })
-                    }
-                  >
-                    <Sparkles size={15} />
-                    {state.merged ? "Separar gráficos" : "Mesclar séries"}
-                  </button>
-                  <span>
-                    {mergeBlocked ||
-                      "Compare tendências; a sobreposição não demonstra causalidade."}
-                  </span>
-                  {state.focusedId && (
-                    <button
-                      className="text-button"
-                      onClick={() =>
-                        dispatch({ type: "focus", cardId: state.focusedId! })
-                      }
+            <div
+              className={
+                "workspace " +
+                (!mobile && (isExplore || isDetail) ? "with-inspector" : "")
+              }
+            >
+              {(!mobile || (!isExplore && !isDetail)) && (
+                <div className="workspace-panel">
+                  <>
+                    <div className="page-heading">
+                      <div>
+                        <span className="eyebrow">
+                          SEU ESPAÇO DE DESCOBERTA
+                        </span>
+                        <h1>
+                          Meu painel<span className="heading-dot">.</span>
+                        </h1>
+                        <p>Explore, compare e conecte os dados do Brasil.</p>
+                      </div>
+                      <div className="heading-actions">
+                        <button
+                          className="secondary share-button"
+                          aria-label="Compartilhar comparação"
+                          onClick={() => void share()}
+                        >
+                          <Share2 size={16} />
+                          <span>Compartilhar</span>
+                        </button>
+                        <button className="primary lime" onClick={openCatalog}>
+                          <Plus size={19} />
+                          Adicionar indicador
+                        </button>
+                      </div>
+                    </div>
+                    <div className="panel-controls">
+                      {periodControls()}
+                      <div className="segmented">
+                        <button
+                          aria-pressed={panelTab === "charts"}
+                          onClick={() => setPanelTab("charts")}
+                        >
+                          <LayoutDashboard size={15} />
+                          Gráficos
+                        </button>
+                        <button
+                          aria-pressed={panelTab === "table"}
+                          onClick={() => setPanelTab("table")}
+                        >
+                          Tabela comparativa
+                        </button>
+                      </div>
+                      <span className="panel-count">
+                        {state.cards.length} de 4 gráficos
+                      </span>
+                    </div>
+                    {state.cards.length >= 2 && (
+                      <div className="merge-toolbar">
+                        <button
+                          className="text-button"
+                          aria-pressed={validMerged}
+                          disabled={Boolean(mergeBlocked) && !state.merged}
+                          onClick={() =>
+                            dispatch({ type: "merge", value: !state.merged })
+                          }
+                        >
+                          <Sparkles size={15} />
+                          {state.merged ? "Separar gráficos" : "Mesclar séries"}
+                        </button>
+                        <span>
+                          {mergeBlocked ||
+                            "Compare tendências; a sobreposição não demonstra causalidade."}
+                        </span>
+                        {state.focusedId && (
+                          <button
+                            className="text-button"
+                            onClick={() =>
+                              dispatch({
+                                type: "focus",
+                                cardId: state.focusedId!,
+                              })
+                            }
+                          >
+                            Voltar ao painel completo
+                          </button>
+                        )}
+                      </div>
+                    )}
+                    <section
+                      className={"workbench " + (dragged ? "is-dragging" : "")}
+                      aria-label="Painel de gráficos"
+                      onDragOver={(e) => {
+                        if (
+                          dragged ||
+                          e.dataTransfer.types.includes(
+                            "application/x-brasa-indicator",
+                          )
+                        )
+                          e.preventDefault();
+                      }}
+                      onDrop={drop}
                     >
-                      Voltar ao painel completo
-                    </button>
-                  )}
+                      {state.cards.length === 0 ? (
+                        <div
+                          className={
+                            "empty-state " + (dragged ? "drop-active" : "")
+                          }
+                        >
+                          <div className="empty-intro">
+                            <div className="empty-illustration">
+                              <div>
+                                <TrendingUp size={42} />
+                                <span />
+                                <span />
+                              </div>
+                              <div>
+                                <BarChart3 size={37} />
+                              </div>
+                              <i>
+                                <Plus size={22} />
+                              </i>
+                            </div>
+                            <span className="eyebrow">
+                              O BRASIL, SOB A SUA PERSPECTIVA
+                            </span>
+                            <h2>
+                              Uma pergunta.
+                              <br />
+                              Muitas possibilidades.
+                            </h2>
+                            <p>
+                              Escolha seu primeiro indicador. Depois, adicione
+                              outros
+                              <br className="desktop-only" /> para descobrir
+                              como as histórias se encontram.
+                            </p>
+                            <button className="primary" onClick={openCatalog}>
+                              <Plus size={18} />
+                              Adicionar primeiro indicador
+                            </button>
+                            <span className="drag-hint">
+                              ou arraste um indicador do catálogo para cá
+                            </span>
+                          </div>
+                          {recommendationCards()}
+                        </div>
+                      ) : panelTab === "table" && !previewAdd ? (
+                        <div className="comparison-table">
+                          <p>
+                            Períodos distintos permanecem em linhas distintas.
+                            “Sem dado” indica ausência de observação.
+                          </p>
+                          <DataTable query={comparison} />
+                        </div>
+                      ) : validMerged && !previewAdd ? (
+                        <div className="indicator-card">
+                          <div className="card-heading">
+                            <div>
+                              <span className="eyebrow">
+                                COMPARAÇÃO DE SÉRIES
+                              </span>
+                              <h2>Uma visão conjunta</h2>
+                            </div>
+                            <button
+                              className="secondary"
+                              onClick={() =>
+                                dispatch({ type: "merge", value: false })
+                              }
+                            >
+                              Separar gráficos
+                            </button>
+                          </div>
+                          <Suspense
+                            fallback={
+                              <div className="chart-placeholder">
+                                Preparando comparação…
+                              </div>
+                            }
+                          >
+                            <Chart
+                              title="Comparação de indicadores"
+                              items={loaded.map((x) => ({
+                                query: queryData(x.data, x.card.scope, range),
+                                display:
+                                  x.card.display ??
+                                  x.data.visualizacao.tipo_padrao,
+                                source: x.data.fonte.orgao,
+                              }))}
+                            />
+                          </Suspense>
+                        </div>
+                      ) : (
+                        <div
+                          className={
+                            "chart-grid " +
+                            (displayed.length + emptySlots > 1
+                              ? "multiple"
+                              : "")
+                          }
+                        >
+                          {displayed.map((card) =>
+                            data[card.indicatorId] ? (
+                              <IndicatorCard
+                                key={card.id + card.indicatorId}
+                                card={card}
+                                data={data[card.indicatorId]}
+                                range={range}
+                                active={state.activeId === card.id}
+                                focused={state.focusedId === card.id}
+                                onActivate={() => {
+                                  if (state.activeId !== card.id)
+                                    dispatch({
+                                      type: "activate",
+                                      cardId: card.id,
+                                    });
+                                }}
+                                onConfigure={(display, scope, reset) =>
+                                  dispatch({
+                                    type: "configure",
+                                    cardId: card.id,
+                                    display,
+                                    scope,
+                                    reset,
+                                  })
+                                }
+                                onRemove={() =>
+                                  dispatch({ type: "remove", cardId: card.id })
+                                }
+                                onFocus={
+                                  state.cards.length > 1
+                                    ? () =>
+                                        dispatch({
+                                          type: "focus",
+                                          cardId: card.id,
+                                        })
+                                    : undefined
+                                }
+                                onReplace={() => setPicker({ target: card.id })}
+                              />
+                            ) : (
+                              <LoadingCard
+                                key={card.id}
+                                error={errors[card.indicatorId]}
+                                retry={() => setAttempt((x) => x + 1)}
+                              />
+                            ),
+                          )}
+                          {Array.from({ length: emptySlots }, (_, index) => (
+                            <button
+                              key={index}
+                              className={
+                                "add-placeholder " +
+                                (previewAdd && index === 0 ? "drop-active" : "")
+                              }
+                              onClick={openCatalog}
+                              aria-label={
+                                previewAdd && index === 0
+                                  ? "Solte o indicador para adicionar"
+                                  : "Adicionar gráfico ao painel"
+                              }
+                            >
+                              <span>
+                                <Plus size={25} />
+                              </span>
+                              <strong>
+                                {previewAdd && index === 0
+                                  ? "Solte para adicionar"
+                                  : "Adicionar gráfico"}
+                              </strong>
+                              <small>
+                                {previewAdd && index === 0
+                                  ? catalog.find((c) => c.id === dragged)
+                                      ?.titulo
+                                  : `Posição ${state.cards.length + index + 1} de 4`}
+                              </small>
+                            </button>
+                          ))}
+                        </div>
+                      )}
+                      {dragged && state.cards.length === 4 && (
+                        <div className="drop-full">
+                          Painel completo. Ao soltar, você poderá escolher qual
+                          gráfico substituir.
+                        </div>
+                      )}
+                    </section>
+                  </>
                 </div>
               )}
-              <section
-                className={"workbench " + (dragged ? "is-dragging" : "")}
-                aria-label="Painel de gráficos"
-                onDragOver={(e) => {
-                  if (
-                    dragged ||
-                    e.dataTransfer.types.includes(
-                      "application/x-brasa-indicator",
-                    )
-                  )
-                    e.preventDefault();
-                }}
-                onDrop={drop}
-              >
-                {state.cards.length === 0 ? (
-                  <div
-                    className={"empty-state " + (dragged ? "drop-active" : "")}
-                  >
-                    <div className="empty-illustration">
-                      <div>
-                        <TrendingUp size={42} />
-                        <span />
-                        <span />
-                      </div>
-                      <div>
-                        <BarChart3 size={37} />
-                      </div>
-                      <i>
-                        <Plus size={22} />
-                      </i>
-                    </div>
-                    <span className="eyebrow">
-                      O BRASIL, SOB A SUA PERSPECTIVA
-                    </span>
-                    <h2>
-                      Uma pergunta.
-                      <br />
-                      Muitas possibilidades.
-                    </h2>
-                    <p>
-                      Escolha seu primeiro indicador. Depois, adicione outros
-                      <br className="desktop-only" /> para descobrir como as
-                      histórias se encontram.
-                    </p>
-                    <button className="primary" onClick={() => setPicker({})}>
-                      <Plus size={18} />
-                      Adicionar primeiro indicador
-                    </button>
-                    <span className="drag-hint">
-                      ou arraste um indicador do catálogo para cá
-                    </span>
-                    <div className="starter-links">
-                      {sorted
-                        .filter((c) => c.status === "verified")
-                        .slice(0, 3)
-                        .map((c) => (
-                          <button key={c.id} onClick={() => add(c.id)}>
-                            {c.titulo}
-                            <ArrowUpRight size={14} />
-                          </button>
-                        ))}
-                    </div>
-                  </div>
-                ) : panelTab === "table" && !previewAdd ? (
-                  <div className="comparison-table">
-                    <p>
-                      Períodos distintos permanecem em linhas distintas. “Sem
-                      dado” indica ausência de observação.
-                    </p>
-                    <DataTable query={comparison} />
-                  </div>
-                ) : validMerged && !previewAdd ? (
-                  <div className="indicator-card">
-                    <div className="card-heading">
-                      <div>
-                        <span className="eyebrow">COMPARAÇÃO DE SÉRIES</span>
-                        <h2>Uma visão conjunta</h2>
-                      </div>
+              {(isExplore || (isDetail && selected)) && (
+                <aside
+                  ref={inspectorRef}
+                  className={mobile ? "context-screen" : "workspace-inspector"}
+                  aria-label={
+                    isExplore ? "Explorar indicadores" : "Detalhe do indicador"
+                  }
+                >
+                  {!mobile && (
+                    <div className="inspector-heading">
+                      <span>
+                        {isExplore
+                          ? "Explorar indicadores"
+                          : "Consultar indicador"}
+                      </span>
                       <button
-                        className="secondary"
-                        onClick={() =>
-                          dispatch({ type: "merge", value: false })
-                        }
+                        className="icon-button"
+                        aria-label="Fechar exploração"
+                        onClick={() => navigate("/comparar")}
                       >
-                        Separar gráficos
+                        <X size={18} />
                       </button>
                     </div>
-                    <Suspense
-                      fallback={
-                        <div className="chart-placeholder">
-                          Preparando comparação…
+                  )}
+                  {isExplore ? (
+                    <>
+                      <div className="page-heading">
+                        <div>
+                          <span className="eyebrow">
+                            UM OLHAR SOBRE O BRASIL
+                          </span>
+                          <h1>
+                            Dados para entender.
+                            <br className="mobile-only" /> Contexto para
+                            comparar.
+                          </h1>
+                          <p>
+                            Explore indicadores públicos e construa sua própria
+                            leitura do país.
+                          </p>
                         </div>
-                      }
-                    >
-                      <Chart
-                        title="Comparação de indicadores"
-                        items={loaded.map((x) => ({
-                          query: queryData(x.data, x.card.scope, range),
-                          display:
-                            x.card.display ?? x.data.visualizacao.tipo_padrao,
-                          source: x.data.fonte.orgao,
-                        }))}
-                      />
-                    </Suspense>
-                  </div>
-                ) : (
-                  <div
-                    className={
-                      "chart-grid " +
-                      (displayed.length + (previewAdd ? 1 : 0) > 1
-                        ? "multiple"
-                        : "")
-                    }
-                  >
-                    {displayed.map((card) =>
-                      data[card.indicatorId] ? (
+                        <span className="catalog-count">
+                          <Database size={18} />
+                          {catalog.length} indicadores
+                        </span>
+                      </div>
+                      <section className="explorer">
+                        {catalogSearch()}
+                        {categoryChips()}
+                        {category === "all" && !search && (
+                          <div className="catalog-intro">
+                            <span className="eyebrow">
+                              COMECE POR UMA PERGUNTA
+                            </span>
+                            {recommendationCards(true)}
+                          </div>
+                        )}
+                        {catalogResults()}
+                      </section>
+                    </>
+                  ) : selected ? (
+                    <>
+                      <div className="detail-top">
+                        <button
+                          className="text-button"
+                          onClick={() => navigate("/explorar")}
+                        >
+                          <ArrowLeft size={16} />
+                          Explorar indicadores
+                        </button>
+                        <button
+                          className="secondary"
+                          onClick={() => void share(true)}
+                        >
+                          <Share2 size={16} />
+                          Compartilhar
+                        </button>
+                      </div>
+                      <div className="detail-controls">
+                        {periodControls(true)}
+                        <button
+                          className="primary"
+                          onClick={() => add(selected.id)}
+                        >
+                          {activeIds.has(selected.id) ? (
+                            <Check size={18} />
+                          ) : (
+                            <Plus size={18} />
+                          )}{" "}
+                          {activeIds.has(selected.id)
+                            ? "No painel"
+                            : "Comparar indicador"}
+                        </button>
+                      </div>
+                      {data[selected.id] && detailCard ? (
                         <IndicatorCard
-                          key={card.id + card.indicatorId}
-                          card={card}
-                          data={data[card.indicatorId]}
-                          range={range}
-                          active={state.activeId === card.id}
-                          focused={state.focusedId === card.id}
-                          onActivate={() => {
-                            if (state.activeId !== card.id)
-                              dispatch({ type: "activate", cardId: card.id });
-                          }}
+                          key={selected.id}
+                          detail
+                          card={detailCard}
+                          data={data[selected.id]}
+                          range={detailRange}
                           onConfigure={(display, scope, reset) =>
-                            dispatch({
-                              type: "configure",
-                              cardId: card.id,
-                              display,
-                              scope,
-                              reset,
-                            })
+                            setDetailSettings((p) => ({
+                              ...p,
+                              [selected.id]: {
+                                ...detailCard,
+                                display: reset
+                                  ? undefined
+                                  : (display ?? detailCard.display),
+                                scope: scope ?? detailCard.scope,
+                              },
+                            }))
                           }
-                          onRemove={() =>
-                            dispatch({ type: "remove", cardId: card.id })
-                          }
-                          onFocus={
-                            state.cards.length > 1
-                              ? () =>
-                                  dispatch({ type: "focus", cardId: card.id })
-                              : undefined
-                          }
-                          onReplace={() => setPicker({ target: card.id })}
                         />
                       ) : (
                         <LoadingCard
-                          key={card.id}
-                          error={errors[card.indicatorId]}
+                          error={errors[selected.id]}
                           retry={() => setAttempt((x) => x + 1)}
                         />
-                      ),
-                    )}
-                    {(previewAdd ||
-                      (state.cards.length === 3 && !state.focusedId)) && (
-                      <button
-                        className={
-                          "add-placeholder " + (previewAdd ? "drop-active" : "")
-                        }
-                        onClick={() => setPicker({})}
-                      >
-                        <span>
-                          <Plus size={25} />
-                        </span>
-                        <strong>
-                          {previewAdd
-                            ? "Solte para adicionar"
-                            : "Uma nova perspectiva"}
-                        </strong>
-                        <small>
-                          {previewAdd
-                            ? catalog.find((c) => c.id === dragged)?.titulo
-                            : "Adicione mais um indicador à comparação"}
-                        </small>
-                      </button>
-                    )}
-                  </div>
-                )}
-                {dragged && state.cards.length === 4 && (
-                  <div className="drop-full">
-                    Painel completo. Ao soltar, você poderá escolher qual
-                    gráfico substituir.
-                  </div>
-                )}
-              </section>
-              {state.cards.length > 0 &&
-                state.cards.length < 4 &&
-                !previewAdd && (
-                  <button className="add-more" onClick={() => setPicker({})}>
-                    <Plus size={17} />
-                    Adicionar outra perspectiva
-                    <span>{state.cards.length}/4</span>
-                  </button>
-                )}
-            </>
+                      )}
+                    </>
+                  ) : null}
+                </aside>
+              )}
+            </div>
           )}
           <footer className="page-footer">
             <span>
@@ -1092,14 +1322,29 @@ function AtlasApp({ catalog }: { catalog: CatalogEntry[] }) {
           </button>
         </nav>
       )}
-      {mobile && isDetail && state.cards.length > 0 && (
+      {mobile && (isDetail || isExplore) && state.cards.length > 0 && (
         <button
           className="comparison-tray"
           onClick={() => navigate("/comparar")}
         >
           <BarChart3 size={19} />
-          Comparar · {state.cards.length}{" "}
-          {state.cards.length === 1 ? "indicador" : "indicadores"}
+          <span>
+            <strong>
+              Meu painel · {state.cards.length}{" "}
+              {state.cards.length === 1 ? "indicador" : "indicadores"}
+            </strong>
+            <small>
+              {state.cards
+                .map(
+                  (card) =>
+                    catalog.find((entry) => entry.id === card.indicatorId)
+                      ?.titulo,
+                )
+                .filter(Boolean)
+                .slice(0, 2)
+                .join(" + ")}
+            </small>
+          </span>
           <ArrowRight size={17} />
         </button>
       )}

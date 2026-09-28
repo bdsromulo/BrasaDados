@@ -23,7 +23,8 @@ O build valida os arquivos de dados antes da compilação. A publicação existe
 - Identidade Atlas Cívico: logo SVG, Outfit e Inter locais, temas claro e escuro.
 - Até quatro gráficos, adicionados por botão, seletor ou arraste. Preview de disposição, substituição explícita, remover/desfazer e maximização sem descartar cartões.
 - Linhas ou colunas recomendadas por indicador; ranking horizontal, opções secundárias e restauração da recomendação.
-- Abaixo de 768 px: explorar, consultar e comparar por toque. De 768 a 1023 px: catálogo recolhido. A partir de 1024 px: bancada com catálogo lateral.
+- Abaixo de 768 px: explorar, consultar e comparar por toque, com acesso persistente ao painel. A partir de 768 px: bancada sempre visível com catálogo e detalhe em painel contextual; a partir de 1024 px, também há navegação lateral fixa.
+- Sugestões editoriais para começar: IPCA + Selic Meta e PIB + Desemprego, preservando a frequência original de cada série. O segundo par é apresentado lado a lado porque suas frequências diferem.
 - Períodos relativos aos dados disponíveis, tabela comparativa, CSV do recorte e PNG identificado.
 - Busca sem distinção de acentos e com sinônimos; links de indicadores/comparações e persistência local.
 - Catálogo, arquivos por indicador e motor gráfico carregados separadamente; gráficos fora da tela são adiados.

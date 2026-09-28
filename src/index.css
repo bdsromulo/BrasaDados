@@ -2013,3 +2013,293 @@ main:focus {
   border-radius: 12px;
   margin: 16px 0;
 }
+
+/* The workbench remains in view while a contextual catalog is open. */
+.workspace {
+  min-width: 0;
+}
+.workspace.with-inspector {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(320px, 29vw, 390px);
+  gap: 18px;
+  align-items: start;
+}
+.workspace-panel {
+  min-width: 0;
+  container-type: inline-size;
+}
+.workspace-inspector {
+  position: sticky;
+  top: 18px;
+  height: calc(100dvh - 112px);
+  min-width: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 18px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  scrollbar-width: thin;
+}
+.inspector-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: -18px;
+  z-index: 4;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 0 0 12px;
+  margin-bottom: 16px;
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 650;
+}
+.workspace-inspector .page-heading {
+  display: block;
+  margin-bottom: 18px;
+}
+.workspace-inspector .page-heading h1 {
+  font-size: 25px;
+  line-height: 1.12;
+}
+.workspace-inspector .page-heading p {
+  margin: 8px 0;
+  line-height: 1.5;
+}
+.workspace-inspector .catalog-count {
+  margin-top: 9px;
+}
+.workspace-inspector .explorer {
+  border: 0;
+  padding: 0;
+}
+.workspace-inspector .catalog-list {
+  grid-template-columns: minmax(0, 1fr);
+}
+.workspace-inspector .catalog-item {
+  padding: 12px 0;
+}
+.workspace-inspector .detail-top,
+.workspace-inspector .detail-controls {
+  flex-wrap: wrap;
+}
+.workspace-inspector .detail-card {
+  padding: 15px 12px 0;
+}
+.workspace-inspector .detail-card .chart-canvas {
+  height: 235px;
+}
+.workspace-inspector .card-heading,
+.workspace-inspector .chart-toolbar {
+  flex-wrap: wrap;
+}
+.workspace-inspector .card-title h2 {
+  font-size: 18px;
+}
+.workspace-inspector .metric-row > strong {
+  font-size: 27px;
+}
+.drag-grip {
+  flex: none;
+  color: var(--muted);
+  opacity: 0.7;
+}
+.sidebar-indicator[draggable="true"],
+.catalog-item[draggable="true"] {
+  cursor: grab;
+}
+.sidebar-indicator[draggable="true"]:active,
+.catalog-item[draggable="true"]:active {
+  cursor: grabbing;
+}
+.sidebar-indicator:focus-within,
+.catalog-item:focus-within {
+  outline: 2px solid var(--primary);
+  outline-offset: -2px;
+  border-radius: 7px;
+}
+.workbench.is-dragging {
+  outline: 2px dashed var(--primary);
+  outline-offset: 5px;
+  border-radius: 12px;
+}
+.catalog-intro {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 18px;
+  margin-bottom: 12px;
+}
+.catalog-intro > .eyebrow {
+  margin-bottom: 10px;
+}
+.recommendations {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 22px;
+  text-align: left;
+}
+.recommendations.compact {
+  grid-template-columns: minmax(0, 1fr);
+  margin-top: 0;
+}
+.recommendation {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  background: var(--subtle);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px;
+  color: var(--ink);
+}
+.recommendation h3 {
+  font-family: "Outfit Variable", sans-serif;
+  font-size: 17px;
+  line-height: 1.2;
+  margin: 0;
+}
+.recommendation p {
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.5;
+  margin: 0;
+}
+.recommendation-names {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.recommendation-names span {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 4px 6px;
+  font-size: 10px;
+  line-height: 1.4;
+}
+.recommendation small {
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.4;
+}
+.recommendation button {
+  margin-top: auto;
+  min-height: 40px;
+  width: 100%;
+  font-size: 11px;
+}
+.recommendation button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+.empty-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.empty-state .recommendations {
+  margin-top: 24px;
+}
+.comparison-tray > span {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+  gap: 3px;
+}
+.comparison-tray strong {
+  font-weight: 650;
+}
+.comparison-tray small {
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 10px;
+  opacity: 0.88;
+}
+@container (max-width: 720px) {
+  .chart-grid.multiple {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .recommendations {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .workspace-panel .page-heading {
+    flex-wrap: wrap;
+  }
+  .workspace-panel .heading-actions {
+    justify-content: flex-start;
+  }
+}
+@container (min-width: 850px) {
+  .empty-state {
+    display: grid;
+    grid-template-columns: minmax(270px, 0.9fr) minmax(0, 1.4fr);
+    align-items: center;
+    gap: 28px;
+    min-height: 470px;
+    padding: 25px 28px;
+  }
+  .empty-state .recommendations {
+    grid-template-columns: minmax(0, 1fr);
+    margin: 0;
+  }
+  .empty-state .recommendation {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 3px 12px;
+    padding: 12px 14px;
+  }
+  .empty-state .recommendation .eyebrow,
+  .empty-state .recommendation h3,
+  .empty-state .recommendation p,
+  .empty-state .recommendation-names,
+  .empty-state .recommendation small {
+    grid-column: 1;
+  }
+  .empty-state .recommendation button {
+    grid-column: 2;
+    grid-row: 1 / 6;
+    white-space: nowrap;
+    width: auto;
+    margin: 0;
+  }
+}
+@media (max-width: 767px) {
+  .workspace-inspector,
+  .context-screen {
+    width: 100%;
+    min-width: 0;
+  }
+  .recommendations {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .empty-state {
+    padding: 30px 16px 22px;
+  }
+  .empty-state .empty-illustration {
+    display: none;
+  }
+  .empty-state h2 {
+    font-size: 27px;
+    margin: 8px 0;
+  }
+  .empty-state p {
+    margin-bottom: 12px;
+  }
+  .empty-state .recommendations {
+    margin-top: 16px;
+  }
+  .catalog-intro {
+    margin-top: 10px;
+  }
+}

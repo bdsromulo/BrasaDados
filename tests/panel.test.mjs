@@ -138,3 +138,25 @@ test("adding the mobile detail carries its visual and geographic filters", () =>
   assert.equal(s.cards[0].display, "area");
   assert.equal(s.cards[0].scope, "estados");
 });
+
+test("a recommended pair is added atomically, preserving existing cards and capacity", () => {
+  const start = panel("a", "b", "c");
+  const blocked = reduce(start, {
+    type: "add-group",
+    indicatorIds: ["d", "e"],
+  });
+  assert.deepEqual(blocked.cards, start.cards);
+  const added = reduce(panel("a"), {
+    type: "add-group",
+    indicatorIds: ["b", "c"],
+  });
+  assert.deepEqual(
+    added.cards.map((card) => card.indicatorId),
+    ["a", "b", "c"],
+  );
+  assert.equal(added.merged, false);
+  assert.deepEqual(
+    reduce(added, { type: "add-group", indicatorIds: ["b", "c"] }).cards,
+    added.cards,
+  );
+});

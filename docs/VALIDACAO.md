@@ -72,3 +72,11 @@ O bundle anterior tinha aproximadamente 462 KB gzip no JavaScript inicial. A red
 Comparação com a direção Atlas Cívico: módulos geométricos do logo, tipografia Outfit/Inter, lateral navy, fundo claro, ação lima, cartões com bordas suaves e séries cobalto/teal. Não foram adicionadas contas ou notificações.
 
 Os testes desta página foram realizados localmente antes da publicação. A auditoria numérica dos 13 indicadores legados, históricos oficiais ainda curtos e medições em telefone físico estão explicitados em [TAREFAS.md](../TAREFAS.md).
+
+## Evolução do painel e recomendações editoriais
+
+Na atualização seguinte, o painel passou a permanecer montado nas rotas de exploração e detalhe a partir de 768 px. No navegador local, a seleção de **Economia** abriu o catálogo à direita preservando dois gráficos e o período do painel; o link direto de detalhe também manteve os cartões. Alterar o período do detalhe de 10 para 5 anos não alterou o período da bancada. Escape fechou a exploração e devolveu o foco ao botão de origem; Voltar reabriu a rota contextual.
+
+As recomendações foram testadas com os dados reais: IPCA + Selic Meta adicionou dois cartões e deixou **Mesclar séries** disponível; PIB + Desemprego adicionou dois cartões e mostrou o bloqueio por frequências diferentes. A adição em grupo é atômica, inclusive quando faltam posições. `npm test` passou com 36 testes. O build validou 40 indicadores, dos quais 27 conferidos na fonte.
+
+Foram inspecionados 360, 390, 768, 1024 e 1440 px nos dois temas, sem transbordamento horizontal. Em 360/390 px o acesso persistente ao painel mostra a quantidade e os nomes dos indicadores; em 768/1024 px painel e detalhe cabem lado a lado em uma coluna de gráficos. A simulação automatizada do gesto de arrastar nesta rodada não confirmou o drop, por isso a conferência manual do gesto em navegadores desktop reais permanece pendente, assim como leitor de tela e telefone físico.

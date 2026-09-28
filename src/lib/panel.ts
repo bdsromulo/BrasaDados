@@ -12,6 +12,7 @@ export const initialPanel: Panel = {
 };
 export type Action =
   | { type: "add"; indicatorId: string; display?: Display; scope?: Scope }
+  | { type: "add-group"; indicatorIds: string[] }
   | { type: "replace"; cardId: string; indicatorId: string }
   | { type: "remove" | "activate" | "focus"; cardId: string }
   | {
@@ -36,6 +37,39 @@ function snapshot(s: Panel) {
 }
 export function panelReducer(s: Panel, a: Action): Panel {
   switch (a.type) {
+    case "add-group": {
+      const ids = [...new Set(a.indicatorIds)];
+      const missing = ids.filter(
+        (id) => !s.cards.some((c) => c.indicatorId === id),
+      );
+      if (!missing.length)
+        return { ...s, notice: "Estes indicadores já estão no painel." };
+      if (s.cards.length + missing.length > 4)
+        return {
+          ...s,
+          notice:
+            "Não há espaço para esta sugestão. Remova um gráfico ou escolha qual substituir.",
+        };
+      const cards = [...s.cards];
+      for (const indicatorId of missing) {
+        let id = `card-${indicatorId}`;
+        for (let suffix = 2; cards.some((c) => c.id === id); suffix++)
+          id = `card-${indicatorId}-${suffix}`;
+        cards.push({ id, indicatorId, scope: "nacional" });
+      }
+      return {
+        ...s,
+        cards,
+        activeId: cards.at(-1)!.id,
+        focusedId: null,
+        merged: false,
+        pendingId: null,
+        notice:
+          missing.length === 1
+            ? "Indicador adicionado ao painel."
+            : "Sugestão adicionada ao painel.",
+      };
+    }
     case "add": {
       const existing = s.cards.find((c) => c.indicatorId === a.indicatorId);
       if (existing)
